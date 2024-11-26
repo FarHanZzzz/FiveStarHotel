@@ -4,7 +4,6 @@ module hotel.fivestarhotel {
 
 
     opens cse.fivestarhotel to javafx.fxml;
-
     opens cse.fivestarhotel.FrontDeskStaff to javafx.fxml;
 
     exports cse.fivestarhotel;
