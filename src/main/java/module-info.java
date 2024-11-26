@@ -9,3 +9,4 @@ module hotel.fivestarhotel {
 
     exports cse.fivestarhotel;
 }
+
