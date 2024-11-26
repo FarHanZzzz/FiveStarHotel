@@ -3,8 +3,9 @@ module hotel.fivestarhotel {
     requires javafx.fxml;
 
 
-    opens hotel.fivestarhotel to javafx.fxml;
+    opens cse.fivestarhotel to javafx.fxml;
 
+    opens cse.fivestarhotel.FrontDeskStaff to javafx.fxml;
 
-    exports hotel.fivestarhotel;
+    exports cse.fivestarhotel;
 }
