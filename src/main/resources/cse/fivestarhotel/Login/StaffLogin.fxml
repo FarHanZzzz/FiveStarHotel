@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cse.fivestarhotel.Login.StaffLoginController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <ImageView fitHeight="720.0" fitWidth="688.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../Img/1280x720-black-solid-color-background.png" />
+         </image>
+      </ImageView>
+   </left>
+   <right>
+      <AnchorPane prefHeight="720.0" prefWidth="672.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="174.0" layoutY="101.0" prefHeight="88.0" prefWidth="293.0" text="«Sign-in»" textFill="#cc8e3c">
+               <font>
+                  <Font name="Sitka Text" size="60.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="335.0" text="User ID:" textFill="#cc8e3c">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="404.0" text="Password:" textFill="#cc8e3c">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="260.0" layoutY="338.0" style="-fx-background-color: #cc8e3c;" />
+            <TextField layoutX="260.0" layoutY="407.0" style="-fx-background-color: #cc8e3c;" />
+            <ImageView fitHeight="133.0" fitWidth="112.0" layoutX="239.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Untitled325_20241128015152.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

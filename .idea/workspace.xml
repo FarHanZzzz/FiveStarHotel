@@ -7,6 +7,7 @@
     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +88,10 @@
       <workItem from="1732691317064" duration="1348000" />
       <workItem from="1732740293857" duration="392000" />
       <workItem from="1732740700449" duration="854000" />
+      <workItem from="1732812843972" duration="6000" />
+      <workItem from="1732812928251" duration="38000" />
+      <workItem from="1732813016733" duration="370000" />
+      <workItem from="1732813603231" duration="2575000" />
     </task>
     <servers />
   </component>
