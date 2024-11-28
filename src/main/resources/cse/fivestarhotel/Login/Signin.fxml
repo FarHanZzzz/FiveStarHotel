@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cse.fivestarhotel.Login.SignInController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.SignInController">
+   <right>
+      <AnchorPane prefHeight="720.0" prefWidth="600.0" style="-fx-background-color: #042713;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="119.0" layoutY="118.0" prefHeight="87.0" prefWidth="355.0" text="✦Sign-in✦" textFill="#cc8e3c">
+               <font>
+                  <Font name="Sitka Text" size="60.0" />
+               </font>
+            </Label>
+            <Button layoutX="162.0" layoutY="388.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="269.0" style="-fx-background-color: #CC8E3C;" text="Sign in as a Staff ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="162.0" layoutY="327.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="269.0" style="-fx-background-color: #CC8E3C;" text="Sign in as a Guest ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="212.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Untitled325_20241128015152.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <ImageView fitHeight="720.0" fitWidth="688.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../Img/Untitled327_20241128022946.jpg" />
+         </image>
+      </ImageView>
+   </left>
+</BorderPane>
