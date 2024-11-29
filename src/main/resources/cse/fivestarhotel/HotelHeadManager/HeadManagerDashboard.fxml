@@ -95,7 +95,12 @@
                   <Font name="Consolas Bold" size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Employee Schedules" textAlignment="CENTER" textFill="#cf8e40">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text=" monthly budget reports" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
@@ -110,22 +115,17 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Hiring Applications" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="customer reviews " textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-               <font>
-                  <Font name="Consolas" size="20.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
@@ -146,14 +146,6 @@
       <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
          <children>
             <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-            <LineChart layoutX="26.0" layoutY="277.0" prefHeight="189.0" prefWidth="255.0" style="-fx-background-color: #777768; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis prefHeight="128.0" prefWidth="19.0" side="LEFT" tickLabelFill="WHITE" />
-              </yAxis>
-            </LineChart>
             <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
                <font>
                   <Font name="Bell MT Bold" size="45.0" />
@@ -183,7 +175,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <LineChart layoutX="312.0" layoutY="277.0" prefHeight="189.0" prefWidth="255.0" style="-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
+            <LineChart layoutX="21.0" layoutY="277.0" prefHeight="189.0" prefWidth="546.0" style="-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
@@ -259,11 +251,6 @@
                   </Text>
                </children>
             </VBox>
-            <Text fill="#0f4a33" layoutX="317.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ some more bullshit" wrappingWidth="217.81787872314453">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
             <Text fill="#000000aa" layoutX="626.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
                <font>
                   <Font name="System Bold" size="16.0" />
