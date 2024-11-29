@@ -9,6 +9,15 @@ public class CreateanAccountController
 {
 
     @javafx.fxml.FXML
+    private PasswordField CreateAnAccountPasswordPasswordField;
+    @javafx.fxml.FXML
+    private DatePicker CreateAnAccountBirthdayDatepicker;
+    @javafx.fxml.FXML
+    private TextField CreateAnAccountNameTextField;
+    @javafx.fxml.FXML
+    private TextField CreateAnAccountNidTextField;
+
+    @javafx.fxml.FXML
     public void initialize() {
 
 
@@ -17,7 +26,7 @@ public class CreateanAccountController
 
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void CreateAccountOnAction(ActionEvent actionEvent) {
     }
 }

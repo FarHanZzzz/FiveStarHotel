@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.CreateanAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.CreateanAccountController">
     <left>
         <ImageView fitHeight="723.0" fitWidth="722.0" pickOnBounds="true" BorderPane.alignment="CENTER">
             <image>
@@ -22,7 +22,7 @@
     <right>
         <AnchorPane prefHeight="720.0" prefWidth="726.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
             <children>
-                <TextField layoutX="142.0" layoutY="306.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your Name" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+                <TextField fx:id="CreateAnAccountNameTextField" layoutX="142.0" layoutY="306.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your Name" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
                 <Label layoutX="93.0" layoutY="123.0" prefHeight="92.0" prefWidth="450.0" text="Create An Account" textFill="#e8ba60">
                     <font>
                         <Font name="Bell MT Italic" size="47.0" />
@@ -33,7 +33,7 @@
                         <Font name="Bell MT" size="20.0" />
                     </font>
                 </Label>
-                <TextField layoutX="142.0" layoutY="363.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your NID" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+                <TextField fx:id="CreateAnAccountNidTextField" layoutX="142.0" layoutY="363.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your NID" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
                 <Label layoutX="26.0" layoutY="366.0" prefHeight="21.0" prefWidth="80.0" text="NID" textFill="#e8ba60">
                     <font>
                         <Font name="Bell MT" size="20.0" />
@@ -44,14 +44,14 @@
                         <Font name="Bell MT" size="20.0" />
                     </font>
                 </Label>
-                <DatePicker layoutX="142.0" layoutY="487.0" promptText="press to enter birthdate" style="-fx-border-color: #E8BA60;" />
-                <PasswordField layoutX="142.0" layoutY="423.0" prefHeight="27.0" prefWidth="269.0" promptText="Password must be 8-letters" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+                <DatePicker fx:id="CreateAnAccountBirthdayDatepicker" layoutX="142.0" layoutY="487.0" promptText="press to enter birthdate" style="-fx-border-color: #E8BA60;" />
+                <PasswordField fx:id="CreateAnAccountPasswordPasswordField" layoutX="142.0" layoutY="423.0" prefHeight="27.0" prefWidth="269.0" promptText="Password must be 8-letters" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
                 <Label layoutX="26.0" layoutY="426.0" prefHeight="21.0" prefWidth="80.0" text="Password" textFill="#e8ba60">
                     <font>
                         <Font name="Bell MT" size="20.0" />
                     </font>
                 </Label>
-                <Button layoutX="142.0" layoutY="592.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="256.0" style="-fx-background-color: #E8BA60;" text="Create Account">
+                <Button layoutX="142.0" layoutY="592.0" mnemonicParsing="false" onAction="#CreateAccountOnAction" prefHeight="53.0" prefWidth="256.0" style="-fx-background-color: #E8BA60;" text="Create Account">
                     <font>
                         <Font name="Sitka Text" size="26.0" />
                     </font>

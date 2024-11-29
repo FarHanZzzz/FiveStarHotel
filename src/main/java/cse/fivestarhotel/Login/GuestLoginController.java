@@ -1,6 +1,7 @@
 package cse.fivestarhotel.Login;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class GuestLoginController
@@ -8,7 +9,7 @@ public class GuestLoginController
     @javafx.fxml.FXML
     private TextField GuestIdTextfield;
     @javafx.fxml.FXML
-    private TextField GuestPasswordTextField;
+    private PasswordField GuestPasswordPasswordField;
 
     @javafx.fxml.FXML
     public void initialize() {

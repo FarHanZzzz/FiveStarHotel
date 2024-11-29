@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.GuestLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.GuestLoginController">
    <left>
       <ImageView fitHeight="720.0" fitWidth="688.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -20,11 +21,6 @@
       <AnchorPane prefHeight="720.0" prefWidth="592.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="GuestIdTextfield" layoutX="156.0" layoutY="231.0" prefHeight="45.0" prefWidth="291.0" style="-fx-background-color: #E8BA60;">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="GuestPasswordTextField" layoutX="154.0" layoutY="350.0" prefHeight="45.0" prefWidth="293.0" style="-fx-background-color: #E8BA60;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -64,6 +60,7 @@
                   <Font name="Sitka Text" size="34.0" />
                </font>
             </Text>
+            <PasswordField fx:id="GuestPasswordPasswordField" layoutX="154.0" layoutY="350.0" prefHeight="45.0" prefWidth="291.0" style="-fx-background-color: #E8BA60;" />
          </children></AnchorPane>
    </center>
 </BorderPane>
