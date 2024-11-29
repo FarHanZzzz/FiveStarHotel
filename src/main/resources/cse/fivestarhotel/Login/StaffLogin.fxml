@@ -36,13 +36,13 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="329.0" layoutY="316.0" style="-fx-background-color: #cc8e3c;" />
-            <Button layoutX="250.0" layoutY="510.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #cc8e3c;" text="Log in" textFill="#072917">
+            <TextField layoutX="329.0" layoutY="316.0" onAction="#StaffIdTextField" style="-fx-background-color: #cc8e3c;" />
+            <Button layoutX="250.0" layoutY="510.0" mnemonicParsing="false" onAction="#StaffLogInOnAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #cc8e3c;" text="Log in" textFill="#072917">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <PasswordField layoutX="329.0" layoutY="373.0" style="-fx-background-color: #cc8e3c;" />
+            <PasswordField layoutX="329.0" layoutY="373.0" onAction="#StaffPasswordPasswordField" style="-fx-background-color: #cc8e3c;" />
          </children>
       </AnchorPane>
    </right>
