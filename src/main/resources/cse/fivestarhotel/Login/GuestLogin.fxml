@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.GuestLoginController">
    <left>
       <ImageView fitHeight="720.0" fitWidth="688.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -19,17 +19,17 @@
    <center>
       <AnchorPane prefHeight="720.0" prefWidth="592.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="156.0" layoutY="231.0" prefHeight="45.0" prefWidth="291.0" style="-fx-background-color: #E8BA60;">
+            <TextField fx:id="GuestIdTextfield" layoutX="156.0" layoutY="231.0" prefHeight="45.0" prefWidth="291.0" style="-fx-background-color: #E8BA60;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <TextField layoutX="154.0" layoutY="350.0" prefHeight="45.0" prefWidth="293.0" style="-fx-background-color: #E8BA60;">
+            <TextField fx:id="GuestPasswordTextField" layoutX="154.0" layoutY="350.0" prefHeight="45.0" prefWidth="293.0" style="-fx-background-color: #E8BA60;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <Button layoutX="228.0" layoutY="442.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="151.0" style="-fx-background-color: #cc8e3c;" text="Login">
+            <Button layoutX="225.0" layoutY="447.0" mnemonicParsing="false" onAction="#GuestLoginOnAction" prefHeight="47.0" prefWidth="151.0" style="-fx-background-color: #cc8e3c;" text="Login">
                <font>
                   <Font name="Sitka Text" size="21.0" />
                </font>
@@ -44,12 +44,12 @@
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Text>
-            <Button layoutX="179.0" layoutY="595.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="261.0" style="-fx-background-color: #cc8e3c;" text="Create an account">
+            <Button layoutX="179.0" layoutY="595.0" mnemonicParsing="false" onAction="#SwitchToCreateAnAccountOnAction" prefHeight="31.0" prefWidth="261.0" style="-fx-background-color: #cc8e3c;" text="Create an account">
                <font>
                   <Font name="Sitka Text" size="21.0" />
                </font>
             </Button>
-            <Text fill="#cc8e3c" layoutX="143.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome!" wrappingWidth="206.7653350830078">
+            <Text fill="#cc8e3c" layoutX="138.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome!" wrappingWidth="247.7653350830078">
                <font>
                   <Font name="Sitka Text" size="43.0" />
                </font>

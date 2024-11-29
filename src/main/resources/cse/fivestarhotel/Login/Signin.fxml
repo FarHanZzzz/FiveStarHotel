@@ -18,7 +18,7 @@
                   <Font name="Sitka Text" size="60.0" />
                </font>
             </Label>
-            <Button layoutX="175.0" layoutY="339.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="269.0" style="-fx-background-color: #CC8E3C;" text="Sign in as a Guest ">
+            <Button layoutX="175.0" layoutY="339.0" mnemonicParsing="false" onAction="#SignInAsGuestOnAction" prefHeight="36.0" prefWidth="269.0" style="-fx-background-color: #CC8E3C;" text="Sign in as a Guest ">
                <font>
                   <Font name="Sitka Text" size="16.0" />
                </font>
@@ -28,7 +28,7 @@
                   <Image url="@../Img/Untitled325_20241128015152.png" />
                </image>
             </ImageView>
-            <Button layoutX="177.0" layoutY="409.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="269.0" style="-fx-background-color: #CC8E3C;" text="Sign in as a Staff">
+            <Button layoutX="177.0" layoutY="409.0" mnemonicParsing="false" onAction="#SignInAsStaffOnAction" prefHeight="36.0" prefWidth="269.0" style="-fx-background-color: #CC8E3C;" text="Sign in as a Staff">
                <font>
                   <Font name="Sitka Text" size="16.0" />
                </font>
