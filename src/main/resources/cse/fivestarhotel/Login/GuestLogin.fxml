@@ -19,32 +19,32 @@
    <center>
       <AnchorPane prefHeight="720.0" prefWidth="592.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="GuestIdTextfield" layoutX="156.0" layoutY="231.0" prefHeight="45.0" prefWidth="291.0" style="-fx-background-color: #E8BA60;">
+            <TextField fx:id="GuestIdTextfield" layoutX="156.0" layoutY="227.0" prefHeight="45.0" prefWidth="291.0" style="-fx-background-color: #E8BA60;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="GuestPasswordTextField" layoutX="154.0" layoutY="350.0" prefHeight="45.0" prefWidth="293.0" style="-fx-background-color: #E8BA60;">
+            <TextField fx:id="GuestPasswordTextField" layoutX="154.0" layoutY="334.0" prefHeight="45.0" prefWidth="293.0" style="-fx-background-color: #E8BA60;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <Button layoutX="225.0" layoutY="447.0" mnemonicParsing="false" onAction="#GuestLoginOnAction" prefHeight="47.0" prefWidth="151.0" style="-fx-background-color: #cc8e3c;" text="Login">
+            <Button layoutX="225.0" layoutY="429.0" mnemonicParsing="false" onAction="#GuestLoginOnAction" prefHeight="47.0" prefWidth="151.0" style="-fx-background-color: #cc8e3c;" text="Login">
                <font>
                   <Font name="Sitka Text" size="21.0" />
                </font>
             </Button>
-            <Text fill="#cc8e3c" layoutX="156.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="user ID" wrappingWidth="100.09858703613281">
+            <Text fill="#cc8e3c" layoutX="156.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="user ID" wrappingWidth="100.09858703613281">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Text>
-            <Text fill="#cc8e3c" layoutX="158.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?">
+            <Text fill="#cc8e3c" layoutX="158.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
                </font>
             </Text>
-            <Button layoutX="179.0" layoutY="595.0" mnemonicParsing="false" onAction="#SwitchToCreateAnAccountOnAction" prefHeight="31.0" prefWidth="261.0" style="-fx-background-color: #cc8e3c;" text="Create an account">
+            <Button layoutX="179.0" layoutY="579.0" mnemonicParsing="false" onAction="#SwitchToCreateAnAccountOnAction" prefHeight="31.0" prefWidth="261.0" style="-fx-background-color: #cc8e3c;" text="Create an account">
                <font>
                   <Font name="Sitka Text" size="21.0" />
                </font>
@@ -54,7 +54,7 @@
                   <Font name="Sitka Text" size="43.0" />
                </font>
             </Text>
-            <Text fill="#cc8e3c" layoutX="156.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="100.09858703613281">
+            <Text fill="#cc8e3c" layoutX="156.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="100.09858703613281">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -64,6 +64,11 @@
                   <Font name="Sitka Text" size="34.0" />
                </font>
             </Text>
+            <Button layoutX="18.0" layoutY="648.0" mnemonicParsing="false" onAction="#FromGuestReturnToSigninOnAction" style="-fx-background-color: #072917;" text="⬅ Back" textFill="#cc8e3c">
+               <font>
+                  <Font name="Consolas Bold" size="23.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
    </center>
 </BorderPane>
