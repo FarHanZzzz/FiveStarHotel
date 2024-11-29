@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.StaffLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.StaffLoginController">
    <left>
       <ImageView fitHeight="720.0" fitWidth="688.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -19,28 +21,28 @@
    <right>
       <AnchorPane prefHeight="720.0" prefWidth="672.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="174.0" layoutY="101.0" prefHeight="88.0" prefWidth="293.0" text="«Sign-in»" textFill="#cc8e3c">
+            <Label layoutX="166.0" layoutY="104.0" prefHeight="88.0" prefWidth="293.0" text="«Sign-in»" textFill="#cc8e3c">
                <font>
                   <Font name="Sitka Text" size="60.0" />
                </font>
             </Label>
-            <Label layoutX="98.0" layoutY="335.0" text="User ID:" textFill="#cc8e3c">
+            <Label layoutX="163.0" layoutY="312.0" text="👤 User ID:" textFill="#cc8e3c">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="98.0" layoutY="404.0" text="Password:" textFill="#cc8e3c">
+            <Label layoutX="164.0" layoutY="368.0" text="🔒 Password:" textFill="#cc8e3c">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="260.0" layoutY="338.0" style="-fx-background-color: #cc8e3c;" />
-            <TextField layoutX="260.0" layoutY="407.0" style="-fx-background-color: #cc8e3c;" />
-            <ImageView fitHeight="133.0" fitWidth="112.0" layoutX="239.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Img/Untitled325_20241128015152.png" />
-               </image>
-            </ImageView>
+            <TextField layoutX="329.0" layoutY="316.0" style="-fx-background-color: #cc8e3c;" />
+            <Button layoutX="250.0" layoutY="510.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #cc8e3c;" text="Log in" textFill="#072917">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <PasswordField layoutX="329.0" layoutY="373.0" style="-fx-background-color: #cc8e3c;" />
          </children>
       </AnchorPane>
    </right>
