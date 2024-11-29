@@ -21,9 +21,6 @@ public class CreateanAccountController
     public void initialize() {
 
 
-
-
-
     }
 
     @javafx.fxml.FXML

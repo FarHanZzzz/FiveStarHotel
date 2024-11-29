@@ -10,7 +10,6 @@ module hotel.fivestarhotel {
     opens cse.fivestarhotel.Img to javafx.fxml;
 
 
-
     exports cse.fivestarhotel;
 }
 
