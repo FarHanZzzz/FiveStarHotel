@@ -17,12 +17,11 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.RestaurantManagerDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.RoomServiceManagerDashboardController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -36,7 +35,7 @@
                     </font>
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Farhana Chowdhury" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rehnuma Afrin Rose" textAlignment="CENTER" wrappingWidth="350.13677978515625">
                     <font>
                         <Font name="Bell MT Bold" size="33.0" />
                     </font>
@@ -62,7 +61,7 @@
                         </LinearGradient>
                     </fill>
                 </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Head Manager" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Room Service Manager" textAlignment="CENTER" wrappingWidth="350.13677978515625">
                     <font>
                         <Font name="Bodoni MT" size="26.0" />
                     </font>
@@ -95,7 +94,12 @@
                         <Font name="Consolas Bold" size="24.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Workers' Scedule " textAlignment="CENTER" textFill="#cf8e40">
+                    <font>
+                        <Font name="Consolas" size="20.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Special Requests" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -105,22 +109,17 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Request Products" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Lost &amp; Found" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View Monthly Budget" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -167,7 +166,7 @@
                         <NumberAxis side="LEFT" />
                     </yAxis>
                 </StackedBarChart>
-                <TableView layoutX="17.0" layoutY="501.0" prefHeight="200.0" prefWidth="557.0" style="-fx-border-style: #8C8C7B;">
+                <TableView layoutX="17.0" layoutY="501.0" prefHeight="200.0" prefWidth="903.0" style="-fx-border-style: #8C8C7B;">
                     <columns>
                         <TableColumn prefWidth="75.0" text="Announcments" />
                         <TableColumn prefWidth="75.0" text="time" />
@@ -177,8 +176,7 @@
                     </columnResizePolicy>
                 </TableView>
                 <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
-                <Circle fill="#0f4a33" layoutX="803.0" layoutY="593.0" radius="80.0" stroke="BLACK" strokeType="INSIDE" />
-                <Text fill="#4e4e40" layoutX="31.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ revenue VS budget" wrappingWidth="217.81787872314453">
+                <Text fill="#4e4e40" layoutX="21.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Product VS Monthly budget" wrappingWidth="245.55121612548828">
                     <font>
                         <Font name="System Bold" size="16.0" />
                     </font>
@@ -191,77 +189,36 @@
                         <NumberAxis prefHeight="128.0" prefWidth="19.0" side="LEFT" tickLabelFill="WHITE" />
                     </yAxis>
                 </LineChart>
-                <VBox layoutX="44.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+                <VBox layoutX="70.0" layoutY="123.0" prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #B6A990;">
                     <children>
                         <Label prefHeight="47.0" prefWidth="151.0" text="0">
                             <font>
                                 <Font size="38.0" />
                             </font>
                         </Label>
-                        <Label opacity="0.55" text="total employees">
+                        <Label opacity="0.55" text="total workers">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Label>
                     </children>
                 </VBox>
-                <VBox layoutX="221.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+                <VBox layoutX="344.0" layoutY="125.0" prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #B6A990;">
                     <children>
-                        <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                        <Label prefHeight="47.0" prefWidth="201.0" text="0">
                             <font>
                                 <Font size="38.0" />
                             </font>
                         </Label>
-                        <Label opacity="0.55" text="active guests">
+                        <Label opacity="0.55" text="Cleaned Rooms">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Label>
                     </children>
                 </VBox>
-                <VBox layoutX="400.0" layoutY="127.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
-                    <children>
-                        <Label prefHeight="47.0" prefWidth="151.0" text="0">
-                            <font>
-                                <Font size="38.0" />
-                            </font>
-                        </Label>
-                        <Label opacity="0.55" text="some other bullshit">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </VBox>
-                <VBox layoutX="635.0" layoutY="546.0" prefHeight="61.0" prefWidth="81.0">
-                    <children>
-                        <Text fill="#0f4a33" strokeType="OUTSIDE" strokeWidth="0.0" text="●Farhan" wrappingWidth="76.13671875">
-                            <font>
-                                <Font name="Consolas" size="15.0" />
-                            </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                        <Text fill="#1a36e6" strokeType="OUTSIDE" strokeWidth="0.0" text="●Jenin" wrappingWidth="76.13671875">
-                            <font>
-                                <Font name="Consolas" size="15.0" />
-                            </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
-                        <Text fill="#d9093d" strokeType="OUTSIDE" strokeWidth="0.0" text="●Rose" wrappingWidth="76.13671875">
-                            <font>
-                                <Font name="Consolas" size="15.0" />
-                            </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                        <Text fill="#570570" strokeType="OUTSIDE" strokeWidth="0.0" text="●Rafid" wrappingWidth="76.13671875">
-                            <font>
-                                <Font name="Consolas" size="15.0" />
-                            </font>
-                        </Text>
-                    </children>
-                </VBox>
-                <Text fill="#0f4a33" layoutX="317.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ some more bullshit" wrappingWidth="217.81787872314453">
+                <Text fill="#0f4a33" layoutX="310.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍Unclean Rooms VS Current Workers" wrappingWidth="292.4845657348633">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="15.0" />
                     </font>
                 </Text>
                 <Text fill="#000000aa" layoutX="626.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
