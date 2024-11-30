@@ -17,12 +17,11 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.HeadManagerDashboardController">
    <cursor>
       <Cursor fx:constant="NE_RESIZE" />
    </cursor>
@@ -115,7 +114,7 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Hiring Applications" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
@@ -151,31 +150,29 @@
                   <Font name="Bell MT Bold" size="45.0" />
                </font>
             </Text>
-            <StackedBarChart layoutX="583.0" layoutY="162.0" prefHeight="322.0" prefWidth="335.0">
+            <StackedBarChart layoutX="537.0" layoutY="162.0" prefHeight="322.0" prefWidth="381.0">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis prefHeight="24.0" prefWidth="265.0" side="BOTTOM" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis side="LEFT" upperBound="10000.0" />
               </yAxis>
             </StackedBarChart>
             <TableView layoutX="17.0" layoutY="501.0" prefHeight="200.0" prefWidth="557.0" style="-fx-border-style: #8C8C7B;">
               <columns>
-                <TableColumn prefWidth="75.0" text="Announcments" />
-                <TableColumn prefWidth="75.0" text="time" />
+                <TableColumn prefWidth="261.33338356018066" text="Announcments" />
+                <TableColumn text="from" />
+                  <TableColumn prefWidth="108.66650390625" text="date" />
+                  <TableColumn prefWidth="104.66671752929688" text="time" />
               </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
             </TableView>
             <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
-            <Circle fill="#0f4a33" layoutX="803.0" layoutY="593.0" radius="80.0" stroke="BLACK" strokeType="INSIDE" />
             <Text fill="#4e4e40" layoutX="31.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ revenue VS budget" wrappingWidth="217.81787872314453">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <LineChart layoutX="21.0" layoutY="277.0" prefHeight="189.0" prefWidth="546.0" style="-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
+            <LineChart layoutX="21.0" layoutY="277.0" prefHeight="189.0" prefWidth="509.0" style="-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
@@ -190,63 +187,23 @@
                         <Font size="38.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.55" text="total employees">
+                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="active guests" wrappingWidth="130.13671112060547">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></Label>
+                     </font>
+                  </Text>
                </children>
             </VBox>
-            <VBox layoutX="221.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+            <VBox layoutX="213.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                <children>
                   <Label prefHeight="47.0" prefWidth="151.0" text="0">
                      <font>
                         <Font size="38.0" />
                      </font>
                   </Label>
-                  <Label opacity="0.55" text="active guests">
+                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="rooms occupied" wrappingWidth="130.13671112060547">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox layoutX="400.0" layoutY="127.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
-               <children>
-                  <Label prefHeight="47.0" prefWidth="151.0" text="0">
-                     <font>
-                        <Font size="38.0" />
-                     </font>
-                  </Label>
-                  <Label opacity="0.55" text="some other bullshit">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox layoutX="635.0" layoutY="546.0" prefHeight="61.0" prefWidth="81.0">
-               <children>
-                  <Text fill="#0f4a33" strokeType="OUTSIDE" strokeWidth="0.0" text="●Farhan" wrappingWidth="76.13671875">
-                     <font>
-                        <Font name="Consolas" size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Text fill="#1a36e6" strokeType="OUTSIDE" strokeWidth="0.0" text="●Jenin" wrappingWidth="76.13671875">
-                     <font>
-                        <Font name="Consolas" size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.13671875" />
-                  <Text fill="#d9093d" strokeType="OUTSIDE" strokeWidth="0.0" text="●Rose" wrappingWidth="76.13671875">
-                     <font>
-                        <Font name="Consolas" size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Text fill="#570570" strokeType="OUTSIDE" strokeWidth="0.0" text="●Rafid" wrappingWidth="76.13671875">
-                     <font>
-                        <Font name="Consolas" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -256,6 +213,20 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
+            <VBox layoutX="385.0" layoutY="125.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="rooms occupied" wrappingWidth="130.13671112060547">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </right>
