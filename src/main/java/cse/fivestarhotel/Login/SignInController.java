@@ -27,17 +27,6 @@ public class SignInController
         stage.show();
 
 
-
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("scene1view.fxml"));
-//        Scene viewscene = new Scene(fxmlLoader.load());
-//        Stage tempstage = (Stage)((Node)actionevent.getSource()).getScene().getWindow();
-//        tempstage.setTitle("Hello!");
-//        tempstage.setScene(viewscene);
-//        tempstage.show();
-
-
-
-
     }
 
     @javafx.fxml.FXML

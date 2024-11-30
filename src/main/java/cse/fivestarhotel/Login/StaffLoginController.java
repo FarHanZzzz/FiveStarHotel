@@ -28,10 +28,16 @@ public class StaffLoginController
     @javafx.fxml.FXML
     public void StaffLogInOnAction(ActionEvent actionEvent) throws IOException {
 
-
-
     }
 
 
-
+    @javafx.fxml.FXML
+    public void FromStaffReturnToSigninOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
