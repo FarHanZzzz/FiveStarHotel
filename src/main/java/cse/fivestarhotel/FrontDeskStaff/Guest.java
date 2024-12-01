@@ -1,18 +1,14 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
+import javafx.scene.control.ComboBox;
+
 public class Guest {
 
-    public String name;
-    public Integer id;
-    public String maritalStatus;
-    public String nationality;
-    public Integer contactNo;
-
-
-
-
-    // constructor ,setter and getter
-
+    private String name;
+    private Integer id;
+    private String maritalStatus;
+    private String nationality;
+    private Integer contactNo;
 
     public Guest(String name, Integer id, String maritalStatus, String nationality, Integer contactNo) {
         this.name = name;
@@ -72,6 +68,8 @@ public class Guest {
                 ", contactNo=" + contactNo +
                 '}';
     }
+
+
 
 
 }
