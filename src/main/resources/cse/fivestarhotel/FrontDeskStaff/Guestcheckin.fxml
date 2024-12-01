@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckinController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckinController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -150,10 +150,10 @@
                 </Text>
                 <TableView fx:id="CheckinTableView" layoutX="17.0" layoutY="441.0" prefHeight="253.0" prefWidth="919.0" style="-fx-border-style: #8C8C7B;">
                     <columns>
-                  <TableColumn fx:id="NameCol" prefWidth="51.0" text="id" />
-                  <TableColumn fx:id="idCol" prefWidth="116.0" text="Name" />
-                  <TableColumn fx:id="MaritalStatusCol" prefWidth="153.0" text="Marital Status" />
-                  <TableColumn fx:id="NationalityCol" prefWidth="127.0" text="Nationality" />
+                  <TableColumn fx:id="NameCol" prefWidth="88.79998588562012" text="Name" />
+                  <TableColumn fx:id="idCol" prefWidth="69.86664581298828" text="id" />
+                  <TableColumn fx:id="MaritalStatusCol" prefWidth="138.66665649414062" text="Marital Status" />
+                  <TableColumn fx:id="NationalityCol" prefWidth="146.13330078125" text="Nationality" />
                   <TableColumn fx:id="ContactNoCol" prefWidth="134.0" text="Contact No" />
                   <TableColumn fx:id="RoomtypeCol" prefWidth="156.0" text="Roomtype" />
                   <TableColumn fx:id="HowManyRoomsCol" prefWidth="186.0" text="How many Rooms" />
@@ -202,7 +202,7 @@
                   <Font name="System Bold" size="38.0" />
                </font>
             </Label>
-            <Label layoutX="398.0" layoutY="178.0" text="Roomtype">
+            <Label layoutX="398.0" layoutY="178.0" text="Room type">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -214,7 +214,7 @@
             </Label>
             <TextField fx:id="HowManyRoomsTextField" layoutX="515.0" layoutY="215.0" />
             <ComboBox fx:id="RoomTypeComboBox" layoutX="515.0" layoutY="174.0" prefWidth="150.0" />
-            <ComboBox fx:id="MaritalStatusComboBox" layoutX="167.0" layoutY="254.0" prefWidth="150.0" />
+            <ComboBox fx:id="GuestMaritalStatusComboBox" layoutX="167.0" layoutY="254.0" prefWidth="150.0" />
             <Button layoutX="398.0" layoutY="327.0" mnemonicParsing="false" onAction="#CheckInOnAction" prefHeight="66.0" prefWidth="166.0" text="Check in and check if room is available" textAlignment="CENTER" textFill="#4d4545" wrapText="true">
                <font>
                   <Font size="15.0" />
