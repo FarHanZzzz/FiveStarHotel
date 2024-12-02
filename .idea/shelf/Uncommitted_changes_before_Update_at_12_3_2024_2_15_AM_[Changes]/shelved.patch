@@ -1,0 +1,80 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;ffe06a0d-a38a-49d0-901d-f1ca4a8601e0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6ad9f7fb11802a4f2637f8c8f95d7778ec5113b0)
++++ b/.idea/workspace.xml	(date 1733170240908)
+@@ -5,11 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,8 +16,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="FxmlFile" />
+         <option value="Class" />
++        <option value="FxmlFile" />
+       </list>
+     </option>
+   </component>
+@@ -33,12 +30,12 @@
+     &quot;assignee&quot;: &quot;FarHanZzzz&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,
+-    &quot;accountId&quot;: &quot;ffe06a0d-a38a-49d0-901d-f1ca4a8601e0&quot;
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/FarHanZzzz/FiveStarHotel.git",
++    "accountId": "6a6a6314-c7b1-47a3-a0ee-4d945d400db2"
+   }
+-}</component>
++}]]></component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+@@ -94,6 +91,7 @@
+       <workItem from="1732812928251" duration="38000" />
+       <workItem from="1732813016733" duration="370000" />
+       <workItem from="1732813603231" duration="2575000" />
++      <workItem from="1733167624293" duration="1480000" />
+     </task>
+     <servers />
+   </component>
+Index: src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.DatePicker?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.Login.CreateanAccountController\">\r\n    <left>\r\n        <ImageView fitHeight=\"723.0\" fitWidth=\"722.0\" pickOnBounds=\"true\" BorderPane.alignment=\"CENTER\">\r\n            <image>\r\n                <Image url=\"@../Img/Untitled327_20241129010451.jpg\" />\r\n            </image>\r\n        </ImageView>\r\n    </left>\r\n    <right>\r\n        <AnchorPane prefHeight=\"720.0\" prefWidth=\"726.0\" style=\"-fx-background-color: #072917;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <TextField fx:id=\"CreateAnAccountNameTextField\" layoutX=\"203.0\" layoutY=\"260.0\" prefHeight=\"27.0\" prefWidth=\"269.0\" promptText=\"Enter your Name\" style=\"-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;\" />\r\n                <Label layoutX=\"113.0\" layoutY=\"123.0\" prefHeight=\"92.0\" prefWidth=\"342.0\" text=\"Create An Account\" textFill=\"#e8ba60\">\r\n                    <font>\r\n                        <Font name=\"Bell MT Italic\" size=\"47.0\" />\r\n                    </font>\r\n                </Label>\r\n                <Label layoutX=\"87.0\" layoutY=\"263.0\" prefHeight=\"21.0\" prefWidth=\"80.0\" style=\"-fx-background-color: trans;\" text=\"Name\" textFill=\"#e8ba60\">\r\n                    <font>\r\n                        <Font name=\"Bell MT\" size=\"20.0\" />\r\n                    </font>\r\n                </Label>\r\n                <TextField fx:id=\"CreateAnAccountNidTextField\" layoutX=\"203.0\" layoutY=\"317.0\" prefHeight=\"27.0\" prefWidth=\"269.0\" promptText=\"Enter your NID\" style=\"-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;\" />\r\n                <Label layoutX=\"87.0\" layoutY=\"320.0\" prefHeight=\"21.0\" prefWidth=\"80.0\" text=\"NID\" textFill=\"#e8ba60\">\r\n                    <font>\r\n                        <Font name=\"Bell MT\" size=\"20.0\" />\r\n                    </font>\r\n                </Label>\r\n                <Label layoutX=\"87.0\" layoutY=\"440.0\" prefHeight=\"28.0\" prefWidth=\"80.0\" text=\"Birthday\" textFill=\"#e8ba60\">\r\n                    <font>\r\n                        <Font name=\"Bell MT\" size=\"20.0\" />\r\n                    </font>\r\n                </Label>\r\n                <DatePicker fx:id=\"CreateAnAccountBirthdayDatepicker\" layoutX=\"203.0\" layoutY=\"441.0\" promptText=\"press to enter birthdate\" style=\"-fx-border-color: #E8BA60;\" />\r\n                <PasswordField fx:id=\"CreateAnAccountPasswordPasswordField\" layoutX=\"203.0\" layoutY=\"377.0\" prefHeight=\"27.0\" prefWidth=\"269.0\" promptText=\"Password must be 8-letters\" style=\"-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;\" />\r\n                <Label layoutX=\"87.0\" layoutY=\"380.0\" prefHeight=\"21.0\" prefWidth=\"80.0\" text=\"Password\" textFill=\"#e8ba60\">\r\n                    <font>\r\n                        <Font name=\"Bell MT\" size=\"20.0\" />\r\n                    </font>\r\n                </Label>\r\n                <Button layoutX=\"158.0\" layoutY=\"537.0\" mnemonicParsing=\"false\" onAction=\"#CreateAccountOnAction\" prefHeight=\"53.0\" prefWidth=\"256.0\" style=\"-fx-background-color: #E8BA60;\" text=\"Create Account\">\r\n                    <font>\r\n                        <Font name=\"Sitka Text\" size=\"26.0\" />\r\n                    </font>\r\n                </Button>\r\n            <Button layoutX=\"22.0\" layoutY=\"648.0\" mnemonicParsing=\"false\" onAction=\"#BackToGuestLoginOnAction\" style=\"-fx-background-color: #072917;\" text=\"⬅ Back\" textFill=\"#cc8e3c\">\r\n               <font>\r\n                  <Font name=\"Consolas Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Button>\r\n            </children>\r\n        </AnchorPane>\r\n    </right>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml b/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml
+--- a/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml	(revision 6ad9f7fb11802a4f2637f8c8f95d7778ec5113b0)
++++ b/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml	(date 1733168731788)
+@@ -33,8 +33,8 @@
+                         <Font name="Bell MT" size="20.0" />
+                     </font>
+                 </Label>
+-                <TextField fx:id="CreateAnAccountNidTextField" layoutX="203.0" layoutY="317.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your NID" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+-                <Label layoutX="87.0" layoutY="320.0" prefHeight="21.0" prefWidth="80.0" text="NID" textFill="#e8ba60">
++                <TextField fx:id="CreateAnAccountNidTextField" layoutX="203.0" layoutY="317.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your email" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
++                <Label layoutX="87.0" layoutY="320.0" prefHeight="21.0" prefWidth="80.0" text="E-Mail" textFill="#e8ba60">
+                     <font>
+                         <Font name="Bell MT" size="20.0" />
+                     </font>
