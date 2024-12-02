@@ -72,6 +72,11 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Laundry" textAlignment="CENTER" textFill="#cf8e40">
+                    <font>
+                        <Font name="Consolas" size="20.0" />
+                    </font>
+                </Button>
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
@@ -83,11 +88,6 @@
                </font>
             </Button>
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel map" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Loyalty points" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>

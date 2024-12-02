@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckinController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckinController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -161,7 +161,7 @@
                     </columnResizePolicy>
                 </TableView>
                 <Line endX="741.0" layoutX="207.0" layoutY="407.0" startX="-207.0" stroke="#8c8c7b" />
-            <Label layoutX="53.0" layoutY="94.0" prefHeight="55.0" prefWidth="255.0" text="Guest Details" underline="true">
+            <Label layoutX="53.0" layoutY="94.0" prefHeight="55.0" prefWidth="281.0" text="Guest Details" underline="true">
                <font>
                   <Font name="System Bold" size="38.0" />
                </font></Label>
@@ -200,12 +200,12 @@
                   <Font name="System Bold" size="38.0" />
                </font>
             </Label>
-            <Label layoutX="391.0" layoutY="170.0" text="Room type">
+            <Label layoutX="397.0" layoutY="170.0" text="Room type">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="391.0" layoutY="211.0" text="Number of Rooms">
+            <Label layoutX="397.0" layoutY="211.0" text="Number of Rooms">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -213,14 +213,14 @@
             <TextField fx:id="NumberofRoomsTextField" layoutX="531.0" layoutY="207.0" prefHeight="25.0" prefWidth="173.0" />
             <ComboBox fx:id="RoomTypeComboBox" layoutX="530.0" layoutY="166.0" prefHeight="25.0" prefWidth="172.0" />
             <ComboBox fx:id="GuestMaritalStatusComboBox" layoutX="167.0" layoutY="254.0" prefWidth="150.0" />
-            <Button layoutX="747.0" layoutY="103.0" mnemonicParsing="false" onAction="#CheckInOnAction" prefHeight="246.0" prefWidth="166.0" style="-fx-border-color: black;" text="Check in and check if room is available" textAlignment="CENTER" textFill="#4d4545" wrapText="true">
+            <Button layoutX="747.0" layoutY="166.0" mnemonicParsing="false" onAction="#CheckInOnAction" prefHeight="133.0" prefWidth="166.0" style="-fx-border-color: black;" text="Check in and check if room is available" textAlignment="CENTER" textFill="#4d4545" wrapText="true">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
             <Button layoutX="23.0" layoutY="371.0" mnemonicParsing="false" onAction="#ClearFieldsOnAction" text="clear all fields" />
-            <Label fx:id="CheckInStatusLabel" layoutX="398.0" layoutY="368.0" prefHeight="30.0" prefWidth="528.0" style="-fx-border-color: red;" text="Check in status : " />
-            <Label layoutX="395.0" layoutY="268.0" text="Check out Date:">
+            <Label fx:id="CheckInStatusLabel" layoutX="398.0" layoutY="347.0" prefHeight="30.0" prefWidth="528.0" style="-fx-border-color: #0D3120;" text="Check in status : " />
+            <Label layoutX="396.0" layoutY="268.0" text="Check out Date:">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
