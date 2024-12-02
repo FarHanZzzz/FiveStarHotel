@@ -3,6 +3,8 @@ package cse.fivestarhotel.FrontDeskStaff;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import java.io.Serializable;
+
 public class GuestcheckinController
 {
     @javafx.fxml.FXML
@@ -11,10 +13,6 @@ public class GuestcheckinController
     private Label CheckInStatusLabel;
     @javafx.fxml.FXML
     private TableColumn NameCol;
-    @javafx.fxml.FXML
-    private TableColumn idCol;
-    @javafx.fxml.FXML
-    private TextField GuestidTextField;
     @javafx.fxml.FXML
     private TextField GuestNameTextField;
     @javafx.fxml.FXML
@@ -32,9 +30,11 @@ public class GuestcheckinController
     @javafx.fxml.FXML
     private ComboBox<String> GuestMaritalStatusComboBox;
     @javafx.fxml.FXML
-    private TextField roomidTextField;
-    @javafx.fxml.FXML
     private DatePicker CheckoutDatePicker;
+    @javafx.fxml.FXML
+    private TextField GuestEmailTextField;
+    @javafx.fxml.FXML
+    private TableColumn EmailCol;
 
     @javafx.fxml.FXML
     public void initialize() {
