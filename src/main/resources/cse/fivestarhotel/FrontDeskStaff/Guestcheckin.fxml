@@ -143,13 +143,13 @@
    <center>
         <AnchorPane prefHeight="724.0" prefWidth="959.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
             <children>
-                <Line endX="743.0" layoutX="202.0" layoutY="72.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+                <Line endX="744.0" layoutX="202.0" layoutY="72.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
                 <Text fill="#0f4a33" layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
                     <font>
                         <Font name="Bell MT Bold" size="45.0" />
                     </font>
                 </Text>
-                <TableView fx:id="CheckinTableView" layoutX="11.0" layoutY="420.0" prefHeight="292.0" prefWidth="924.0" style="-fx-border-style: #8C8C7B;">
+                <TableView fx:id="CheckinTableView" layoutX="11.0" layoutY="420.0" prefHeight="292.0" prefWidth="924.0" style="-fx-border-style: #8C8C7B; -fx-background-color: #B6A990;">
                     <columns>
                   <TableColumn fx:id="NameCol" prefWidth="136.0" text="Name" />
                   <TableColumn fx:id="EmailCol" prefWidth="156.0" text="Email" />

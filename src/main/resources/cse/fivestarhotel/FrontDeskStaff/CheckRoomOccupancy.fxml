@@ -180,7 +180,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Label layoutX="52.0" layoutY="311.0" prefHeight="157.0" prefWidth="852.0" style="-fx-border-color: black;" />
+            <Label layoutX="52.0" layoutY="311.0" prefHeight="157.0" prefWidth="852.0" style="-fx-border-color: black; -fx-background-color: #B6A990;" />
             </children>
         </AnchorPane>
     </right>
