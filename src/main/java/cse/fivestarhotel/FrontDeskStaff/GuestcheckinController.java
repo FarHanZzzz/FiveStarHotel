@@ -32,12 +32,10 @@ public class GuestcheckinController
     @javafx.fxml.FXML
     private TextField GuestNationalityTextField;
     @javafx.fxml.FXML
-    private ComboBox<String> RoomTypeComboBox;
+    private ComboBox RoomTypeComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
-        RoomTypeComboBox.getItems().addAll("helo","jony");
-
     }
 
     @javafx.fxml.FXML
