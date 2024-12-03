@@ -8,6 +8,7 @@ public class Room {
     private Integer roomid;
     private Boolean availability;
 
+
     public Room(String roomtype, Integer roomid, Boolean availability) {
         this.roomtype = roomtype;
         this.roomid = roomid;
@@ -47,8 +48,6 @@ public class Room {
                 ", availability=" + availability +
                 '}';
     }
-
-
 
 
 }

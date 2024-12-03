@@ -19,11 +19,11 @@ public class GuestcheckoutController
     @javafx.fxml.FXML
     private TableColumn checkoutNoofRoomsCol;
     @javafx.fxml.FXML
-    private TableColumn checkoutIdCol;
-    @javafx.fxml.FXML
     private TableColumn checkoutTotalBillCol;
     @javafx.fxml.FXML
     private TableView CheckoutTableView;
+    @javafx.fxml.FXML
+    private TableColumn checkoutEmailCol;
 
     @javafx.fxml.FXML
     public void initialize() {
