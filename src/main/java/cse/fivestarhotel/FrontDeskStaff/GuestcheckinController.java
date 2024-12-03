@@ -36,6 +36,7 @@ public class GuestcheckinController
 
     @javafx.fxml.FXML
     public void initialize() {
+        System.out.println("hello magii can you see me");
     }
 
     @javafx.fxml.FXML
