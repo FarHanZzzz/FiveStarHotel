@@ -26,17 +26,17 @@ public class GuestcheckinController
     @javafx.fxml.FXML
     private TextField GuestContactNoTetField;
     @javafx.fxml.FXML
-    private ComboBox GuestMaritalStatusComboBox;
+    private ComboBox<String> GuestMaritalStatusComboBox;
     @javafx.fxml.FXML
     private TableColumn EmailCol;
     @javafx.fxml.FXML
     private TextField GuestNationalityTextField;
     @javafx.fxml.FXML
-    private ComboBox RoomTypeComboBox;
+    private ComboBox<String> RoomTypeComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
-        System.out.println("hello magii can you see me");
+
     }
 
     @javafx.fxml.FXML

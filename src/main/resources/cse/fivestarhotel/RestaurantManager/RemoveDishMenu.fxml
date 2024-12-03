@@ -2,10 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.CheckRoomOccupancyController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.RemoveDishMenuController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -91,12 +87,12 @@
                         <Font name="Consolas Bold" size="24.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check in " textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check Out " textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -147,40 +143,7 @@
                         <Font name="Bell MT Bold" size="45.0" />
                     </font>
                 </Text>
-                <TableView layoutX="22.0" layoutY="566.0" prefHeight="100.0" prefWidth="898.0" style="-fx-border-style: #8C8C7B;">
-                    <columns>
-                        <TableColumn prefWidth="287.0" text="Name" />
-                        <TableColumn prefWidth="249.0" text="Room Type " />
-                  <TableColumn prefWidth="367.0" text="Status" />
-                    </columns>
-                    <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                    </columnResizePolicy>
-                </TableView>
-            <Label layoutX="52.0" layoutY="158.0" text="Guest Id:">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Label>
-            <TextField layoutX="158.0" layoutY="160.0" />
-            <Label layoutX="425.0" layoutY="158.0" text="Room Id:">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Label>
-            <TextField layoutX="531.0" layoutY="160.0" />
-            <Label layoutX="52.0" layoutY="209.0" text="Room type:">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Label>
-            <TextField layoutX="158.0" layoutY="211.0" />
-            <Button layoutX="723.0" layoutY="156.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="182.0" text="Check Room Occupancy" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Label layoutX="52.0" layoutY="311.0" prefHeight="157.0" prefWidth="852.0" style="-fx-border-color: black;" />
+                <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
             </children>
         </AnchorPane>
     </right>

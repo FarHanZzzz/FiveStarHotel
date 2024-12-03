@@ -1,6 +1,6 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
-public class AnswerGuestQueriesController
+public class ViewHotelguestReviewsController
 {
     @javafx.fxml.FXML
     public void initialize() {
