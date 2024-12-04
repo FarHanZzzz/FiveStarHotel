@@ -13,8 +13,6 @@ public class GuestcheckoutController
     @javafx.fxml.FXML
     private Label StatusLabel;
     @javafx.fxml.FXML
-    private TextField GuestcheckoutidTextfield;
-    @javafx.fxml.FXML
     private TableColumn checkoutnameCol;
     @javafx.fxml.FXML
     private TableColumn checkoutNoofRoomsCol;
@@ -24,6 +22,8 @@ public class GuestcheckoutController
     private TableView CheckoutTableView;
     @javafx.fxml.FXML
     private TableColumn checkoutEmailCol;
+    @javafx.fxml.FXML
+    private TextField GuestcheckoutEmailTextfield;
 
     @javafx.fxml.FXML
     public void initialize() {

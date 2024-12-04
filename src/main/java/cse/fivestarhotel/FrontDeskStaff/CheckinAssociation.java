@@ -4,6 +4,15 @@ public class CheckinAssociation {
     private String name,email;
     private String roomtype;
     private Integer NoofRooms;
+    private String roomid;
+
+    public CheckinAssociation(String name, String email, String roomtype, Integer noofRooms, String roomid) {
+        this.name = name;
+        this.email = email;
+        this.roomtype = roomtype;
+        NoofRooms = noofRooms;
+        this.roomid = roomid;
+    }
 
     public String getName() {
         return name;
@@ -37,13 +46,13 @@ public class CheckinAssociation {
         NoofRooms = noofRooms;
     }
 
-    public CheckinAssociation(String name, String email, String roomtype, Integer noofRooms) {
-        this.name = name;
-        this.email = email;
-        this.roomtype = roomtype;
-        NoofRooms = noofRooms;
+    public String getRoomid() {
+        return roomid;
     }
 
+    public void setRoomid(String roomid) {
+        this.roomid = roomid;
+    }
 
     @Override
     public String toString() {
@@ -52,8 +61,8 @@ public class CheckinAssociation {
                 ", email='" + email + '\'' +
                 ", roomtype='" + roomtype + '\'' +
                 ", NoofRooms=" + NoofRooms +
+                ", roomid='" + roomid + '\'' +
                 '}';
     }
-
 
 }
