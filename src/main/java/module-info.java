@@ -8,6 +8,10 @@ module hotel.fivestarhotel {
     opens cse.fivestarhotel.RestaurantManager to javafx.fxml;
     opens cse.fivestarhotel.Login to javafx.fxml;
     opens cse.fivestarhotel.Img to javafx.fxml;
+    opens cse.fivestarhotel.HotelHeadManager to javafx.fxml;
+    opens cse.fivestarhotel.CEO to javafx.fxml;
+    opens cse.fivestarhotel.RoomServiceWorker to javafx.fxml;
+    opens cse.fivestarhotel.RoomServiceManager to javafx.fxml;
 
 
     exports cse.fivestarhotel;
