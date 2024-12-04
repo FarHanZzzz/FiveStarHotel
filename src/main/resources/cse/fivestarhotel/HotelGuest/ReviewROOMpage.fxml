@@ -3,7 +3,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.TransportationDetailsPAGEController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewROOMpageController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -79,14 +80,14 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation ➤" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas Bold" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews ➤" textAlignment="CENTER" textFill="#cf8e40">
+                    <font>
+                        <Font name="Consolas Bold" size="20.0" />
                     </font>
                 </Button>
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel map" textAlignment="CENTER" textFill="#cf8e40">
@@ -108,66 +109,52 @@
     </left>
     <right>
         <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
-         <children>
-            <TextField layoutX="165.0" layoutY="272.0" prefHeight="36.0" prefWidth="256.0" style="-fx-background-color: #B6A990;" />
-            <Text fill="#0d3120" layoutX="66.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="95.69335174560547">
-               <font>
-                  <Font name="Consolas Bold" size="25.0" />
-               </font>
-            </Text>
-            <TextField layoutX="603.0" layoutY="272.0" prefHeight="36.0" prefWidth="256.0" style="-fx-background-color: #B6A990;" />
-            <Text fill="#0d3120" layoutX="482.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email :" wrappingWidth="111.69335174560547">
-               <font>
-                  <Font name="Consolas Bold" size="22.0" />
-               </font>
-            </Text>
-            <TextField layoutX="248.0" layoutY="341.0" prefHeight="44.0" prefWidth="612.0" style="-fx-background-color: #B6A990;" />
-            <Text fill="#0d3120" layoutX="67.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination:" wrappingWidth="170.35997772216797">
-               <font>
-                  <Font name="Consolas Bold" size="25.0" />
-               </font>
-            </Text>
-            <Text fill="#0d3120" layoutX="67.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="170.35997772216797">
-               <font>
-                  <Font name="Consolas Bold" size="25.0" />
-               </font>
-            </Text>
-            <ComboBox layoutX="251.0" layoutY="486.0" prefHeight="52.0" prefWidth="283.0" />
-            <Text fill="#0d3120" layoutX="68.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="vehicle type" wrappingWidth="170.35997772216797">
-               <font>
-                  <Font name="Consolas Bold" size="25.0" />
-               </font>
-            </Text>
-            <Button layoutX="359.0" layoutY="591.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="245.0" style="-fx-background-color: #0D3120;" text="Book Transportation" textFill="#d0913f">
-               <font>
-                  <Font name="Consolas Bold" size="20.0" />
-               </font></Button>
-            <TextField layoutX="167.0" layoutY="416.0" prefHeight="36.0" prefWidth="256.0" style="-fx-background-color: #B6A990;" />
-            <Text fill="#0d3120" layoutX="506.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :" wrappingWidth="170.35997772216797">
-               <font>
-                  <Font name="Consolas Bold" size="25.0" />
-               </font>
-            </Text>
-            <TextField layoutX="606.0" layoutY="417.0" prefHeight="36.0" prefWidth="256.0" style="-fx-background-color: #B6A990;" />
-            <Text fill="#0d3120" layoutX="66.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book a transportation :" wrappingWidth="423.69348907470703">
-               <font>
-                  <Font name="Consolas Bold" size="33.0" />
-               </font>
-            </Text>
-            <Text fill="#165938" layoutX="72.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booked Transportation :" wrappingWidth="321.02674102783203">
-               <font>
-                  <Font name="Consolas Bold" size="25.0" />
-               </font>
-            </Text>
-            <Label layoutX="398.0" layoutY="68.0" prefHeight="71.0" prefWidth="464.0" text="n / a">
-               <font>
-                  <Font size="29.0" />
-               </font>
-            </Label>
-            <Line endX="258.99993896484375" endY="-7.62939453125E-6" layoutX="603.0" layoutY="68.0" startX="-540.3333129882812" startY="-7.62939453125E-6" />
-            <Line endX="258.99993896484375" endY="-7.62939453125E-6" layoutX="603.0" layoutY="140.0" startX="-540.3333129882812" startY="-7.62939453125E-6" stroke="#9d8d71" />
-            <Line endX="-128.8332977294922" endY="-32.50001525878906" layoutX="191.0" layoutY="173.0" startX="-128.8332977294922" startY="-104.50000762939453" />
-            <Line endX="105.99993896484375" endY="-31.666671752929688" layoutX="756.0" layoutY="171.0" startX="106.49993896484375" startY="-102.50000762939453" stroke="#9d8d71" />
-         </children></AnchorPane>
+            <children>
+                <Text fill="#0d3120" layoutX="48.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="L e a v e   a   R e v i e w" underline="true" wrappingWidth="515.0256118774414">
+                    <font>
+                        <Font name="Consolas Bold" size="34.0" />
+                    </font>
+                </Text>
+                <ComboBox layoutX="289.0" layoutY="127.0" prefHeight="35.0" prefWidth="270.0" promptText="select stars" visibleRowCount="5" />
+                <Text fill="#0d3120" layoutX="63.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="rate your visit" wrappingWidth="204.80333709716797">
+                    <font>
+                        <Font name="Consolas Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Text fill="#0d3120" layoutX="63.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description:" wrappingWidth="180.80333709716797">
+                    <font>
+                        <Font name="Consolas Bold" size="24.0" />
+                    </font>
+                </Text>
+                <TextField layoutX="256.0" layoutY="190.0" prefHeight="129.0" prefWidth="309.0" style="-fx-background-color: #B6A990;" />
+                <Text fill="#0d3120" layoutX="81.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(optional)" wrappingWidth="155.4699478149414">
+                    <font>
+                        <Font name="Consolas" size="20.0" />
+                    </font>
+                </Text>
+                <TableView layoutX="50.0" layoutY="448.0" prefHeight="236.0" prefWidth="828.0" style="-fx-background-color: #B6A990;">
+                    <columns>
+                        <TableColumn prefWidth="216.6666374206543" text="Name" />
+                        <TableColumn prefWidth="208.6666259765625" text="Rating" />
+                        <TableColumn minWidth="0.0" prefWidth="402.6667175292969" text="Description" />
+                    </columns>
+                </TableView>
+                <Text fill="#246545" layoutX="618.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We here at Bonjour Moneseur value YOUR input." textAlignment="CENTER" wrappingWidth="254.865234375">
+                    <font>
+                        <Font name="Magneto Bold" size="20.0" />
+                    </font>
+                </Text>
+                <Text fill="#0d3120" layoutX="54.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R e v i e w s" underline="true" wrappingWidth="254.58124542236328">
+                    <font>
+                        <Font name="Consolas Bold" size="34.0" />
+                    </font>
+                </Text>
+                <Line endX="695.9999389648438" endY="13.333343505859375" layoutX="221.0" layoutY="353.0" startX="-215.99998474121094" startY="13.333343505859375" stroke="#917429" />
+                <Button layoutX="643.0" layoutY="242.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="202.0" style="-fx-background-color: #0D3120;" text="Submit Review" textFill="#d0913f">
+                    <font>
+                        <Font name="Consolas Bold" size="22.0" />
+                    </font>
+                </Button>
+            </children></AnchorPane>
     </right>
 </BorderPane>

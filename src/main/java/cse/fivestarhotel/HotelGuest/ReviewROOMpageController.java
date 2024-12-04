@@ -1,6 +1,6 @@
 package cse.fivestarhotel.HotelGuest;
 
-public class ReviewQueriesPAGEController
+public class ReviewROOMpageController
 {
     @javafx.fxml.FXML
     public void initialize() {

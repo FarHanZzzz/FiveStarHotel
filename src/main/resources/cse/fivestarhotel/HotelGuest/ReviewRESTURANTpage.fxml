@@ -2,6 +2,10 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewQueriesPAGEController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewRESTURANTpageController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -81,7 +85,7 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="review &amp; queries ➤" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews ➤" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas Bold" size="20.0" />
                     </font>
@@ -104,6 +108,53 @@
             </children></VBox>
     </left>
     <right>
-        <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="#0d3120" layoutX="48.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave a Review" underline="true" wrappingWidth="515.0256118774414">
+                    <font>
+                        <Font name="Consolas Bold" size="34.0" />
+                    </font>
+                </Text>
+                <ComboBox layoutX="289.0" layoutY="127.0" prefHeight="35.0" prefWidth="270.0" promptText="select stars" visibleRowCount="5" />
+                <Text fill="#0d3120" layoutX="63.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Food Rating:" wrappingWidth="204.80333709716797">
+                    <font>
+                        <Font name="Consolas Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Text fill="#0d3120" layoutX="63.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="description:" wrappingWidth="180.80333709716797">
+                    <font>
+                        <Font name="Consolas Bold" size="24.0" />
+                    </font>
+                </Text>
+                <TextField layoutX="256.0" layoutY="190.0" prefHeight="129.0" prefWidth="309.0" style="-fx-background-color: #B6A990;" />
+                <Text fill="#0d3120" layoutX="81.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(optional)" wrappingWidth="155.4699478149414">
+                    <font>
+                        <Font name="Consolas" size="20.0" />
+                    </font>
+                </Text>
+                <TableView layoutX="50.0" layoutY="448.0" prefHeight="236.0" prefWidth="828.0" style="-fx-background-color: #B6A990;">
+                    <columns>
+                        <TableColumn prefWidth="216.6666374206543" text="Name" />
+                        <TableColumn prefWidth="208.6666259765625" text="Rating" />
+                        <TableColumn minWidth="0.0" prefWidth="402.6667175292969" text="Description" />
+                    </columns>
+                </TableView>
+                <Text fill="#0d3120" layoutX="54.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resturant Reviews" underline="true" wrappingWidth="331.9144973754883">
+                    <font>
+                        <Font name="Consolas Bold" size="34.0" />
+                    </font>
+                </Text>
+                <Line endX="695.9999389648438" endY="13.333343505859375" layoutX="221.0" layoutY="353.0" startX="-215.99998474121094" startY="13.333343505859375" stroke="#917429" />
+                <Button layoutX="638.0" layoutY="264.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="202.0" style="-fx-background-color: #0D3120;" text="Submit Review" textFill="#d0913f">
+                    <font>
+                        <Font name="Consolas Bold" size="22.0" />
+                    </font>
+                </Button>
+            <ImageView fitHeight="178.0" fitWidth="199.0" layoutX="638.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Untitled344_20241204045354%20(1).jpg" />
+               </image>
+            </ImageView>
+            </children></AnchorPane>
     </right>
 </BorderPane>
