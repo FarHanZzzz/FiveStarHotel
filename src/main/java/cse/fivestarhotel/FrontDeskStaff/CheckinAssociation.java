@@ -1,18 +1,23 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
+import java.time.LocalDate;
+
 public class CheckinAssociation {
     private String name,email;
     private String roomtype;
     private Integer NoofRooms;
-    private String roomid;
+    private Integer roomnumber;
+    private LocalDate checkoutDate;
 
-    public CheckinAssociation(String name, String email, String roomtype, Integer noofRooms, String roomid) {
+    public CheckinAssociation(String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate) {
         this.name = name;
         this.email = email;
         this.roomtype = roomtype;
         NoofRooms = noofRooms;
-        this.roomid = roomid;
+        this.roomnumber = roomnumber;
+        this.checkoutDate = checkoutDate;
     }
+
 
     public String getName() {
         return name;
@@ -46,12 +51,20 @@ public class CheckinAssociation {
         NoofRooms = noofRooms;
     }
 
-    public String getRoomid() {
-        return roomid;
+    public Integer getRoomnumber() {
+        return roomnumber;
     }
 
-    public void setRoomid(String roomid) {
-        this.roomid = roomid;
+    public void setRoomnumber(Integer roomnumber) {
+        this.roomnumber = roomnumber;
+    }
+
+    public LocalDate getCheckoutDate() {
+        return checkoutDate;
+    }
+
+    public void setCheckoutDate(LocalDate checkoutDate) {
+        this.checkoutDate = checkoutDate;
     }
 
     @Override
@@ -61,8 +74,8 @@ public class CheckinAssociation {
                 ", email='" + email + '\'' +
                 ", roomtype='" + roomtype + '\'' +
                 ", NoofRooms=" + NoofRooms +
-                ", roomid='" + roomid + '\'' +
+                ", roomnumber=" + roomnumber +
+                ", checkoutDate=" + checkoutDate +
                 '}';
     }
-
 }

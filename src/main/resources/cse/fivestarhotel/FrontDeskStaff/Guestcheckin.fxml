@@ -152,10 +152,11 @@
                 <TableView fx:id="CheckinTableView" layoutX="11.0" layoutY="420.0" prefHeight="286.0" prefWidth="924.0" style="-fx-border-style: #8C8C7B; -fx-background-color: #B6A990;">
                     <columns>
                   <TableColumn fx:id="NameCol" prefWidth="136.0" text="Name" />
-                  <TableColumn fx:id="EmailCol" prefWidth="156.0" text="Email" />
-                  <TableColumn fx:id="RoomtypeCol" prefWidth="225.0" text="Roomtype" />
-                  <TableColumn fx:id="NumberofRoomsCol" prefWidth="156.0" text="Number of Rooms" />
-                  <TableColumn fx:id="roomidCol" prefWidth="133.0" text="RoomId" />
+                  <TableColumn fx:id="EmailCol" prefWidth="151.0" text="Email" />
+                  <TableColumn fx:id="RoomtypeCol" prefWidth="172.0" text="Roomtype" />
+                  <TableColumn fx:id="NumberofRoomsCol" prefWidth="123.0" text="Number of Rooms" />
+                  <TableColumn fx:id="roomnumberCol" prefWidth="133.0" text="Room  Number" />
+                  <TableColumn fx:id="checkoutCol" prefWidth="199.0" text="Check Out Date" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
