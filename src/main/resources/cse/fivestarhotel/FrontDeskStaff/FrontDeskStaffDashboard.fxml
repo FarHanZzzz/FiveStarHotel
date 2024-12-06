@@ -85,7 +85,7 @@
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                 <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
+                <Button mnemonicParsing="false" onAction="#FrontDeskStaffDashboardOnAction" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
                     <font>
                         <Font name="Consolas Bold" size="24.0" />
                     </font>

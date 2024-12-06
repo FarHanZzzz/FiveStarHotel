@@ -3,7 +3,12 @@ package cse.fivestarhotel.FrontDeskStaff;
 import cse.fivestarhotel.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class FrontDeskStaffDashboardController
 {
@@ -120,5 +125,15 @@ public class FrontDeskStaffDashboardController
         catch(Exception e){}
 
 
+    }
+
+    @javafx.fxml.FXML
+    public void FrontDeskStaffDashboardOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
     }
 }
