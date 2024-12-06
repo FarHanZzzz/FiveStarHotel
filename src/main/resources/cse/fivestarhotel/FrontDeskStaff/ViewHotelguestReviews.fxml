@@ -1,170 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewHotelguestReviewsController">
-    <cursor>
-        <Cursor fx:constant="NE_RESIZE" />
-    </cursor>
-    <left>
-        <VBox prefHeight="720.0" prefWidth="351.0" style="-fx-background-color: #0D3120;" BorderPane.alignment="CENTER">
-            <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text fill="#d0913f" strokeType="OUTSIDE" strokeWidth="0.0" text="👤" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font size="29.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Farhan Sadeque" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font name="Bell MT Bold" size="33.0" />
-                    </font>
-                    <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                            <stops>
-                                <Stop>
-                                    <color>
-                                        <Color />
-                                    </color>
-                                </Stop>
-                                <Stop offset="0.006711409395973154">
-                                    <color>
-                                        <Color red="0.8156862854957581" green="0.5686274766921997" blue="0.24705882370471954" />
-                                    </color>
-                                </Stop>
-                                <Stop offset="1.0">
-                                    <color>
-                                        <Color red="0.9647058844566345" green="0.8627451062202454" blue="0.7372549176216125" />
-                                    </color>
-                                </Stop>
-                            </stops>
-                        </LinearGradient>
-                    </fill>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Front Desk Staff" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font name="Bodoni MT" size="26.0" />
-                    </font>
-                    <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                            <stops>
-                                <Stop>
-                                    <color>
-                                        <Color />
-                                    </color>
-                                </Stop>
-                                <Stop offset="0.006711409395973154">
-                                    <color>
-                                        <Color red="0.8156862854957581" green="0.5686274766921997" blue="0.24705882370471954" />
-                                    </color>
-                                </Stop>
-                                <Stop offset="1.0">
-                                    <color>
-                                        <Color red="1.0" green="0.8235294222831726" blue="0.6039215922355652" />
-                                    </color>
-                                </Stop>
-                            </stops>
-                        </LinearGradient>
-                    </fill>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
-                    <font>
-                        <Font name="Consolas Bold" size="24.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check in " textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check Out " textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
-                    <font>
-                        <Font name="Consolas Bold" size="20.0" />
-                    </font>
-                </Button>
-                <ImageView fitHeight="85.0" fitWidth="351.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Img/Untitled329_20241129211738.png" />
-                    </image>
-                </ImageView>
-            </children></VBox>
-    </left>
-    <right>
-        <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
-            <children>
-                <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-                <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
-                    <font>
-                        <Font name="Bell MT Bold" size="45.0" />
-                    </font>
-                </Text>
-            <TableView layoutX="41.0" layoutY="241.0" prefHeight="274.0" prefWidth="852.0">
-              <columns>
-                <TableColumn prefWidth="137.0" text="Name" />
-                <TableColumn prefWidth="149.0" text="Email" />
-                  <TableColumn prefWidth="186.0" text="Rating" />
-                  <TableColumn prefWidth="379.0" text="Description" />
-              </columns>
-            </TableView>
-            <Button layoutX="737.0" layoutY="111.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="151.0" text="View Hotel Guest Reviews" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <Label layoutX="249.0" layoutY="153.0" text="Hotel Guest Reviews" underline="true">
-               <font>
-                  <Font size="39.0" />
-               </font>
-            </Label>
-            </children>
-        </AnchorPane>
-    </right>
-</BorderPane>
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewHotelguestReviewsController">
+   <children>
+      <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+         <font>
+            <Font name="Bell MT Bold" size="45.0" />
+         </font>
+      </Text>
+      <TableView layoutX="41.0" layoutY="241.0" prefHeight="274.0" prefWidth="852.0">
+         <columns>
+            <TableColumn prefWidth="137.0" text="Name" />
+            <TableColumn prefWidth="149.0" text="Email" />
+            <TableColumn prefWidth="186.0" text="Rating" />
+            <TableColumn prefWidth="379.0" text="Description" />
+         </columns>
+      </TableView>
+      <Button layoutX="737.0" layoutY="111.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="151.0" text="View Hotel Guest Reviews" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Label layoutX="249.0" layoutY="153.0" text="Hotel Guest Reviews" underline="true">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

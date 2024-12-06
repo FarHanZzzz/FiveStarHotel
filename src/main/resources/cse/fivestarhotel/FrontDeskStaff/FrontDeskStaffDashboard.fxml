@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.FrontDeskStaffDashboardController">
+<BorderPane fx:id="dashBoardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.FrontDeskStaffDashboardController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -90,37 +90,37 @@
                         <Font name="Consolas Bold" size="24.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check in" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#checkinOnAction" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check in" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check out" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#checkoutOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Check out" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Access Guest Details" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#guestDetailsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Guest Details" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Room Occupancy Details" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#roomOccupancyOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Room Occupancy " textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#ViewBookeventOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View Book Event" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#transportationDetailsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Transportation Details" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#hotelGuestReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Hotel Guest Reviews" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -137,7 +137,7 @@
                 </ImageView>
             </children></VBox>
     </left>
-    <right>
+   <center>
         <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
             <children>
                 <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
@@ -199,5 +199,5 @@
                 </VBox>
             </children>
         </AnchorPane>
-    </right>
+   </center>
 </BorderPane>
