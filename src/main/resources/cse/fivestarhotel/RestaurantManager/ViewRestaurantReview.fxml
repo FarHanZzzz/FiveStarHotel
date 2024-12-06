@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -8,11 +11,19 @@
 <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.ViewRestaurantReviewController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Reviews">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
       <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+      <TableView fx:id="ViewRestaurantReviewTableView" layoutX="69.0" layoutY="260.0" prefHeight="200.0" prefWidth="690.0">
+        <columns>
+          <TableColumn fx:id="nameCol" prefWidth="212.00001525878906" text="Name" />
+          <TableColumn fx:id="ratingCol" prefWidth="224.0" text="Rating" />
+            <TableColumn fx:id="descriptionCol" prefWidth="254.0" text="Description" />
+        </columns>
+      </TableView>
+      <Button layoutX="189.0" layoutY="209.0" mnemonicParsing="false" onAction="#viewReviewOfGuests" prefHeight="25.0" prefWidth="410.0" text="View Review of Guests" />
    </children>
 </AnchorPane>

@@ -4,4 +4,9 @@ public class CheckRoomOccupancyController
 {
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+
+
+
+
+    }
+}

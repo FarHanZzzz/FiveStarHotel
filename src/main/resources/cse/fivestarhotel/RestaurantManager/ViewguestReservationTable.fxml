@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -13,6 +17,23 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+      <TableView layoutX="42.0" layoutY="260.0" prefHeight="403.0" prefWidth="823.0" style="-fx-border-color: black;">
+        <columns>
+          <TableColumn fx:id="nameCol" prefWidth="172.0" text="Name" />
+          <TableColumn fx:id="timeCol" prefWidth="163.00001525878906" text="Time" />
+            <TableColumn fx:id="dateCol" prefWidth="173.0" text="Date" />
+            <TableColumn fx:id="numberofPeopleCol" prefWidth="313.0" text="Number of People" />
+        </columns>
+      </TableView>
+      <Button layoutX="320.0" layoutY="208.0" mnemonicParsing="false" onAction="#viewGuestReservationTableOnAction" prefHeight="39.0" prefWidth="245.0" text="View Guest Reservation Table">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="230.0" layoutY="109.0" text="Gues Reservation Table Details" underline="true">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

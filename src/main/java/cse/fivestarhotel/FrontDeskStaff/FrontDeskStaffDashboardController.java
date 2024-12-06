@@ -10,16 +10,11 @@ public class FrontDeskStaffDashboardController
     @javafx.fxml.FXML
     private BorderPane dashBoardBorderPane;
 
-    @javafx.fxml.FXML
-    public void initialize() {
 
 
 
-    }
 
-
-
-//       try {
+    //       try {
 //                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml"));
 //            );
 //
@@ -28,6 +23,13 @@ public class FrontDeskStaffDashboardController
 //        catch(Exception e){}
 
 
+
+    @javafx.fxml.FXML
+    public void initialize() {
+
+
+
+    }
 
 
 

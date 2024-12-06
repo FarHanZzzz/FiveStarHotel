@@ -96,13 +96,7 @@ public class GuestcheckinController
         CheckinTableView.setItems(CheckinTabledataList);
 
 
-
-
-
-
     }
-
-
 
 
 
