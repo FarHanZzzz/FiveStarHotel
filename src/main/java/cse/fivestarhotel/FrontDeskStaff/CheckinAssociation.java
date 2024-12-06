@@ -1,8 +1,9 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CheckinAssociation {
+public class CheckinAssociation implements Serializable {
     private String name,email;
     private String roomtype;
     private Integer NoofRooms;

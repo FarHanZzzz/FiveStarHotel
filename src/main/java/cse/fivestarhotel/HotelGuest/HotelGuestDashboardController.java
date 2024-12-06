@@ -15,18 +15,32 @@ public class HotelGuestDashboardController
 
     }
 
+
+
     @javafx.fxml.FXML
     public void resturanttablebookingOnAction(ActionEvent actionEvent) {
 
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/restaurantPAGE.fxml"));
+
+
+            DashboardBorderPaneHotelGuest.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+
 
     }
+
+
 
     @javafx.fxml.FXML
     public void viewmenuOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ViewMenu.fxml"));
 
+
+            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
+        }
+        catch(Exception e){}
     }
-
-
-
-
 }

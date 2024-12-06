@@ -22,11 +22,9 @@ public class HelloApplication extends Application {
         launch();
     }
 
-    private void createDummyAccounts(){
-        FrontDeskStaff frontDeskStaff = new FrontDeskStaff();
 
 
-    }
+
 
 
 
