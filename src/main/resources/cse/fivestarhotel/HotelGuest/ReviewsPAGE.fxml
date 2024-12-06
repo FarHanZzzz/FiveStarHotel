@@ -1,136 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewsPAGEController">
-    <cursor>
-        <Cursor fx:constant="NE_RESIZE" />
-    </cursor>
-    <left>
-        <VBox prefHeight="720.0" prefWidth="351.0" style="-fx-background-color: #0D3120;" BorderPane.alignment="CENTER">
-            <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text fill="#d0913f" strokeType="OUTSIDE" strokeWidth="0.0" text="👤" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font size="29.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jen Chowdhury" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font name="Bell MT Bold" size="33.0" />
-                    </font>
-                    <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                            <stops>
-                                <Stop>
-                                    <color>
-                                        <Color />
-                                    </color>
-                                </Stop>
-                                <Stop offset="0.006711409395973154">
-                                    <color>
-                                        <Color red="0.8156862854957581" green="0.5686274766921997" blue="0.24705882370471954" />
-                                    </color>
-                                </Stop>
-                                <Stop offset="1.0">
-                                    <color>
-                                        <Color red="0.9647058844566345" green="0.8627451062202454" blue="0.7372549176216125" />
-                                    </color>
-                                </Stop>
-                            </stops>
-                        </LinearGradient>
-                    </fill>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
-                    <font>
-                        <Font name="Consolas Bold" size="24.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="resturant" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="room service" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Laundry" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews ➤" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas Bold" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel map" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
-                    <font>
-                        <Font name="Consolas Bold" size="20.0" />
-                    </font>
-                </Button>
-                <ImageView fitHeight="85.0" fitWidth="351.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Img/Untitled329_20241129211738.png" />
-                    </image>
-                </ImageView>
-            </children></VBox>
-    </left>
-    <right>
-        <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
-            <children>
-                <Text fill="#0d3120" layoutX="98.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a section :" wrappingWidth="310.13672637939453">
-                    <font>
-                        <Font name="Consolas Bold" size="30.0" />
-                    </font>
-                </Text>
-                <Text fill="#246545" layoutX="331.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Share your visit experience" textAlignment="CENTER" wrappingWidth="254.865234375">
-                    <font>
-                        <Font name="Consolas Bold" size="20.0" />
-                    </font>
-                </Text>
-            <Button layoutX="276.0" layoutY="256.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Hotel Review" textFill="#d0913f">
-               <font>
-                  <Font name="Consolas Bold" size="22.0" />
-               </font>
-            </Button>
-            <Text fill="#246545" layoutX="327.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Share your eating experience" textAlignment="CENTER" wrappingWidth="254.865234375">
-               <font>
-                  <Font name="Consolas Bold" size="20.0" />
-               </font>
-            </Text>
-            <Button layoutX="272.0" layoutY="473.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Resturant Review" textFill="#d0913f">
-               <font>
-                  <Font name="Consolas Bold" size="22.0" />
-               </font>
-            </Button>
-            </children></AnchorPane>
-    </right>
-</BorderPane>
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewsPAGEController">
+   <children>
+      <Text fill="#0d3120" layoutX="98.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a section :" wrappingWidth="310.13672637939453">
+         <font>
+            <Font name="Consolas Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#246545" layoutX="331.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Share your visit experience" textAlignment="CENTER" wrappingWidth="254.865234375">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="276.0" layoutY="324.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Hotel Review" textFill="#d0913f">
+         <font>
+            <Font name="Consolas Bold" size="22.0" />
+         </font>
+      </Button>
+      <Text fill="#246545" layoutX="327.0" layoutY="635.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Share your eating experience" textAlignment="CENTER" wrappingWidth="254.865234375">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="272.0" layoutY="541.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Resturant Review" textFill="#d0913f">
+         <font>
+            <Font name="Consolas Bold" size="22.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="154.0" fitWidth="897.0" layoutX="19.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/Untitled348_20241207024630.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

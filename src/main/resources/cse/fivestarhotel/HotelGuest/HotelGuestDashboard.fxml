@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.HotelGuestDashboardController">
+<BorderPane fx:id="DashboardBorderPaneHotelGuest" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.HotelGuestDashboardController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -62,11 +62,16 @@
                         <Font name="Consolas Bold" size="24.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="resturant" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#resturanttablebookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="resturant table booking" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
+            <Button mnemonicParsing="false" onAction="#viewmenuOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="view menu" textAlignment="CENTER" textFill="#cf8e40">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font>
+            </Button>
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="room service" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
@@ -87,7 +92,7 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel map" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="event booking" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -104,7 +109,7 @@
                 </ImageView>
             </children></VBox>
     </left>
-    <right>
+   <center>
         <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
             <children>
                 <VBox layoutX="29.0" layoutY="356.0" prefHeight="79.0" prefWidth="160.0" style="-fx-background-color: #B6A990;">
@@ -176,7 +181,7 @@
                   <Image url="@../Img/Untitled333_20241201010635.png" />
                </image>
             </ImageView>
-            <Label layoutX="218.0" layoutY="222.0" prefHeight="24.0" prefWidth="343.0" text="wtf@gmail.com" textFill="#a86207">
+            <Label layoutX="218.0" layoutY="222.0" prefHeight="24.0" prefWidth="343.0" text="2222@gmail.com" textFill="#a86207">
                <font>
                   <Font name="Eras Bold ITC" size="20.0" />
                </font>
@@ -270,5 +275,5 @@
             </VBox>
             </children>
         </AnchorPane>
-    </right>
+   </center>
 </BorderPane>
