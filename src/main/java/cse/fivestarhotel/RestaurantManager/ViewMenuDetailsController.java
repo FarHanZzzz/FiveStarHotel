@@ -9,6 +9,10 @@ public class ViewMenuDetailsController
     private TableColumn dishNameCol;
     @javafx.fxml.FXML
     private TableColumn mealTypeCol;
+    @javafx.fxml.FXML
+    private TableColumn DishTypeCol;
+    @javafx.fxml.FXML
+    private TableColumn priceCol;
 
     @javafx.fxml.FXML
     public void initialize() {

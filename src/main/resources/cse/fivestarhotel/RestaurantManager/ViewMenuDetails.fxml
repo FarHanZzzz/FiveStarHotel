@@ -17,11 +17,12 @@
          </font>
       </Text>
       <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
-      <TableView layoutX="59.0" layoutY="270.0" prefHeight="200.0" prefWidth="780.0">
+      <TableView layoutX="59.0" layoutY="270.0" prefHeight="200.0" prefWidth="871.0">
         <columns>
-          <TableColumn fx:id="dishNameCol" prefWidth="265.00001525878906" text="Dish Name" />
-          <TableColumn prefWidth="225.0" text="Dish Type" />
-            <TableColumn fx:id="mealTypeCol" prefWidth="289.0" text="Meal Type" />
+          <TableColumn fx:id="dishNameCol" prefWidth="253.00001525878906" text="Dish Name" />
+          <TableColumn fx:id="DishTypeCol" prefWidth="208.0" text="Dish Type" />
+            <TableColumn fx:id="mealTypeCol" prefWidth="207.0" text="Meal Type" />
+            <TableColumn fx:id="priceCol" prefWidth="200.0" text="Price" />
         </columns>
       </TableView>
       <Button layoutX="348.0" layoutY="212.0" mnemonicParsing="false" onAction="#viewMenuDetailsOnAction" prefHeight="25.0" prefWidth="250.0" text="View Menu Details" />
