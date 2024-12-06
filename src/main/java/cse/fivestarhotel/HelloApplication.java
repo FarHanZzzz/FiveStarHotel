@@ -1,4 +1,5 @@
 package cse.fivestarhotel;
+import cse.fivestarhotel.FrontDeskStaff.FrontDeskStaff;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,7 +11,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Sign in!");
         stage.setScene(scene);
@@ -21,9 +22,11 @@ public class HelloApplication extends Application {
         launch();
     }
 
+    private void createDummyAccounts(){
+        FrontDeskStaff frontDeskStaff = new FrontDeskStaff();
 
 
-
+    }
 
 
 

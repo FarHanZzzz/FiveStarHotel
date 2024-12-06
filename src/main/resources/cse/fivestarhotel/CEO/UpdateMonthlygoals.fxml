@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.CEO.UpdateMonthlygoalsController">
+   <children>
+      <Line endX="821.0" layoutX="115.0" layoutY="116.0" startX="-115.0" stroke="#6f6a6a" />
+      <Label layoutX="33.0" layoutY="24.0" prefHeight="64.0" prefWidth="528.0" text="⮯Monthly Goals Overview" textFill="#0f4a33">
+         <font>
+            <Font name="Bell MT Bold" size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="157.0" prefHeight="33.0" prefWidth="133.0" text="Post Goals" textFill="#0f4a33">
+         <font>
+            <Font name="Bell MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="215.0" prefHeight="33.0" prefWidth="164.0" text="Budget of Department" textFill="#0f4a33" wrapText="true">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="7.0" layoutY="277.0" prefHeight="33.0" prefWidth="106.0" text="Department" textFill="#0f4a33">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="344.0" prefHeight="33.0" prefWidth="164.0" text="Date of posting" textFill="#0f4a33">
+         <font>
+            <Font name="Bell MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="180.0" layoutY="219.0" />
+      <DatePicker layoutX="180.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
+      <ComboBox layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
+      <BarChart layoutX="422.0" layoutY="190.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label layoutX="508.0" layoutY="157.0" prefHeight="33.0" prefWidth="481.0" text="Revenue split by department" textFill="#0f4a33">
+         <font>
+            <Font name="Bell MT Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="157.0" layoutY="419.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="236.0" style="-fx-background-color: #0f4a33;" text="Post budget for department" textFill="#e8ba60">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="399.0" style="-fx-background-color: #0f4a33;" text="Show revenue Split per department with Barchart" textFill="#e8ba60">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

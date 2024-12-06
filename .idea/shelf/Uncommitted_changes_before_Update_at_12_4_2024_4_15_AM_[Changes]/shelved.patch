@@ -1,0 +1,178 @@
+Index: src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.chart.CategoryAxis?>\r\n<?import javafx.scene.chart.LineChart?>\r\n<?import javafx.scene.chart.NumberAxis?>\r\n<?import javafx.scene.chart.StackedBarChart?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.paint.Color?>\r\n<?import javafx.scene.paint.LinearGradient?>\r\n<?import javafx.scene.paint.Stop?>\r\n<?import javafx.scene.shape.Circle?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"1280.0\" style=\"-fx-background-color: #0D3120;\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.CEO.CEODashBoardController\">\r\n    <cursor>\r\n        <Cursor fx:constant=\"NE_RESIZE\" />\r\n    </cursor>\r\n    <left>\r\n        <VBox prefHeight=\"720.0\" prefWidth=\"351.0\" style=\"-fx-background-color: #0D3120;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Text fill=\"#d0913f\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"\uD83D\uDC64\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font size=\"29.0\" />\r\n                    </font>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Farhana Chowdhury\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font name=\"Bell MT Bold\" size=\"33.0\" />\r\n                    </font>\r\n                    <fill>\r\n                        <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                            <stops>\r\n                                <Stop>\r\n                                    <color>\r\n                                        <Color />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"0.006711409395973154\">\r\n                                    <color>\r\n                                        <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"1.0\">\r\n                                    <color>\r\n                                        <Color red=\"0.9647058844566345\" green=\"0.8627451062202454\" blue=\"0.7372549176216125\" />\r\n                                    </color>\r\n                                </Stop>\r\n                            </stops>\r\n                        </LinearGradient>\r\n                    </fill>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Head Manager\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font name=\"Bodoni MT\" size=\"26.0\" />\r\n                    </font>\r\n                    <fill>\r\n                        <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                            <stops>\r\n                                <Stop>\r\n                                    <color>\r\n                                        <Color />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"0.006711409395973154\">\r\n                                    <color>\r\n                                        <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"1.0\">\r\n                                    <color>\r\n                                        <Color red=\"1.0\" green=\"0.8235294222831726\" blue=\"0.6039215922355652\" />\r\n                                    </color>\r\n                                </Stop>\r\n                            </stops>\r\n                        </LinearGradient>\r\n                    </fill>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Line endX=\"251.25244140625\" endY=\"-1.583514928817749\" startX=\"-100.0\" strokeWidth=\"2.0\" />\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"60.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Dashboard\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n                    <font>\r\n                        <Font name=\"Consolas Bold\" size=\"24.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"35.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"75.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"⬅ Logout\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n                    <font>\r\n                        <Font name=\"Consolas Bold\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <ImageView fitHeight=\"85.0\" fitWidth=\"351.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../Img/Untitled329_20241129211738.png\" />\r\n                    </image>\r\n                </ImageView>\r\n            </children></VBox>\r\n    </left>\r\n    <right>\r\n        <AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <Line endX=\"730.0\" layoutX=\"202.0\" layoutY=\"88.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" strokeWidth=\"2.0\" />\r\n                <LineChart layoutX=\"26.0\" layoutY=\"277.0\" prefHeight=\"189.0\" prefWidth=\"255.0\" style=\"-fx-background-color: #777768; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;\">\r\n                    <xAxis>\r\n                        <CategoryAxis side=\"BOTTOM\" />\r\n                    </xAxis>\r\n                    <yAxis>\r\n                        <NumberAxis prefHeight=\"128.0\" prefWidth=\"19.0\" side=\"LEFT\" tickLabelFill=\"WHITE\" />\r\n                    </yAxis>\r\n                </LineChart>\r\n                <Text fill=\"#0f4a33\" layoutX=\"22.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"⮯ Overview\">\r\n                    <font>\r\n                        <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n                    </font>\r\n                </Text>\r\n                <StackedBarChart layoutX=\"583.0\" layoutY=\"162.0\" prefHeight=\"322.0\" prefWidth=\"335.0\">\r\n                    <xAxis>\r\n                        <CategoryAxis side=\"BOTTOM\" />\r\n                    </xAxis>\r\n                    <yAxis>\r\n                        <NumberAxis side=\"LEFT\" />\r\n                    </yAxis>\r\n                </StackedBarChart>\r\n                <TableView layoutX=\"17.0\" layoutY=\"501.0\" prefHeight=\"200.0\" prefWidth=\"557.0\" style=\"-fx-border-style: #8C8C7B;\">\r\n                    <columns>\r\n                        <TableColumn prefWidth=\"75.0\" text=\"Announcments\" />\r\n                        <TableColumn prefWidth=\"75.0\" text=\"time\" />\r\n                    </columns>\r\n                    <columnResizePolicy>\r\n                        <TableView fx:constant=\"CONSTRAINED_RESIZE_POLICY\" />\r\n                    </columnResizePolicy>\r\n                </TableView>\r\n                <Line endX=\"730.0\" layoutX=\"200.0\" layoutY=\"484.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" />\r\n                <Circle fill=\"#0f4a33\" layoutX=\"803.0\" layoutY=\"593.0\" radius=\"80.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" />\r\n                <Text fill=\"#4e4e40\" layoutX=\"31.0\" layoutY=\"263.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ revenue VS budget\" wrappingWidth=\"217.81787872314453\">\r\n                    <font>\r\n                        <Font name=\"System Bold\" size=\"16.0\" />\r\n                    </font>\r\n                </Text>\r\n                <LineChart layoutX=\"312.0\" layoutY=\"277.0\" prefHeight=\"189.0\" prefWidth=\"255.0\" style=\"-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;\">\r\n                    <xAxis>\r\n                        <CategoryAxis side=\"BOTTOM\" />\r\n                    </xAxis>\r\n                    <yAxis>\r\n                        <NumberAxis prefHeight=\"128.0\" prefWidth=\"19.0\" side=\"LEFT\" tickLabelFill=\"WHITE\" />\r\n                    </yAxis>\r\n                </LineChart>\r\n                <VBox layoutX=\"44.0\" layoutY=\"126.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                        <Label opacity=\"0.55\" text=\"total employees\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"12.0\" />\r\n                            </font></Label>\r\n                    </children>\r\n                </VBox>\r\n                <VBox layoutX=\"221.0\" layoutY=\"126.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                        <Label opacity=\"0.55\" text=\"active guests\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"12.0\" />\r\n                            </font>\r\n                        </Label>\r\n                    </children>\r\n                </VBox>\r\n                <VBox layoutX=\"400.0\" layoutY=\"127.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                        <Label opacity=\"0.55\" text=\"some other bullshit\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"12.0\" />\r\n                            </font>\r\n                        </Label>\r\n                    </children>\r\n                </VBox>\r\n                <VBox layoutX=\"635.0\" layoutY=\"546.0\" prefHeight=\"61.0\" prefWidth=\"81.0\">\r\n                    <children>\r\n                        <Text fill=\"#0f4a33\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"●Farhan\" wrappingWidth=\"76.13671875\">\r\n                            <font>\r\n                                <Font name=\"Consolas\" size=\"15.0\" />\r\n                            </font>\r\n                        </Text>\r\n                        <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                        <Text fill=\"#1a36e6\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"●Jenin\" wrappingWidth=\"76.13671875\">\r\n                            <font>\r\n                                <Font name=\"Consolas\" size=\"15.0\" />\r\n                            </font>\r\n                        </Text>\r\n                        <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" wrappingWidth=\"22.13671875\" />\r\n                        <Text fill=\"#d9093d\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"●Rose\" wrappingWidth=\"76.13671875\">\r\n                            <font>\r\n                                <Font name=\"Consolas\" size=\"15.0\" />\r\n                            </font>\r\n                        </Text>\r\n                        <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                        <Text fill=\"#570570\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"●Rafid\" wrappingWidth=\"76.13671875\">\r\n                            <font>\r\n                                <Font name=\"Consolas\" size=\"15.0\" />\r\n                            </font>\r\n                        </Text>\r\n                    </children>\r\n                </VBox>\r\n                <Text fill=\"#0f4a33\" layoutX=\"317.0\" layoutY=\"264.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ some more bullshit\" wrappingWidth=\"217.81787872314453\">\r\n                    <font>\r\n                        <Font name=\"System Bold\" size=\"16.0\" />\r\n                    </font>\r\n                </Text>\r\n                <Text fill=\"#000000aa\" layoutX=\"626.0\" layoutY=\"157.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ guests per month\" wrappingWidth=\"217.81787872314453\">\r\n                    <font>\r\n                        <Font name=\"System Bold\" size=\"16.0\" />\r\n                    </font>\r\n                </Text>\r\n            </children>\r\n        </AnchorPane>\r\n    </right>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml b/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml
+--- a/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml	(revision b9f86dd4ef64ca73a99f00b5d8f20a2388832309)
++++ b/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml	(date 1733264108098)
+@@ -17,7 +17,6 @@
+ <?import javafx.scene.paint.Color?>
+ <?import javafx.scene.paint.LinearGradient?>
+ <?import javafx.scene.paint.Stop?>
+-<?import javafx.scene.shape.Circle?>
+ <?import javafx.scene.shape.Line?>
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+@@ -36,7 +35,7 @@
+                     </font>
+                 </Text>
+                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Farhana Chowdhury" textAlignment="CENTER" wrappingWidth="350.13677978515625">
++                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rafid Md Shafiq" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                     <font>
+                         <Font name="Bell MT Bold" size="33.0" />
+                     </font>
+@@ -62,7 +61,7 @@
+                         </LinearGradient>
+                     </fill>
+                 </Text>
+-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Head Manager" textAlignment="CENTER" wrappingWidth="350.13677978515625">
++                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ceo" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                     <font>
+                         <Font name="Bodoni MT" size="26.0" />
+                     </font>
+@@ -95,22 +94,22 @@
+                         <Font name="Consolas Bold" size="24.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Monthly Goals" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Sponsership Campaigns" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Manage User Accounts" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Post announcements" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+@@ -177,7 +176,6 @@
+                     </columnResizePolicy>
+                 </TableView>
+                 <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+-                <Circle fill="#0f4a33" layoutX="803.0" layoutY="593.0" radius="80.0" stroke="BLACK" strokeType="INSIDE" />
+                 <Text fill="#4e4e40" layoutX="31.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ revenue VS budget" wrappingWidth="217.81787872314453">
+                     <font>
+                         <Font name="System Bold" size="16.0" />
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/FarHanZzzz/FiveStarHotel.git\",\r\n    \"accountId\": \"6a6a6314-c7b1-47a3-a0ee-4d945d400db2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n      <workItem from=\"1733174270251\" duration=\"1371000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b9f86dd4ef64ca73a99f00b5d8f20a2388832309)
++++ b/.idea/workspace.xml	(date 1733264115232)
+@@ -6,8 +6,7 @@
+   <component name="ChangeListManager">
+     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -17,8 +16,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Class" />
+         <option value="FxmlFile" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+@@ -31,12 +30,12 @@
+     &quot;assignee&quot;: &quot;FarHanZzzz&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/FarHanZzzz/FiveStarHotel.git",
+-    "accountId": "6a6a6314-c7b1-47a3-a0ee-4d945d400db2"
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,
++    &quot;accountId&quot;: &quot;5d49b3d9-2eb5-473f-861c-0462b64dfa01&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+@@ -55,31 +54,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.HelloApplication.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "master",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "D:/fivestarhotelproject/FiveStarHotel",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
++        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
++        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -98,7 +93,8 @@
+       <workItem from="1732812928251" duration="38000" />
+       <workItem from="1732813016733" duration="370000" />
+       <workItem from="1732813603231" duration="2575000" />
+-      <workItem from="1733174270251" duration="1371000" />
++      <workItem from="1733251227786" duration="2273000" />
++      <workItem from="1733263661827" duration="448000" />
+     </task>
+     <servers />
+   </component>
