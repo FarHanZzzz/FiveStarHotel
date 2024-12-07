@@ -18,7 +18,6 @@ public class FrontDeskStaffDashboardController
 
 
 
-
     //       try {
 //                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml"));
 //            );

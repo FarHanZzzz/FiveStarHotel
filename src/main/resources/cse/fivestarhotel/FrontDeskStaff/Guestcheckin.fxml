@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="724.0" prefWidth="959.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckinController">
+<AnchorPane prefHeight="724.0" prefWidth="959.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckinController">
    <children>
       <Line endX="744.0" layoutX="202.0" layoutY="72.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
       <Text fill="#0f4a33" layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
@@ -34,7 +34,7 @@
          </columnResizePolicy>
       </TableView>
       <Line endX="741.0" layoutX="207.0" layoutY="407.0" startX="-207.0" stroke="#8c8c7b" />
-      <Label layoutX="53.0" layoutY="94.0" prefHeight="55.0" prefWidth="281.0" text="Guest Details" underline="true">
+      <Label layoutX="47.0" layoutY="81.0" prefHeight="55.0" prefWidth="281.0" text="Guest Details" underline="true">
          <font>
             <Font name="System Bold" size="38.0" />
          </font>
@@ -69,7 +69,7 @@
       <TextField fx:id="GuestNationalityTextField" layoutX="167.0" layoutY="291.0" />
       <TextField fx:id="GuestContactNoTetField" layoutX="167.0" layoutY="327.0" />
       <Line endX="270.0" endY="-310.0" layoutX="116.0" layoutY="399.0" startX="270.0" startY="7.0" stroke="#8c8c7b" />
-      <Label layoutX="398.0" layoutY="94.0" text="Room Details" underline="true">
+      <Label layoutX="397.0" layoutY="81.0" text="Room Details" underline="true">
          <font>
             <Font name="System Bold" size="38.0" />
          </font>
@@ -87,12 +87,12 @@
       <TextField fx:id="NumberofRoomsTextField" layoutX="531.0" layoutY="207.0" prefHeight="25.0" prefWidth="173.0" />
       <ComboBox fx:id="RoomTypeComboBox" layoutX="530.0" layoutY="166.0" prefHeight="25.0" prefWidth="172.0" />
       <ComboBox fx:id="GuestMaritalStatusComboBox" layoutX="167.0" layoutY="254.0" prefWidth="150.0" />
-      <Button layoutX="747.0" layoutY="166.0" mnemonicParsing="false" onAction="#CheckInOnAction" prefHeight="133.0" prefWidth="166.0" style="-fx-border-color: black;" text="Check in and check if room is available " textAlignment="CENTER" textFill="#4d4545" wrapText="true">
+      <Button layoutX="759.0" layoutY="103.0" mnemonicParsing="false" onAction="#CheckInOnAction" prefHeight="112.0" prefWidth="166.0" style="-fx-border-color: black;" text="Check in and check if room is available " textAlignment="CENTER" textFill="#4d4545" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="23.0" layoutY="371.0" mnemonicParsing="false" onAction="#ClearFieldsOnAction" text="clear all fields" />
+      <Button layoutX="23.0" layoutY="371.0" mnemonicParsing="false" onAction="#ClearFieldsOnAction" text="clear All Text fields" />
       <Label fx:id="CheckInStatusLabel" layoutX="398.0" layoutY="347.0" prefHeight="30.0" prefWidth="528.0" style="-fx-border-color: #0D3120;" text="Check in status : " />
       <Label layoutX="397.0" layoutY="250.0" text="Check out Date:">
          <font>

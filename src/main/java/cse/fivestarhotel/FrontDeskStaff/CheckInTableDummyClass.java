@@ -3,22 +3,21 @@ package cse.fivestarhotel.FrontDeskStaff;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CheckinAssociation implements Serializable {
+public class CheckInTableDummyClass implements Serializable {
     private String name,email;
     private String roomtype;
     private Integer NoofRooms;
-    private Integer roomnumber;
+    private String roomnumber;
     private LocalDate checkoutDate;
 
-    public CheckinAssociation(String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate) {
+    public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate) {
         this.name = name;
         this.email = email;
         this.roomtype = roomtype;
         NoofRooms = noofRooms;
-        this.roomnumber = roomnumber;
+        this.roomnumber = String.valueOf(roomnumber);
         this.checkoutDate = checkoutDate;
     }
-
 
     public String getName() {
         return name;
@@ -52,12 +51,12 @@ public class CheckinAssociation implements Serializable {
         NoofRooms = noofRooms;
     }
 
-    public Integer getRoomnumber() {
+    public String getRoomnumber() {
         return roomnumber;
     }
 
     public void setRoomnumber(Integer roomnumber) {
-        this.roomnumber = roomnumber;
+        this.roomnumber = String.valueOf(roomnumber);
     }
 
     public LocalDate getCheckoutDate() {
@@ -70,7 +69,7 @@ public class CheckinAssociation implements Serializable {
 
     @Override
     public String toString() {
-        return "CheckinAssociation{" +
+        return "CheckInTableDummyClass{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", roomtype='" + roomtype + '\'' +
@@ -79,4 +78,7 @@ public class CheckinAssociation implements Serializable {
                 ", checkoutDate=" + checkoutDate +
                 '}';
     }
+
+
+
 }
