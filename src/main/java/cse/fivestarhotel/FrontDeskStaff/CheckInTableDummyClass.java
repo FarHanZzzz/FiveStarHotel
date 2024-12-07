@@ -3,21 +3,23 @@ package cse.fivestarhotel.FrontDeskStaff;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CheckInTableDummyClass implements Serializable {
+public class CheckInTableDummyClass  {
     private String name,email;
     private String roomtype;
-    private Integer NoofRooms;
+    private Integer noofRooms;
     private String roomnumber;
     private LocalDate checkoutDate;
+
 
     public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate) {
         this.name = name;
         this.email = email;
         this.roomtype = roomtype;
-        NoofRooms = noofRooms;
-        this.roomnumber = String.valueOf(roomnumber);
+        this.noofRooms = noofRooms;
+        this.roomnumber = roomnumber;
         this.checkoutDate = checkoutDate;
     }
+
 
     public String getName() {
         return name;
@@ -44,19 +46,19 @@ public class CheckInTableDummyClass implements Serializable {
     }
 
     public Integer getNoofRooms() {
-        return NoofRooms;
+        return noofRooms;
     }
 
     public void setNoofRooms(Integer noofRooms) {
-        NoofRooms = noofRooms;
+        this.noofRooms = noofRooms;
     }
 
     public String getRoomnumber() {
         return roomnumber;
     }
 
-    public void setRoomnumber(Integer roomnumber) {
-        this.roomnumber = String.valueOf(roomnumber);
+    public void setRoomnumber(String roomnumber) {
+        this.roomnumber = roomnumber;
     }
 
     public LocalDate getCheckoutDate() {
@@ -73,12 +75,9 @@ public class CheckInTableDummyClass implements Serializable {
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", roomtype='" + roomtype + '\'' +
-                ", NoofRooms=" + NoofRooms +
-                ", roomnumber=" + roomnumber +
+                ", noofRooms=" + noofRooms +
+                ", roomnumber='" + roomnumber + '\'' +
                 ", checkoutDate=" + checkoutDate +
                 '}';
     }
-
-
-
 }

@@ -46,34 +46,35 @@ public class GuestcheckinController
     @javafx.fxml.FXML
     private ComboBox<String> RoomTypeComboBox;
 
-
     @javafx.fxml.FXML
     private TableColumn<CheckInTableDummyClass,LocalDate> checkoutCol;
 
     @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,Integer> roomnumberCol;
+    private TableColumn<CheckInTableDummyClass,String> roomnumberCol;
 
 
 
 
     ObservableList<CheckInTableDummyClass> CheckinTabledataList = FXCollections.observableArrayList();
-    ObservableList<AcessGuestDetails> ViewTableListofGuest = FXCollections.observableArrayList();
 
+
+
+    //ObservableList<AcessGuestDetails> ViewTableListofGuest = FXCollections.observableArrayList();
     //ArrayList<CheckinAssociation> CheckinAssociationList = new ArrayList<>();
 
 
+
     ArrayList<Integer> SingleRoom = new ArrayList<>();
-
     ArrayList<Integer> DoubleeRoom = new ArrayList<>();
-
     ArrayList<Integer> SuiteRoom = new ArrayList<>();
 
+
+    //ArrayList<CheckInTableDummyClass> CheckinTabledataList = new ArrayList<>();
 
 
 
     @javafx.fxml.FXML
     public void initialize() {
-
 
 
 
@@ -88,21 +89,37 @@ public class GuestcheckinController
 
 
 
-
         // combobox
         RoomTypeComboBox.getItems().addAll("Single", "Double", "Suite");
         GuestMaritalStatusComboBox.getItems().addAll("Married","Unmarried","Divorced");
 
 
 
-        //String name, String email, String roomtype, Integer noofRooms, String roomid
+
+//    private String name,email;
+//    private String roomtype;
+//    private Integer noofRooms;
+//    private String roomnumber;
+//    private LocalDate checkoutDate;
+
+        //String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate
+
+//NameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+//EmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+//RoomtypeCol.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
+//NumberofRoomsCol.setCellValueFactory(new PropertyValueFactory<>("noofRooms"));
+//roomnumberCol.setCellValueFactory(new PropertyValueFactory<>("roomnumber"));
+//checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
+
 
         NameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         EmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
         RoomtypeCol.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
         NumberofRoomsCol.setCellValueFactory(new PropertyValueFactory<>("noofRooms"));
         roomnumberCol.setCellValueFactory(new PropertyValueFactory<>("roomnumber"));
-        checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutCol"));
+        checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
+
+
 
 
         CheckinTableView.setItems(CheckinTabledataList);
@@ -123,13 +140,9 @@ public class GuestcheckinController
         RoomTypeComboBox.setValue(null);
         CheckoutDatePicker.setValue(null);
         GuestMaritalStatusComboBox.setValue(null);
-
-
+        NumberofRoomsTextField.clear();
 
     }
-
-
-
 
 
 
@@ -141,27 +154,29 @@ public class GuestcheckinController
         String email = GuestEmailTextField.getText();
         Integer contactno = Integer.valueOf(GuestContactNoTetField.getText());
         String nationality = GuestNationalityTextField.getText();
-        LocalDate Checkoutdate = CheckoutDatePicker.getValue();
+        LocalDate checkoutDate = CheckoutDatePicker.getValue();
         String roomtype = RoomTypeComboBox.getValue();
         String maritalStatus = GuestMaritalStatusComboBox.getValue();
         int noofRooms;
 
 
+
         try {
-            noofRooms = Integer.parseInt(GuestContactNoTetField.getText());
+            noofRooms = Integer.parseInt(NumberofRoomsTextField.getText());
         } catch (NumberFormatException e) {
             CheckInStatusLabel.setText("Invalid number of Rooms");
             return;
         }
 
+
         // validating other inputs
-        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0 || contactno == null || nationality.isEmpty() || Checkoutdate == null || maritalStatus.isEmpty()){
+        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0 || contactno == null || nationality.isEmpty() || checkoutDate == null || maritalStatus.isEmpty()){
             CheckInStatusLabel.setText("Please fill all the fields");
         }
 
 
-
         // Allocate rooms
+
         List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);
         if (allocatedRooms.isEmpty()) {
             CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
@@ -169,44 +184,37 @@ public class GuestcheckinController
         }
 
 
-        String roomNumbers = allocatedRooms.stream()
+        String roomNumber = allocatedRooms.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
 
-        //String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
-        CheckInTableDummyClass newcheckin = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumbers,Checkoutdate);
 
-        CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumbers);
+
+
+        CheckInTableDummyClass newcheckin = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+        CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
         CheckinTabledataList.add(newcheckin);
+        CheckinTableView.refresh();
 
 
 
 
+        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
 
-
-
-
-
+//        CheckinTabledataList.add(
+//                new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumbers,Checkoutdate)
+//        );
+//
+//        for(CheckInTableDummyClass c: CheckinTabledataList){
+//            CheckinTableView.getItems().add(c);
+//
+//        }
 
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public List<Integer> allocateRooms(String roomtype , int numberofRooms) {
+    public List<Integer> allocateRooms(String roomtype , int noofRooms) {
 
         List<Integer> roomList;
         List<Integer> allocatedRooms = new ArrayList<>();
@@ -226,14 +234,18 @@ public class GuestcheckinController
         // allocate room if avalidable
         System.out.println("Room list for " + roomtype + ": " + roomList);
 
+        // roomlist = 50 , 3
 
-        if (roomList.size() >= numberofRooms) {
-            for(int i = 0; i < numberofRooms; i++){
-                Integer allocatedRoom = roomList.remove(0);
-                allocatedRooms.add(allocatedRoom); // remove and allocate
-                System.out.println(allocatedRooms);
+        if (roomList.size() >= noofRooms) {
+            for(int i = 0; i < noofRooms; i++){
+                allocatedRooms.add(roomList.remove(0));  // remove and allocate
 
             }
+
+            System.out.println("1"+ allocatedRooms);
+
+
+            // single 1 -50 =
 
         }
 
@@ -242,7 +254,10 @@ public class GuestcheckinController
 
         }
 
+
+        System.out.println("Final "+ allocatedRooms);
         return allocatedRooms;
+
 
 
     }
