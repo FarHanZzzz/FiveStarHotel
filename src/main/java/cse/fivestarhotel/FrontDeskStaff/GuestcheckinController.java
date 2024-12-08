@@ -120,6 +120,7 @@ public class GuestcheckinController
         checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
 
 
+        CheckinTabledataList.add(new CheckInTableDummyClass("John Doe", "john@example.com", "Single", 1, "101", LocalDate.now()));
 
 
         CheckinTableView.setItems(CheckinTabledataList);
@@ -191,9 +192,12 @@ public class GuestcheckinController
 
 
 
-        CheckInTableDummyClass newcheckin = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+        CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+
+
+
         CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-        CheckinTabledataList.add(newcheckin);
+        CheckinTabledataList.add(temp);
         CheckinTableView.refresh();
 
 
