@@ -4,22 +4,12 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class CheckInTableDummyClass  {
-    private String name,email;
+    private String name;
+    private String email;
     private String roomtype;
     private Integer noofRooms;
     private String roomnumber;
     private LocalDate checkoutDate;
-
-
-    public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate) {
-        this.name = name;
-        this.email = email;
-        this.roomtype = roomtype;
-        this.noofRooms = noofRooms;
-        this.roomnumber = roomnumber;
-        this.checkoutDate = checkoutDate;
-    }
-
 
     public String getName() {
         return name;
@@ -80,4 +70,18 @@ public class CheckInTableDummyClass  {
                 ", checkoutDate=" + checkoutDate +
                 '}';
     }
+
+    public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate) {
+        this.name = name;
+        this.email = email;
+        this.roomtype = roomtype;
+        this.noofRooms = noofRooms;
+        this.roomnumber = roomnumber;
+        this.checkoutDate = checkoutDate;
+
+
+
+
+    }
 }
+

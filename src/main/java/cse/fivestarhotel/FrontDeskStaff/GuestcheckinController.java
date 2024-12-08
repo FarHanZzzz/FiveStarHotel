@@ -55,12 +55,8 @@ public class GuestcheckinController
 
 
 
-    ObservableList<CheckInTableDummyClass> CheckinTabledataList = FXCollections.observableArrayList();
-
-
-
+    //ObservableList<CheckInTableDummyClass> CheckinTabledataList = FXCollections.observableArrayList();
     //ObservableList<AcessGuestDetails> ViewTableListofGuest = FXCollections.observableArrayList();
-    //ArrayList<CheckinAssociation> CheckinAssociationList = new ArrayList<>();
 
 
 
@@ -69,7 +65,7 @@ public class GuestcheckinController
     ArrayList<Integer> SuiteRoom = new ArrayList<>();
 
 
-    //ArrayList<CheckInTableDummyClass> CheckinTabledataList = new ArrayList<>();
+    ArrayList<CheckInTableDummyClass> CheckinTabledataList = new ArrayList<>();
 
 
 
@@ -86,31 +82,12 @@ public class GuestcheckinController
 
 
 
-
-
-
         // combobox
         RoomTypeComboBox.getItems().addAll("Single", "Double", "Suite");
         GuestMaritalStatusComboBox.getItems().addAll("Married","Unmarried","Divorced");
 
 
-
-
-//    private String name,email;
-//    private String roomtype;
-//    private Integer noofRooms;
-//    private String roomnumber;
-//    private LocalDate checkoutDate;
-
         //String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate
-
-//NameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-//EmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
-//RoomtypeCol.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
-//NumberofRoomsCol.setCellValueFactory(new PropertyValueFactory<>("noofRooms"));
-//roomnumberCol.setCellValueFactory(new PropertyValueFactory<>("roomnumber"));
-//checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
-
 
         NameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         EmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -120,11 +97,11 @@ public class GuestcheckinController
         checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
 
 
-        CheckinTabledataList.add(new CheckInTableDummyClass("John Doe", "john@example.com", "Single", 1, "101", LocalDate.now()));
 
+        //CheckinTabledataList.add(new CheckInTableDummyClass("John Doe", "john@example.com", "Single", 1, "101", LocalDate.now()));
 
-        CheckinTableView.setItems(CheckinTabledataList);
-
+//        CheckinTableView.setItems(CheckinTabledataList);
+//        CheckinTableView.refresh();
 
     }
 
@@ -177,42 +154,43 @@ public class GuestcheckinController
 
 
         // Allocate rooms
-
         List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);
         if (allocatedRooms.isEmpty()) {
             CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
             return;
         }
 
+        String roomNumber = allocatedRooms.stream().map(String::valueOf).collect(Collectors.joining(", "));
 
-        String roomNumber = allocatedRooms.stream()
-                .map(String::valueOf)
-                .collect(Collectors.joining(", "));
-
-
+        CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+        CheckinTabledataList.add(c);
 
 
-        CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+        CheckinTableView.getItems().clear();
+        for (CheckInTableDummyClass s : CheckinTabledataList){
+            CheckinTableView.getItems().add(s);
+            System.out.println(s);
 
-
-
-        CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-        CheckinTabledataList.add(temp);
-        CheckinTableView.refresh();
+            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
 
 
 
-
-        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
-
-//        CheckinTabledataList.add(
-//                new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumbers,Checkoutdate)
-//        );
-//
+//        CheckinTabledataList.add(new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate));
 //        for(CheckInTableDummyClass c: CheckinTabledataList){
 //            CheckinTableView.getItems().add(c);
-//
-//        }
+//            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
+
+
+
+
+            //CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+//        CheckinTabledataList.add(temp);
+//        CheckinTableView.refresh();
+            // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
+
+
+
+        }
 
     }
 
@@ -260,6 +238,9 @@ public class GuestcheckinController
 
 
         System.out.println("Final "+ allocatedRooms);
+
+
+
         return allocatedRooms;
 
 

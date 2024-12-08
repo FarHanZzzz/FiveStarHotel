@@ -1,6 +1,7 @@
 module hotel.fivestarhotel {
     requires javafx.controls;
     requires javafx.fxml;
+//    requires java.base;
 
 
     opens cse.fivestarhotel to javafx.fxml;
@@ -18,5 +19,8 @@ module hotel.fivestarhotel {
 
 
     exports cse.fivestarhotel;
+    exports cse.fivestarhotel.FrontDeskStaff;
+    exports cse.fivestarhotel.RestaurantManager;
+
 }
 
