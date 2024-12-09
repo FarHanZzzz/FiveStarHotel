@@ -161,10 +161,10 @@ public class GuestcheckinController
         }
 
         String roomNumber = allocatedRooms.stream().map(String::valueOf).collect(Collectors.joining(", "));
-
         CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
         CheckinTabledataList.add(c);
 
+        // ends
 
         CheckinTableView.getItems().clear();
         for (CheckInTableDummyClass s : CheckinTabledataList){
