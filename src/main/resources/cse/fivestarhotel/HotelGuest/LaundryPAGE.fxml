@@ -44,7 +44,7 @@
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Button layoutX="234.0" layoutY="583.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Reserve a Table" textFill="#d0913f">
+      <Button layoutX="234.0" layoutY="583.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="book laundry" textFill="#d0913f">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

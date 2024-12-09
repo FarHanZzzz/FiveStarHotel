@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.MonthlyRevenueController">
+   <children>
+      <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Revenue Reports">
+         <font>
+            <Font name="Bell MT Bold" size="45.0" />
+         </font>
+      </Text>
+      <Text fill="#000000aa" layoutX="31.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Submit Revenue Report" wrappingWidth="343.15125274658203">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <StackedAreaChart layoutX="14.0" layoutY="373.0" prefHeight="335.0" prefWidth="908.0">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedAreaChart>
+      <TextField layoutX="312.0" layoutY="181.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
+      <Text layoutX="66.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Revenue ($):" wrappingWidth="244.80333709716797">
+         <font>
+            <Font name="Consolas" size="23.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

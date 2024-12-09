@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.RoomServiceReqController">
+   <children>
+      <Text fill="#0d3120" layoutX="34.0" layoutY="224.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Additional Service Request :" wrappingWidth="355.469970703125">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#0d3120" layoutX="96.0" layoutY="290.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="specifications :" wrappingWidth="191.469970703125">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ComboBox layoutX="260.0" layoutY="265.0" prefHeight="40.0" prefWidth="235.0" />
+      <TextField layoutX="260.0" layoutY="346.0" prefHeight="205.0" prefWidth="513.0" style="-fx-background-color: #B6A990;" />
+      <Text fill="#0d3120" layoutX="97.0" layoutY="384.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="details :" wrappingWidth="191.469970703125">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#0d3120" layoutX="255.0" layoutY="634.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="We are known for our impecable service. Just let us know what troubles you!" textAlignment="CENTER" wrappingWidth="468.0">
+         <font>
+            <Font name="Consolas" size="21.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="162.0" fitWidth="918.0" layoutX="9.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/Untitled349_20241208143837.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

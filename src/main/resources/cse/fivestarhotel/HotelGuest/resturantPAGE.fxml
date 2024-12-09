@@ -46,7 +46,7 @@
          </font>
       </Text>
       <ComboBox layoutX="284.0" layoutY="546.0" prefHeight="33.0" prefWidth="159.0" promptText="0" style="-fx-background-color: #B6A990;" visibleRowCount="6" />
-      <Button layoutX="224.0" layoutY="626.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="206.0" style="-fx-background-color: #0d3120;" text="Reserve a Table" textFill="#d0913f">
+      <Button layoutX="224.0" layoutY="626.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="206.0" style="-fx-background-color: #0d3120;" text="Book a Table" textFill="#d0913f">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

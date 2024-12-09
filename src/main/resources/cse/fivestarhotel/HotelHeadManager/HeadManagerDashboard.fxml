@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
@@ -21,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.HeadManagerDashboardController">
+<BorderPane fx:id="DashboardBorderPaneHeadManager" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.HeadManagerDashboardController">
    <cursor>
       <Cursor fx:constant="NE_RESIZE" />
    </cursor>
@@ -89,47 +88,47 @@
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" />
             <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
+            <Button mnemonicParsing="false" onAction="#BackToHeadManagerDashboardOnAction" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
                <font>
                   <Font name="Consolas Bold" size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Employee Schedules" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#monthlyrevenueOnAction" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text=" monthly revenue report" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text=" monthly budget reports" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#postannouncementOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="post an announcement" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#performancereportsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="performance reports" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#viewbudgetOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="view budget" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="satisfaction report" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="customer reviews " textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#hotelguestreviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel guest reviews " textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#staffinquiriesOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
+            <Button mnemonicParsing="false" onAction="#HeadManagerLogoutOnAction" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
                <font>
                   <Font name="Consolas Bold" size="20.0" />
                </font>
@@ -150,7 +149,7 @@
                   <Font name="Bell MT Bold" size="45.0" />
                </font>
             </Text>
-            <StackedBarChart layoutX="537.0" layoutY="162.0" prefHeight="322.0" prefWidth="381.0">
+            <StackedBarChart layoutX="10.0" layoutY="243.0" prefHeight="201.0" prefWidth="680.0">
               <xAxis>
                 <CategoryAxis prefHeight="24.0" prefWidth="265.0" side="BOTTOM" />
               </xAxis>
@@ -158,29 +157,15 @@
                 <NumberAxis side="LEFT" upperBound="10000.0" />
               </yAxis>
             </StackedBarChart>
-            <TableView layoutX="17.0" layoutY="501.0" prefHeight="200.0" prefWidth="557.0" style="-fx-border-style: #8C8C7B;">
+            <TableView layoutX="25.0" layoutY="447.0" prefHeight="249.0" prefWidth="882.0" style="-fx-border-style: #8C8C7B;">
               <columns>
-                <TableColumn prefWidth="261.33338356018066" text="Announcments" />
-                <TableColumn text="from" />
-                  <TableColumn prefWidth="108.66650390625" text="date" />
-                  <TableColumn prefWidth="104.66671752929688" text="time" />
+                <TableColumn prefWidth="499.99997901916504" text="Announcments" />
+                <TableColumn prefWidth="198.6666259765625" text="from" />
+                  <TableColumn prefWidth="204.666748046875" text="date" />
               </columns>
             </TableView>
-            <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
-            <Text fill="#4e4e40" layoutX="31.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ revenue VS budget" wrappingWidth="217.81787872314453">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
-            <LineChart layoutX="21.0" layoutY="277.0" prefHeight="189.0" prefWidth="509.0" style="-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
-               <xAxis>
-                  <CategoryAxis side="BOTTOM" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis prefHeight="128.0" prefWidth="19.0" side="LEFT" tickLabelFill="WHITE" />
-               </yAxis>
-            </LineChart>
-            <VBox layoutX="44.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+            <Line endX="730.0" layoutX="200.0" layoutY="426.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+            <VBox layoutX="78.0" layoutY="119.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                <children>
                   <Label prefHeight="47.0" prefWidth="151.0" text="0">
                      <font>
@@ -194,7 +179,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox layoutX="213.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+            <VBox layoutX="276.0" layoutY="119.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                <children>
                   <Label prefHeight="47.0" prefWidth="151.0" text="0">
                      <font>
@@ -208,25 +193,12 @@
                   </Text>
                </children>
             </VBox>
-            <Text fill="#000000aa" layoutX="626.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
+            <Text fill="#000000aa" layoutX="67.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <VBox layoutX="385.0" layoutY="125.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
-               <children>
-                  <Label prefHeight="47.0" prefWidth="151.0" text="0">
-                     <font>
-                        <Font size="38.0" />
-                     </font>
-                  </Label>
-                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="rooms occupied" wrappingWidth="130.13671112060547">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
+            <ImageView fitHeight="299.0" fitWidth="201.0" layoutX="707.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </right>

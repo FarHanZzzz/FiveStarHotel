@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.ViewStaffIquiriesController">
+    <children>
+        <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+        <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Staff Inquiries">
+            <font>
+                <Font name="Bell MT Bold" size="45.0" />
+            </font>
+        </Text>
+        <TableView layoutX="45.0" layoutY="228.0" prefHeight="448.0" prefWidth="848.0" style="-fx-font-size: 19;">
+            <columns>
+                <TableColumn prefWidth="238.66662216186523" text="Name" />
+                <TableColumn prefWidth="170.6666259765625" text="Position" />
+                <TableColumn prefWidth="458.0001220703125" text="inquiry" />
+            </columns>
+        </TableView>
+        <Text fill="#0f4a33" layoutX="227.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff concerns and inquiries" textAlignment="CENTER" wrappingWidth="478.13671875">
+            <font>
+                <Font name="Consolas" size="21.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

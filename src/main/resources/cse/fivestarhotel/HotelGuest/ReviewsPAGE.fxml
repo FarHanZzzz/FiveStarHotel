@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewsPAGEController">
+<AnchorPane fx:id="ReviewAnchorPene" prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewsPAGEController">
    <children>
       <Text fill="#0d3120" layoutX="98.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a section :" wrappingWidth="310.13672637939453">
          <font>
@@ -19,7 +19,7 @@
             <Font name="Consolas Bold" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="276.0" layoutY="324.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Hotel Review" textFill="#d0913f">
+      <Button layoutX="276.0" layoutY="324.0" mnemonicParsing="false" onAction="#HotelReviewOnAction" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Hotel Review" textFill="#d0913f">
          <font>
             <Font name="Consolas Bold" size="22.0" />
          </font>
@@ -29,7 +29,7 @@
             <Font name="Consolas Bold" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="272.0" layoutY="541.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Resturant Review" textFill="#d0913f">
+      <Button layoutX="272.0" layoutY="541.0" mnemonicParsing="false" onAction="#ResturantReviewOnAction" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Resturant Review" textFill="#d0913f">
          <font>
             <Font name="Consolas Bold" size="22.0" />
          </font>

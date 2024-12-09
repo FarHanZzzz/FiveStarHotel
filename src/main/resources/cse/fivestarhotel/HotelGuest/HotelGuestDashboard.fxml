@@ -57,7 +57,7 @@
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                 <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
+                <Button mnemonicParsing="false" onAction="#BackToDashboardOnAction" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
                     <font>
                         <Font name="Consolas Bold" size="24.0" />
                     </font>
@@ -72,32 +72,32 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="room service" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#GuestroomserviceOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="room service" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Laundry" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#laundrybookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Laundry" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#transportationbookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#GuestReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="event booking" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#eventbookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="event booking" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
+                <Button mnemonicParsing="false" onAction="#GuestLogoutOnAction" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
                     <font>
                         <Font name="Consolas Bold" size="20.0" />
                     </font>

@@ -34,7 +34,7 @@
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Button layoutX="234.0" layoutY="541.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Reserve a Table" textFill="#d0913f">
+      <Button layoutX="234.0" layoutY="531.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Book Event" textFill="#d0913f">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -45,7 +45,7 @@
             <Image url="@../Img/Untitled343_20241207021419.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="132.0" layoutY="634.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="424.0" style="-fx-background-color: #d0913f;" text="view booked event info" textFill="#0d3120">
+      <Button layoutX="132.0" layoutY="624.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="424.0" style="-fx-background-color: #d0913f;" text="view booked event info" textFill="#0d3120">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

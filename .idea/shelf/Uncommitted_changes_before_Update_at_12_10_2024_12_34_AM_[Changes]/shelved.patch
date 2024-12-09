@@ -1,0 +1,924 @@
+Index: src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.HotelHeadManager;\r\n\r\npublic class HeadManagerDashboardController\r\n{\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n    }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java b/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java
+--- a/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java	(date 1733769051468)
+@@ -1,7 +1,124 @@
+ package cse.fivestarhotel.HotelHeadManager;
+ 
++import cse.fivestarhotel.HelloApplication;
++import javafx.event.ActionEvent;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Node;
++import javafx.scene.Scene;
++import javafx.scene.layout.BorderPane;
++import javafx.stage.Stage;
++
++import java.io.IOException;
++
+ public class HeadManagerDashboardController
+ {
++    @javafx.fxml.FXML
++    private BorderPane DashboardBorderPaneHeadManager;
++
+     @javafx.fxml.FXML
+     public void initialize() {
+-    }}
+\ No newline at end of file
++    }
++
++
++
++
++    @javafx.fxml.FXML
++    public void BackToHeadManagerDashboardOnAction(ActionEvent actionEvent) throws IOException {
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml"));
++        Scene scene = new Scene(fxmlLoader.load());
++        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
++        stage.setTitle("Hello");
++        stage.setScene(scene);
++        stage.show();
++    }
++
++
++    @javafx.fxml.FXML
++    public void monthlyrevenueOnAction(ActionEvent actionEvent) {
++
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/MonthlyRevenue.fxml"));
++
++            DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++
++    }
++
++
++
++    @javafx.fxml.FXML
++    public void postannouncementOnAction(ActionEvent actionEvent) {
++
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml"));
++
++            DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++
++    }
++
++
++    @javafx.fxml.FXML
++    public void performancereportsOnAction(ActionEvent actionEvent) {
++
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/PerformanceReports.fxml"));
++
++            DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++
++    }
++
++
++    @javafx.fxml.FXML
++    public void viewbudgetOnAction(ActionEvent actionEvent) {
++
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml"));
++
++            DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++
++    }
++
++
++    @javafx.fxml.FXML
++    public void hotelguestreviewsOnAction(ActionEvent actionEvent) {
++
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml"));
++
++            DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++
++    }
++
++
++    @javafx.fxml.FXML
++    public void staffinquiriesOnAction(ActionEvent actionEvent) {
++
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewStaffIquiries.fxml"));
++
++            DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++
++    }
++
++    @javafx.fxml.FXML
++    public void HeadManagerLogoutOnAction(ActionEvent actionEvent) throws IOException {
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/StaffLongin.fxml"));
++        Scene scene = new Scene(fxmlLoader.load());
++        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
++        stage.setTitle("Hello");
++        stage.setScene(scene);
++        stage.show();
++    }
++
++}
+\ No newline at end of file
+Index: src/main/java/cse/fivestarhotel/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel;\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\nimport java.io.IOException;\r\n\r\npublic class HelloApplication extends Application {\r\n    @Override\r\n    public void start(Stage stage) throws IOException {\r\n\r\n\r\n        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/Login/Signin.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n        stage.setTitle(\"Sign in!\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/HelloApplication.java b/src/main/java/cse/fivestarhotel/HelloApplication.java
+--- a/src/main/java/cse/fivestarhotel/HelloApplication.java	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/java/cse/fivestarhotel/HelloApplication.java	(date 1733768609860)
+@@ -10,7 +10,7 @@
+     public void start(Stage stage) throws IOException {
+ 
+ 
+-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml"));
+         Scene scene = new Scene(fxmlLoader.load());
+         stage.setTitle("Sign in!");
+         stage.setScene(scene);
+Index: src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.paint.Color?>\r\n<?import javafx.scene.paint.LinearGradient?>\r\n<?import javafx.scene.paint.Stop?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane fx:id=\"DashboardBorderPaneHotelGuest\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"1280.0\" style=\"-fx-background-color: #0D3120;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelGuest.HotelGuestDashboardController\">\r\n    <cursor>\r\n        <Cursor fx:constant=\"NE_RESIZE\" />\r\n    </cursor>\r\n    <left>\r\n        <VBox prefHeight=\"720.0\" prefWidth=\"351.0\" style=\"-fx-background-color: #0D3120;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Text fill=\"#d0913f\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"\uD83D\uDC64\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font size=\"29.0\" />\r\n                    </font>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Jen Chowdhury\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font name=\"Bell MT Bold\" size=\"33.0\" />\r\n                    </font>\r\n                    <fill>\r\n                        <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                            <stops>\r\n                                <Stop>\r\n                                    <color>\r\n                                        <Color />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"0.006711409395973154\">\r\n                                    <color>\r\n                                        <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"1.0\">\r\n                                    <color>\r\n                                        <Color red=\"0.9647058844566345\" green=\"0.8627451062202454\" blue=\"0.7372549176216125\" />\r\n                                    </color>\r\n                                </Stop>\r\n                            </stops>\r\n                        </LinearGradient>\r\n                    </fill>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Line endX=\"251.25244140625\" endY=\"-1.583514928817749\" startX=\"-100.0\" strokeWidth=\"2.0\" />\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"60.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Dashboard\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n                    <font>\r\n                        <Font name=\"Consolas Bold\" size=\"24.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" onAction=\"#resturanttablebookingOnAction\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"resturant table booking\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n            <Button mnemonicParsing=\"false\" onAction=\"#viewmenuOnAction\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"view menu\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"room service\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Laundry\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"transportation details\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"reviews\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"event booking\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"75.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"⬅ Logout\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n                    <font>\r\n                        <Font name=\"Consolas Bold\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <ImageView fitHeight=\"85.0\" fitWidth=\"351.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../Img/Untitled329_20241129211738.png\" />\r\n                    </image>\r\n                </ImageView>\r\n            </children></VBox>\r\n    </left>\r\n   <center>\r\n        <AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <VBox layoutX=\"29.0\" layoutY=\"356.0\" prefHeight=\"79.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Room No.\" wrappingWidth=\"130.13671112060547\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"15.0\" />\r\n                            </font>\r\n                        </Text>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font name=\"Consolas\" size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                    </children>\r\n                </VBox>\r\n            <ImageView fitHeight=\"160.0\" fitWidth=\"930.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../Img/Untitled332_20241201001844.jpg\" />\r\n               </image>\r\n            </ImageView>\r\n            <ImageView fitHeight=\"260.0\" fitWidth=\"280.0\" layoutX=\"627.0\" layoutY=\"436.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../Img/Untitled334_20241201024857.jpg\" />\r\n               </image></ImageView>\r\n            <Text fill=\"#0d3120\" layoutX=\"29.0\" layoutY=\"321.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ B o o k i n g  D e t a i l s\" wrappingWidth=\"283.469970703125\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <VBox layoutX=\"207.0\" layoutY=\"356.0\" prefHeight=\"79.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Room Type\" wrappingWidth=\"130.13671112060547\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"15.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"n/a\">\r\n                     <font>\r\n                        <Font size=\"38.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </VBox>\r\n            <VBox layoutX=\"385.0\" layoutY=\"356.0\" prefHeight=\"79.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Guest Staying\" wrappingWidth=\"130.13671112060547\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"15.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                     <font>\r\n                        <Font name=\"Consolas\" size=\"38.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </VBox>\r\n            <Text fill=\"#0d3120\" layoutX=\"104.0\" layoutY=\"242.0\" opacity=\"0.79\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"User email:\" wrappingWidth=\"113.025634765625\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"20.0\" />\r\n               </font></Text>\r\n            <Label layoutX=\"626.0\" layoutY=\"311.0\" prefHeight=\"48.0\" prefWidth=\"269.0\" style=\"-fx-background-color: #B6A990;\" text=\"xx/xx/xx - xx/xx/xx\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"24.0\" />\r\n               </font></Label>\r\n            <ImageView fitHeight=\"65.0\" fitWidth=\"65.0\" layoutX=\"28.0\" layoutY=\"199.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../Img/Untitled333_20241201010635.png\" />\r\n               </image>\r\n            </ImageView>\r\n            <Label layoutX=\"218.0\" layoutY=\"222.0\" prefHeight=\"24.0\" prefWidth=\"343.0\" text=\"2222@gmail.com\" textFill=\"#a86207\">\r\n               <font>\r\n                  <Font name=\"Eras Bold ITC\" size=\"20.0\" />\r\n               </font>\r\n            </Label>\r\n            <Text fill=\"#8b7a5c\" layoutX=\"501.0\" layoutY=\"571.0\" rotate=\"-90.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"3 r d   F l o o r  ⮯\" wrappingWidth=\"194.13674926757812\" AnchorPane.rightAnchor=\"234.86325073242188\">\r\n               <font>\r\n                  <Font name=\"Century Gothic Bold\" size=\"25.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"#0d3120\" layoutX=\"623.0\" layoutY=\"291.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ B o o k e d  f o r\" wrappingWidth=\"191.469970703125\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"18.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"#0d3120\" layoutX=\"31.0\" layoutY=\"506.0\" opacity=\"0.79\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Front Desk No.\" wrappingWidth=\"159.6922607421875\">\r\n               <font>\r\n                  <Font size=\"21.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"#0d3120\" layoutX=\"283.0\" layoutY=\"506.0\" opacity=\"0.79\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"email:\" wrappingWidth=\"159.6922607421875\">\r\n               <font>\r\n                  <Font size=\"21.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"#0d3120\" layoutX=\"175.0\" layoutY=\"507.0\" opacity=\"0.79\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"23347\" wrappingWidth=\"69.025634765625\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"21.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text fill=\"#0d3120\" layoutX=\"347.0\" layoutY=\"506.0\" opacity=\"0.79\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"bandm@email.com\" wrappingWidth=\"209.025634765625\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"21.0\" />\r\n               </font>\r\n            </Text>\r\n            <Line endX=\"316.0\" endY=\"1.52587890625E-5\" layoutX=\"612.0\" layoutY=\"225.0\" startX=\"-138.0\" startY=\"1.52587890625E-5\" strokeWidth=\"2.0\">\r\n               <stroke>\r\n                  <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                     <stops>\r\n                        <Stop>\r\n                           <color>\r\n                              <Color red=\"0.7803921699523926\" green=\"0.7529411911964417\" blue=\"0.6549019813537598\" />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"0.006711409395973154\">\r\n                           <color>\r\n                              <Color red=\"0.7803921699523926\" green=\"0.7529411911964417\" blue=\"0.6549019813537598\" />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"0.23373983739837395\">\r\n                           <color>\r\n                              <Color red=\"0.7099999785423279\" green=\"0.6603000164031982\" blue=\"0.5680000185966492\" />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"1.0\">\r\n                           <color>\r\n                              <Color red=\"0.7137255072593689\" green=\"0.6627451181411743\" blue=\"0.5647059082984924\" />\r\n                           </color>\r\n                        </Stop>\r\n                     </stops>\r\n                  </LinearGradient>\r\n               </stroke>\r\n            </Line>\r\n            <Text fill=\"#86775c\" layoutX=\"829.0\" layoutY=\"215.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"powered by 4real\" />\r\n            <VBox layoutX=\"32.0\" layoutY=\"567.0\" prefHeight=\"62.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"resturant reservation\" wrappingWidth=\"152.80345916748047\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"15.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"n/a\">\r\n                     <font>\r\n                        <Font size=\"34.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </VBox>\r\n            <VBox layoutX=\"256.0\" layoutY=\"567.0\" prefHeight=\"62.0\" prefWidth=\"160.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Laundry reservation\" wrappingWidth=\"152.80345916748047\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"15.0\" />\r\n                     </font>\r\n                  </Text>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"n/a\">\r\n                     <font>\r\n                        <Font size=\"34.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </VBox>\r\n            </children>\r\n        </AnchorPane>\r\n   </center>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml b/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml	(date 1733649163790)
+@@ -57,7 +57,7 @@
+                 </Text>
+                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                 <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
+-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
++                <Button mnemonicParsing="false" onAction="#BackToDashboardOnAction" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
+                     <font>
+                         <Font name="Consolas Bold" size="24.0" />
+                     </font>
+@@ -72,32 +72,32 @@
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="room service" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" onAction="#GuestroomserviceOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="room service" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Laundry" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" onAction="#laundrybookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Laundry" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" onAction="#transportationbookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="transportation details" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#GuestReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="event booking" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" onAction="#eventbookingOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="event booking" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
++                <Button mnemonicParsing="false" onAction="#GuestLogoutOnAction" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
+                     <font>
+                         <Font name="Consolas Bold" size="20.0" />
+                     </font>
+Index: src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.chart.CategoryAxis?>\r\n<?import javafx.scene.chart.LineChart?>\r\n<?import javafx.scene.chart.NumberAxis?>\r\n<?import javafx.scene.chart.StackedBarChart?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.paint.Color?>\r\n<?import javafx.scene.paint.LinearGradient?>\r\n<?import javafx.scene.paint.Stop?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"1280.0\" style=\"-fx-background-color: #0D3120;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelHeadManager.HeadManagerDashboardController\">\r\n   <cursor>\r\n      <Cursor fx:constant=\"NE_RESIZE\" />\r\n   </cursor>\r\n   <left>\r\n      <VBox prefHeight=\"720.0\" prefWidth=\"351.0\" style=\"-fx-background-color: #0D3120;\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n            <Text fill=\"#d0913f\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"\uD83D\uDC64\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n               <font>\r\n                  <Font size=\"29.0\" />\r\n               </font>\r\n            </Text>\r\n            <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n            <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Farhana Chowdhury\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n               <font>\r\n                  <Font name=\"Bell MT Bold\" size=\"33.0\" />\r\n               </font>\r\n               <fill>\r\n                  <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                     <stops>\r\n                        <Stop>\r\n                           <color>\r\n                              <Color />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"0.006711409395973154\">\r\n                           <color>\r\n                              <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"1.0\">\r\n                           <color>\r\n                              <Color red=\"0.9647058844566345\" green=\"0.8627451062202454\" blue=\"0.7372549176216125\" />\r\n                           </color>\r\n                        </Stop>\r\n                     </stops>\r\n                  </LinearGradient>\r\n               </fill>\r\n            </Text>\r\n            <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Head Manager\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n               <font>\r\n                  <Font name=\"Bodoni MT\" size=\"26.0\" />\r\n               </font>\r\n               <fill>\r\n                  <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                     <stops>\r\n                        <Stop>\r\n                           <color>\r\n                              <Color />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"0.006711409395973154\">\r\n                           <color>\r\n                              <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                           </color>\r\n                        </Stop>\r\n                        <Stop offset=\"1.0\">\r\n                           <color>\r\n                              <Color red=\"1.0\" green=\"0.8235294222831726\" blue=\"0.6039215922355652\" />\r\n                           </color>\r\n                        </Stop>\r\n                     </stops>\r\n                  </LinearGradient>\r\n               </fill>\r\n            </Text>\r\n            <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n            <Line endX=\"251.25244140625\" endY=\"-1.583514928817749\" startX=\"-100.0\" strokeWidth=\"2.0\" />\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"60.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Dashboard\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n               <font>\r\n                  <Font name=\"Consolas Bold\" size=\"24.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"35.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Employee Schedules\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\" monthly budget reports\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"goal\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"customer reviews \" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"staff submitted inquiries\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n               <font>\r\n                  <Font name=\"Consolas\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"75.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"⬅ Logout\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n               <font>\r\n                  <Font name=\"Consolas Bold\" size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <ImageView fitHeight=\"85.0\" fitWidth=\"351.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../Img/Untitled329_20241129211738.png\" />\r\n               </image>\r\n            </ImageView>\r\n         </children></VBox>\r\n   </left>\r\n   <right>\r\n      <AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" BorderPane.alignment=\"CENTER\">\r\n         <children>\r\n            <Line endX=\"730.0\" layoutX=\"202.0\" layoutY=\"88.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" strokeWidth=\"2.0\" />\r\n            <Text fill=\"#0f4a33\" layoutX=\"22.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"⮯ Overview\">\r\n               <font>\r\n                  <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n               </font>\r\n            </Text>\r\n            <StackedBarChart layoutX=\"537.0\" layoutY=\"162.0\" prefHeight=\"322.0\" prefWidth=\"381.0\">\r\n              <xAxis>\r\n                <CategoryAxis prefHeight=\"24.0\" prefWidth=\"265.0\" side=\"BOTTOM\" />\r\n              </xAxis>\r\n              <yAxis>\r\n                <NumberAxis side=\"LEFT\" upperBound=\"10000.0\" />\r\n              </yAxis>\r\n            </StackedBarChart>\r\n            <TableView layoutX=\"17.0\" layoutY=\"501.0\" prefHeight=\"200.0\" prefWidth=\"557.0\" style=\"-fx-border-style: #8C8C7B;\">\r\n              <columns>\r\n                <TableColumn prefWidth=\"261.33338356018066\" text=\"Announcments\" />\r\n                <TableColumn text=\"from\" />\r\n                  <TableColumn prefWidth=\"108.66650390625\" text=\"date\" />\r\n                  <TableColumn prefWidth=\"104.66671752929688\" text=\"time\" />\r\n              </columns>\r\n            </TableView>\r\n            <Line endX=\"730.0\" layoutX=\"200.0\" layoutY=\"484.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" />\r\n            <Text fill=\"#4e4e40\" layoutX=\"31.0\" layoutY=\"263.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ revenue VS budget\" wrappingWidth=\"217.81787872314453\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"16.0\" />\r\n               </font>\r\n            </Text>\r\n            <LineChart layoutX=\"21.0\" layoutY=\"277.0\" prefHeight=\"189.0\" prefWidth=\"509.0\" style=\"-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;\">\r\n               <xAxis>\r\n                  <CategoryAxis side=\"BOTTOM\" />\r\n               </xAxis>\r\n               <yAxis>\r\n                  <NumberAxis prefHeight=\"128.0\" prefWidth=\"19.0\" side=\"LEFT\" tickLabelFill=\"WHITE\" />\r\n               </yAxis>\r\n            </LineChart>\r\n            <VBox layoutX=\"44.0\" layoutY=\"126.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                     <font>\r\n                        <Font size=\"38.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"active guests\" wrappingWidth=\"130.13671112060547\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"12.0\" />\r\n                     </font>\r\n                  </Text>\r\n               </children>\r\n            </VBox>\r\n            <VBox layoutX=\"213.0\" layoutY=\"126.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                     <font>\r\n                        <Font size=\"38.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"rooms occupied\" wrappingWidth=\"130.13671112060547\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"12.0\" />\r\n                     </font>\r\n                  </Text>\r\n               </children>\r\n            </VBox>\r\n            <Text fill=\"#000000aa\" layoutX=\"626.0\" layoutY=\"157.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ guests per month\" wrappingWidth=\"217.81787872314453\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"16.0\" />\r\n               </font>\r\n            </Text>\r\n            <VBox layoutX=\"385.0\" layoutY=\"125.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n               <children>\r\n                  <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                     <font>\r\n                        <Font size=\"38.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Text fill=\"#00000075\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"rooms occupied\" wrappingWidth=\"130.13671112060547\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"12.0\" />\r\n                     </font>\r\n                  </Text>\r\n               </children>\r\n            </VBox>\r\n         </children>\r\n      </AnchorPane>\r\n   </right>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml b/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml	(date 1733768958043)
+@@ -2,7 +2,6 @@
+ 
+ <?import javafx.scene.Cursor?>
+ <?import javafx.scene.chart.CategoryAxis?>
+-<?import javafx.scene.chart.LineChart?>
+ <?import javafx.scene.chart.NumberAxis?>
+ <?import javafx.scene.chart.StackedBarChart?>
+ <?import javafx.scene.control.Button?>
+@@ -21,7 +20,7 @@
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.HeadManagerDashboardController">
++<BorderPane fx:id="DashboardBorderPaneHeadManager" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.HeadManagerDashboardController">
+    <cursor>
+       <Cursor fx:constant="NE_RESIZE" />
+    </cursor>
+@@ -89,47 +88,47 @@
+             </Text>
+             <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+             <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
+-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
++            <Button mnemonicParsing="false" onAction="#BackToHeadManagerDashboardOnAction" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
+                <font>
+                   <Font name="Consolas Bold" size="24.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Employee Schedules" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#monthlyrevenueOnAction" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text=" monthly revenue report" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text=" monthly budget reports" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#postannouncementOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="post an announcement" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#performancereportsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="performance reports" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#viewbudgetOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="view budget" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="satisfaction report" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="customer reviews " textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#hotelguestreviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel guest reviews " textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
++            <Button mnemonicParsing="false" onAction="#staffinquiriesOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
+                <font>
+                   <Font name="Consolas" size="20.0" />
+                </font>
+             </Button>
+-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
++            <Button mnemonicParsing="false" onAction="#HeadManagerLogoutOnAction" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
+                <font>
+                   <Font name="Consolas Bold" size="20.0" />
+                </font>
+@@ -150,7 +149,7 @@
+                   <Font name="Bell MT Bold" size="45.0" />
+                </font>
+             </Text>
+-            <StackedBarChart layoutX="537.0" layoutY="162.0" prefHeight="322.0" prefWidth="381.0">
++            <StackedBarChart layoutX="10.0" layoutY="243.0" prefHeight="201.0" prefWidth="680.0">
+               <xAxis>
+                 <CategoryAxis prefHeight="24.0" prefWidth="265.0" side="BOTTOM" />
+               </xAxis>
+@@ -158,29 +157,15 @@
+                 <NumberAxis side="LEFT" upperBound="10000.0" />
+               </yAxis>
+             </StackedBarChart>
+-            <TableView layoutX="17.0" layoutY="501.0" prefHeight="200.0" prefWidth="557.0" style="-fx-border-style: #8C8C7B;">
++            <TableView layoutX="25.0" layoutY="447.0" prefHeight="249.0" prefWidth="882.0" style="-fx-border-style: #8C8C7B;">
+               <columns>
+-                <TableColumn prefWidth="261.33338356018066" text="Announcments" />
+-                <TableColumn text="from" />
+-                  <TableColumn prefWidth="108.66650390625" text="date" />
+-                  <TableColumn prefWidth="104.66671752929688" text="time" />
++                <TableColumn prefWidth="499.99997901916504" text="Announcments" />
++                <TableColumn prefWidth="198.6666259765625" text="from" />
++                  <TableColumn prefWidth="204.666748046875" text="date" />
+               </columns>
+             </TableView>
+-            <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+-            <Text fill="#4e4e40" layoutX="31.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ revenue VS budget" wrappingWidth="217.81787872314453">
+-               <font>
+-                  <Font name="System Bold" size="16.0" />
+-               </font>
+-            </Text>
+-            <LineChart layoutX="21.0" layoutY="277.0" prefHeight="189.0" prefWidth="509.0" style="-fx-background-color: #0f4a33; -fx-alternative-column-fill-visible: #EA62A4; -fx-alternative-row-fill-visible: #0D5030;">
+-               <xAxis>
+-                  <CategoryAxis side="BOTTOM" />
+-               </xAxis>
+-               <yAxis>
+-                  <NumberAxis prefHeight="128.0" prefWidth="19.0" side="LEFT" tickLabelFill="WHITE" />
+-               </yAxis>
+-            </LineChart>
+-            <VBox layoutX="44.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
++            <Line endX="730.0" layoutX="200.0" layoutY="426.0" startX="-202.00001525878906" stroke="#8c8c7b" />
++            <VBox layoutX="78.0" layoutY="119.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+                <children>
+                   <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                      <font>
+@@ -194,7 +179,7 @@
+                   </Text>
+                </children>
+             </VBox>
+-            <VBox layoutX="213.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
++            <VBox layoutX="276.0" layoutY="119.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+                <children>
+                   <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                      <font>
+@@ -208,25 +193,12 @@
+                   </Text>
+                </children>
+             </VBox>
+-            <Text fill="#000000aa" layoutX="626.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
++            <Text fill="#000000aa" layoutX="67.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
+                <font>
+                   <Font name="System Bold" size="16.0" />
+                </font>
+             </Text>
+-            <VBox layoutX="385.0" layoutY="125.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
+-               <children>
+-                  <Label prefHeight="47.0" prefWidth="151.0" text="0">
+-                     <font>
+-                        <Font size="38.0" />
+-                     </font>
+-                  </Label>
+-                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="rooms occupied" wrappingWidth="130.13671112060547">
+-                     <font>
+-                        <Font name="System Bold" size="12.0" />
+-                     </font>
+-                  </Text>
+-               </children>
+-            </VBox>
++            <ImageView fitHeight="299.0" fitWidth="201.0" layoutX="707.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+          </children>
+       </AnchorPane>
+    </right>
+Index: src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.HotelGuest;\r\n\r\nimport cse.fivestarhotel.HelloApplication;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.layout.BorderPane;\r\n\r\npublic class HotelGuestDashboardController\r\n{\r\n    @javafx.fxml.FXML\r\n    private BorderPane DashboardBorderPaneHotelGuest;\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n\r\n    }\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void resturanttablebookingOnAction(ActionEvent actionEvent) {\r\n\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/HotelGuest/restaurantPAGE.fxml\"));\r\n\r\n\r\n            DashboardBorderPaneHotelGuest.setRight(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void viewmenuOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/HotelGuest/ViewMenu.fxml\"));\r\n\r\n\r\n            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java b/src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java
+--- a/src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java	(date 1733767783162)
+@@ -3,7 +3,12 @@
+ import cse.fivestarhotel.HelloApplication;
+ import javafx.event.ActionEvent;
+ import javafx.fxml.FXMLLoader;
++import javafx.scene.Node;
++import javafx.scene.Scene;
+ import javafx.scene.layout.BorderPane;
++import javafx.stage.Stage;
++
++import java.io.IOException;
+ 
+ public class HotelGuestDashboardController
+ {
+@@ -16,15 +21,26 @@
+     }
+ 
+ 
++    @javafx.fxml.FXML
++    public void BackToDashboardOnAction(ActionEvent actionEvent) throws IOException {
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml"));
++        Scene scene = new Scene(fxmlLoader.load());
++        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
++        stage.setTitle("Hello");
++        stage.setScene(scene);
++        stage.show();
++    }
++
++
++
+ 
+     @javafx.fxml.FXML
+     public void resturanttablebookingOnAction(ActionEvent actionEvent) {
+ 
+         try {
+-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/restaurantPAGE.fxml"));
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml"));
+ 
+-
+-            DashboardBorderPaneHotelGuest.setRight(fxmlLoader.load());
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
+         }
+         catch(Exception e){}
+ 
+@@ -38,9 +54,112 @@
+         try {
+             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ViewMenu.fxml"));
+ 
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++
++    @javafx.fxml.FXML
++    public void GuestroomserviceOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/RoomServiceReq.fxml"));
+ 
+             DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
+         }
+         catch(Exception e){}
+     }
+-}
+\ No newline at end of file
++
++
++
++
++    @javafx.fxml.FXML
++    public void laundrybookingOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml"));
++
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++
++
++
++    @javafx.fxml.FXML
++    public void transportationbookingOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/TransportationDetailsPAGE.fxml"));
++
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++
++
++
++
++    @javafx.fxml.FXML
++    public void GuestReviewsOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml"));
++
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++    @Deprecated
++    public void ResturantReviewOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ReviewRESTURANTpage.fxml"));
++
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++    @Deprecated
++    public void HotelReviewOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ReviewROOMpage.fxml"));
++
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++
++
++
++
++
++    @javafx.fxml.FXML
++    public void eventbookingOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml"));
++
++            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
++
++
++
++    @javafx.fxml.FXML
++    public void GuestLogoutOnAction(ActionEvent actionEvent) throws IOException {
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/GuestLogin.fxml"));
++        Scene scene = new Scene(fxmlLoader.load());
++        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
++        stage.setTitle("Hello");
++        stage.setScene(scene);
++        stage.show();
++    }
++}
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM__Changes_.xml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]" date="1733047750488" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/1/2024 4:09 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM__Changes_.xml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]" date="1733136842616" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/2/2024 4:53 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]/shelved.patch	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,42 +0,0 @@
+-Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.scene.control.*;\r\n\r\npublic class GuestcheckinController\r\n{\r\n    @javafx.fxml.FXML\r\n    private TableColumn RoomtypeCol;\r\n    @javafx.fxml.FXML\r\n    private Label CheckInStatusLabel;\r\n    @javafx.fxml.FXML\r\n    private TableColumn MaritalStatusCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn NameCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn HowManyRoomsCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn idCol;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestidTextField;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestNameTextField;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestContactNoTetField;\r\n    @javafx.fxml.FXML\r\n    private ComboBox<String> MaritalStatusComboBox;\r\n    @javafx.fxml.FXML\r\n    private TableColumn NationalityCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn ContactNoCol;\r\n    @javafx.fxml.FXML\r\n    private TextField HowManyRoomsTextField;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestNationalityTextField;\r\n    @javafx.fxml.FXML\r\n    private ComboBox<String> RoomTypeComboBox;\r\n    @javafx.fxml.FXML\r\n    private TableView CheckinTableView;\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n\r\n\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void ClearFieldsOnAction(ActionEvent actionEvent) {\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void CheckInOnAction(ActionEvent actionEvent) {\r\n\r\n\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java
+---- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java	(revision 84e96b50ed6c4a319479aa8b8eb2bf8df5610994)
+-+++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java	(date 1733056601367)
+-@@ -45,6 +45,9 @@
+- 
+-     }
+- 
+-+
+-+
+-+
+-     @javafx.fxml.FXML
+-     public void ClearFieldsOnAction(ActionEvent actionEvent) {
+- 
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;ffe06a0d-a38a-49d0-901d-f1ca4a8601e0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 84e96b50ed6c4a319479aa8b8eb2bf8df5610994)
+-+++ b/.idea/workspace.xml	(date 1733056879997)
+-@@ -5,11 +5,8 @@
+-   </component>
+-   <component name="ChangeListManager">
+-     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+--      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM__Changes_.xml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]" date="1733056889189" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/1/2024 6:41 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]/shelved.patch	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,21 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/FarHanZzzz/FiveStarHotel.git\",\r\n    \"accountId\": \"05fd5f93-b42c-44cd-9acf-41986fd5422d\"\r\n  }\r\n}]]></component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision c9f2c1bf1e7f218d2f95a16d0dfdf6c4732723ca)
+-+++ b/.idea/workspace.xml	(date 1732967447409)
+-@@ -4,9 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--    </list>
+-+    <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]/shelved.patch	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,31 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetailsController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetailsController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Guest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Guest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ReserveTableController.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ReserveTable.fxml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;ffe06a0d-a38a-49d0-901d-f1ca4a8601e0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 930db218ec0279ff21c80385642f89e7b7dd169f)
+-+++ b/.idea/workspace.xml	(date 1733091499924)
+-@@ -4,19 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+--      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetailsController.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Guest.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ReserveTableController.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ReserveTable.fxml" beforeDir="false" />
+--    </list>
+-+    <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM__Changes_.xml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]" date="1733139573642" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/2/2024 5:39 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]/shelved.patch	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ /dev/null	(revision 17c468a15677f6cf30273d893e07345dff72279e)
+@@ -1,18 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;05fd5f93-b42c-44cd-9acf-41986fd5422d&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision e185904542b87806ae58d0d2d636225fafcedfbd)
+-+++ b/.idea/workspace.xml	(date 1733123381132)
+-@@ -6,7 +6,6 @@
+-   <component name="ChangeListManager">
+-     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.ComboBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelGuest.ResturantPAGEController\">\r\n   <children>\r\n      <Text fill=\"#0d3120\" layoutX=\"36.0\" layoutY=\"223.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ Table reservation:\" wrappingWidth=\"282.136474609375\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#0d3120\" layoutX=\"67.0\" layoutY=\"300.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ B o o k  a  t a b l e :\" wrappingWidth=\"272.80322265625\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"25.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#0d3120\" layoutX=\"140.0\" layoutY=\"360.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Name :\" wrappingWidth=\"82.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Label layoutX=\"310.0\" layoutY=\"199.0\" prefHeight=\"30.0\" prefWidth=\"143.0\" text=\"xx - xx - xxxx\" textFill=\"#a16b28\">\r\n         <font>\r\n            <Font size=\"22.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"232.0\" layoutY=\"334.0\" prefHeight=\"39.0\" prefWidth=\"243.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"140.0\" layoutY=\"427.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Date :\" wrappingWidth=\"82.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"232.0\" layoutY=\"401.0\" prefHeight=\"39.0\" prefWidth=\"243.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"125.0\" layoutY=\"564.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Number of People:\" wrappingWidth=\"146.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"22.0\" />\r\n         </font>\r\n      </Text>\r\n      <ComboBox layoutX=\"284.0\" layoutY=\"546.0\" prefHeight=\"33.0\" prefWidth=\"159.0\" promptText=\"0\" style=\"-fx-background-color: #B6A990;\" visibleRowCount=\"6\" />\r\n      <Button layoutX=\"224.0\" layoutY=\"626.0\" mnemonicParsing=\"false\" prefHeight=\"49.0\" prefWidth=\"206.0\" style=\"-fx-background-color: #0d3120;\" text=\"Reserve a Table\" textFill=\"#d0913f\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Button>\r\n      <ImageView fitHeight=\"135.0\" fitWidth=\"496.0\" layoutX=\"25.0\" layoutY=\"24.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Img/Untitled339_20241203033314.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <Line endX=\"225.33334350585938\" endY=\"3.0517578125E-5\" layoutX=\"236.0\" layoutY=\"241.0\" startX=\"-205.33335876464844\" startY=\"3.0517578125E-5\" stroke=\"#9d8d71\" />\r\n      <Line endX=\"225.33334350585938\" endY=\"3.0517578125E-5\" layoutX=\"236.0\" layoutY=\"192.0\" startX=\"-205.33335876464844\" startY=\"3.0517578125E-5\" />\r\n      <Line endX=\"19.833343505859375\" endY=\"-57.499969482421875\" layoutX=\"442.0\" layoutY=\"299.0\" startX=\"19.833343505859375\" startY=\"-106.49996948242188\" stroke=\"#9d8d71\" />\r\n      <Line endX=\"19.833343505859375\" endY=\"-57.499969482421875\" layoutX=\"10.0\" layoutY=\"299.0\" startX=\"19.833343505859375\" startY=\"-106.49996948242188\" />\r\n      <ImageView fitHeight=\"650.0\" fitWidth=\"354.0\" layoutX=\"551.0\" layoutY=\"37.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Img/Untitled347_20241207022737.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"#0d3120\" layoutX=\"140.0\" layoutY=\"495.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Time :\" wrappingWidth=\"82.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"232.0\" layoutY=\"469.0\" prefHeight=\"39.0\" prefWidth=\"243.0\" style=\"-fx-background-color: #B6A990;\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml b/src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml	(date 1733649163804)
+@@ -46,7 +46,7 @@
+          </font>
+       </Text>
+       <ComboBox layoutX="284.0" layoutY="546.0" prefHeight="33.0" prefWidth="159.0" promptText="0" style="-fx-background-color: #B6A990;" visibleRowCount="6" />
+-      <Button layoutX="224.0" layoutY="626.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="206.0" style="-fx-background-color: #0d3120;" text="Reserve a Table" textFill="#d0913f">
++      <Button layoutX="224.0" layoutY="626.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="206.0" style="-fx-background-color: #0d3120;" text="Book a Table" textFill="#d0913f">
+          <font>
+             <Font name="System Bold" size="18.0" />
+          </font>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;ffe06a0d-a38a-49d0-901d-f1ca4a8601e0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"preferences.sourceCode.Java\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalAccessException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/.idea/workspace.xml	(date 1733767707832)
+@@ -5,8 +5,24 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_4_09_PM__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_1_2024_6_41_PM__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_4_53_PM__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_2_2024_5_39_PM__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/HotelGuestDashboardController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/resturantPAGE.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -54,27 +70,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.HelloApplication.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "master",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelGuest.LaundryPAGEController\">\r\n   <children>\r\n      <Text fill=\"#0d3120\" layoutX=\"69.0\" layoutY=\"113.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ Laundry status:\" wrappingWidth=\"282.136474609375\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#0d3120\" layoutX=\"65.0\" layoutY=\"227.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ Pre-book Laundry\" wrappingWidth=\"250.1365966796875\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#0d3120\" layoutX=\"138.0\" layoutY=\"291.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Name    :\" wrappingWidth=\"130.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Label layoutX=\"302.0\" layoutY=\"89.0\" prefHeight=\"32.0\" prefWidth=\"55.0\" text=\"no\" textFill=\"#a16b28\">\r\n         <font>\r\n            <Font size=\"22.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"277.0\" layoutY=\"266.0\" prefHeight=\"39.0\" prefWidth=\"241.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"138.0\" layoutY=\"359.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Room No :\" wrappingWidth=\"114.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"277.0\" layoutY=\"333.0\" prefHeight=\"39.0\" prefWidth=\"243.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"138.0\" layoutY=\"449.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"additional notes\" wrappingWidth=\"146.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Button layoutX=\"234.0\" layoutY=\"583.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"249.0\" style=\"-fx-background-color: #0d3120;\" text=\"Reserve a Table\" textFill=\"#d0913f\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Button>\r\n      <Line endX=\"88.33334350585938\" endY=\"1.0000152587890625\" layoutX=\"269.0\" layoutY=\"131.0\" startX=\"-205.33335876464844\" startY=\"3.0517578125E-5\" stroke=\"#9d8d71\" />\r\n      <Line endX=\"88.33334350585938\" endY=\"1.52587890625E-5\" layoutX=\"269.0\" layoutY=\"82.0\" startX=\"-205.33335876464844\" startY=\"3.0517578125E-5\" />\r\n      <Line endX=\"19.833343505859375\" endY=\"-57.499969482421875\" layoutX=\"337.0\" layoutY=\"188.0\" startX=\"19.833343505859375\" startY=\"-106.49996948242188\" stroke=\"#9d8d71\" />\r\n      <Line endX=\"19.833343505859375\" endY=\"-57.499969482421875\" layoutX=\"43.0\" layoutY=\"189.0\" startX=\"19.833343505859375\" startY=\"-106.49996948242188\" />\r\n      <TextField layoutX=\"279.0\" layoutY=\"407.0\" prefHeight=\"97.0\" prefWidth=\"295.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <ImageView fitHeight=\"634.0\" fitWidth=\"249.0\" layoutX=\"639.0\" layoutY=\"44.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Img/Untitled343_20241204044052 (2).jpg\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml b/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml	(date 1733649167205)
+@@ -44,7 +44,7 @@
+             <Font name="Consolas" size="23.0" />
+          </font>
+       </Text>
+-      <Button layoutX="234.0" layoutY="583.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Reserve a Table" textFill="#d0913f">
++      <Button layoutX="234.0" layoutY="583.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="book laundry" textFill="#d0913f">
+          <font>
+             <Font name="System Bold" size="18.0" />
+          </font>
+Index: src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.ComboBox?>\r\n<?import javafx.scene.control.DatePicker?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelGuest.EventReservationPAGEController\">\r\n   <children>\r\n      <Text fill=\"#0d3120\" layoutX=\"65.0\" layoutY=\"76.0\" opacity=\"0.84\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"❍ Book an Event\" wrappingWidth=\"250.1365966796875\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"25.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#0d3120\" layoutX=\"119.0\" layoutY=\"140.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Name    :\" wrappingWidth=\"130.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"277.0\" layoutY=\"115.0\" prefHeight=\"39.0\" prefWidth=\"265.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"119.0\" layoutY=\"208.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Email\" wrappingWidth=\"114.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"277.0\" layoutY=\"182.0\" prefHeight=\"39.0\" prefWidth=\"265.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"119.0\" layoutY=\"436.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"additional notes\" wrappingWidth=\"146.13672256469727\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <Button layoutX=\"234.0\" layoutY=\"541.0\" mnemonicParsing=\"false\" prefHeight=\"57.0\" prefWidth=\"249.0\" style=\"-fx-background-color: #0d3120;\" text=\"Reserve a Table\" textFill=\"#d0913f\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Button>\r\n      <TextField layoutX=\"279.0\" layoutY=\"419.0\" prefHeight=\"72.0\" prefWidth=\"271.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <ImageView fitHeight=\"634.0\" fitWidth=\"249.0\" layoutX=\"639.0\" layoutY=\"44.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Img/Untitled343_20241207021419.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n      <Button layoutX=\"132.0\" layoutY=\"634.0\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"424.0\" style=\"-fx-background-color: #d0913f;\" text=\"view booked event info\" textFill=\"#0d3120\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <ComboBox layoutX=\"281.0\" layoutY=\"247.0\" prefHeight=\"43.0\" prefWidth=\"259.0\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"119.0\" layoutY=\"267.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Event type\" wrappingWidth=\"148.80336380004883\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <ComboBox layoutX=\"281.0\" layoutY=\"363.0\" prefHeight=\"33.0\" prefWidth=\"262.0\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"119.0\" layoutY=\"383.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Timing\" wrappingWidth=\"148.80336380004883\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <DatePicker layoutX=\"281.0\" layoutY=\"312.0\" prefHeight=\"25.0\" prefWidth=\"265.0\" />\r\n      <Text fill=\"#0d3120\" layoutX=\"119.0\" layoutY=\"329.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"date\" wrappingWidth=\"148.80336380004883\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml b/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml	(date 1733649163781)
+@@ -34,7 +34,7 @@
+             <Font name="Consolas" size="23.0" />
+          </font>
+       </Text>
+-      <Button layoutX="234.0" layoutY="541.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Reserve a Table" textFill="#d0913f">
++      <Button layoutX="234.0" layoutY="531.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Book Event" textFill="#d0913f">
+          <font>
+             <Font name="System Bold" size="18.0" />
+          </font>
+@@ -45,7 +45,7 @@
+             <Image url="@../Img/Untitled343_20241207021419.jpg" />
+          </image>
+       </ImageView>
+-      <Button layoutX="132.0" layoutY="634.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="424.0" style="-fx-background-color: #d0913f;" text="view booked event info" textFill="#0d3120">
++      <Button layoutX="132.0" layoutY="624.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="424.0" style="-fx-background-color: #d0913f;" text="view booked event info" textFill="#0d3120">
+          <font>
+             <Font name="System Bold" size="20.0" />
+          </font>
+Index: src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelGuest.ReviewsPAGEController\">\r\n   <children>\r\n      <Text fill=\"#0d3120\" layoutX=\"98.0\" layoutY=\"250.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Select a section :\" wrappingWidth=\"310.13672637939453\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"30.0\" />\r\n         </font>\r\n      </Text>\r\n      <Text fill=\"#246545\" layoutX=\"331.0\" layoutY=\"418.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Share your visit experience\" textAlignment=\"CENTER\" wrappingWidth=\"254.865234375\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"20.0\" />\r\n         </font>\r\n      </Text>\r\n      <Button layoutX=\"276.0\" layoutY=\"324.0\" mnemonicParsing=\"false\" prefHeight=\"52.0\" prefWidth=\"387.0\" style=\"-fx-background-color: #0D3120;\" text=\"Hotel Review\" textFill=\"#d0913f\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"22.0\" />\r\n         </font>\r\n      </Button>\r\n      <Text fill=\"#246545\" layoutX=\"327.0\" layoutY=\"635.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Share your eating experience\" textAlignment=\"CENTER\" wrappingWidth=\"254.865234375\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"20.0\" />\r\n         </font>\r\n      </Text>\r\n      <Button layoutX=\"272.0\" layoutY=\"541.0\" mnemonicParsing=\"false\" prefHeight=\"52.0\" prefWidth=\"387.0\" style=\"-fx-background-color: #0D3120;\" text=\"Resturant Review\" textFill=\"#d0913f\">\r\n         <font>\r\n            <Font name=\"Consolas Bold\" size=\"22.0\" />\r\n         </font>\r\n      </Button>\r\n      <ImageView fitHeight=\"154.0\" fitWidth=\"897.0\" layoutX=\"19.0\" layoutY=\"17.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../Img/Untitled348_20241207024630.jpg\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml b/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml	(revision 17c468a15677f6cf30273d893e07345dff72279e)
++++ b/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml	(date 1733649167210)
+@@ -7,7 +7,7 @@
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewsPAGEController">
++<AnchorPane fx:id="ReviewAnchorPene" prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.ReviewsPAGEController">
+    <children>
+       <Text fill="#0d3120" layoutX="98.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a section :" wrappingWidth="310.13672637939453">
+          <font>
+@@ -19,7 +19,7 @@
+             <Font name="Consolas Bold" size="20.0" />
+          </font>
+       </Text>
+-      <Button layoutX="276.0" layoutY="324.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Hotel Review" textFill="#d0913f">
++      <Button layoutX="276.0" layoutY="324.0" mnemonicParsing="false" onAction="#HotelReviewOnAction" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Hotel Review" textFill="#d0913f">
+          <font>
+             <Font name="Consolas Bold" size="22.0" />
+          </font>
+@@ -29,7 +29,7 @@
+             <Font name="Consolas Bold" size="20.0" />
+          </font>
+       </Text>
+-      <Button layoutX="272.0" layoutY="541.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Resturant Review" textFill="#d0913f">
++      <Button layoutX="272.0" layoutY="541.0" mnemonicParsing="false" onAction="#ResturantReviewOnAction" prefHeight="52.0" prefWidth="387.0" style="-fx-background-color: #0D3120;" text="Resturant Review" textFill="#d0913f">
+          <font>
+             <Font name="Consolas Bold" size="22.0" />
+          </font>
