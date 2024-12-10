@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.AccessGuestDetailsController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.AccessGuestDetailsController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
       <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
@@ -23,11 +18,11 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <TableView fx:id="AcessGuestDetailsTableView" layoutX="14.0" layoutY="305.0" prefHeight="288.0" prefWidth="905.0" style="-fx-background-color: #B6A990;">
+      <TableView fx:id="AcessGuestDetailsTableView" layoutX="14.0" layoutY="367.0" prefHeight="226.0" prefWidth="906.0" style="-fx-background-color: #B6A990;">
          <columns>
             <TableColumn fx:id="GuestDetailsNameCol" prefWidth="118.0" text="Name" />
-            <TableColumn fx:id="GuestDetailsIdCol" prefWidth="77.0" text="Email" />
-            <TableColumn fx:id="GuestDetailsMaritalStatusCol" prefWidth="164.0" text="Marital Status" />
+            <TableColumn fx:id="GuestDetailsIdCol" prefWidth="117.4000244140625" text="Email" />
+            <TableColumn fx:id="GuestDetailsMaritalStatusCol" prefWidth="125.79998779296875" text="Marital Status" />
             <TableColumn fx:id="GuestDetailsNationalityCol" prefWidth="124.0" text="Nationality" />
             <TableColumn fx:id="GuestDetailsContactNoCol" prefWidth="129.0" text="Contact Number" />
             <TableColumn fx:id="GuestDetailsRoomTypeCol" prefWidth="170.0" text="Room type" />

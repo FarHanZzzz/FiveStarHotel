@@ -3,7 +3,7 @@ package cse.fivestarhotel.FrontDeskStaff;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CheckInTableDummyClass  {
+public class CheckInTableDummyClass  implements Serializable{
     private String name;
     private String email;
     private String roomtype;
