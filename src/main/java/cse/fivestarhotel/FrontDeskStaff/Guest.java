@@ -2,7 +2,10 @@ package cse.fivestarhotel.FrontDeskStaff;
 
 import javafx.scene.control.ComboBox;
 
-public class Guest {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Guest implements Serializable {
     private String name;
     private String Email;   // Unique Id
     private String MaritalStatus;

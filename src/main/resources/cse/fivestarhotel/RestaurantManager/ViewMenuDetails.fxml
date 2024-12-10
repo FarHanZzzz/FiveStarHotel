@@ -16,8 +16,7 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
-      <TableView layoutX="59.0" layoutY="270.0" prefHeight="200.0" prefWidth="871.0">
+      <TableView fx:id="MenuTableView" layoutX="38.0" layoutY="300.0" prefHeight="200.0" prefWidth="871.0">
         <columns>
           <TableColumn fx:id="dishNameCol" prefWidth="253.00001525878906" text="Dish Name" />
           <TableColumn fx:id="DishTypeCol" prefWidth="208.0" text="Dish Type" />

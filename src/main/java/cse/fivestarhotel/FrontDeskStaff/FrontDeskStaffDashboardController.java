@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -39,6 +40,12 @@ public class FrontDeskStaffDashboardController
 
 
 
+
+
+
+
+
+
     @javafx.fxml.FXML
     public void roomOccupancyOnAction(ActionEvent actionEvent) {
         try {
@@ -56,8 +63,6 @@ public class FrontDeskStaffDashboardController
     public void guestDetailsOnAction(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml"));
-
-
             dashBoardBorderPane.setCenter(fxmlLoader.load());
         }
         catch(Exception e){}
@@ -135,4 +140,6 @@ public class FrontDeskStaffDashboardController
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

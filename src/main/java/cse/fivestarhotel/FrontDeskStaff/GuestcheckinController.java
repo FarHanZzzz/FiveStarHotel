@@ -10,8 +10,6 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 //import static cse.fivestarhotel.FrontDeskStaff.GuestcheckinController.EmailValidator.isValidEmail;
@@ -19,17 +17,9 @@ import java.util.stream.Collectors;
 public class GuestcheckinController implements Serializable
 {
     @javafx.fxml.FXML
-    private TableView<CheckInTableDummyClass> CheckinTableView;
-    @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,Integer> NumberofRoomsCol;
-    @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,String> RoomtypeCol;
-    @javafx.fxml.FXML
     private Label CheckInStatusLabel;
     @javafx.fxml.FXML
     private TextField GuestEmailTextField;
-    @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,String> NameCol;
     @javafx.fxml.FXML
     private TextField NumberofRoomsTextField;
     @javafx.fxml.FXML
@@ -39,25 +29,11 @@ public class GuestcheckinController implements Serializable
     @javafx.fxml.FXML
     private TextField GuestContactNoTetField;
     @javafx.fxml.FXML
-    private ComboBox<String> GuestMaritalStatusComboBox;
-    @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,String> EmailCol;
-    @javafx.fxml.FXML
-    private TextField GuestNationalityTextField;
-    @javafx.fxml.FXML
     private ComboBox<String> RoomTypeComboBox;
-
-    @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,LocalDate> checkoutCol;
-
-    @javafx.fxml.FXML
-    private TableColumn<CheckInTableDummyClass,String> roomnumberCol;
-
-
 
 
     ObservableList<CheckInTableDummyClass> CheckinTabledataList = FXCollections.observableArrayList();
-    //ObservableList<AcessGuestDetails> ViewTableListofGuest = FXCollections.observableArrayList();
+    //ObservableList<Guest> GuestDetails = FXCollections.observableArrayList();
 
 
 
@@ -66,7 +42,11 @@ public class GuestcheckinController implements Serializable
      ArrayList<Integer> SuiteRoom = new ArrayList<>();
 
 
-   // ArrayList<CheckInTableDummyClass> CheckinTabledataList = new ArrayList<>();
+    @javafx.fxml.FXML
+    private TextArea GuestTextAreaDetails;
+
+
+    // ArrayList<CheckInTableDummyClass> CheckinTabledataList = new ArrayList<>();
 
 
 
@@ -79,23 +59,20 @@ public class GuestcheckinController implements Serializable
             if (i <= 50) SingleRoom.add(i); // 50 Single rooms
             else if (i <= 80) DoubleeRoom.add(i); // 30 Double rooms
             else SuiteRoom.add(i); // 20 Suite rooms
+
+
+
         }
 
 
 
         // combobox
         RoomTypeComboBox.getItems().addAll("Single", "Double", "Suite");
-        GuestMaritalStatusComboBox.getItems().addAll("Married","Unmarried","Divorced");
+
 
 
         //String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate
 
-        NameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        EmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
-        RoomtypeCol.setCellValueFactory(new PropertyValueFactory<>("roomtype"));
-        NumberofRoomsCol.setCellValueFactory(new PropertyValueFactory<>("noofRooms"));
-        roomnumberCol.setCellValueFactory(new PropertyValueFactory<>("roomnumber"));
-        checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
 
 
 
@@ -115,10 +92,8 @@ public class GuestcheckinController implements Serializable
         GuestContactNoTetField.clear();
         NumberofRoomsTextField.clear();
         GuestEmailTextField.clear();
-        GuestNationalityTextField.clear();
         RoomTypeComboBox.setValue(null);
         CheckoutDatePicker.setValue(null);
-        GuestMaritalStatusComboBox.setValue(null);
         NumberofRoomsTextField.clear();
 
     }
@@ -132,10 +107,8 @@ public class GuestcheckinController implements Serializable
         String name = GuestNameTextField.getText();
         String email = GuestEmailTextField.getText();
         Integer contactno = Integer.valueOf(GuestContactNoTetField.getText());
-        String nationality = GuestNationalityTextField.getText();
         LocalDate checkoutDate = CheckoutDatePicker.getValue();
         String roomtype = RoomTypeComboBox.getValue();
-        String maritalStatus = GuestMaritalStatusComboBox.getValue();
         int noofRooms;
 
 
@@ -149,7 +122,7 @@ public class GuestcheckinController implements Serializable
 
 
         // validating other inputs
-        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0 || contactno == null || nationality.isEmpty() || checkoutDate == null || maritalStatus.isEmpty()){
+        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0 || contactno == null ||  checkoutDate == null ){
             CheckInStatusLabel.setText("Please fill all the fields");
         }
 
@@ -164,50 +137,20 @@ public class GuestcheckinController implements Serializable
         String roomNumber = allocatedRooms.stream().map(String::valueOf).collect(Collectors.joining(", "));
 
 
-        CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+        CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate,contactno);
         CheckinTabledataList.add(c);
-        CheckinTableView.refresh();
-
-
-        // ends
-
-        //        CheckinTabledataList.add(new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate));
-//        for(CheckInTableDummyClass c: CheckinTabledataList){
-//            CheckinTableView.getItems().add(c);
-//            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-
-        //CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
-//        CheckinTabledataList.add(temp);
-//        CheckinTableView.refresh();
-        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
-
-
-// main code of tableview
+        //CheckinTableView.refresh();
 
 
 
-            //Will create multiple file header issue while appending objects (class instances)
 
-//            if(f.exists()) {
-//                fos = new FileOutputStream(f, true);
-//                oos = new AppendableObjectOutputStream(fos);
-//            }
-//            else {
-//                fos = new FileOutputStream(f);
-//                oos = new ObjectOutputStream(fos);
-//            }
-//
         try {
-
             File f = new File("CheckInGuestDetails.bin");
-
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
 
             fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
-
-
             for(CheckInTableDummyClass s : CheckinTabledataList){
                 oos.writeObject(s);
                 CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
@@ -228,9 +171,6 @@ public class GuestcheckinController implements Serializable
 
 
 
-
-
-
 //         for (CheckInTableDummyClass s : CheckinTabledataList){
 //         //   CheckinTableView.getItems().add(s);
 //         //   CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
@@ -239,6 +179,7 @@ public class GuestcheckinController implements Serializable
 //
 //
 //        }
+
 
     }
 
@@ -292,43 +233,49 @@ public class GuestcheckinController implements Serializable
 
 
 
-    @javafx.fxml.FXML
-    public void GenerateCheckinDetailsTableOnAction(ActionEvent actionEvent) {
-
-        FileInputStream fis=null;
-        ObjectInputStream ois=null;
 
 
-        try{
-            File f = new File("CheckInGuestDetails.bin");
-            if(f.exists()){
-                fis = new FileInputStream(f);
-            }
-            else{
-                //Alert: file does not exist
-            }
-            if(fis != null) ois = new ObjectInputStream(fis);
 
-            CheckinTableView.getItems().clear();
-            while(true) {
-                CheckinTableView.getItems().add((CheckInTableDummyClass) ois.readObject());
-                //CheckinTableView.setItems(CheckinTabledataList);
-            }
-            //ois.close();
 
-        }
-        catch(Exception e){
-            try {
-                if (ois != null) ois.close();
-            }
-            catch(Exception e2){
-                //
 
-            }
+        //        // ends
+        //
+        //        //        CheckinTabledataList.add(new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate));
+        ////        for(CheckInTableDummyClass c: CheckinTabledataList){
+        ////            CheckinTableView.getItems().add(c);
+        ////            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
+        //
+        //        //CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+        ////        CheckinTabledataList.add(temp);
+        ////        CheckinTableView.refresh();
+        //        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
+        //
+        //
+        //// main code of tableview
+        //
+        //
+        //
+        //            //Will create multiple file header issue while appending objects (class instances)
+        //
+        //        // append
 
-        }
+
+        //
+        ////            if(f.exists()) {
+        ////                fos = new FileOutputStream(f, true);
+        ////                oos = new AppendableObjectOutputStream(fos);
+        ////            }
+        ////            else {
+        ////                fos = new FileOutputStream(f);
+        ////                oos = new ObjectOutputStream(fos);
+        ////            }
+        ////
+
+
+
+
     }
-}
+
 
 
 

@@ -10,6 +10,7 @@ public class CheckInTableDummyClass  implements Serializable{
     private Integer noofRooms;
     private String roomnumber;
     private LocalDate checkoutDate;
+    private Integer contactinfo;
 
     public String getName() {
         return name;
@@ -59,6 +60,14 @@ public class CheckInTableDummyClass  implements Serializable{
         this.checkoutDate = checkoutDate;
     }
 
+    public Integer getContactinfo() {
+        return contactinfo;
+    }
+
+    public void setContactinfo(Integer contactinfo) {
+        this.contactinfo = contactinfo;
+    }
+
     @Override
     public String toString() {
         return "CheckInTableDummyClass{" +
@@ -68,20 +77,26 @@ public class CheckInTableDummyClass  implements Serializable{
                 ", noofRooms=" + noofRooms +
                 ", roomnumber='" + roomnumber + '\'' +
                 ", checkoutDate=" + checkoutDate +
+                ", contactinfo=" + contactinfo +
                 '}';
     }
 
-    public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate) {
+    public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate, Integer contactinfo) {
         this.name = name;
         this.email = email;
         this.roomtype = roomtype;
         this.noofRooms = noofRooms;
         this.roomnumber = roomnumber;
         this.checkoutDate = checkoutDate;
+        this.contactinfo = contactinfo;
+
+
+
 
 
 
 
     }
 }
+
 
