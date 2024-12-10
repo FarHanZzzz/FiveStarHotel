@@ -41,7 +41,7 @@
          </font>
       </Label>
       <ComboBox fx:id="mealTypeComboBox" layoutX="602.0" layoutY="238.0" prefWidth="150.0" />
-      <Label fx:id="MenuDetailsLabel" layoutX="468.0" layoutY="371.0" prefHeight="187.0" prefWidth="397.0" style="-fx-border-color: black;" />
+      <Label fx:id="MenuDetailsLabel" layoutX="431.0" layoutY="371.0" prefHeight="187.0" prefWidth="434.0" style="-fx-border-color: black;" />
       <Label layoutX="466.0" layoutY="276.0" text="Dish Price:">
          <font>
             <Font size="18.0" />
