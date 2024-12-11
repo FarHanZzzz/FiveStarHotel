@@ -1,6 +1,7 @@
 module hotel.fivestarhotel {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.compiler;
 //    requires java.base;
 
 

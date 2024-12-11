@@ -1,10 +1,12 @@
 package cse.fivestarhotel.HotelHeadManager;
 
+import com.sun.tools.javac.Main;
 import cse.fivestarhotel.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -112,13 +114,7 @@ public class HeadManagerDashboardController
     }
 
     @javafx.fxml.FXML
-    public void HeadManagerLogoutOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/StaffLongin.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
-        stage.setTitle("Hello");
-        stage.setScene(scene);
-        stage.show();
-    }
+    private Button HeadManagerLogoutOnAction;
+
 
 }
