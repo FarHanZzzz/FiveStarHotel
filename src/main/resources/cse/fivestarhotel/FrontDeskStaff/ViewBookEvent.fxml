@@ -16,7 +16,7 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView fx:id="BookTable" layoutX="13.0" layoutY="233.0" prefHeight="343.0" prefWidth="908.0" style="-fx-border-style: #8C8C7B;">
+      <TableView fx:id="BookEventTableView" layoutX="13.0" layoutY="233.0" prefHeight="343.0" prefWidth="908.0" style="-fx-border-style: #8C8C7B;">
          <columns>
             <TableColumn fx:id="nameCol" prefWidth="115.20003986358643" text="Name" />
             <TableColumn fx:id="emailCol" prefWidth="96.79998779296875" text="Email" />

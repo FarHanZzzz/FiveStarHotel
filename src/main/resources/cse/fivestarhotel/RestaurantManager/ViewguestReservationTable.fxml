@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.ViewguestReservationTableController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.ViewguestReservationTableController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
       <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
@@ -17,12 +17,12 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView layoutX="42.0" layoutY="260.0" prefHeight="403.0" prefWidth="823.0" style="-fx-border-color: black;">
+      <TableView fx:id="BooktableTableView" layoutX="42.0" layoutY="260.0" prefHeight="403.0" prefWidth="823.0" style="-fx-border-color: black;">
         <columns>
           <TableColumn fx:id="nameCol" prefWidth="172.0" text="Name" />
-          <TableColumn fx:id="timeCol" prefWidth="163.00001525878906" text="Time" />
-            <TableColumn fx:id="dateCol" prefWidth="173.0" text="Date" />
-            <TableColumn fx:id="numberofPeopleCol" prefWidth="313.0" text="Number of People" />
+          <TableColumn fx:id="timeCol" prefWidth="174.4000244140625" text="Time" />
+            <TableColumn fx:id="dateCol" prefWidth="255.19998168945312" text="Date" />
+            <TableColumn fx:id="numberofPeopleCol" prefWidth="222.4000244140625" text="Number of People" />
         </columns>
       </TableView>
       <Button layoutX="320.0" layoutY="208.0" mnemonicParsing="false" onAction="#viewGuestReservationTableOnAction" prefHeight="39.0" prefWidth="245.0" text="View Guest Reservation Table">

@@ -1,8 +1,6 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
@@ -12,30 +10,28 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ViewBookEventController
+public class ViewBookEventController implements Serializable
 {
     @javafx.fxml.FXML
-    private TableColumn<Book, LocalDate> dateCol;
+    private TableColumn<Event, LocalDate> dateCol;
     @javafx.fxml.FXML
-    private TableColumn<Book,String> nameCol;
+    private TableColumn<Event,String> nameCol;
     @javafx.fxml.FXML
-    private TableColumn<Book,String> emailCol;
+    private TableColumn<Event,String> emailCol;
     @javafx.fxml.FXML
-    private TableColumn<Book,String> timingCol;
+    private TableColumn<Event,String> timingCol;
     @javafx.fxml.FXML
-    private TableColumn<Book,String> eventtypeCol;
+    private TableColumn<Event,String> eventtypeCol;
     @javafx.fxml.FXML
-    private TableColumn<Book,String> additionalNotesCol;
-    @javafx.fxml.FXML
-    private TableView<Book> BookTable;
+    private TableColumn<Event,String> additionalNotesCol;
 
 
-
-    ObservableList<Book> Booklist = FXCollections.observableArrayList();
-
-
+    ObservableList<Event> BookEventlist = FXCollections.observableArrayList();
+    @javafx.fxml.FXML
+    private TableView<Event> BookEventTableView;
 
 
     @javafx.fxml.FXML
@@ -47,6 +43,7 @@ public class ViewBookEventController
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         timingCol.setCellValueFactory(new PropertyValueFactory<>("timing"));
         additionalNotesCol.setCellValueFactory(new PropertyValueFactory<>("additionalNotes"));
+        eventtypeCol.setCellValueFactory(new PropertyValueFactory<>("eventType"));
 
 
 
@@ -61,7 +58,7 @@ public class ViewBookEventController
 
 
         try{
-            File f = new File("BookTableDetails.bin");
+            File f = new File("BookEventDetails.bin");
             if(f.exists()){
                 fis = new FileInputStream(f);
             }
@@ -70,10 +67,10 @@ public class ViewBookEventController
             }
             if(fis != null) ois = new ObjectInputStream(fis);
 
-            BookTable.getItems().clear();
+            BookEventTableView.getItems().clear();
 
             while(true) {
-                BookTable.getItems().add((Book) ois.readObject());
+                BookEventTableView.getItems().add((Event) ois.readObject());
 
 
                 //CheckinTableView.setItems(CheckinTabledataList);

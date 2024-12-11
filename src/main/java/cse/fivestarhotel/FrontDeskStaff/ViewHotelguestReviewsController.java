@@ -1,7 +1,13 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
-public class ViewHotelguestReviewsController
+import java.io.Serializable;
+
+public class ViewHotelguestReviewsController implements Serializable
 {
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+
+
+
+    }
+}

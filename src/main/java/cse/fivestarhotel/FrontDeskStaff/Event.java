@@ -2,19 +2,22 @@ package cse.fivestarhotel.FrontDeskStaff;
 
 import java.time.LocalDate;
 
-public class Book {
+public class Event {
     private String name,email;
-    private LocalDate Date;
+    private String eventType;
+    private LocalDate date;
     private String timing;
     private String additionalNotes;
 
 
-    public Book(String name, String email, LocalDate date, String timing, String additionalNotes) {
+    public Event(String name, String email, String eventType, LocalDate date, String timing, String additionalNotes) {
         this.name = name;
         this.email = email;
-        Date = date;
+        this.eventType = eventType;
+        this.date = date;
         this.timing = timing;
         this.additionalNotes = additionalNotes;
+
     }
 
 
@@ -34,12 +37,20 @@ public class Book {
         this.email = email;
     }
 
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
     public LocalDate getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(LocalDate date) {
-        Date = date;
+        this.date = date;
     }
 
     public String getTiming() {
@@ -60,10 +71,11 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "Event{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", Date=" + Date +
+                ", eventType='" + eventType + '\'' +
+                ", Date=" + date +
                 ", timing='" + timing + '\'' +
                 ", additionalNotes='" + additionalNotes + '\'' +
                 '}';

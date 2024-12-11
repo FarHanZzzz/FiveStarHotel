@@ -1,0 +1,41 @@
+
+/// Goals thats been Done
+
+1) View Book Event ->>>>>>>>>>>>>> ViewBookEvent
+
+2) Add Check in  -> - >>  Guestcheckin
+
+3) View Hotel Guest Reviews ->>>>  ViewHotelguestReviews
+
+4) View CHecked in guests ( Access guest details)  -> AccessGuestDetails
+
+
+//
+Model class = Event , BookTable, CheckInTableDummyClass,
+//
+
+
+
+
+**  Pending
+5) Submit Queries       - >- >- >- >- >- >- >- >- >- >- >      will do it
+
+6) View Transportation Service details  - >- >- >- >- >- >- >- >   will do it
+
+7) Dashboard       - >- >- >- >- >- >- >- >- >
+
+
+
+
+////////
+
+8) Room occupancy check         ||  Needs Validation and
+9) Checkout                     ||  proper
+
+////////
+
+
+
+
+
+

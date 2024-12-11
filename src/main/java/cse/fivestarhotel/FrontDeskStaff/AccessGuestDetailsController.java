@@ -46,9 +46,6 @@ public class AccessGuestDetailsController implements Serializable
         checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
         contactInfoCol.setCellValueFactory(new PropertyValueFactory<>("contactinfo"));
 
-
-
-
     }
 
 
