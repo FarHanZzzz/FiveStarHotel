@@ -51,7 +51,7 @@ public class ReviewsPAGEController implements Serializable {
 
         // Step 4: Write the reviews to a file
         try {
-            File file = new File("Reviews.bin");
+            File file = new File("HotelGuestReview.bin");
             FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
