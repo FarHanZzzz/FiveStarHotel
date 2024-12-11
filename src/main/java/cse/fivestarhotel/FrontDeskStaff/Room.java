@@ -2,7 +2,9 @@ package cse.fivestarhotel.FrontDeskStaff;
 
 import javafx.scene.control.ComboBox;
 
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
 
     private String roomtype;
     private Integer roomid;

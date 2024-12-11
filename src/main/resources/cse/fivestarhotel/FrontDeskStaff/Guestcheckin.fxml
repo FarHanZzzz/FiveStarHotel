@@ -65,7 +65,7 @@
          </font>
       </Button>
       <Button layoutX="57.0" layoutY="377.0" mnemonicParsing="false" onAction="#ClearFieldsOnAction" text="clear All Text fields" />
-      <Label fx:id="CheckInStatusLabel" layoutX="372.0" layoutY="347.0" prefHeight="30.0" prefWidth="553.0" style="-fx-border-color: #0D3120;" text="Check in status : " />
+      <Label fx:id="CheckInStatusLabel" layoutX="372.0" layoutY="347.0" prefHeight="113.0" prefWidth="553.0" style="-fx-border-color: #0D3120;" text="Check in status : " />
       <Label layoutX="397.0" layoutY="250.0" text="Check out Date:">
          <font>
             <Font name="System Bold" size="12.0" />

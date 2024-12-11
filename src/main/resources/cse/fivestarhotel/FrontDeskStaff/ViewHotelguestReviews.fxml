@@ -17,15 +17,14 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView layoutX="41.0" layoutY="241.0" prefHeight="274.0" prefWidth="852.0">
+      <TableView fx:id="ReviewTableView" layoutX="41.0" layoutY="241.0" prefHeight="274.0" prefWidth="852.0">
          <columns>
-            <TableColumn prefWidth="137.0" text="Name" />
-            <TableColumn prefWidth="149.0" text="Email" />
-            <TableColumn prefWidth="186.0" text="Rating" />
-            <TableColumn prefWidth="379.0" text="Description" />
+            <TableColumn fx:id="nameCol" prefWidth="137.0" text="Name" />
+            <TableColumn fx:id="ratingCol" prefWidth="186.0" text="Rating" />
+            <TableColumn fx:id="reviewCol" prefWidth="528.0" text="Review" />
          </columns>
       </TableView>
-      <Button layoutX="737.0" layoutY="111.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="151.0" text="View Hotel Guest Reviews" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="737.0" layoutY="111.0" mnemonicParsing="false" onAction="#ViewHotelGuestReviews" prefHeight="98.0" prefWidth="151.0" text="View Hotel Guest Reviews" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="17.0" />
          </font>

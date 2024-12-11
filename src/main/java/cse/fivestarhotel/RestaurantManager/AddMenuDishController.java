@@ -1,5 +1,6 @@
 package cse.fivestarhotel.RestaurantManager;
 
+import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import cse.fivestarhotel.FrontDeskStaff.CheckInTableDummyClass;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -59,29 +60,30 @@ public class AddMenuDishController implements Serializable
 
 
         try {
-
             File f = new File("MenuDetails.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
 
-            FileOutputStream fos = null;
-            ObjectOutputStream oos = null;
-
-            fos = new FileOutputStream(f);
-            oos = new ObjectOutputStream(fos);
-
-
-            for(Menu m : menudetails){
-                oos.writeObject(m);
-                MenuDetailsLabel.setText("Menu is added " + m.toString());
-
+            // Use appropriate streams based on file existence
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
             }
 
+            // Write the object
+            oos.writeObject(s);
 
+            // Update UI
+
+            MenuDetailsLabel.setText("Add menu detais:" +s.toString());
             oos.close();
-        }
-        catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
     }

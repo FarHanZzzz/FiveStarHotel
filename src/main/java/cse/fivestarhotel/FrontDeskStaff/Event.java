@@ -1,8 +1,9 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Event {
+public class Event implements Serializable {
     private String name,email;
     private String eventType;
     private LocalDate date;

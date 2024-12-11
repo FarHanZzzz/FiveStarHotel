@@ -21,6 +21,41 @@ public class HotelGuestDashboardController
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @javafx.fxml.FXML
     public void BackToDashboardOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/HotelGuestDashboard.fxml"));

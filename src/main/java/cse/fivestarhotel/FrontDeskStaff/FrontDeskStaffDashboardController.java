@@ -123,7 +123,6 @@ public class FrontDeskStaffDashboardController
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml"));
 
-
             dashBoardBorderPane.setCenter(fxmlLoader.load());
         }
         catch(Exception e){}

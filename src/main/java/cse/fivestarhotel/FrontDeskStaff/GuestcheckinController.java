@@ -33,6 +33,11 @@ public class GuestcheckinController implements Serializable
 
 
     ObservableList<CheckInTableDummyClass> CheckinTabledataList = FXCollections.observableArrayList();
+
+
+
+
+
     //ObservableList<Guest> GuestDetails = FXCollections.observableArrayList();
 
 
@@ -142,49 +147,34 @@ public class GuestcheckinController implements Serializable
 
 
 
-
-
         try {
             File f = new File("CheckInGuestDetails.bin");
-            FileOutputStream fos = null;
-            ObjectOutputStream oos = null;
+            FileOutputStream fos;
+            ObjectOutputStream oos;
 
-
-            if(f.exists()) {
+            // Use appropriate streams based on file existence
+            if (f.exists()) {
                 fos = new FileOutputStream(f, true);
                 oos = new AppendableObjectOutputStream(fos);
-            }
-            else {
+            } else {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
-            fos = new FileOutputStream(f);
-                oos = new ObjectOutputStream(fos);
-            for(CheckInTableDummyClass s : CheckinTabledataList){
-                oos.writeObject(s);
-                CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-                GuestTextAreaDetails.setText("Guest Details: " + s.toString());
 
-          }
+            // Write the object
+            oos.writeObject(c);
 
+            // Update UI
+            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
+            GuestTextAreaDetails.setText("Guest Details: " + CheckinTabledataList.toString());
 
             oos.close();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
 
 
-
-
-
-
-
-//         for (CheckInTableDummyClass s : CheckinTabledataList){
-//         //   CheckinTableView.getItems().add(s);
-//         //   CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-//        }
 
 
     }

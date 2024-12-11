@@ -10,10 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.time.LocalDate;
 
 public class AccessGuestDetailsController implements Serializable
@@ -35,6 +32,7 @@ public class AccessGuestDetailsController implements Serializable
     private TableColumn<CheckInTableDummyClass,String> NameCol;
     @javafx.fxml.FXML
     private TableColumn<CheckInTableDummyClass,Integer> contactInfoCol;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -90,5 +88,11 @@ public class AccessGuestDetailsController implements Serializable
         }
 
     }
+
+
+
+
+
+
 
 }

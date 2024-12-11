@@ -17,6 +17,9 @@ public class RestaurantManagerDashboardController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+
+
     }
 
 

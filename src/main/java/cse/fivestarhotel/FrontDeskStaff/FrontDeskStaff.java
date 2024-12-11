@@ -1,6 +1,8 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
-public class FrontDeskStaff {
+import java.io.Serializable;
+
+public class FrontDeskStaff  {
 
     private String name;
 

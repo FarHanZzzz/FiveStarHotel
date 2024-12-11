@@ -72,12 +72,7 @@ public class ViewMenuDetailsController implements Serializable
 
             }
 
+
         }
-
-
-
-
-
-
     }
 }

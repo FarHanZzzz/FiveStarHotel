@@ -29,13 +29,13 @@ public class ViewBookEventController implements Serializable
     private TableColumn<Event,String> additionalNotesCol;
 
 
-    ObservableList<Event> BookEventlist = FXCollections.observableArrayList();
+    //ObservableList<Event> BookEventlist = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     private TableView<Event> BookEventTableView;
 
 
     @javafx.fxml.FXML
-
     //String name, String email, LocalDate date, String timing, String additionalNotes
     public void initialize() {
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
