@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ReviewAnchorPene" prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.SubmitQueriesController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.SubmitQueriesController">
     <children>
-        <Text fill="#0d3120" layoutX="55.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="310.13672637939453">
+        <Text fill="#0d3120" layoutX="51.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="310.13672637939453">
             <font>
                 <Font name="Consolas Bold" size="28.0" />
             </font>
@@ -21,23 +21,28 @@
                 <Font name="Consolas Bold" size="20.0" />
             </font>
         </Button>
-        <Text fill="#0d3120" layoutX="56.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="310.13672637939453">
+        <Text fill="#0d3120" layoutX="55.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="310.13672637939453">
             <font>
                 <Font name="Consolas Bold" size="29.0" />
             </font>
         </Text>
-        <ComboBox fx:id="PositionComboBox" layoutX="368.0" layoutY="360.0" prefHeight="40.0" prefWidth="225.0" />
-        <TextField fx:id="nameTextField" layoutX="367.0" layoutY="282.0" prefHeight="46.0" prefWidth="371.0" style="-fx-background-color: #B6A990;" />
-        <Text fill="#0d3120" layoutX="59.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="310.13672637939453">
+        <ComboBox fx:id="PositionComboBox" layoutX="365.0" layoutY="240.0" prefHeight="40.0" prefWidth="225.0" />
+        <TextField fx:id="nameTextField" layoutX="362.0" layoutY="132.0" prefHeight="46.0" prefWidth="371.0" style="-fx-background-color: #B6A990;" />
+        <Text fill="#0d3120" layoutX="55.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="310.13672637939453">
             <font>
                 <Font name="Consolas Bold" size="28.0" />
             </font>
         </Text>
-        <TextArea fx:id="DescriptionTextArea" layoutX="362.0" layoutY="433.0" prefHeight="148.0" prefWidth="476.0" />
-        <Label fx:id="reviewDetailsLabel" layoutX="330.0" layoutY="218.0" prefHeight="0.0" prefWidth="238.0" textAlignment="CENTER">
+        <TextArea fx:id="DescriptionTextArea" layoutX="362.0" layoutY="332.0" prefHeight="249.0" prefWidth="513.0" />
+        <Label fx:id="QueryStatusLabel" layoutX="321.0" layoutY="66.0" prefHeight="0.0" prefWidth="238.0" textAlignment="CENTER">
             <font>
                 <Font name="Consolas" size="15.0" />
             </font>
         </Label>
+        <Button layoutX="36.0" layoutY="629.0" mnemonicParsing="false" onAction="#clearFieldsOnAction" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #0D3120;" text="Clear Fields" textFill="#f5a831">
+            <font>
+                <Font name="Consolas Bold" size="14.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>

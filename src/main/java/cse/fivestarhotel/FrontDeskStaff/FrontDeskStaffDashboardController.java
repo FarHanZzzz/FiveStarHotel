@@ -46,18 +46,7 @@ public class FrontDeskStaffDashboardController
 
 
 
-    @javafx.fxml.FXML
-    public void roomOccupancyOnAction(ActionEvent actionEvent) {
-        try {
-                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/CheckRoomOccupancy.fxml"));
 
-
-            dashBoardBorderPane.setCenter(fxmlLoader.load());
-        }
-        catch(Exception e){}
-
-
-    }
 
     @javafx.fxml.FXML
     public void guestDetailsOnAction(ActionEvent actionEvent) {
@@ -118,7 +107,7 @@ public class FrontDeskStaffDashboardController
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ViewBookeventOnAction(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml"));
@@ -141,4 +130,33 @@ public class FrontDeskStaffDashboardController
     }
 
 
+    @javafx.fxml.FXML
+    public void BookedEventDetailsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml"));
+
+
+            dashBoardBorderPane.setCenter(fxmlLoader.load());
+        }
+        catch(Exception e){}
+
+
+    }
+
+
+    //Submit Queries
+
+    @javafx.fxml.FXML
+    public void SubmitQueriesOnAction(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml"));
+
+
+            dashBoardBorderPane.setCenter(fxmlLoader.load());
+        }
+        catch(Exception e){}
+
+
+    }
 }

@@ -13,7 +13,7 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView fx:id="MenuTableView" layoutX="38.0" layoutY="300.0" prefHeight="405.0" prefWidth="871.0">
+      <TableView fx:id="MenuTableView" layoutX="38.0" layoutY="193.0" prefHeight="512.0" prefWidth="871.0">
         <columns>
           <TableColumn fx:id="dishNameCol" prefWidth="253.00001525878906" text="Dish Name" />
           <TableColumn fx:id="DishTypeCol" prefWidth="208.0" text="Dish Type" />
@@ -21,6 +21,6 @@
             <TableColumn fx:id="priceCol" prefWidth="200.0" text="Price" />
         </columns>
       </TableView>
-      <Button layoutX="291.0" layoutY="259.0" mnemonicParsing="false" onAction="#viewMenuDetailsOnAction" prefHeight="25.0" prefWidth="250.0" text="View Menu Details" />
+      <Button layoutX="293.0" layoutY="148.0" mnemonicParsing="false" onAction="#viewMenuDetailsOnAction" prefHeight="25.0" prefWidth="250.0" text="View Menu Details" />
    </children>
 </AnchorPane>

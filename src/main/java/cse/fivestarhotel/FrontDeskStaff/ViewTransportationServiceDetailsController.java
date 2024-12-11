@@ -35,10 +35,9 @@ public class ViewTransportationServiceDetailsController
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
         destinationCol.setCellValueFactory(new PropertyValueFactory<>("destination"));
-        destinationCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         timeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
         vehicleTypeCol.setCellValueFactory(new PropertyValueFactory<>("vehicletype"));
-
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
     }
 
@@ -48,7 +47,7 @@ public class ViewTransportationServiceDetailsController
 
 
     @javafx.fxml.FXML
-    public void showBookingDetailsOnAction(ActionEvent actionEvent) {
+    public void showTransportationBookingDetailsOnAction(ActionEvent actionEvent) {
         FileInputStream fis=null;
         ObjectInputStream ois=null;
 
@@ -84,10 +83,6 @@ public class ViewTransportationServiceDetailsController
             }
 
         }
-
-
-
-
 
     }
 }
