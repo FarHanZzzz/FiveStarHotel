@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewBookEventController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewBookEventController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
       <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
@@ -16,19 +16,19 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView layoutX="13.0" layoutY="233.0" prefHeight="343.0" prefWidth="908.0" style="-fx-border-style: #8C8C7B;">
+      <TableView fx:id="BookTable" layoutX="13.0" layoutY="233.0" prefHeight="343.0" prefWidth="908.0" style="-fx-border-style: #8C8C7B;">
          <columns>
-            <TableColumn prefWidth="75.0" text="Name" />
-            <TableColumn prefWidth="75.0" text="Email" />
-            <TableColumn prefWidth="75.0" text="Event Type" />
-            <TableColumn prefWidth="75.0" text="Date" />
-            <TableColumn prefWidth="75.0" text="Timing" />
-            <TableColumn prefWidth="75.0" text="Additional Notes" />
+            <TableColumn fx:id="nameCol" prefWidth="115.20003986358643" text="Name" />
+            <TableColumn fx:id="emailCol" prefWidth="96.79998779296875" text="Email" />
+            <TableColumn fx:id="eventtypeCol" prefWidth="102.39996337890625" text="Event Type" />
+            <TableColumn fx:id="dateCol" prefWidth="116.79998779296875" text="Date" />
+            <TableColumn fx:id="timingCol" prefWidth="105.60006713867188" text="Timing" />
+            <TableColumn fx:id="additionalNotesCol" prefWidth="369.5999755859375" text="Additional Notes" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="22.0" layoutY="194.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="255.0" text="VIew Book Event Details of Guest" />
+      <Button layoutX="211.0" layoutY="188.0" mnemonicParsing="false" onAction="#ViewBookEventDetailsOnAction" prefHeight="26.0" prefWidth="437.0" text="VIew Book Event Details of Guest" />
    </children>
 </AnchorPane>
