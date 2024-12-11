@@ -2,6 +2,10 @@ package cse.fivestarhotel.FrontDeskStaff;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
+//package cse.fivestarhotel.FrontDeskStaff;
+
+import javafx.event.ActionEvent;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -41,7 +45,7 @@ public class AccessGuestDetailsController implements Serializable
         roomnumberCol.setCellValueFactory(new PropertyValueFactory<>("roomnumber"));
         checkoutCol.setCellValueFactory(new PropertyValueFactory<>("checkoutDate"));
         contactInfoCol.setCellValueFactory(new PropertyValueFactory<>("contactinfo"));
-        System.out.println("farhan");
+
 
 
 
@@ -90,4 +94,4 @@ public class AccessGuestDetailsController implements Serializable
 
     }
 
-        }
+}

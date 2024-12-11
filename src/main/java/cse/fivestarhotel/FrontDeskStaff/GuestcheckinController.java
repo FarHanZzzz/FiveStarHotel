@@ -139,7 +139,7 @@ public class GuestcheckinController implements Serializable
 
         CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate,contactno);
         CheckinTabledataList.add(c);
-        //CheckinTableView.refresh();
+
 
 
 
@@ -149,11 +149,21 @@ public class GuestcheckinController implements Serializable
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
 
+
+            if(f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            }
+            else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
             fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             for(CheckInTableDummyClass s : CheckinTabledataList){
                 oos.writeObject(s);
                 CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
+                GuestTextAreaDetails.setText("Guest Details: " + s.toString());
 
           }
 
@@ -174,10 +184,6 @@ public class GuestcheckinController implements Serializable
 //         for (CheckInTableDummyClass s : CheckinTabledataList){
 //         //   CheckinTableView.getItems().add(s);
 //         //   CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-//
-//
-//
-//
 //        }
 
 
@@ -261,17 +267,17 @@ public class GuestcheckinController implements Serializable
 
 
         //
-        ////            if(f.exists()) {
-        ////                fos = new FileOutputStream(f, true);
-        ////                oos = new AppendableObjectOutputStream(fos);
-        ////            }
-        ////            else {
-        ////                fos = new FileOutputStream(f);
-        ////                oos = new ObjectOutputStream(fos);
-        ////            }
-        ////
-
-
+//                    if(f.exists()) {
+//                        fos = new FileOutputStream(f, true);
+//                        oos = new AppendableObjectOutputStream(fos);
+//                    }
+//                    else {
+//                        fos = new FileOutputStream(f);
+//                        oos = new ObjectOutputStream(fos);
+//                    }
+//
+//
+//
 
 
     }

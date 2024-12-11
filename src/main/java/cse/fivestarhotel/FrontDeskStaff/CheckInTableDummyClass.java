@@ -70,15 +70,9 @@ public class CheckInTableDummyClass  implements Serializable{
 
     @Override
     public String toString() {
-        return "CheckInTableDummyClass{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", roomtype='" + roomtype + '\'' +
-                ", noofRooms=" + noofRooms +
-                ", roomnumber='" + roomnumber + '\'' +
-                ", checkoutDate=" + checkoutDate +
-                ", contactinfo=" + contactinfo +
-                '}';
+        return
+                "name=" + name  + ", email =" + email + ", roomtype=" + roomtype  + ", noofRooms=" + noofRooms +
+                        ", roomnumber='" + roomnumber  + ", checkoutDate=" + checkoutDate + ", contactinfo=" + contactinfo + '}';
     }
 
     public CheckInTableDummyClass(String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate, Integer contactinfo) {
