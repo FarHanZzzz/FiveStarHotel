@@ -1,5 +1,6 @@
 package cse.fivestarhotel.HotelGuest;
 
+import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,37 +29,43 @@ public class ReviewsPAGEController implements Serializable {
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Populate the ComboBox with star ratings
-        ratingComboBox.getItems().addAll("★", "★★", "★★★", "★★★★", "★★★★★");
+
+        ratingComboBox.getItems().addAll("★", "★★", "★★★", "★★★★","★★★★★");
     }
 
     @javafx.fxml.FXML
     public void submitreviewButtonOnAction(ActionEvent actionEvent) {
-        // Step 1: Get data from input fields
+
         String name = reviewnameTextField.getText();
         String rating = ratingComboBox.getValue();
         String reviewText = reviewTextArea.getText();
 
-        // Step 2: Validate input fields
+
         if (name.isEmpty() || rating == null || reviewText.isEmpty()) {
             reviewDetailsLabel.setText("Please fill all the fields");
             return;
         }
 
-        // Step 3: Create a new Review object
         Reviews review = new Reviews(name, rating, reviewText);
         reviews.add(review);
 
-        // Step 4: Write the reviews to a file
         try {
-            File file = new File("Reviews.bin");
-            FileOutputStream fos = new FileOutputStream(file);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            File f = new File("HotelGuestReview.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
 
-            for (Reviews r : reviews) {
-                oos.writeObject(r);
-                reviewDetailsLabel.setText("Thank you for your feedback!");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
             }
+
+            // Write the object
+            oos.writeObject(review);
+
+            reviewDetailsLabel.setText("Thank you for your feedback!");
 
             oos.close();
         } catch (Exception e) {

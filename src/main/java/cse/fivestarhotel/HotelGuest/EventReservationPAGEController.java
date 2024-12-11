@@ -2,9 +2,11 @@ package cse.fivestarhotel.HotelGuest;
 
 import cse.fivestarhotel.FrontDeskStaff.Event;
 import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import javafx.collections.FXCollections;
@@ -13,9 +15,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class EventReservationPAGEController {
+public class EventReservationPAGEController implements Serializable {
 
     @FXML
     private TextField eventnameField;
@@ -29,18 +32,17 @@ public class EventReservationPAGEController {
     private ComboBox<String> eventTypeComboBox;
     @FXML
     private TextField eventadditionalNotesField;
-
-
     @FXML
+    private Label eventstatusLabel;
+
+    ObservableList<Event> events = FXCollections.observableArrayList();
+
+
+    @javafx.fxml.FXML
     public void initialize() {
-        // Populate timing options
-        ObservableList<String> timingOptions = FXCollections.observableArrayList("1 pm", "5 pm", "7 pm");
-        eventtimingComboBox.setItems(timingOptions);
-
-        // Populate event type options
-        ObservableList<String> eventTypeOptions = FXCollections.observableArrayList("Birthday", "Wedding", "Office Party", "Other");
-        eventTypeComboBox.setItems(eventTypeOptions);
-
+        // Populate the ComboBox with star ratings
+        eventTypeComboBox.getItems().addAll("Birthday", "Wedding", "Work Event", "Other");
+        eventtimingComboBox.getItems().addAll("1 pm", "5 pm", "7 pm");
     }
 
     @FXML
@@ -48,35 +50,53 @@ public class EventReservationPAGEController {
         String name = eventnameField.getText();
         String email = eventemailField.getText();
         LocalDate date = eventdatePicker.getValue();
-        String timing = eventtimingComboBox.getValue(); // Get selected timing
-        String eventType = eventTypeComboBox.getValue(); // Get selected event type
-        String eventadditionalNotes = eventadditionalNotesField.getText();
+        String timing = eventtimingComboBox.getValue();
+        String eventType = eventTypeComboBox.getValue();
+        String additionalNotes = eventadditionalNotesField.getText();
 
-        Event event = new Event(name, email, eventType, date, timing, eventadditionalNotes);
 
-        FileOutputStream fos = null;
-        ObjectOutputStream oos = null;
+        if (name.isEmpty() || email.isEmpty() || date == null || timing == null || eventType == null || additionalNotes.isEmpty()) {
+            eventstatusLabel.setText("Please input all the details."); // Show error message
+            return;
+        }
 
+        Event event = new Event(name, email, eventType, date, timing, additionalNotes);
+        events.add(event);
+
+
+        // Step 4: Write the reviews to a file
         try {
-            File file = new File("BookEventDetails.bin");
-            fos = new FileOutputStream(file, true);
+            File f = new File("BookEventDetails.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
 
-            if (file.exists() && file.length() > 0) {
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
                 oos = new AppendableObjectOutputStream(fos);
             } else {
+                fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
 
+            // Write the object
             oos.writeObject(event);
+
+            eventstatusLabel.setText("Event Booked!");
+
+            oos.close();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (oos != null) oos.close();
-                if (fos != null) fos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        }
+
+
+        eventnameField.clear();
+        eventemailField.clear();
+        eventdatePicker.setValue(null);
+        eventtimingComboBox.setValue(null);
+        eventTypeComboBox.setValue(null);
+        eventadditionalNotesField.setText(null);
+
         }
     }
-}
+
+
