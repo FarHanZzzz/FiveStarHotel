@@ -36,6 +36,14 @@ Model class = Event , BookTable, CheckInTableDummyClass,
 
 
 
+// CONNECTIONSS
 
+// FOR FRONT DESK --connection with--  HEAD MANAGER
+// SubmitQueriesController ---  ViewStaffquiriesController
 
+// FOR FRONT DESK --connection with-- HOTEL GUEST
+// ViewBookEventController -- EventReservationPAGEController        D O N E
+// ViewHotelguestReviewsController -- ReviewsPAGEController         D O N E
+// ViewTransportationServiceDetailsController -- TransportationDetailsPAGEController
+// (Ekhane 3 ta tei table view er write er code ta korbi)
 

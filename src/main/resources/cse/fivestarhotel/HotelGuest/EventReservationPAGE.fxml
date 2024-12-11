@@ -22,47 +22,42 @@
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <TextField layoutX="277.0" layoutY="115.0" prefHeight="39.0" prefWidth="265.0" style="-fx-background-color: #B6A990;" />
+      <TextField fx:id="eventnameField" layoutX="277.0" layoutY="115.0" prefHeight="39.0" prefWidth="265.0" style="-fx-background-color: #B6A990;" />
       <Text fill="#0d3120" layoutX="119.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="114.13672256469727">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <TextField layoutX="277.0" layoutY="182.0" prefHeight="39.0" prefWidth="265.0" style="-fx-background-color: #B6A990;" />
+      <TextField fx:id="eventemailField" layoutX="277.0" layoutY="182.0" prefHeight="39.0" prefWidth="265.0" style="-fx-background-color: #B6A990;" />
       <Text fill="#0d3120" layoutX="119.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="additional notes" wrappingWidth="146.13672256469727">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Button layoutX="234.0" layoutY="531.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Book Event" textFill="#d0913f">
+      <Button layoutX="234.0" layoutY="563.0" mnemonicParsing="false" onAction="#bookeventOnAction" prefHeight="57.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="Book Event" textFill="#d0913f">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <TextField layoutX="279.0" layoutY="419.0" prefHeight="72.0" prefWidth="271.0" style="-fx-background-color: #B6A990;" />
+      <TextField fx:id="eventadditionalNotesField" layoutX="279.0" layoutY="419.0" prefHeight="109.0" prefWidth="271.0" style="-fx-background-color: #B6A990;" />
       <ImageView fitHeight="634.0" fitWidth="249.0" layoutX="639.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Img/Untitled343_20241207021419.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="132.0" layoutY="624.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="424.0" style="-fx-background-color: #d0913f;" text="view booked event info" textFill="#0d3120">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <ComboBox layoutX="281.0" layoutY="247.0" prefHeight="43.0" prefWidth="259.0" />
+      <ComboBox fx:id="eventTypeComboBox" layoutX="281.0" layoutY="247.0" prefHeight="43.0" prefWidth="259.0" />
       <Text fill="#0d3120" layoutX="119.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event type" wrappingWidth="148.80336380004883">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <ComboBox layoutX="281.0" layoutY="363.0" prefHeight="33.0" prefWidth="262.0" />
+      <ComboBox fx:id="eventtimingComboBox" layoutX="281.0" layoutY="363.0" prefHeight="33.0" prefWidth="262.0" />
       <Text fill="#0d3120" layoutX="119.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Timing" wrappingWidth="148.80336380004883">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <DatePicker layoutX="281.0" layoutY="312.0" prefHeight="25.0" prefWidth="265.0" />
+      <DatePicker fx:id="eventdatePicker" layoutX="281.0" layoutY="312.0" prefHeight="25.0" prefWidth="265.0" />
       <Text fill="#0d3120" layoutX="119.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date" wrappingWidth="148.80336380004883">
          <font>
             <Font name="Consolas" size="23.0" />

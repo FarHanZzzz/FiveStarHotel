@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AppendableObjectOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AppendableObjectOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/goals thats been done" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/goals thats been done" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/EventReservationPAGEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/EventReservationPAGEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/EventReservationPAGE.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

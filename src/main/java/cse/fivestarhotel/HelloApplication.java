@@ -10,7 +10,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Sign in!");
         stage.setScene(scene);
