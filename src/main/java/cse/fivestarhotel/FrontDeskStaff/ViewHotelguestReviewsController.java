@@ -46,7 +46,7 @@ public class ViewHotelguestReviewsController implements Serializable
 
 
         try{
-            File f = new File("TransportationDetails.bin");
+            File f = new File("HotelGuestReview.bin");
             if(f.exists()){
                 fis = new FileInputStream(f);
             }

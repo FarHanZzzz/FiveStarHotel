@@ -1,8 +1,9 @@
 package cse.fivestarhotel.RestaurantManager;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class BookTable {
+public class BookTable implements Serializable {
 
     private String name,time;
     private LocalDate date;

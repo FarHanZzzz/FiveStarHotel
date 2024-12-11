@@ -16,13 +16,16 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView fx:id="ViewRestaurantReviewTableView" layoutX="69.0" layoutY="260.0" prefHeight="200.0" prefWidth="807.0">
+      <TableView fx:id="ViewRestaurantReviewTableView" layoutX="69.0" layoutY="260.0" prefHeight="428.0" prefWidth="807.0">
         <columns>
-          <TableColumn fx:id="nameCol" prefWidth="167.0" text="Name" />
-          <TableColumn fx:id="ratingCol" prefWidth="188.00001525878906" text="Rating" />
+          <TableColumn fx:id="nameCol" prefWidth="176.0" text="Name" />
+          <TableColumn fx:id="ratingCol" prefWidth="180.00001525878906" text="Rating" />
             <TableColumn fx:id="descriptionCol" prefWidth="451.0" text="Description" />
         </columns>
       </TableView>
-      <Button layoutX="189.0" layoutY="209.0" mnemonicParsing="false" onAction="#viewRestaurantReviewOnAction" prefHeight="25.0" prefWidth="410.0" text="View Restaurant Review of Guests" />
+      <Button layoutX="69.0" layoutY="209.0" mnemonicParsing="false" onAction="#viewRestaurantReviewOnAction" prefHeight="42.0" prefWidth="530.0" text="View Restaurant Review of Guests">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
    </children>
 </AnchorPane>

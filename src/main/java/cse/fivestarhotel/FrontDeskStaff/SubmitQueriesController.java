@@ -14,7 +14,7 @@ public class SubmitQueriesController
     @javafx.fxml.FXML
     private TextArea DescriptionTextArea;
     @javafx.fxml.FXML
-    private ComboBox PositionComboBox;
+    private ComboBox<String> PositionComboBox;
     @javafx.fxml.FXML
     private TextField nameTextField;
     @javafx.fxml.FXML
