@@ -62,7 +62,6 @@ public class ResturantReviewController implements Serializable {
                 oos = new ObjectOutputStream(fos);
             }
 
-            // Write the object
             oos.writeObject(rev);
 
             ResturantreviewDetailsLabel.setText("Thank you for your feedback!");

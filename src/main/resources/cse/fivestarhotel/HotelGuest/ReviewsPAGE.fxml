@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="154.0" fitWidth="897.0" layoutX="19.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Img/Untitled348_20241207024630.jpg" />
+            <Image url="@../Img/Untitled348_20241212062851.jpg" />
          </image>
       </ImageView>
       <Text fill="#0d3120" layoutX="55.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="write review :" wrappingWidth="310.13672637939453">

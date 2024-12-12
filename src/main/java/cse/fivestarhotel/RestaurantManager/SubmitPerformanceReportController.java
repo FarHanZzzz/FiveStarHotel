@@ -13,7 +13,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-public class SubmitPerformanceReportController
+public class SubmitPerformanceReportController implements Serializable
 {
     @javafx.fxml.FXML
     private Label Status;
@@ -21,10 +21,6 @@ public class SubmitPerformanceReportController
     private TextField totalSpentTextField;
     @javafx.fxml.FXML
     private TextField attendenceTextField;
-    @javafx.fxml.FXML
-    private TextField nameTextField;
-    @javafx.fxml.FXML
-    private TextField SummaryTextField;
     @javafx.fxml.FXML
     private ComboBox<String> satisfactionComboBox;
     @javafx.fxml.FXML
@@ -47,14 +43,13 @@ public class SubmitPerformanceReportController
 
     @javafx.fxml.FXML
     public void submitPerformanceReportOnAction(ActionEvent actionEvent) {
-        String name = nameTextField.getText();
-        String summary = SummaryTextField.getText();
+
         int totalSpent;
         int attendence;
         String satisfaction = satisfactionComboBox.getValue();
         String month = MonthComboBox.getValue();
 
-        if (name.isEmpty() || summary.isEmpty()  || satisfaction.isEmpty() || month.isEmpty()){
+        if (satisfaction.isEmpty() || month.isEmpty()){
             StatusLabel.setText("Please fill all the fields");
         }
 
@@ -68,8 +63,8 @@ public class SubmitPerformanceReportController
                     return;
                 }
 
-
-        PerformanceReport p = new PerformanceReport(name,satisfaction,month,totalSpent,attendence,summary);
+//String customerSatisfaction, String month, int totalSpent, int employeeAttendenceRate
+        PerformanceReport p = new PerformanceReport(satisfaction,month,totalSpent,attendence);
         performanceList.add(p);
 
         try{
@@ -89,7 +84,7 @@ public class SubmitPerformanceReportController
 
             StatusLabel.setText("Sumitted Successfully : "+ p.toString());
 
-            nameTextField.clear(); SummaryTextField.clear(); totalSpentTextField.clear();
+            totalSpentTextField.clear();
             attendenceTextField.clear(); satisfactionComboBox.setValue(null);
             MonthComboBox.setValue(null);
 

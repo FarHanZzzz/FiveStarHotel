@@ -46,7 +46,7 @@
       <DatePicker layoutX="284.0" layoutY="314.0" prefHeight="36.0" prefWidth="231.0" />
       <ComboBox layoutX="284.0" layoutY="249.0" prefHeight="39.0" prefWidth="229.0" />
       <TextField layoutX="283.0" layoutY="188.0" prefHeight="38.0" prefWidth="327.0" style="-fx-background-color: #B6A990;" />
-      <Button layoutX="358.0" layoutY="613.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="235.0" text="Post">
+      <Button layoutX="358.0" layoutY="613.0" mnemonicParsing="false" onAction="#HeadsubmitAnnoncementOnAction" prefHeight="53.0" prefWidth="235.0" text="Post">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

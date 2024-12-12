@@ -6,58 +6,48 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelGuest.LaundryPAGEController">
    <children>
-      <Text fill="#0d3120" layoutX="69.0" layoutY="113.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Laundry status:" wrappingWidth="282.136474609375">
-         <font>
-            <Font name="Consolas Bold" size="23.0" />
-         </font>
-      </Text>
-      <Text fill="#0d3120" layoutX="65.0" layoutY="227.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Pre-book Laundry" wrappingWidth="250.1365966796875">
+      <Text fill="#0d3120" layoutX="65.0" layoutY="196.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Pre-book Laundry" wrappingWidth="250.1365966796875">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Text>
-      <Text fill="#0d3120" layoutX="138.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name    :" wrappingWidth="130.13672256469727">
+      <Text fill="#0d3120" layoutX="138.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name    :" wrappingWidth="130.13672256469727">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Label layoutX="302.0" layoutY="89.0" prefHeight="32.0" prefWidth="55.0" text="no" textFill="#a16b28">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <TextField layoutX="277.0" layoutY="266.0" prefHeight="39.0" prefWidth="241.0" style="-fx-background-color: #B6A990;" />
-      <Text fill="#0d3120" layoutX="138.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room No :" wrappingWidth="114.13672256469727">
+      <TextField fx:id="LanNamefield" layoutX="277.0" layoutY="240.0" prefHeight="39.0" prefWidth="241.0" style="-fx-background-color: #B6A990;" />
+      <Text fill="#0d3120" layoutX="138.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room No :" wrappingWidth="114.13672256469727">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <TextField layoutX="277.0" layoutY="333.0" prefHeight="39.0" prefWidth="243.0" style="-fx-background-color: #B6A990;" />
-      <Text fill="#0d3120" layoutX="138.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="additional notes" wrappingWidth="146.13672256469727">
+      <TextField fx:id="LanRoomfield" layoutX="277.0" layoutY="318.0" prefHeight="39.0" prefWidth="243.0" style="-fx-background-color: #B6A990;" />
+      <Text fill="#0d3120" layoutX="138.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="additional notes" wrappingWidth="146.13672256469727">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Button layoutX="234.0" layoutY="583.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="book laundry" textFill="#d0913f">
+      <Button layoutX="234.0" layoutY="578.0" mnemonicParsing="false" onAction="#bookLaundryOnAction" prefHeight="65.0" prefWidth="249.0" style="-fx-background-color: #0d3120;" text="book laundry" textFill="#d0913f">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Line endX="88.33334350585938" endY="1.0000152587890625" layoutX="269.0" layoutY="131.0" startX="-205.33335876464844" startY="3.0517578125E-5" stroke="#9d8d71" />
-      <Line endX="88.33334350585938" endY="1.52587890625E-5" layoutX="269.0" layoutY="82.0" startX="-205.33335876464844" startY="3.0517578125E-5" />
-      <Line endX="19.833343505859375" endY="-57.499969482421875" layoutX="337.0" layoutY="188.0" startX="19.833343505859375" startY="-106.49996948242188" stroke="#9d8d71" />
-      <Line endX="19.833343505859375" endY="-57.499969482421875" layoutX="43.0" layoutY="189.0" startX="19.833343505859375" startY="-106.49996948242188" />
-      <TextField layoutX="279.0" layoutY="407.0" prefHeight="97.0" prefWidth="295.0" style="-fx-background-color: #B6A990;" />
+      <TextField fx:id="Lannotesfield" layoutX="279.0" layoutY="402.0" prefHeight="97.0" prefWidth="295.0" style="-fx-background-color: #B6A990;" />
       <ImageView fitHeight="634.0" fitWidth="249.0" layoutX="639.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Img/Untitled343_20241204044052 (2).jpg" />
          </image>
       </ImageView>
+      <Label fx:id="LanLabel" layoutX="174.0" layoutY="84.0" prefHeight="33.0" prefWidth="365.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
