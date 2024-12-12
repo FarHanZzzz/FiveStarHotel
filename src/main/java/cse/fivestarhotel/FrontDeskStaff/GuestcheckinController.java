@@ -111,7 +111,7 @@ public class GuestcheckinController implements Serializable
 
         String name = GuestNameTextField.getText();
         String email = GuestEmailTextField.getText();
-        Integer contactno = Integer.valueOf(GuestContactNoTetField.getText());
+        int contactno;
         LocalDate checkoutDate = CheckoutDatePicker.getValue();
         String roomtype = RoomTypeComboBox.getValue();
         int noofRooms;
@@ -120,6 +120,8 @@ public class GuestcheckinController implements Serializable
 
         try {
             noofRooms = Integer.parseInt(NumberofRoomsTextField.getText());
+            contactno = Integer.parseInt(GuestContactNoTetField.getText());
+
         } catch (NumberFormatException e) {
             CheckInStatusLabel.setText("Invalid number of Rooms");
             return;
@@ -127,7 +129,7 @@ public class GuestcheckinController implements Serializable
 
 
         // validating other inputs
-        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0 || contactno == null ||  checkoutDate == null ){
+        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0  ||  checkoutDate == null ){
             CheckInStatusLabel.setText("Please fill all the fields");
         }
 
@@ -152,7 +154,7 @@ public class GuestcheckinController implements Serializable
             FileOutputStream fos;
             ObjectOutputStream oos;
 
-            // Use appropriate streams based on file existence
+
             if (f.exists()) {
                 fos = new FileOutputStream(f, true);
                 oos = new AppendableObjectOutputStream(fos);
@@ -166,7 +168,7 @@ public class GuestcheckinController implements Serializable
 
             // Update UI
             CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-            GuestTextAreaDetails.setText("Guest Details: " + CheckinTabledataList.toString());
+            GuestTextAreaDetails.setText("Guest Details: " + c.toString());
 
             oos.close();
         } catch (Exception e) {

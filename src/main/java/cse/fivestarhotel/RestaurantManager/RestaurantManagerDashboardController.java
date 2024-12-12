@@ -105,14 +105,6 @@ public class RestaurantManagerDashboardController
 
     }
 
-    @javafx.fxml.FXML
-    public void ViewAnnouncementOnAction(ActionEvent actionEvent) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RestaurantManager/ViewAnnouncement.fxml"));
-            dashBoardBorderPane.setCenter(fxmlLoader.load());
-        }
-        catch(Exception e){}
-    }
 
     @javafx.fxml.FXML
     public void ViewGuestReservationTableOnAction(ActionEvent actionEvent) {
@@ -154,5 +146,14 @@ public class RestaurantManagerDashboardController
         stage.setTitle("Hello");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void submitPerformanceReportOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml"));
+            dashBoardBorderPane.setCenter(fxmlLoader.load());
+        }
+        catch(Exception e){}
     }
 }

@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-public class ViewMenuDetailsController implements Serializable
+public class ViewMenuDetailsController
 {
     @javafx.fxml.FXML
     private TableColumn<Menu,String> dishNameCol;

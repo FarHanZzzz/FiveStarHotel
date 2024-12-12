@@ -78,12 +78,16 @@ public class AddMenuDishController implements Serializable
 
             // Update UI
 
-            MenuDetailsLabel.setText("Add menu detais:" +s.toString());
+            MenuDetailsLabel.setText("Added Dish detais:\n" +s.toString());
             oos.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
+
 
 
     }

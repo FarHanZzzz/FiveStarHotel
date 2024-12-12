@@ -48,12 +48,12 @@ public class Menu implements Serializable {
 
     @Override
     public String toString() {
-        return "Menu{" +
-                "dishname='" + dishname + '\'' +
-                ", dishtype='" + dishtype + '\'' +
-                ", mealtype='" + mealtype + '\'' +
-                ", price=" + price +
-                '}';
+        return
+                "dishname='" + dishname +
+                ", dishtype='" + dishtype +
+                ", mealtype='" + mealtype +
+                ", price=" + price
+                ;
     }
 
 

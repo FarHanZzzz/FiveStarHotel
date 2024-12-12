@@ -49,6 +49,11 @@ public class SubmitQueriesController
 
         }
 
+
+
+
+
+
         Query q  = new Query(name,position,description);
         queries.add(q);
 

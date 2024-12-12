@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.SubmitPerformanceReportController">
+    <children>
+        <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+        <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+            <font>
+                <Font name="Bell MT Bold" size="45.0" />
+            </font>
+        </Text>
+        <Label fx:id="Status" layoutX="130.0" layoutY="597.0" prefHeight="17.0" prefWidth="567.0" />
+      <Label layoutX="37.0" layoutY="150.0" prefHeight="30.0" prefWidth="251.0" text="Department Name:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="222.0" prefHeight="30.0" prefWidth="251.0" text="Customer Satisfaction:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="291.0" prefHeight="30.0" prefWidth="251.0" text="Total Spent:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="360.0" prefHeight="30.0" prefWidth="251.0" text="Employee Attendence Rate:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="430.0" prefHeight="30.0" prefWidth="251.0" text="Summary:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="288.0" layoutY="153.0" prefHeight="25.0" prefWidth="552.0" />
+      <TextField fx:id="totalSpentTextField" layoutX="288.0" layoutY="294.0" prefHeight="25.0" prefWidth="552.0" />
+      <TextField fx:id="attendenceTextField" layoutX="288.0" layoutY="363.0" prefHeight="25.0" prefWidth="552.0" />
+      <TextField fx:id="SummaryTextField" layoutX="288.0" layoutY="436.0" prefHeight="64.0" prefWidth="559.0" />
+      <ComboBox fx:id="satisfactionComboBox" layoutX="288.0" layoutY="218.0" prefHeight="30.0" prefWidth="552.0" />
+      <Button layoutX="54.0" layoutY="605.0" mnemonicParsing="false" onAction="#submitPerformanceReportOnAction" prefHeight="64.0" prefWidth="227.0" text="Submit Performance Report">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label fx:id="StatusLabel" layoutX="405.0" layoutY="637.0" prefHeight="17.0" prefWidth="447.0" style="-fx-border-color: black;" />
+      <Label layoutX="37.0" layoutY="511.0" prefHeight="30.0" prefWidth="251.0" text="Month:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="MonthComboBox" layoutX="288.0" layoutY="526.0" prefHeight="30.0" prefWidth="559.0" />
+    </children>
+</AnchorPane>

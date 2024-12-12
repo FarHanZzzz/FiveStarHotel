@@ -155,15 +155,14 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
-                <Line endX="730.0" layoutX="207.0" layoutY="375.0" startX="-202.00001525878906" stroke="#8c8c7b" />
                 <VBox layoutX="44.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                     <children>
-                        <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                        <Label fx:id="totalroomsStatus" prefHeight="47.0" prefWidth="151.0">
                             <font>
                                 <Font size="38.0" />
                             </font>
                         </Label>
-                        <Label opacity="0.55" text="total Rooms">
+                        <Label opacity="0.55" text="total Guest Checked in">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Label>
@@ -171,12 +170,12 @@
                 </VBox>
                 <VBox layoutX="221.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                     <children>
-                        <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                        <Label fx:id="totalGuestCheckedOutLabel" prefHeight="55.0" prefWidth="138.0">
                             <font>
                                 <Font size="38.0" />
                             </font>
                         </Label>
-                        <Label opacity="0.55" text="Total Rooms Occupied ">
+                        <Label opacity="0.55" text="total guest Checkedout">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -185,12 +184,12 @@
                 </VBox>
                 <VBox layoutX="400.0" layoutY="127.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                     <children>
-                        <Label prefHeight="47.0" prefWidth="151.0" text="0">
+                        <Label fx:id="SingleroomLabel" prefHeight="47.0" prefWidth="151.0">
                             <font>
                                 <Font size="38.0" />
                             </font>
                         </Label>
-                        <Label opacity="0.55" text="Total guest Checked in">
+                        <Label opacity="0.55" text="Single Room">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
