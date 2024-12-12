@@ -1,8 +1,9 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Transportation {
+public class Transportation implements Serializable {
     private String name,email,destination;
     private LocalDate date;
     private String time;

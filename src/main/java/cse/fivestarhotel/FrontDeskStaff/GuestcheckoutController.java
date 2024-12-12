@@ -3,7 +3,9 @@ package cse.fivestarhotel.FrontDeskStaff;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class GuestcheckoutController
+import java.io.Serializable;
+
+public class GuestcheckoutController implements Serializable
 {
     @javafx.fxml.FXML
     private Label StatusLabel;

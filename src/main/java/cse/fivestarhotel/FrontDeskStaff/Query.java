@@ -1,6 +1,8 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
-public class Query {
+import java.io.Serializable;
+
+public class Query implements Serializable {
     private String name, position , description;
 
     public Query(String name, String position, String description) {

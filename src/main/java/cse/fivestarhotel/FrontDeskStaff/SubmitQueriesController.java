@@ -13,8 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-public class SubmitQueriesController
+public class SubmitQueriesController implements Serializable
 {
     @javafx.fxml.FXML
     private TextArea DescriptionTextArea;
@@ -52,7 +53,7 @@ public class SubmitQueriesController
         queries.add(q);
 
         try {
-            File f = new File("Query1Review.bin");
+            File f = new File("QueryReview.bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 

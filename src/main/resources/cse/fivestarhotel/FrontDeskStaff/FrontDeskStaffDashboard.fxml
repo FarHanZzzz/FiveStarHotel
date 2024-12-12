@@ -146,16 +146,16 @@
                         <Font name="Bell MT Bold" size="45.0" />
                     </font>
                 </Text>
-                <TableView layoutX="17.0" layoutY="501.0" prefHeight="210.0" prefWidth="908.0" style="-fx-border-style: #8C8C7B;">
+                <TableView fx:id="AnnouncementTableView" layoutX="17.0" layoutY="392.0" prefHeight="319.0" prefWidth="908.0" style="-fx-border-style: #8C8C7B;">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="Announcments" />
-                        <TableColumn prefWidth="75.0" text="time" />
+                        <TableColumn fx:id="announcementsCol" prefWidth="75.0" text="Announcments" />
+                        <TableColumn fx:id="dateCol" prefWidth="75.0" text="Date" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
-                <Line endX="730.0" layoutX="200.0" layoutY="484.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+                <Line endX="730.0" layoutX="207.0" layoutY="375.0" startX="-202.00001525878906" stroke="#8c8c7b" />
                 <VBox layoutX="44.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                     <children>
                         <Label prefHeight="47.0" prefWidth="151.0" text="0">

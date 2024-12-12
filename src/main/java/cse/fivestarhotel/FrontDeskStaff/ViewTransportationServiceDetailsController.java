@@ -8,9 +8,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ViewTransportationServiceDetailsController
+public class ViewTransportationServiceDetailsController implements Serializable
 {
     @javafx.fxml.FXML
     private TableView<Transportation> transportationTableView;
@@ -50,6 +51,8 @@ public class ViewTransportationServiceDetailsController
     public void showTransportationBookingDetailsOnAction(ActionEvent actionEvent) {
         FileInputStream fis=null;
         ObjectInputStream ois=null;
+
+//String name, String email, String destination, LocalDate date, String time, String vehicletype
 
 
         try{

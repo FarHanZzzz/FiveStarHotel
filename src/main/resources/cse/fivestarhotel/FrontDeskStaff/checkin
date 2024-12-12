@@ -1,8 +1,0 @@
-for check in button
-
-1) total rooms = 100 , 50 rooms = single , 30 rooms = double , 20 rooms = suite
-
-
-
-2) it check room type and number of rooms if room type matches then it checks by that roomtype if there is
-any any room left also seeing number of rooms .

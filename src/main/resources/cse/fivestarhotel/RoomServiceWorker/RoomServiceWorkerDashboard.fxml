@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.RoomServiceWorkerDashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.RoomServiceWorkerDashboardController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -143,13 +143,12 @@
     <right>
         <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
             <children>
-                <Line endX="253.80001831054688" endY="636.5999755859375" layoutX="217.0" layoutY="85.0" startX="256.9999694824219" startY="-22.499996185302734" stroke="#8c8c7b" strokeWidth="2.0" />
                 <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
                     <font>
                         <Font name="Bell MT Bold" size="45.0" />
                     </font>
                 </Text>
-                <StackedBarChart layoutX="22.0" layoutY="281.0" prefHeight="403.0" prefWidth="382.0">
+                <StackedBarChart layoutX="606.0" layoutY="72.0" prefHeight="314.0" prefWidth="227.0">
                     <xAxis>
                         <CategoryAxis prefHeight="24.0" prefWidth="265.0" side="BOTTOM" />
                     </xAxis>
@@ -191,12 +190,10 @@
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Text>
-            <TableView layoutX="554.0" layoutY="120.0" prefHeight="531.0" prefWidth="352.0" style="-fx-background-color: #B6A990;">
+            <TableView fx:id="AnnouncementTableView" layoutX="45.0" layoutY="406.0" prefHeight="284.0" prefWidth="852.0" style="-fx-background-color: #B6A990;">
               <columns>
-                <TableColumn prefWidth="112.0" text="Announcement" />
-                <TableColumn prefWidth="75.199951171875" text="From" />
-                  <TableColumn prefWidth="78.4000244140625" text="Date" />
-                  <TableColumn prefWidth="84.800048828125" text="Time" />
+                <TableColumn fx:id="announcementsCol" prefWidth="437.0" text="Announcement" />
+                  <TableColumn fx:id="dateCol" prefWidth="414.0" text="Date" />
               </columns>
             </TableView>
             </children>
