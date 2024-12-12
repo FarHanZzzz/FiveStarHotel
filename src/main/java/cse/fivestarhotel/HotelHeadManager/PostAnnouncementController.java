@@ -1,5 +1,6 @@
-package cse.fivestarhotel.CEO;
+package cse.fivestarhotel.HotelHeadManager;
 
+import cse.fivestarhotel.CEO.Announcement;
 import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,13 +17,6 @@ import java.time.LocalDate;
 
 public class PostAnnouncementController implements Serializable {
 
-    @javafx.fxml.FXML
-    private Label Status;
-    @javafx.fxml.FXML
-    private DatePicker HeaddateDatePicker;
-    @javafx.fxml.FXML
-    private TextField HeadAnnouncementTextField;
-
     ObservableList<Announcement> announcementList = FXCollections.observableArrayList();
 
 
@@ -32,8 +26,12 @@ public class PostAnnouncementController implements Serializable {
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void submitAnnoncementOnAction(ActionEvent actionEvent) {
 
+    }
+
+    @javafx.fxml.FXML
+    public void HeadsubmitAnnoncementOnAction(ActionEvent actionEvent) {
     }
 }

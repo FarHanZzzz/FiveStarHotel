@@ -33,7 +33,11 @@ public class RoomServiceReqController implements Serializable {
 
     @javafx.fxml.FXML
     public void initialize() {
+
         reqspecifycombobox.getItems().addAll("Cleanup", "Extra pillow/blanket etc", "Extra commodities (shampoo/soap etc)", "Other");
+
+
+
     }
 
     @FXML
