@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.ViewAnnouncementController">
+    <children>
+        <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+        <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Announcement">
+            <font>
+                <Font name="Bell MT Bold" size="45.0" />
+            </font>
+        </Text>
+        <TableView layoutX="147.0" layoutY="166.0" prefHeight="486.0" prefWidth="651.0" style="-fx-background-color: #B6A990;">
+            <columns>
+                <TableColumn prefWidth="126.39997863769531" text="Position" />
+                <TableColumn prefWidth="221.60006713867188" text="Name" />
+                <TableColumn prefWidth="328.0000244140625" text="Announcement" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

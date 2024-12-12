@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.ViewCustomerSubmittedLostFoundPageController">
+    <children>
+        <Text fill="#0f4a33" layoutX="12.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Customer Submitted Lost&amp;Found Reports:" wrappingWidth="921.5870971679688">
+            <font>
+                <Font name="Bell MT Bold" size="36.0" />
+            </font>
+        </Text>
+        <Line endX="730.0" layoutX="211.0" layoutY="83.0" startX="-211.0" stroke="#8c8c7b" />
+      <TableView layoutX="38.0" layoutY="123.0" prefHeight="385.0" prefWidth="872.0" style="-fx-background-color: #B6A990;">
+        <columns>
+          <TableColumn prefWidth="150.13338088989258" text="Customer Name" />
+          <TableColumn prefWidth="148.26661682128906" text="Item Name" />
+            <TableColumn prefWidth="83.20002746582031" text="Floor No." />
+            <TableColumn prefWidth="128.79998779296875" text="Room No." />
+            <TableColumn prefWidth="359.20001220703125" text="Item Details" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="150.0" fitWidth="877.0" layoutX="101.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Img/istockphoto-1001349692-612x612.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

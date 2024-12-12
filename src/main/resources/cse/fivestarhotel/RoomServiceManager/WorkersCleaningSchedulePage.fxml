@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.WorkersCleaningSchedulePageController">
+    <children>
+        <Text fill="#0d3120" layoutX="108.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Woker Name:" textAlignment="JUSTIFY" wrappingWidth="277.6035795211792">
+            <font>
+                <Font name="Arial Bold" size="24.0" />
+            </font>
+        </Text>
+        <ComboBox layoutX="391.0" layoutY="144.0" prefHeight="26.0" prefWidth="318.0" style="-fx-background-color: #B6A990;" />
+        <TableView layoutX="50.0" layoutY="233.0" prefHeight="340.0" prefWidth="841.0" style="-fx-background-color: #B6A990;">
+            <columns>
+                <TableColumn prefWidth="174.13330078125" text="Floor No." />
+                <TableColumn prefWidth="243.73333740234375" text="Room No." />
+                <TableColumn prefWidth="210.39996337890625" text="Date" />
+            <TableColumn prefWidth="210.39996337890625" text="Time" />
+            </columns>
+        </TableView>
+      <Text fill="#0f4a33" layoutX="32.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Worker's Cleaning Schedule:">
+         <font>
+            <Font name="Bell MT Bold" size="45.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.SubmitInquiryPageController">
+    <children>
+        <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+        <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Submit Inquiry:">
+            <font>
+                <Font name="Bell MT Bold" size="45.0" />
+            </font>
+        </Text>
+        <TextField fx:id="DescriptionTextArea" layoutX="280.0" layoutY="333.0" prefHeight="183.0" prefWidth="589.0" style="-fx-background-color: #B6A990;" />
+        <Text layoutX="66.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="244.80333709716797">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <Text layoutX="68.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="244.80333709716797">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <Text layoutX="67.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inquiries:" wrappingWidth="158.40335845947266">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <ComboBox fx:id="PositionComboBox" layoutX="284.0" layoutY="249.0" prefHeight="39.0" prefWidth="229.0" />
+        <TextField fx:id="nameTextField" layoutX="283.0" layoutY="188.0" prefHeight="38.0" prefWidth="327.0" style="-fx-background-color: #B6A990;" />
+      <Button layoutX="379.0" layoutY="628.0" mnemonicParsing="false" onAction="#submitQueriesOnAction" prefHeight="49.0" prefWidth="203.0" style="-fx-background-color: #0D3120;" text="Submit Queries" textFill="#f5a831">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="46.0" layoutY="639.0" mnemonicParsing="false" onAction="#clearFieldsOnAction" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #0D3120;" text="Clear Fields" textFill="#f5a831">
+         <font>
+            <Font name="Consolas Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="QueryStatusLabel" layoutX="335.0" layoutY="122.0" prefHeight="0.0" prefWidth="238.0" textAlignment="CENTER">
+         <font>
+            <Font name="Consolas" size="15.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.SpecialRequestPageController">
+    <children>
+        <Line endX="730.0" layoutX="220.0" layoutY="90.0" startX="-220.0" stroke="#8c8c7b" />
+        <Text fill="#0f4a33" layoutX="17.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Special Request:" wrappingWidth="355.41785430908203">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Text>
+        <TableView layoutX="32.0" layoutY="137.0" prefHeight="362.0" prefWidth="872.0" style="-fx-background-color: #B6A990;">
+            <columns>
+                <TableColumn prefWidth="380.0000419616699" text="Specifications" />
+                <TableColumn prefWidth="491.199951171875" text="Details" />
+            </columns>
+        </TableView>
+        <ImageView fitHeight="154.0" fitWidth="901.0" layoutX="35.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Img/Untitled349_20241208143837.jpg" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
