@@ -3,27 +3,14 @@ package cse.fivestarhotel.RestaurantManager;
 import java.io.Serializable;
 
 public class PerformanceReport implements Serializable {
-    private  String name, customerSatisfaction,month;
+    private String customerSatisfaction, month;
     private int totalSpent, EmployeeAttendenceRate;
-    private String summary;
 
-
-    public PerformanceReport(String name, String customerSatisfaction, String month, int totalSpent, int employeeAttendenceRate, String summary) {
-        this.name = name;
+    public PerformanceReport(String customerSatisfaction, String month, int totalSpent, int employeeAttendenceRate) {
         this.customerSatisfaction = customerSatisfaction;
         this.month = month;
         this.totalSpent = totalSpent;
         EmployeeAttendenceRate = employeeAttendenceRate;
-        this.summary = summary;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getCustomerSatisfaction() {
@@ -58,23 +45,13 @@ public class PerformanceReport implements Serializable {
         EmployeeAttendenceRate = employeeAttendenceRate;
     }
 
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
     @Override
     public String toString() {
         return "PerformanceReport{" +
-                "name='" + name + '\'' +
-                ", customerSatisfaction='" + customerSatisfaction + '\'' +
+                "customerSatisfaction='" + customerSatisfaction + '\'' +
                 ", month='" + month + '\'' +
                 ", totalSpent=" + totalSpent +
                 ", EmployeeAttendenceRate=" + EmployeeAttendenceRate +
-                ", summary='" + summary + '\'' +
                 '}';
     }
 }

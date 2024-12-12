@@ -157,11 +157,11 @@
                 <NumberAxis side="LEFT" upperBound="10000.0" />
               </yAxis>
             </StackedBarChart>
-            <TableView layoutX="25.0" layoutY="447.0" prefHeight="249.0" prefWidth="882.0" style="-fx-border-style: #8C8C7B;">
+            <TableView fx:id="AnnouncementTableView" layoutX="25.0" layoutY="447.0" prefHeight="249.0" prefWidth="882.0" style="-fx-border-style: #8C8C7B;">
               <columns>
-                <TableColumn prefWidth="499.99997901916504" text="Announcments" />
+                <TableColumn fx:id="announcementsCol" prefWidth="499.99997901916504" text="Announcments" />
                 <TableColumn prefWidth="198.6666259765625" text="from" />
-                  <TableColumn prefWidth="204.666748046875" text="date" />
+                  <TableColumn fx:id="dateCol" prefWidth="204.666748046875" text="date" />
               </columns>
             </TableView>
             <Line endX="730.0" layoutX="200.0" layoutY="426.0" startX="-202.00001525878906" stroke="#8c8c7b" />

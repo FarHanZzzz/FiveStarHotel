@@ -5,28 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckInGuestDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CheckInGuestDetails.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MenuDetails.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookTableDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BookTableDetails.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestaurantManagerPerformance.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/AddMenuDishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/AddMenuDishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Goals thats been done" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Goals thats been done" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/SubmitQueriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/SubmitQueriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/ViewMenuDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/ViewMenuDetailsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/EventReservationPAGEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/EventReservationPAGEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/LaundryPAGEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/LaundryPAGEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ResturantPAGEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ResturantPAGEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ResturantReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ResturantReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ReviewsPAGEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ReviewsPAGEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/RoomServiceReqController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/RoomServiceReqController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/TransportationDetailsPAGEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/TransportationDetailsPAGEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ViewMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelGuest/ViewMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/CreateanAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/CreateanAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/PerformanceReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/PerformanceReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/LaundryPAGE.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/ReviewsPAGE.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/RoomServiceReq.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/RoomServiceReq.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/ViewMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelGuest/ViewMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PerformanceReports.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PerformanceReports.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/CreateanAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -50,12 +56,12 @@
     &quot;assignee&quot;: &quot;FarHanZzzz&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/FarHanZzzz/FiveStarHotel.git",
-    "accountId": "ffe06a0d-a38a-49d0-901d-f1ca4a8601e0"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,
+    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -104,6 +110,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -65,7 +65,6 @@ public class TransportationDetailsPAGEController implements Serializable {
         transportations.add(transfer);
 
 
-        // Step 4: Write the reviews to a file
         try {
             File f = new File("TransportationDetails.bin");
             FileOutputStream fos;
@@ -79,7 +78,7 @@ public class TransportationDetailsPAGEController implements Serializable {
                 oos = new ObjectOutputStream(fos);
             }
             transportlabel.setText("Transportation Booked!");
-            // Write the object
+
             oos.writeObject(transfer);
 
 

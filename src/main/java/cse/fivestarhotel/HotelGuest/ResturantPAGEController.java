@@ -49,7 +49,7 @@ public class ResturantPAGEController implements Serializable {
         String time = ResTimefield.getText();
         String noofPeople = ResPeoplecombobox.getValue();
 
-//String name, String time, LocalDate date, String noofPeople
+        //String name, String time, LocalDate date, String noofPeople
         if (name.isEmpty() || time.isEmpty() || date == null || noofPeople == null ) {
             ResLabel.setText("Please input all the details."); // Show error message
             return;
@@ -59,7 +59,6 @@ public class ResturantPAGEController implements Serializable {
         bookedtabels.add(table);
 
 
-        // Step 4: Write the reviews to a file
         try {
             File f = new File("BookTableDetails.bin");
             FileOutputStream fos;
@@ -73,7 +72,6 @@ public class ResturantPAGEController implements Serializable {
                 oos = new ObjectOutputStream(fos);
             }
 
-            // Write the object
             oos.writeObject(table);
 
             ResLabel.setText("Event Booked!");

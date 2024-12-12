@@ -40,7 +40,7 @@ public class EventReservationPAGEController implements Serializable {
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Populate the ComboBox with star ratings
+
         eventTypeComboBox.getItems().addAll("Birthday", "Wedding", "Work Event", "Other");
         eventtimingComboBox.getItems().addAll("1 pm", "5 pm", "7 pm");
     }
@@ -56,7 +56,7 @@ public class EventReservationPAGEController implements Serializable {
 
 
         if (name.isEmpty() || email.isEmpty() || date == null || timing == null || eventType == null || additionalNotes.isEmpty()) {
-            eventstatusLabel.setText("Please input all the details."); // Show error message
+            eventstatusLabel.setText("Please input all the details.");
             return;
         }
 
@@ -64,7 +64,6 @@ public class EventReservationPAGEController implements Serializable {
         events.add(event);
 
 
-        // Step 4: Write the reviews to a file
         try {
             File f = new File("BookEventDetails.bin");
             FileOutputStream fos;
@@ -78,7 +77,6 @@ public class EventReservationPAGEController implements Serializable {
                 oos = new ObjectOutputStream(fos);
             }
 
-            // Write the object
             oos.writeObject(event);
 
             eventstatusLabel.setText("Event Booked!");

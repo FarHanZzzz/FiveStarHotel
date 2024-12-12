@@ -9,7 +9,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Label;
 import java.io.IOException;
 
 public class CreateanAccountController
@@ -22,7 +22,9 @@ public class CreateanAccountController
     @javafx.fxml.FXML
     private TextField CreateAnAccountNameTextField;
     @javafx.fxml.FXML
-    private TextField CreateAnAccountNidTextField;
+    private TextField CreateAnAccountemailTextField;
+    @javafx.fxml.FXML
+    private Label createacclabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -32,6 +34,7 @@ public class CreateanAccountController
 
     @javafx.fxml.FXML
     public void CreateAccountOnAction(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
