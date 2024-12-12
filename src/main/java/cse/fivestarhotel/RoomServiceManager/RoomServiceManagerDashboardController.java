@@ -1,9 +1,13 @@
 package cse.fivestarhotel.RoomServiceManager;
 
 import cse.fivestarhotel.CEO.Announcement;
+import cse.fivestarhotel.HelloApplication;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,6 +22,8 @@ public class RoomServiceManagerDashboardController
     private TableColumn<Announcement, LocalDate> dateCol;
     @javafx.fxml.FXML
     private TableView<Announcement> AnnouncementTableView;
+    @javafx.fxml.FXML
+    private BorderPane RoomServiceManagerBorderPane;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -75,6 +81,17 @@ public class RoomServiceManagerDashboardController
 
 
 
+
+    }
+
+    @javafx.fxml.FXML
+    public void submitQueriesOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceManager/SubmitInquiryPage.fxml"));
+
+            RoomServiceManagerBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
 
     }
 }
