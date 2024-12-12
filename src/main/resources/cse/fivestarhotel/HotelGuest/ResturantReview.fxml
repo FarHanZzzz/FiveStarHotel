@@ -23,7 +23,7 @@
                 <Font name="Consolas Bold" size="28.0" />
             </font>
         </Text>
-        <Button layoutX="369.0" layoutY="618.0" mnemonicParsing="false" onAction="#submitreviewButtonOnAction" prefHeight="49.0" prefWidth="203.0" style="-fx-background-color: #0D3120;" text="Submit Review" textFill="#f5a831">
+        <Button layoutX="369.0" layoutY="618.0" mnemonicParsing="false" onAction="#RessubmitreviewButtonOnAction" prefHeight="49.0" prefWidth="203.0" style="-fx-background-color: #0D3120;" text="Submit Review" textFill="#f5a831">
             <font>
                 <Font name="Consolas Bold" size="20.0" />
             </font>
@@ -33,17 +33,17 @@
                 <Font name="Consolas Bold" size="29.0" />
             </font>
         </Text>
-        <ComboBox fx:id="ratingComboBox" layoutX="368.0" layoutY="360.0" prefHeight="40.0" prefWidth="225.0" />
-        <TextField fx:id="reviewnameTextField" layoutX="367.0" layoutY="282.0" prefHeight="46.0" prefWidth="371.0" style="-fx-background-color: #B6A990;" />
+        <ComboBox fx:id="ResratingComboBox" layoutX="368.0" layoutY="360.0" prefHeight="40.0" prefWidth="225.0" />
+        <TextField fx:id="ResreviewnameTextField" layoutX="367.0" layoutY="282.0" prefHeight="46.0" prefWidth="371.0" style="-fx-background-color: #B6A990;" />
         <Text fill="#0d3120" layoutX="59.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="310.13672637939453">
             <font>
                 <Font name="Consolas Bold" size="28.0" />
             </font>
         </Text>
-        <TextArea fx:id="reviewTextArea" layoutX="362.0" layoutY="433.0" prefHeight="148.0" prefWidth="476.0" promptText="let us know" />
+        <TextArea fx:id="ResreviewTextArea" layoutX="362.0" layoutY="433.0" prefHeight="148.0" prefWidth="476.0" promptText="let us know" />
         <Label fx:id="ResturantreviewDetailsLabel" layoutX="330.0" layoutY="218.0" prefHeight="0.0" prefWidth="238.0" textAlignment="CENTER">
             <font>
-                <Font name="Consolas" size="15.0" />
+                <Font name="Consolas" size="18.0" />
             </font>
         </Label>
     </children>

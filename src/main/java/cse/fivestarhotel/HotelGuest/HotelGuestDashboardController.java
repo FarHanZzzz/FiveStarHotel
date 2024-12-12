@@ -126,7 +126,7 @@ public class HotelGuestDashboardController
     @Deprecated
     public void ResturantReviewOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ReviewRESTURANTpage.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ResturantReview.fxml"));
 
             DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
         }
@@ -170,5 +170,15 @@ public class HotelGuestDashboardController
         stage.setTitle("Hello");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void ResGuestReviewsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelGuest/ResturantReview.fxml"));
+
+            DashboardBorderPaneHotelGuest.setCenter(fxmlLoader.load());
+        }
+        catch(Exception e){}
     }
 }

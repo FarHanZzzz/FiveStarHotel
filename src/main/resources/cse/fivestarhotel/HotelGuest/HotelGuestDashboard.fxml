@@ -87,7 +87,12 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-            <Button mnemonicParsing="false" onAction="#GuestReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="reviews" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#GuestReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="hotel reviews" textAlignment="CENTER" textFill="#cf8e40">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ResGuestReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="restaurant reviews" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
