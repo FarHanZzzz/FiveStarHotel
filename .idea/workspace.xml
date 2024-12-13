@@ -6,42 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnnoncementsDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoncementsDetails.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/AnnoncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/AnnoncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/Announcement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/Announcement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviewsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/Annoncement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/Annoncement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/Submit queries.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/Submit queries.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewMenuDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewMenuDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewRestaurantReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewRestaurantReview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewguestReservationTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewguestReservationTable.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -150,6 +117,13 @@
       <workItem from="1734094478218" duration="502000" />
       <workItem from="1734095676748" duration="3500000" />
       <workItem from="1734099775397" duration="31000" />
+      <workItem from="1734100267427" duration="219000" />
+      <workItem from="1734100624888" duration="465000" />
+      <workItem from="1734101136586" duration="631000" />
+      <workItem from="1734101797466" duration="1738000" />
+      <workItem from="1734103606623" duration="2817000" />
+      <workItem from="1734106942281" duration="916000" />
+      <workItem from="1734107873415" duration="2926000" />
     </task>
     <servers />
   </component>

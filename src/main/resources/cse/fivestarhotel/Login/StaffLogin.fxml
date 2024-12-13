@@ -43,7 +43,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <PasswordField fx:id="StaffPasswordPasswordField" layoutX="329.0" layoutY="373.0" style="-fx-background-color: #cc8e3c;" />
+            <PasswordField fx:id="StaffPasswordField" layoutX="329.0" layoutY="373.0" style="-fx-background-color: #cc8e3c;" />
             <Button layoutX="29.0" layoutY="639.0" mnemonicParsing="false" onAction="#FromStaffReturnToSigninOnAction" prefHeight="43.0" prefWidth="127.0" style="-fx-background-color: #072917;" text="⬅ Back" textFill="#cc8e3c">
                <font>
                   <Font name="Consolas Bold" size="23.0" />
