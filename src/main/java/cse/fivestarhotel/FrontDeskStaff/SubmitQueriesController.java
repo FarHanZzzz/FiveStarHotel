@@ -32,7 +32,7 @@ public class SubmitQueriesController implements Serializable
     @javafx.fxml.FXML
     public void initialize() {
 
-        PositionComboBox.getItems().addAll("FrontDeskStaff","Room Service Manager","Restarant Manager");
+        PositionComboBox.getItems().addAll("FrontDeskStaff","Room Service Manager","Restaurant Manager","Room Service Worker");
 
         
     }
@@ -51,6 +51,9 @@ public class SubmitQueriesController implements Serializable
 
         Query q  = new Query(name,position,description);
         queries.add(q);
+
+
+
 
         try {
             File f = new File("QueryReview.bin");

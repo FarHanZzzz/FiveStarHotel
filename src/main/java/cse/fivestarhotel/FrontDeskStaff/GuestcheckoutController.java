@@ -38,8 +38,9 @@ public class GuestcheckoutController implements Serializable
         }
 
         List<CheckInTableDummyClass> guestlist = new ArrayList<>();
-        CheckInTableDummyClass checkedoutGuest = null;
 
+
+        CheckInTableDummyClass checkedoutGuest = null;
 
         // Step 1: Read all objects and identify the one to delete
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
