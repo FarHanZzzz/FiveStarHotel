@@ -5,13 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
-
+import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import cse.fivestarhotel.RestaurantManager.Menu;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
+import java.io.*;
 
 public class ViewBudgetController implements Serializable {
 
@@ -26,44 +23,33 @@ public class ViewBudgetController implements Serializable {
     @javafx.fxml.FXML
     private Label viewbudlabel;
 
-    @Deprecated
-    public void loadResBudgetOnAction(ActionEvent actionEvent) {
+    @javafx.fxml.FXML
+    private Label budgetDisplayLabel;
 
-        ObservableList<Budget> budgets = FXCollections.observableArrayList();
+    public void loadResBudgetOnAction() {
+        File f = new File("ResBudgets.bin");
 
-        FileInputStream fis = null;
-        ObjectInputStream ois = null;
+        if (!f.exists()) {
+            viewResBudget.setText("No budget data found.");
+            return;
+        }
 
-        try {
-            File f = new File("ResBudgetUp.bin");
-            if (f.exists()) {
-                fis = new FileInputStream(f);
-            } else {
-                viewbudlabel.setText("error");
-                return;
-            }
+        try (FileInputStream fis = new FileInputStream(f);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-            if (fis != null) ois = new ObjectInputStream(fis);
+            // Read the single Budget object
+            Budget b = (Budget) ois.readObject();
 
-            while (true) {
-                try {
-                    Budget b = (Budget) ois.readObject();
-                } catch (Exception e) {
-                    break;
-                }
-            }
-            viewbudlabel.setText(budgets.toString());
+            // Display the Budget object in the label
+            viewResBudget.setText("Budget Details:\n" + b.toString());
 
-        } catch (Exception e) {
-            viewbudlabel.setText("not yet uploaded");
-        } finally {
-            try {
-                if (ois != null) ois.close();
-            } catch (Exception e2) {
-
-            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            viewResBudget.setText("Error reading budget file.");
         }
     }
+
+
 
     @javafx.fxml.FXML
     public void loadRoomBudgetOnAction(ActionEvent actionEvent) {

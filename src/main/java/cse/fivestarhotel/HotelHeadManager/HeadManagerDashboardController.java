@@ -20,18 +20,17 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.time.LocalDate;
 
-public class HeadManagerDashboardController
-{
+public class HeadManagerDashboardController {
     @javafx.fxml.FXML
     private BorderPane DashboardBorderPaneHeadManager;
     @javafx.fxml.FXML
-    private TableColumn<Announcement,String> announcementsCol;
+    private TableColumn<Announcement, String> announcementsCol;
     @javafx.fxml.FXML
     private TableColumn<Announcement, LocalDate> dateCol;
     @javafx.fxml.FXML
     private TableView<Announcement> AnnouncementTableView;
     @javafx.fxml.FXML
-    private TableColumn<Announcement,String> positionCol;
+    private TableColumn<Announcement, String> positionCol;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -41,25 +40,22 @@ public class HeadManagerDashboardController
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
 
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
 
 
-        FileInputStream fis=null;
-        ObjectInputStream ois=null;
-
-
-        try{
+        try {
             File f = new File("AnnoncementsDetails.bin");
-            if(f.exists()){
+            if (f.exists()) {
                 fis = new FileInputStream(f);
-            }
-            else{
+            } else {
                 //Alert: file does not exist
             }
-            if(fis != null) ois = new ObjectInputStream(fis);
+            if (fis != null) ois = new ObjectInputStream(fis);
 
             AnnouncementTableView.getItems().clear();
 
-            while(true) {
+            while (true) {
                 AnnouncementTableView.getItems().add((Announcement) ois.readObject());
 
 
@@ -67,8 +63,7 @@ public class HeadManagerDashboardController
             }
             //ois.close();
 
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             try {
                 if (ois != null) ois.close();
 
@@ -78,8 +73,6 @@ public class HeadManagerDashboardController
             }
         }
     }
-
-
 
 
     @javafx.fxml.FXML
@@ -93,10 +86,6 @@ public class HeadManagerDashboardController
     }
 
 
-
-
-
-
     @javafx.fxml.FXML
     public void monthlyrevenueOnAction(ActionEvent actionEvent) {
 
@@ -104,11 +93,10 @@ public class HeadManagerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/MonthlyRevenue.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
-
 
 
     @javafx.fxml.FXML
@@ -118,8 +106,8 @@ public class HeadManagerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
 
@@ -131,8 +119,8 @@ public class HeadManagerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/PerformanceReports.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
 
@@ -144,8 +132,8 @@ public class HeadManagerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
 
@@ -157,8 +145,8 @@ public class HeadManagerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
 
@@ -170,13 +158,19 @@ public class HeadManagerDashboardController
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewStaffIquiries.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
 
 
     @javafx.fxml.FXML
-    public void HeadManagerLogoutOnAction(ActionEvent actionEvent) {
+    public void HeadManagerLogoutOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
     }
 }

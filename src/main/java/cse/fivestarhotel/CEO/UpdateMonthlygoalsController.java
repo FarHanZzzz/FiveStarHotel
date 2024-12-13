@@ -3,6 +3,7 @@ package cse.fivestarhotel.CEO;
 import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import cse.fivestarhotel.HotelHeadManager.Budget;
 import cse.fivestarhotel.FrontDeskStaff.Query;
+import cse.fivestarhotel.RestaurantManager.Menu;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class UpdateMonthlygoalsController
@@ -31,6 +33,8 @@ public class UpdateMonthlygoalsController
     @javafx.fxml.FXML
     private Label budgetStatusLabel;
 
+    ObservableList<Budget> allbudget = FXCollections.observableArrayList();
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -40,40 +44,27 @@ public class UpdateMonthlygoalsController
 
     @javafx.fxml.FXML
     public void postRESbudgetOnAction(ActionEvent actionEvent) {
-        String budget = RESbudgetTextField.getText();
+
+        String name = RESbudgetTextField.getText();
         String month = ResmonthComboBox.getValue();
 
-        if (budget.isEmpty() || month.isEmpty()){
-            budgetStatusLabel.setText("Please fill all the fields");
-
+        if (name.isEmpty() || month == null) {
+            budgetStatusLabel.setText("error");
         }
 
-
-        Budget b  = new Budget(budget, month);
-        budgets.add(b);
-
-        try {
-            File f = new File("ResBudgetUp.bin");
-            FileOutputStream fos;
-            ObjectOutputStream oos;
-
-            if (f.exists()) {
-                fos = new FileOutputStream(f, true);
-                oos = new AppendableObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(f);
-                oos = new ObjectOutputStream(fos);
-            }
-
-            // Write the object
-            budgetStatusLabel.setText("Budget posted" + "\n"+ b.toString());
-            oos.writeObject(b);
+        Budget b = new Budget(name, month);
+        allbudget.add(b);
 
 
-            oos.close();
-        } catch (Exception e) {
+        try (FileOutputStream fos = new FileOutputStream("ResBudgets.bin");
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+            oos.writeObject(b); // Write a single Budget object
+            budgetStatusLabel.setText("Posted successfully:\n" + b.toString());
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         RESbudgetTextField.clear();
         ResmonthComboBox.setValue(null);
 
@@ -82,41 +73,6 @@ public class UpdateMonthlygoalsController
     @javafx.fxml.FXML
     public void roomBudgetOnAction(ActionEvent actionEvent) {
 
-
-        String budget = RoombudgetTextField.getText();
-        String month = RoommonthComboBox.getValue();
-
-        if (budget.isEmpty() || month.isEmpty()){
-            budgetStatusLabel.setText("Please fill all the fields");
-
-        }
-
-
-        Budget b  = new Budget(budget, month);
-        budgets.add(b);
-
-        try {
-            File f = new File("RoomBudgetUp.bin");
-            FileOutputStream fos;
-            ObjectOutputStream oos;
-
-            if (f.exists()) {
-                fos = new FileOutputStream(f, true);
-                oos = new AppendableObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(f);
-                oos = new ObjectOutputStream(fos);
-            }
-
-            // Write the object
-            budgetStatusLabel.setText("Budget posted" + "\n"+ b.toString());
-            oos.writeObject(b);
-
-
-            oos.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         RESbudgetTextField.clear();
         ResmonthComboBox.setValue(null);
 
