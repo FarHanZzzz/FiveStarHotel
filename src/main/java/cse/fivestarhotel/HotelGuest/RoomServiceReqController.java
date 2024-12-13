@@ -58,7 +58,7 @@ public class RoomServiceReqController implements Serializable {
 
 
         try {
-            File f = new File("RoomServiceReq.bin");
+            File f = new File("RoomServiceReq.Bin");
             FileOutputStream fos;
             ObjectOutputStream oos;
 

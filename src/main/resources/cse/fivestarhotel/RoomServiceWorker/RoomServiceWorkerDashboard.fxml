@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="RoomServiceWorkerBorderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.RoomServiceWorkerDashboardController">
+<BorderPane fx:id="RoomServiceWorkerBorderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.RoomServiceWorkerDashboardController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -93,7 +93,7 @@
                         <Font name="Consolas Bold" size="24.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Room Cleaning Scedule" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#SubmitPerReportOnAction" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Submit Performance Report" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
@@ -119,11 +119,6 @@
                     </font>
                 </Button>
                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Cleaning Supplies Inventory" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Food Delivery Request" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>

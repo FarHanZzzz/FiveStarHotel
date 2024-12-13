@@ -102,4 +102,16 @@ public class RoomServiceWorkerDashboardController
         stage.setScene(scene);
         stage.show();
     }
+
+
+    @javafx.fxml.FXML
+    public void SubmitPerReportOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceWorker/SubmitPerReport.fxml"));
+
+            RoomServiceWorkerBorderpane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+
+    }
 }

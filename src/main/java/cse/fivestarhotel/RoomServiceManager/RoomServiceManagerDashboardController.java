@@ -108,4 +108,50 @@ public class RoomServiceManagerDashboardController
         stage.setScene(scene);
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void SpecialRequestsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceManager/SpecialRequestPage.fxml"));
+
+            RoomServiceManagerBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
+
+    @javafx.fxml.FXML
+    public void ViewReviewsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceManager/ViewReviews.fxml"));
+
+            RoomServiceManagerBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
+
+    @javafx.fxml.FXML
+    public void ViewBudgetOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void AnnouncementOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void LostAndFoundOnAction(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void WorkerScheduleOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void SubmitPerformanceReportOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceManager/SubmitPerformanceReportt.fxml"));
+
+            RoomServiceManagerBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
 }
