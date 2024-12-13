@@ -32,19 +32,9 @@ public class FrontDeskStaffDashboardController
     @javafx.fxml.FXML
     private TableColumn<Announcement, LocalDate> dateCol;
     @javafx.fxml.FXML
-    private Label SingleroomLabel;
-    @javafx.fxml.FXML
-    private Label totalGuestCheckedOutLabel;
-    @javafx.fxml.FXML
     private TableColumn<Announcement,String> announcementCol;
     @javafx.fxml.FXML
     private TableColumn<Announcement,String> positionCol;
-    @javafx.fxml.FXML
-    private Label suiteRoomLabel;
-    @javafx.fxml.FXML
-    private Label doubleroomlabel;
-    @javafx.fxml.FXML
-    private Label totalCheckedin;
 
 
     @javafx.fxml.FXML
@@ -54,10 +44,6 @@ public class FrontDeskStaffDashboardController
         announcementCol.setCellValueFactory(new PropertyValueFactory<>("position"));
         positionCol.setCellValueFactory(new PropertyValueFactory<>("announcement"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-
-        SingleroomLabel.setText("50");
-        suiteRoomLabel.setText("20");
-        doubleroomlabel.setText("30");
 
 
 
