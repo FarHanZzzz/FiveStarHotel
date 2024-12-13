@@ -27,9 +27,17 @@ public class GuestcheckoutController implements Serializable
         String email = GuestcheckoutEmailTextfield.getText();
 
 
+
+
         if (email.isEmpty()) {
             StatusLabel.setText("Please fill the Email field");
         }
+
+        if (!isValidEmail(email)) {
+            StatusLabel.setText("Invalid email address.");
+            return;
+        }
+
 
         File file = new File("CheckInGuestDetails.bin");
         if (!file.exists()) {
@@ -101,5 +109,12 @@ public class GuestcheckoutController implements Serializable
 
     }
 
-
+    public static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email != null && email.matches(emailRegex);
     }
+
+
+
+}

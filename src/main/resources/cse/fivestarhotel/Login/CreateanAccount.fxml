@@ -61,7 +61,7 @@
                   <Font name="Consolas Bold" size="23.0" />
                </font>
             </Button>
-            <Label fx:id="createacclabel" layoutX="149.0" layoutY="71.0" prefHeight="28.0" prefWidth="268.0" textFill="#facc43" />
+            <Label fx:id="StatusLabel" layoutX="141.0" layoutY="106.0" prefHeight="17.0" prefWidth="321.0" />
             </children>
         </AnchorPane>
     </right>

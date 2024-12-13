@@ -157,4 +157,25 @@ public class RestaurantManagerDashboardController
         }
         catch(Exception e){}
     }
+
+    @javafx.fxml.FXML
+    public void logOutOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void submitQueriesOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RestaurantManager/Submit Queries.fxml"));
+            dashBoardBorderPane.setCenter(fxmlLoader.load());
+        }
+        catch(Exception e){}
+
+
+    }
 }

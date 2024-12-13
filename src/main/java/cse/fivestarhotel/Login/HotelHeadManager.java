@@ -30,4 +30,6 @@ public class HotelHeadManager implements Serializable{
         this.password = password;
     
     }
+
+
 }

@@ -52,6 +52,9 @@ public class ViewTransportationServiceDetailsController implements Serializable
 //String name, String email, String destination, LocalDate date, String time, String vehicletype
 
 
+
+
+
         try{
             File f = new File("TransportationDetails.bin");
             if(f.exists()){
@@ -82,6 +85,7 @@ public class ViewTransportationServiceDetailsController implements Serializable
             }
 
         }
+
 
     }
 }

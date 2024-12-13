@@ -1,18 +1,22 @@
 package cse.fivestarhotel.Login;
 
+import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import cse.fivestarhotel.HelloApplication;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
-import java.io.IOException;
 
-public class CreateanAccountController
+import java.io.*;
+import java.time.LocalDate;
+
+import static cse.fivestarhotel.FrontDeskStaff.alert.showAlert;
+
+public class CreateanAccountController implements Serializable
 {
 
     @javafx.fxml.FXML
@@ -23,8 +27,11 @@ public class CreateanAccountController
     private TextField CreateAnAccountNameTextField;
     @javafx.fxml.FXML
     private TextField CreateAnAccountemailTextField;
+
+    ObservableList<CreateAccount> createlist = FXCollections.observableArrayList();
     @javafx.fxml.FXML
-    private Label createacclabel;
+    private Label StatusLabel;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -34,6 +41,62 @@ public class CreateanAccountController
 
     @javafx.fxml.FXML
     public void CreateAccountOnAction(ActionEvent actionEvent) {
+        String name = CreateAnAccountNameTextField.getText();
+        String password = CreateAnAccountPasswordPasswordField.getText();
+        LocalDate date = CreateAnAccountBirthdayDatepicker.getValue();
+        String email = CreateAnAccountemailTextField.getText();
+
+        if (name.isEmpty() || password.isEmpty() || date == null || email.isEmpty()){
+            showAlert("error", "please fill all the fields");
+        }
+
+        if (!isValidEmail(email)) {
+            showAlert("error","Invalid email address.");
+            return;
+        }
+
+
+        if (date.isBefore(LocalDate.now())) {
+            showAlert("error","Checkout date cannot be in the past!");
+            return;
+        }
+
+        //int num = 8;
+
+        if (password.length() < 9) {
+           showAlert("error","please make it bigger");
+            return;
+        }
+
+
+        //String name, String email, String password, LocalDate birthdate
+        CreateAccount c = new CreateAccount(name,email,password,date);
+        createlist.add(c);
+
+        try {
+            File f = new File("CreateAccountOfGuest.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
+
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            // Write the object
+            oos.writeObject(c);
+
+            StatusLabel.setText("Account Successfully Created!!!");
+            oos.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -46,4 +109,14 @@ public class CreateanAccountController
         stage.setScene(scene);
         stage.show();
     }
+
+    public static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email != null && email.matches(emailRegex);
+    }
+
+
+
+
 }

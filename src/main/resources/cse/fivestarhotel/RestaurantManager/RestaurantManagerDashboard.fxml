@@ -31,7 +31,7 @@
                     </font>
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sadeque" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Farhan Sadeque" textAlignment="CENTER" wrappingWidth="350.13677978515625">
                     <font>
                         <Font name="Bell MT Bold" size="33.0" />
                     </font>
@@ -120,7 +120,12 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
+            <Button mnemonicParsing="false" onAction="#submitQueriesOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Submit Queries" textAlignment="CENTER" textFill="#cf8e40">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font>
+            </Button>
+                <Button mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
                     <font>
                         <Font name="Consolas Bold" size="20.0" />
                     </font>
@@ -141,7 +146,7 @@
                         <Font name="Bell MT Bold" size="45.0" />
                     </font>
                 </Text>
-                <TableView fx:id="AnnouncementTableView" layoutX="18.0" layoutY="405.0" prefHeight="301.0" prefWidth="896.0" style="-fx-border-style: #8C8C7B;">
+                <TableView fx:id="AnnouncementTableView" layoutX="18.0" layoutY="295.0" prefHeight="411.0" prefWidth="896.0" style="-fx-border-style: #8C8C7B;">
                     <columns>
                         <TableColumn fx:id="positionCol" prefWidth="213.0" text="from" />
                         <TableColumn fx:id="AnnouncementCol" prefWidth="404.0" text="Announcments" />
@@ -151,7 +156,6 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
-                <Line endX="730.0" layoutX="202.0" layoutY="380.0" startX="-202.00001525878906" stroke="#8c8c7b" />
                 <VBox layoutX="44.0" layoutY="126.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                     <children>
                         <Label prefHeight="47.0" prefWidth="151.0" text="0">
@@ -193,6 +197,11 @@
                         </Label>
                     </children>
                 </VBox>
+            <Label layoutX="330.0" layoutY="249.0" prefHeight="39.0" prefWidth="188.0" text="Announcement" textAlignment="CENTER" underline="true" wrapText="true">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
    </center>
