@@ -44,9 +44,6 @@ public class ViewTransportationServiceDetailsController implements Serializable
 
 
 
-
-
-
     @javafx.fxml.FXML
     public void showTransportationBookingDetailsOnAction(ActionEvent actionEvent) {
         FileInputStream fis=null;
@@ -71,9 +68,8 @@ public class ViewTransportationServiceDetailsController implements Serializable
                 transportationTableView.getItems().add((Transportation) ois.readObject());
 
 
-                //CheckinTableView.setItems(CheckinTabledataList);
+
             }
-            //ois.close();
 
         }
         catch(Exception e) {

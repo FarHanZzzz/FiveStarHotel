@@ -1,105 +1,69 @@
-Index: src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java
+Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>package cse.fivestarhotel.RestaurantManager;\r\n\r\nimport cse.fivestarhotel.FrontDeskStaff.CheckInTableDummyClass;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextArea;\r\nimport javafx.scene.control.TextField;\r\n\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class RemoveDishMenuController implements Serializable\r\n{\r\n\r\n    @javafx.fxml.FXML\r\n    private TextArea removedGuestTextArea;\r\n    @javafx.fxml.FXML\r\n    private TextField nameTextField;\r\n    @javafx.fxml.FXML\r\n    private Label statusLabel;\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void RemoveDIshTextField(ActionEvent actionEvent) {\r\n\r\n        String name = nameTextField.getText();\r\n\r\n        if (name.isEmpty()){\r\n            statusLabel.setText(\"Please fill the field\");\r\n        }\r\n\r\n\r\n        File file = new File(\"MenuDetails.bin\");\r\n\r\n        if (!file.exists()) {\r\n            statusLabel.setText(\"This Dish Cannot be found\");\r\n            return;\r\n        }\r\n\r\n        List<Menu> MenuList = new ArrayList<>();\r\n        Menu removedguest = null;\r\n\r\n\r\n        // Step 1: Read all objects and identify the one to delete\r\n        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {\r\n            while (true) {\r\n                try {\r\n                    Menu m = (Menu) ois.readObject();\r\n                    if (m.getDishname().equalsIgnoreCase(name)) {\r\n                        removedguest = m; // Found the guest to remove\r\n                    } else {\r\n                        MenuList.add(m); // Keep all other guests\r\n                    }\r\n                } catch (EOFException e) {\r\n                    break; // End of file reached\r\n\r\n\r\n                } catch (ClassNotFoundException e) {\r\n                    e.printStackTrace();\r\n                    statusLabel.setText(\"Class not found during object deserialization.\");\r\n                    return;\r\n                }\r\n            }\r\n\r\n\r\n\r\n        } catch (FileNotFoundException e) {\r\n            statusLabel.setText(\"The file does not exist.\");\r\n            e.printStackTrace();\r\n            return;\r\n        } catch (IOException e) {\r\n            statusLabel.setText(\"Error reading guest details: \" + e.getMessage());\r\n            e.printStackTrace();\r\n            return;\r\n        }\r\n\r\n\r\n        // Check if the guest was found\r\n        if (removedguest == null) {\r\n            statusLabel.setText(\"Dish with Name \" + name + \" not found\");\r\n            return;\r\n        }\r\n\r\n\r\n        // Step 2: Rewrite the file with the remaining guests\r\n        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {\r\n            for (Menu m: MenuList) {\r\n                oos.writeObject(m);\r\n            }\r\n\r\n\r\n        } catch (IOException e) {\r\n            statusLabel.setText(\"Error updating guest details: \" + e.getMessage());\r\n            e.printStackTrace();\r\n            return;\r\n        }\r\n\r\n\r\n        removedGuestTextArea.setText(\"Removed Dish name :\"+\"\\n\"+ removedguest.toString());\r\n        statusLabel.setText(\"Dish is REmoved SUccessfully\");\r\n        nameTextField.clear();\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n}
+<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.scene.control.*;\r\n\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class GuestcheckoutController implements Serializable\r\n{\r\n    @javafx.fxml.FXML\r\n    private Label StatusLabel;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestcheckoutEmailTextfield;\r\n    @javafx.fxml.FXML\r\n    private TextArea checkoutTextArea;\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n    }\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void CheckoutOnAction(ActionEvent actionEvent) throws FileNotFoundException {\r\n        String email = GuestcheckoutEmailTextfield.getText();\r\n\r\n\r\n        if (email.isEmpty()) {\r\n            StatusLabel.setText(\"Please fill the Email field\");\r\n        }\r\n\r\n        File file = new File(\"CheckInGuestDetails.bin\");\r\n        if (!file.exists()) {\r\n            StatusLabel.setText(\"No guest details found\");\r\n            return;\r\n        }\r\n\r\n        List<CheckInTableDummyClass> guestlist = new ArrayList<>();\r\n        CheckInTableDummyClass checkedoutGuest = null;\r\n\r\n\r\n        // Step 1: Read all objects and identify the one to delete\r\n        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {\r\n            while (true) {\r\n                try {\r\n                    CheckInTableDummyClass guest = (CheckInTableDummyClass) ois.readObject();\r\n                    if (guest.getEmail().equalsIgnoreCase(email)) {\r\n                        checkedoutGuest = guest; // Found the guest to remove\r\n                    } else {\r\n                        guestlist.add(guest); // Keep all other guests\r\n                    }\r\n                } catch (EOFException e) {\r\n                    break; // End of file reached\r\n                } catch (ClassNotFoundException e) {\r\n                    e.printStackTrace();\r\n                    StatusLabel.setText(\"Class not found during object deserialization.\");\r\n                    return;\r\n                }\r\n            }\r\n\r\n\r\n        } catch (FileNotFoundException e) {\r\n            StatusLabel.setText(\"The file does not exist.\");\r\n            e.printStackTrace();\r\n            return;\r\n        } catch (IOException e) {\r\n            StatusLabel.setText(\"Error reading guest details: \" + e.getMessage());\r\n            e.printStackTrace();\r\n            return;\r\n        }\r\n\r\n\r\n        // Check if the guest was found\r\n        if (checkedoutGuest == null) {\r\n            StatusLabel.setText(\"Guest with email \" + email + \" not found\");\r\n            return;\r\n        }\r\n\r\n\r\n        // Step 2: Rewrite the file with the remaining guests\r\n        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {\r\n            for (CheckInTableDummyClass guest : guestlist) {\r\n                oos.writeObject(guest);\r\n            }\r\n\r\n\r\n        } catch (IOException e) {\r\n            StatusLabel.setText(\"Error updating guest details: \" + e.getMessage());\r\n            e.printStackTrace();\r\n            return;\r\n        }\r\n\r\n\r\n        // Step 3: Show removed guest details\r\n        checkoutTextArea.setText(\"Checked out guest details:\\n\" + checkedoutGuest.toString());\r\n        StatusLabel.setText(\"Guest checked out successfully\");\r\n        GuestcheckoutEmailTextfield.clear();\r\n\r\n    }\r\n\r\n\r\n    }
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java b/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java
---- a/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java	(revision fa1c329ed741b709ae6692e3db400876834fcb8b)
-+++ b/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java	(date 1734100496227)
-@@ -10,7 +10,7 @@
- import java.util.ArrayList;
- import java.util.List;
- 
--public class RemoveDishMenuController implements Serializable
-+public class RemoveDishMenuController
- {
- 
-     @javafx.fxml.FXML
-@@ -31,13 +31,15 @@
- 
- 
- 
-+
-+
-     @javafx.fxml.FXML
--    public void RemoveDIshTextField(ActionEvent actionEvent) {
--
-+    public void RemoveDIshOnAction(ActionEvent actionEvent) {
-         String name = nameTextField.getText();
- 
-         if (name.isEmpty()){
-             statusLabel.setText("Please fill the field");
-+            return;
+diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java
+--- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java	(date 1734094156025)
+@@ -38,9 +38,10 @@
          }
  
+         List<CheckInTableDummyClass> guestlist = new ArrayList<>();
++
++
+         CheckInTableDummyClass checkedoutGuest = null;
  
-@@ -57,15 +59,13 @@
+-
+         // Step 1: Read all objects and identify the one to delete
+         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
              while (true) {
-                 try {
-                     Menu m = (Menu) ois.readObject();
--                    if (m.getDishname().equalsIgnoreCase(name)) {
-+                    if (m.getDishname().trim().equalsIgnoreCase(name.trim())) {
-                         removedguest = m; // Found the guest to remove
-                     } else {
-                         MenuList.add(m); // Keep all other guests
-                     }
-                 } catch (EOFException e) {
--                    break; // End of file reached
+Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport cse.fivestarhotel.HotelGuest.Reviews;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.scene.control.TableColumn;\r\nimport javafx.scene.control.TableView;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\n\r\nimport java.io.File;\r\nimport java.io.FileInputStream;\r\nimport java.io.ObjectInputStream;\r\nimport java.io.Serializable;\r\n\r\npublic class ViewHotelguestReviewsController implements Serializable\r\n{\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Reviews,String> nameCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Reviews,String> ratingCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Reviews,String> reviewCol;\r\n    @javafx.fxml.FXML\r\n    private TableView<Reviews> ReviewTableView;\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n\r\n\r\n        //String name, String rating, String review\r\n        nameCol.setCellValueFactory(new PropertyValueFactory<>(\"name\"));\r\n        ratingCol.setCellValueFactory(new PropertyValueFactory<>(\"rating\"));\r\n        reviewCol.setCellValueFactory(new PropertyValueFactory<>(\"review\"));\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void ViewHotelGuestReviews(ActionEvent actionEvent) {\r\n        FileInputStream fis=null;\r\n        ObjectInputStream ois=null;\r\n\r\n\r\n        try{\r\n            File f = new File(\"HotelGuestReview.bin\");\r\n            if(f.exists()){\r\n                fis = new FileInputStream(f);\r\n            }\r\n            else{\r\n                //Alert: file does not exist\r\n            }\r\n            if(fis != null) ois = new ObjectInputStream(fis);\r\n\r\n            ReviewTableView.getItems().clear();\r\n\r\n            while(true) {\r\n                ReviewTableView.getItems().add((Reviews) ois.readObject());\r\n\r\n\r\n                //CheckinTableView.setItems(CheckinTabledataList);\r\n            }\r\n            //ois.close();\r\n\r\n        }\r\n        catch(Exception e) {\r\n            try {\r\n                if (ois != null) ois.close();\r\n\r\n            } catch (Exception e2) {\r\n                //\r\n\r\n            }\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java
+--- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java	(date 1734094436715)
+@@ -26,7 +26,6 @@
+     @javafx.fxml.FXML
+     public void initialize() {
+ 
+-
+         //String name, String rating, String review
+         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+         ratingCol.setCellValueFactory(new PropertyValueFactory<>("rating"));
+@@ -36,9 +35,6 @@
+     }
+ 
+ 
 -
 -
-+                    break;
-                 } catch (ClassNotFoundException e) {
-                     e.printStackTrace();
-                     statusLabel.setText("Class not found during object deserialization.");
-@@ -79,14 +79,17 @@
-             statusLabel.setText("The file does not exist.");
-             e.printStackTrace();
-             return;
+-
+     @javafx.fxml.FXML
+     public void ViewHotelGuestReviews(ActionEvent actionEvent) {
+         FileInputStream fis=null;
+@@ -60,10 +56,8 @@
+             while(true) {
+                 ReviewTableView.getItems().add((Reviews) ois.readObject());
+ 
+-
+-                //CheckinTableView.setItems(CheckinTabledataList);
+             }
+-            //ois.close();
 +
-+
-         } catch (IOException e) {
--            statusLabel.setText("Error reading guest details: " + e.getMessage());
-+            statusLabel.setText("Error reading menu details: " + e.getMessage());
-             e.printStackTrace();
-             return;
+ 
          }
- 
- 
--        // Check if the guest was found
-+        // Check if the Menu was found
-+
-         if (removedguest == null) {
-             statusLabel.setText("Dish with Name " + name + " not found");
-             return;
-@@ -95,30 +98,22 @@
- 
-         // Step 2: Rewrite the file with the remaining guests
-         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
--            for (Menu m: MenuList) {
-+            for (Menu m : MenuList) {
-                 oos.writeObject(m);
+         catch(Exception e) {
+@@ -76,10 +70,5 @@
              }
  
- 
-         } catch (IOException e) {
--            statusLabel.setText("Error updating guest details: " + e.getMessage());
-+            statusLabel.setText("Error updating Menu details: " + e.getMessage());
-             e.printStackTrace();
-             return;
          }
- 
- 
-         removedGuestTextArea.setText("Removed Dish name :"+"\n"+ removedguest.toString());
--        statusLabel.setText("Dish is REmoved SUccessfully");
-+        statusLabel.setText("Dish is Removed SUccessfully");
-         nameTextField.clear();
- 
- 
--
--
--
 -
 -
 -
@@ -108,82 +72,193 @@ diff --git a/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuCon
      }
  }
 \ No newline at end of file
-Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java
+Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport cse.fivestarhotel.CEO.Announcement;\r\nimport cse.fivestarhotel.HelloApplication;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.TableColumn;\r\nimport javafx.scene.control.TableView;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\nimport javafx.scene.layout.BorderPane;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.File;\r\nimport java.io.FileInputStream;\r\nimport java.io.IOException;\r\nimport java.io.ObjectInputStream;\r\nimport java.time.LocalDate;\r\nimport java.util.PropertyPermission;\r\n\r\npublic class FrontDeskStaffDashboardController\r\n{\r\n    @javafx.fxml.FXML\r\n    private BorderPane dashBoardBorderPane;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Announcement,String> announcementsCol;\r\n    @javafx.fxml.FXML\r\n    private TableView<Announcement> AnnouncementTableView;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Announcement, LocalDate> dateCol;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n        //String announcement, LocalDate date\r\n        announcementsCol.setCellValueFactory(new PropertyValueFactory<>(\"announcement\"));\r\n        dateCol.setCellValueFactory(new PropertyValueFactory<>(\"date\"));\r\n\r\n\r\n\r\n\r\n        FileInputStream fis=null;\r\n        ObjectInputStream ois=null;\r\n\r\n\r\n\r\n\r\n        try{\r\n            File f = new File(\"AnnoncementsDetails.bin\");\r\n            if(f.exists()){\r\n                fis = new FileInputStream(f);\r\n            }\r\n            else{\r\n                //Alert: file does not exist\r\n            }\r\n            if(fis != null) ois = new ObjectInputStream(fis);\r\n\r\n            AnnouncementTableView.getItems().clear();\r\n\r\n            while(true) {\r\n                AnnouncementTableView.getItems().add((Announcement) ois.readObject());\r\n\r\n\r\n                //CheckinTableView.setItems(CheckinTabledataList);\r\n            }\r\n            //ois.close();\r\n\r\n        }\r\n        catch(Exception e) {\r\n            try {\r\n                if (ois != null) ois.close();\r\n\r\n            } catch (Exception e2) {\r\n                //\r\n\r\n            }\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void guestDetailsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml\"));\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void transportationDetailsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void hotelGuestReviewsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void checkinOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void checkoutOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @Deprecated\r\n    public void ViewBookeventOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml\"));\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void FrontDeskStaffDashboardOnAction(ActionEvent actionEvent) throws IOException {\r\n        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());\r\n        stage.setTitle(\"Hello\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void BookedEventDetailsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n\r\n    //Submit Queries\r\n\r\n    @javafx.fxml.FXML\r\n    public void SubmitQueriesOnAction(ActionEvent actionEvent) {\r\n\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n}
+<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\n\r\nimport java.io.*;\r\nimport java.time.LocalDate;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.stream.Collectors;\r\n\r\n//import static cse.fivestarhotel.FrontDeskStaff.GuestcheckinController.EmailValidator.isValidEmail;\r\n\r\npublic class GuestcheckinController implements Serializable\r\n{\r\n    @javafx.fxml.FXML\r\n    private Label CheckInStatusLabel;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestEmailTextField;\r\n    @javafx.fxml.FXML\r\n    private TextField NumberofRoomsTextField;\r\n    @javafx.fxml.FXML\r\n    private DatePicker CheckoutDatePicker;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestNameTextField;\r\n    @javafx.fxml.FXML\r\n    private TextField GuestContactNoTetField;\r\n    @javafx.fxml.FXML\r\n    private ComboBox<String> RoomTypeComboBox;\r\n\r\n\r\n    ObservableList<CheckInTableDummyClass> CheckinTabledataList = FXCollections.observableArrayList();\r\n\r\n\r\n\r\n\r\n\r\n    //ObservableList<Guest> GuestDetails = FXCollections.observableArrayList();\r\n\r\n\r\n\r\n     ArrayList<Integer> SingleRoom = new ArrayList<>();\r\n     ArrayList<Integer> DoubleeRoom = new ArrayList<>();\r\n     ArrayList<Integer> SuiteRoom = new ArrayList<>();\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    private TextArea GuestTextAreaDetails;\r\n\r\n\r\n    // ArrayList<CheckInTableDummyClass> CheckinTabledataList = new ArrayList<>();\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n\r\n\r\n\r\n        for (int i = 1; i <= 100; i++) {\r\n            if (i <= 50) SingleRoom.add(i); // 50 Single rooms\r\n            else if (i <= 80) DoubleeRoom.add(i); // 30 Double rooms\r\n            else SuiteRoom.add(i); // 20 Suite rooms\r\n\r\n\r\n\r\n        }\r\n\r\n\r\n\r\n        // combobox\r\n        RoomTypeComboBox.getItems().addAll(\"Single\", \"Double\", \"Suite\");\r\n\r\n\r\n\r\n        //String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate\r\n\r\n\r\n\r\n\r\n        //CheckinTabledataList.add(new CheckInTableDummyClass(\"John Doe\", \"john@example.com\", \"Single\", 1, \"101\", LocalDate.now()));\r\n\r\n        //CheckinTableView.setItems(CheckinTabledataList);\r\n//        CheckinTableView.refresh();\r\n\r\n    }\r\n\r\n\r\n// name,  email,  roomtype,  noofRooms,  roomnumber,  checkoutDate\r\n\r\n    @javafx.fxml.FXML\r\n    public void ClearFieldsOnAction(ActionEvent actionEvent) {\r\n        GuestNameTextField.clear();\r\n        GuestContactNoTetField.clear();\r\n        NumberofRoomsTextField.clear();\r\n        GuestEmailTextField.clear();\r\n        RoomTypeComboBox.setValue(null);\r\n        CheckoutDatePicker.setValue(null);\r\n        NumberofRoomsTextField.clear();\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void CheckInOnAction(ActionEvent actionEvent) {\r\n\r\n        String name = GuestNameTextField.getText();\r\n        String email = GuestEmailTextField.getText();\r\n        int contactno;\r\n        LocalDate checkoutDate = CheckoutDatePicker.getValue();\r\n        String roomtype = RoomTypeComboBox.getValue();\r\n        int noofRooms;\r\n\r\n\r\n\r\n        try {\r\n            noofRooms = Integer.parseInt(NumberofRoomsTextField.getText());\r\n            contactno = Integer.parseInt(GuestContactNoTetField.getText());\r\n\r\n        } catch (NumberFormatException e) {\r\n            CheckInStatusLabel.setText(\"Invalid number of Rooms\");\r\n            return;\r\n        }\r\n\r\n\r\n        // validating other inputs\r\n        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0  ||  checkoutDate == null ){\r\n            CheckInStatusLabel.setText(\"Please fill all the fields\");\r\n        }\r\n\r\n\r\n        // Allocate rooms\r\n        List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);\r\n        if (allocatedRooms.isEmpty()) {\r\n            CheckInStatusLabel.setText(\"Not enough rooms available for the selected type!\");\r\n            return;\r\n        }\r\n\r\n        String roomNumber = allocatedRooms.stream().map(String::valueOf).collect(Collectors.joining(\", \"));\r\n\r\n\r\n        CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate,contactno);\r\n        CheckinTabledataList.add(c);\r\n\r\n\r\n\r\n        try {\r\n            File f = new File(\"CheckInGuestDetails.bin\");\r\n            FileOutputStream fos;\r\n            ObjectOutputStream oos;\r\n\r\n\r\n            if (f.exists()) {\r\n                fos = new FileOutputStream(f, true);\r\n                oos = new AppendableObjectOutputStream(fos);\r\n            } else {\r\n                fos = new FileOutputStream(f);\r\n                oos = new ObjectOutputStream(fos);\r\n            }\r\n\r\n            // Write the object\r\n            oos.writeObject(c);\r\n\r\n            // Update UI\r\n            CheckInStatusLabel.setText(\"Check-in successful! Rooms allocated: \" + roomNumber);\r\n            GuestTextAreaDetails.setText(\"Guest Details: \" + c.toString());\r\n\r\n            oos.close();\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n    public List<Integer> allocateRooms(String roomtype , int noofRooms) {\r\n        List<Integer> roomList;\r\n        List<Integer> allocatedRooms = new ArrayList<>();\r\n\r\n        switch (roomtype) {\r\n            case \"Single\" -> roomList = SingleRoom;\r\n            case \"Double\" -> roomList = DoubleeRoom;\r\n            case \"Suite\" -> roomList = SuiteRoom;\r\n\r\n            default -> {\r\n                return allocatedRooms; // empty list if invalid\r\n\r\n            }\r\n\r\n        }\r\n\r\n        // allocate room if avalidable\r\n        System.out.println(\"Room list for \" + roomtype + \": \" + roomList);\r\n\r\n        // roomlist = 50 , 3\r\n\r\n        if (roomList.size() >= noofRooms) {\r\n            for(int i = 0; i < noofRooms; i++){\r\n                allocatedRooms.add(roomList.remove(0));  // remove and allocate\r\n\r\n            }\r\n\r\n            System.out.println(\"1\"+ allocatedRooms);\r\n\r\n\r\n            // single 1 -50 =\r\n\r\n        }\r\n\r\n        else {\r\n            System.out.println(\"Insufficient rooms for \" + roomtype + \". Available: \" + roomList.size());\r\n\r\n        }\r\n\r\n\r\n        System.out.println(\"Final \"+ allocatedRooms);\r\n\r\n        return allocatedRooms;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        //        // ends\r\n        //\r\n        //        //        CheckinTabledataList.add(new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate));\r\n        ////        for(CheckInTableDummyClass c: CheckinTabledataList){\r\n        ////            CheckinTableView.getItems().add(c);\r\n        ////            CheckInStatusLabel.setText(\"Check-in successful! Rooms allocated: \" + roomNumber);\r\n        //\r\n        //        //CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);\r\n        ////        CheckinTabledataList.add(temp);\r\n        ////        CheckinTableView.refresh();\r\n        //        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate\r\n        //\r\n        //\r\n        //// main code of tableview\r\n        //\r\n        //\r\n        //\r\n        //            //Will create multiple file header issue while appending objects (class instances)\r\n        //\r\n        //        // append\r\n\r\n\r\n        //\r\n//                    if(f.exists()) {\r\n//                        fos = new FileOutputStream(f, true);\r\n//                        oos = new AppendableObjectOutputStream(fos);\r\n//                    }\r\n//                    else {\r\n//                        fos = new FileOutputStream(f);\r\n//                        oos = new ObjectOutputStream(fos);\r\n//                    }\r\n//\r\n//\r\n//\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java
---- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java	(revision fa1c329ed741b709ae6692e3db400876834fcb8b)
-+++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java	(date 1734100496248)
-@@ -9,6 +9,7 @@
- import javafx.scene.Node;
- import javafx.scene.Scene;
- import javafx.scene.control.Alert;
-+import javafx.scene.control.Label;
- import javafx.scene.control.TableColumn;
- import javafx.scene.control.TableView;
- import javafx.scene.control.cell.PropertyValueFactory;
-@@ -32,11 +33,12 @@
-     private TableView<Announcement> AnnouncementTableView;
+diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java
+--- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java	(date 1734093800339)
+@@ -58,34 +58,14 @@
      @javafx.fxml.FXML
-     private TableColumn<Announcement, LocalDate> dateCol;
+     public void initialize() {
+ 
+-
+-
+         for (int i = 1; i <= 100; i++) {
+             if (i <= 50) SingleRoom.add(i); // 50 Single rooms
+             else if (i <= 80) DoubleeRoom.add(i); // 30 Double rooms
+             else SuiteRoom.add(i); // 20 Suite rooms
+-
+-
+-
+         }
+ 
+-
+-
+-        // combobox
+         RoomTypeComboBox.getItems().addAll("Single", "Double", "Suite");
+ 
+-
+-
+-        //String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate
 -
 -
 -
 -
+-        //CheckinTabledataList.add(new CheckInTableDummyClass("John Doe", "john@example.com", "Single", 1, "101", LocalDate.now()));
 -
-+    @javafx.fxml.FXML
-+    private Label SingleroomLabel;
-+    @javafx.fxml.FXML
-+    private Label totalGuestCheckedOutLabel;
-+    @javafx.fxml.FXML
-+    private Label totalroomsStatus;
+-        //CheckinTableView.setItems(CheckinTabledataList);
+-//        CheckinTableView.refresh();
+-
+     }
  
  
+@@ -103,12 +83,17 @@
+ 
+     }
+ 
++    public static boolean isValidEmail(String email) {
++        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
++                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
++        return email != null && email.matches(emailRegex);
++    }
++
+ 
+ 
+ 
      @javafx.fxml.FXML
-Index: src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextArea?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.RestaurantManager.RemoveDishMenuController\">\r\n   <children>\r\n      <Line endX=\"730.0\" layoutX=\"202.0\" layoutY=\"88.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" strokeWidth=\"2.0\" />\r\n      <Text fill=\"#0f4a33\" layoutX=\"22.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"⮯ Remove Menu Item\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n         </font>\r\n      </Text>\r\n      <Label layoutX=\"92.0\" layoutY=\"137.0\" prefHeight=\"30.0\" prefWidth=\"122.0\" text=\"DIsh Name: \">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"20.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField fx:id=\"nameTextField\" layoutX=\"246.0\" layoutY=\"127.0\" prefHeight=\"50.0\" prefWidth=\"525.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Label fx:id=\"statusLabel\" layoutX=\"93.0\" layoutY=\"302.0\" prefHeight=\"40.0\" prefWidth=\"745.0\" style=\"-fx-border-color: #0d3120;\" textFill=\"#6b5347\" />\r\n      <TextArea fx:id=\"removedGuestTextArea\" layoutX=\"29.0\" layoutY=\"379.0\" prefHeight=\"303.0\" prefWidth=\"884.0\" />\r\n      <Button layoutX=\"311.0\" layoutY=\"236.0\" mnemonicParsing=\"false\" onAction=\"#RemoveDIshTextField\" prefHeight=\"35.0\" prefWidth=\"323.0\" style=\"-fx-background-color: #0d3120;\" text=\"Remove Dish \" textFill=\"#ffb51f\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"18.0\" />\r\n         </font></Button>\r\n   </children>\r\n</AnchorPane>\r\n
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml b/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml
---- a/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml	(revision fa1c329ed741b709ae6692e3db400876834fcb8b)
-+++ b/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml	(date 1734100497386)
-@@ -12,22 +12,19 @@
- <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.RemoveDishMenuController">
-    <children>
-       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
--      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Remove Menu Item">
-+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
-          <font>
-             <Font name="Bell MT Bold" size="45.0" />
-          </font>
-       </Text>
--      <Label layoutX="92.0" layoutY="137.0" prefHeight="30.0" prefWidth="122.0" text="DIsh Name: ">
-+      <Label layoutX="58.0" layoutY="139.0" prefHeight="30.0" prefWidth="113.0" text="DIsh Name: ">
-          <font>
--            <Font name="System Bold" size="20.0" />
-+            <Font size="20.0" />
-          </font>
-       </Label>
--      <TextField fx:id="nameTextField" layoutX="246.0" layoutY="127.0" prefHeight="50.0" prefWidth="525.0" style="-fx-background-color: #B6A990;" />
--      <Label fx:id="statusLabel" layoutX="93.0" layoutY="302.0" prefHeight="40.0" prefWidth="745.0" style="-fx-border-color: #0d3120;" textFill="#6b5347" />
--      <TextArea fx:id="removedGuestTextArea" layoutX="29.0" layoutY="379.0" prefHeight="303.0" prefWidth="884.0" />
--      <Button layoutX="311.0" layoutY="236.0" mnemonicParsing="false" onAction="#RemoveDIshTextField" prefHeight="35.0" prefWidth="323.0" style="-fx-background-color: #0d3120;" text="Remove Dish " textFill="#ffb51f">
--         <font>
--            <Font name="System Bold" size="18.0" />
--         </font></Button>
-+      <TextField fx:id="nameTextField" layoutX="246.0" layoutY="139.0" prefHeight="25.0" prefWidth="657.0" />
-+      <Label fx:id="statusLabel" layoutX="70.0" layoutY="301.0" prefHeight="17.0" prefWidth="745.0" style="-fx-border-color: black;" />
-+      <TextArea fx:id="removedGuestTextArea" layoutX="36.0" layoutY="427.0" prefHeight="255.0" prefWidth="884.0" />
-+      <Button layoutX="259.0" layoutY="248.0" mnemonicParsing="false" onAction="#RemoveDIshTextField" prefHeight="25.0" prefWidth="323.0" text="Remove Dish " />
-    </children>
- </AnchorPane>
+     public void CheckInOnAction(ActionEvent actionEvent) {
+-
+         String name = GuestNameTextField.getText();
+         String email = GuestEmailTextField.getText();
+         int contactno;
+@@ -116,8 +101,6 @@
+         String roomtype = RoomTypeComboBox.getValue();
+         int noofRooms;
+ 
+-
+-
+         try {
+             noofRooms = Integer.parseInt(NumberofRoomsTextField.getText());
+             contactno = Integer.parseInt(GuestContactNoTetField.getText());
+@@ -133,6 +116,12 @@
+             CheckInStatusLabel.setText("Please fill all the fields");
+         }
+ 
++        // email
++        if (!isValidEmail(email)) {
++            CheckInStatusLabel.setText("Invalid email address.");
++            return;
++        }
++
+ 
+         // Allocate rooms
+         List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);
+@@ -142,8 +131,6 @@
+         }
+ 
+         String roomNumber = allocatedRooms.stream().map(String::valueOf).collect(Collectors.joining(", "));
+-
+-
+         CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate,contactno);
+         CheckinTabledataList.add(c);
+ 
+@@ -183,6 +170,8 @@
+ 
+ 
+ 
++
++
+     public List<Integer> allocateRooms(String roomtype , int noofRooms) {
+         List<Integer> roomList;
+         List<Integer> allocatedRooms = new ArrayList<>();
+@@ -196,82 +185,27 @@
+                 return allocatedRooms; // empty list if invalid
+ 
+             }
+-
+         }
+ 
+         // allocate room if avalidable
+         System.out.println("Room list for " + roomtype + ": " + roomList);
+ 
+-        // roomlist = 50 , 3
+-
+         if (roomList.size() >= noofRooms) {
+             for(int i = 0; i < noofRooms; i++){
+                 allocatedRooms.add(roomList.remove(0));  // remove and allocate
+-
+             }
+-
+             System.out.println("1"+ allocatedRooms);
+-
+-
+-            // single 1 -50 =
+-
+         }
+-
+         else {
+             System.out.println("Insufficient rooms for " + roomtype + ". Available: " + roomList.size());
+ 
+         }
+-
+-
+         System.out.println("Final "+ allocatedRooms);
+-
+         return allocatedRooms;
+     }
+ 
+ 
+ 
+-
+-
+-
+-
+-
+-
+-        //        // ends
+-        //
+-        //        //        CheckinTabledataList.add(new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate));
+-        ////        for(CheckInTableDummyClass c: CheckinTabledataList){
+-        ////            CheckinTableView.getItems().add(c);
+-        ////            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
+-        //
+-        //        //CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
+-        ////        CheckinTabledataList.add(temp);
+-        ////        CheckinTableView.refresh();
+-        //        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
+-        //
+-        //
+-        //// main code of tableview
+-        //
+-        //
+-        //
+-        //            //Will create multiple file header issue while appending objects (class instances)
+-        //
+-        //        // append
+-
+-
+-        //
+-//                    if(f.exists()) {
+-//                        fos = new FileOutputStream(f, true);
+-//                        oos = new AppendableObjectOutputStream(fos);
+-//                    }
+-//                    else {
+-//                        fos = new FileOutputStream(f);
+-//                        oos = new ObjectOutputStream(fos);
+-//                    }
+-//
+-//
+-//
+-
+-
+     }
+ 
+ 
 Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -192,117 +267,104 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java
---- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java	(revision fa1c329ed741b709ae6692e3db400876834fcb8b)
-+++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java	(date 1734100502360)
-@@ -89,6 +89,8 @@
-         nameTextField.clear();
-         PositionComboBox.setValue(null);
-         DescriptionTextArea.clear();
-+        QueryStatusLabel.setText(null);
-+
+--- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java	(date 1734094436726)
+@@ -32,7 +32,7 @@
+     @javafx.fxml.FXML
+     public void initialize() {
  
+-        PositionComboBox.getItems().addAll("FrontDeskStaff","Room Service Manager","Restarant Manager");
++        PositionComboBox.getItems().addAll("FrontDeskStaff","Room Service Manager","Restaurant Manager","Room Service Worker");
  
+         
      }
+@@ -52,6 +52,9 @@
+         Query q  = new Query(name,position,description);
+         queries.add(q);
+ 
++
++
++
+         try {
+             File f = new File("QueryReview.bin");
+             FileOutputStream fos;
 Index: .idea/workspace.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/AnnoncementsDetails.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/AnnoncementsDetails.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/AnnoncementController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/AnnoncementController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/Announcement.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/Announcement.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviewsController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviewsController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/Annoncement.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/Annoncement.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/Submit queries.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/Submit queries.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewMenuDetails.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewMenuDetails.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewRestaurantReview.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewRestaurantReview.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewguestReservationTable.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewguestReservationTable.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"cse.fivestarhotel.HelloApplication\" />\r\n      <module name=\"FiveStarHotel\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n      <workItem from=\"1733947475473\" duration=\"786000\" />\r\n      <workItem from=\"1733948278263\" duration=\"481000\" />\r\n      <workItem from=\"1733948776583\" duration=\"630000\" />\r\n      <workItem from=\"1733949431710\" duration=\"1466000\" />\r\n      <workItem from=\"1734094478218\" duration=\"502000\" />\r\n      <workItem from=\"1734095676748\" duration=\"3500000\" />\r\n      <workItem from=\"1734099775397\" duration=\"31000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalAccessException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/CheckInGuestDetails.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/CheckInGuestDetails.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AppendableObjectOutputStream.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AppendableObjectOutputStream.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaff.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;05fd5f93-b42c-44cd-9acf-41986fd5422d&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"cse.fivestarhotel.HelloApplication\" />\r\n      <module name=\"FiveStarHotel\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n      <workItem from=\"1733947475473\" duration=\"786000\" />\r\n      <workItem from=\"1733948278263\" duration=\"481000\" />\r\n      <workItem from=\"1733948776583\" duration=\"630000\" />\r\n      <workItem from=\"1733949431710\" duration=\"1466000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalAccessException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/.idea/workspace.xml b/.idea/workspace.xml
---- a/.idea/workspace.xml	(revision fa1c329ed741b709ae6692e3db400876834fcb8b)
-+++ b/.idea/workspace.xml	(date 1734100640333)
-@@ -6,42 +6,13 @@
-   <component name="ChangeListManager">
+--- a/.idea/workspace.xml	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/.idea/workspace.xml	(date 1734094437069)
+@@ -7,11 +7,12 @@
      <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
        <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/AnnoncementsDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoncementsDetails.bin" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/AnnoncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/AnnoncementController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/Announcement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/Announcement.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/CheckInGuestDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CheckInGuestDetails.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AppendableObjectOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/AppendableObjectOutputStream.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaff.java" beforeDir="false" />
 -      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboardController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PerformanceReportsController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/PostAnnouncementController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviewsController.java" afterDir="false" />
 -      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/Annoncement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/Annoncement.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewCustomerReviews.fxml" afterDir="false" />
 -      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/Login/StaffLogin.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/AddMenuDish.fxml" afterDir="false" />
-+      <change beforePath="$PROJECT_DIR$/MenuDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MenuDetails.bin" afterDir="false" />
-+      <change beforePath="$PROJECT_DIR$/QueryReview.bin" beforeDir="false" afterPath="$PROJECT_DIR$/QueryReview.bin" afterDir="false" />
-+      <change beforePath="$PROJECT_DIR$/RestaurantManagerPerformance.bin" beforeDir="false" afterPath="$PROJECT_DIR$/RestaurantManagerPerformance.bin" afterDir="false" />
 +      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" afterDir="false" />
 +      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java" afterDir="false" />
-+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java" afterDir="false" />
-       <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RemoveDishMenu.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/Submit queries.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/Submit queries.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/SubmitPerformanceReport.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewMenuDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewMenuDetails.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewRestaurantReview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewRestaurantReview.fxml" afterDir="false" />
--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewguestReservationTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/ViewguestReservationTable.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviewsController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java" afterDir="false" />
      </list>
      <option name="SHOW_DIALOG" value="false" />
      <option name="HIGHLIGHT_CONFLICTS" value="true" />
-@@ -65,12 +36,12 @@
-     &quot;assignee&quot;: &quot;FarHanZzzz&quot;
-   }
- }</component>
--  <component name="GithubPullRequestsUISettings">{
--  &quot;selectedUrlAndAccountId&quot;: {
--    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,
--    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;
--  }
--}</component>
-+  <component name="GithubPullRequestsUISettings"><![CDATA[{
-+  "selectedUrlAndAccountId": {
-+    "url": "https://github.com/FarHanZzzz/FiveStarHotel.git",
-+    "accountId": "ffe06a0d-a38a-49d0-901d-f1ca4a8601e0"
-+  }
-+}]]></component>
-   <component name="MavenImportPreferences">
-     <option name="generalSettings">
-       <MavenGeneralSettings>
-@@ -120,14 +91,6 @@
-       </method>
-     </configuration>
-   </component>
--  <component name="SharedIndexes">
--    <attachedChunks>
--      <set>
--        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
--        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
--      </set>
--    </attachedChunks>
--  </component>
-   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-   <component name="TaskManager">
-     <task active="true" id="Default" summary="Default task">
-@@ -147,9 +110,6 @@
-       <workItem from="1733948278263" duration="481000" />
-       <workItem from="1733948776583" duration="630000" />
-       <workItem from="1733949431710" duration="1466000" />
--      <workItem from="1734094478218" duration="502000" />
--      <workItem from="1734095676748" duration="3500000" />
--      <workItem from="1734099775397" duration="31000" />
-     </task>
-     <servers />
-   </component>
+Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.scene.control.TableColumn;\r\nimport javafx.scene.control.TableView;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\n\r\nimport java.io.File;\r\nimport java.io.FileInputStream;\r\nimport java.io.ObjectInputStream;\r\nimport java.io.Serializable;\r\nimport java.time.LocalDate;\r\n\r\npublic class ViewTransportationServiceDetailsController implements Serializable\r\n{\r\n    @javafx.fxml.FXML\r\n    private TableView<Transportation> transportationTableView;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Transportation,String> nameCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Transportation,String> emailCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Transportation,LocalDate> dateCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Transportation,String> destinationCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Transportation,String> vehicleTypeCol;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Transportation, String> timeCol;\r\n\r\n\r\n    //String name, String email, String destination, LocalDate date, String time, String vehicletype\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n\r\n        nameCol.setCellValueFactory(new PropertyValueFactory<>(\"name\"));\r\n        emailCol.setCellValueFactory(new PropertyValueFactory<>(\"email\"));\r\n        destinationCol.setCellValueFactory(new PropertyValueFactory<>(\"destination\"));\r\n        timeCol.setCellValueFactory(new PropertyValueFactory<>(\"time\"));\r\n        vehicleTypeCol.setCellValueFactory(new PropertyValueFactory<>(\"vehicletype\"));\r\n        dateCol.setCellValueFactory(new PropertyValueFactory<>(\"date\"));\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void showTransportationBookingDetailsOnAction(ActionEvent actionEvent) {\r\n        FileInputStream fis=null;\r\n        ObjectInputStream ois=null;\r\n\r\n//String name, String email, String destination, LocalDate date, String time, String vehicletype\r\n\r\n\r\n        try{\r\n            File f = new File(\"TransportationDetails.bin\");\r\n            if(f.exists()){\r\n                fis = new FileInputStream(f);\r\n            }\r\n            else{\r\n                //Alert: file does not exist\r\n            }\r\n            if(fis != null) ois = new ObjectInputStream(fis);\r\n\r\n            transportationTableView.getItems().clear();\r\n\r\n            while(true) {\r\n                transportationTableView.getItems().add((Transportation) ois.readObject());\r\n\r\n\r\n                //CheckinTableView.setItems(CheckinTabledataList);\r\n            }\r\n            //ois.close();\r\n\r\n        }\r\n        catch(Exception e) {\r\n            try {\r\n                if (ois != null) ois.close();\r\n\r\n            } catch (Exception e2) {\r\n                //\r\n\r\n            }\r\n\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java
+--- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java	(date 1734094436736)
+@@ -44,9 +44,6 @@
+ 
+ 
+ 
+-
+-
+-
+     @javafx.fxml.FXML
+     public void showTransportationBookingDetailsOnAction(ActionEvent actionEvent) {
+         FileInputStream fis=null;
+@@ -71,9 +68,8 @@
+                 transportationTableView.getItems().add((Transportation) ois.readObject());
+ 
+ 
+-                //CheckinTableView.setItems(CheckinTabledataList);
++
+             }
+-            //ois.close();
+ 
+         }
+         catch(Exception e) {
+Index: src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.FrontDeskStaff;\r\n\r\nimport cse.fivestarhotel.CEO.Announcement;\r\nimport cse.fivestarhotel.HelloApplication;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.TableColumn;\r\nimport javafx.scene.control.TableView;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\nimport javafx.scene.layout.BorderPane;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.File;\r\nimport java.io.FileInputStream;\r\nimport java.io.IOException;\r\nimport java.io.ObjectInputStream;\r\nimport java.time.LocalDate;\r\nimport java.util.PropertyPermission;\r\n\r\npublic class FrontDeskStaffDashboardController\r\n{\r\n    @javafx.fxml.FXML\r\n    private BorderPane dashBoardBorderPane;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Announcement,String> announcementsCol;\r\n    @javafx.fxml.FXML\r\n    private TableView<Announcement> AnnouncementTableView;\r\n    @javafx.fxml.FXML\r\n    private TableColumn<Announcement, LocalDate> dateCol;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n        //String announcement, LocalDate date\r\n        announcementsCol.setCellValueFactory(new PropertyValueFactory<>(\"announcement\"));\r\n        dateCol.setCellValueFactory(new PropertyValueFactory<>(\"date\"));\r\n\r\n\r\n\r\n\r\n        FileInputStream fis=null;\r\n        ObjectInputStream ois=null;\r\n\r\n\r\n\r\n\r\n        try{\r\n            File f = new File(\"AnnoncementsDetails.bin\");\r\n            if(f.exists()){\r\n                fis = new FileInputStream(f);\r\n            }\r\n            else{\r\n                //Alert: file does not exist\r\n            }\r\n            if(fis != null) ois = new ObjectInputStream(fis);\r\n\r\n            AnnouncementTableView.getItems().clear();\r\n\r\n            while(true) {\r\n                AnnouncementTableView.getItems().add((Announcement) ois.readObject());\r\n\r\n\r\n                //CheckinTableView.setItems(CheckinTabledataList);\r\n            }\r\n            //ois.close();\r\n\r\n        }\r\n        catch(Exception e) {\r\n            try {\r\n                if (ois != null) ois.close();\r\n\r\n            } catch (Exception e2) {\r\n                //\r\n\r\n            }\r\n\r\n        }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void guestDetailsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/AccessGuestDetails.fxml\"));\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void transportationDetailsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetails.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void hotelGuestReviewsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewHotelguestReviews.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void checkinOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/Guestcheckin.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void checkoutOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n    }\r\n\r\n    @Deprecated\r\n    public void ViewBookeventOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml\"));\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void FrontDeskStaffDashboardOnAction(ActionEvent actionEvent) throws IOException {\r\n        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());\r\n        stage.setTitle(\"Hello\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n\r\n    @javafx.fxml.FXML\r\n    public void BookedEventDetailsOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/ViewBookEvent.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n\r\n\r\n    //Submit Queries\r\n\r\n    @javafx.fxml.FXML\r\n    public void SubmitQueriesOnAction(ActionEvent actionEvent) {\r\n\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/FrontDeskStaff/Submit Queries.fxml\"));\r\n\r\n\r\n            dashBoardBorderPane.setCenter(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java b/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java
+--- a/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java	(revision 4c8635ec216ea94914c8e8532581960c1f067485)
++++ b/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java	(date 1734093800326)
+@@ -50,10 +50,6 @@
+ 
+         FileInputStream fis=null;
+         ObjectInputStream ois=null;
+-
+-
+-
+-
+         try{
+             File f = new File("AnnoncementsDetails.bin");
+             if(f.exists()){

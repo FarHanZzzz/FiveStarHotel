@@ -50,10 +50,6 @@ public class FrontDeskStaffDashboardController
 
         FileInputStream fis=null;
         ObjectInputStream ois=null;
-
-
-
-
         try{
             File f = new File("AnnoncementsDetails.bin");
             if(f.exists()){

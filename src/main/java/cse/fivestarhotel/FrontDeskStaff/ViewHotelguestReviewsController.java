@@ -26,7 +26,6 @@ public class ViewHotelguestReviewsController implements Serializable
     @javafx.fxml.FXML
     public void initialize() {
 
-
         //String name, String rating, String review
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         ratingCol.setCellValueFactory(new PropertyValueFactory<>("rating"));
@@ -34,9 +33,6 @@ public class ViewHotelguestReviewsController implements Serializable
 
 
     }
-
-
-
 
 
     @javafx.fxml.FXML
@@ -60,10 +56,8 @@ public class ViewHotelguestReviewsController implements Serializable
             while(true) {
                 ReviewTableView.getItems().add((Reviews) ois.readObject());
 
-
-                //CheckinTableView.setItems(CheckinTabledataList);
             }
-            //ois.close();
+
 
         }
         catch(Exception e) {
@@ -76,10 +70,5 @@ public class ViewHotelguestReviewsController implements Serializable
             }
 
         }
-
-
-
-
-
     }
 }
