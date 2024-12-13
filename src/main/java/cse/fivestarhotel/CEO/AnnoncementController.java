@@ -4,6 +4,7 @@ import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -24,21 +25,24 @@ public class AnnoncementController implements Serializable
     private TextField AnnouncementTextField;
 
     ObservableList<Announcement> announcementList = FXCollections.observableArrayList();
+    @javafx.fxml.FXML
+    private ComboBox<String> positionComboBox;
 
 
     @javafx.fxml.FXML
     public void initialize() {
-
+        positionComboBox.getItems().addAll("CEO", "Head Manager");
 
     }
 
     @javafx.fxml.FXML
     public void submitAnnoncementOnAction(ActionEvent actionEvent) {
         String Announcement = AnnouncementTextField.getText();
+        String position = positionComboBox.getValue();
         LocalDate date = dateDatePicker.getValue();
 
 
-        Announcement a = new Announcement(Announcement,date);
+        Announcement a = new Announcement(Announcement,position,date);
         announcementList.add(a);
 
         try {
@@ -65,9 +69,6 @@ public class AnnoncementController implements Serializable
 
         AnnouncementTextField.clear();
         dateDatePicker.setValue(null);
-
-
-
 
 
     }

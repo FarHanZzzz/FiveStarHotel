@@ -26,25 +26,25 @@ public class PerformanceReportsController
     @javafx.fxml.FXML
     private TableColumn eleAttendanceCol;
     @javafx.fxml.FXML
-    private TableColumn roomtotalspentCol;
+    private TableColumn<PerformanceReport,String> roomtotalspentCol;
     @javafx.fxml.FXML
-    private TableColumn roomAttendanceCol;
+    private TableColumn<PerformanceReport,String> roomAttendanceCol;
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String>  restotalspentCol;
     @javafx.fxml.FXML
-    private TableColumn roomcustomersatisCol;
+    private TableColumn<PerformanceReport,String> roomcustomersatisCol;
     @javafx.fxml.FXML
     private TableColumn elecustomersatisCol;
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String>  ResAttendanceCol;
     @javafx.fxml.FXML
-    private TableColumn roomMonthCol;
+    private TableColumn<PerformanceReport,String> roomMonthCol;
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String>   ResMonthCol;
     @javafx.fxml.FXML
     private TableView<PerformanceReport>  resPerformanceTableView;
     @javafx.fxml.FXML
-    private TableView roomPerformanceTableView;
+    private TableView<PerformanceReport> roomPerformanceTableView;
     @javafx.fxml.FXML
     private TableView elePerformanceTableView;
 
@@ -119,5 +119,40 @@ public class PerformanceReportsController
 
     @javafx.fxml.FXML
     public void roomPerformaneOnAction(ActionEvent actionEvent) {
+
+
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+
+        try {
+            File f = new File("RoomServicePerformance.bin");
+            if (f.exists()) {
+                fis = new FileInputStream(f);
+            } else {
+                //Alert: file does not exist
+            }
+            if (fis != null) ois = new ObjectInputStream(fis);
+
+            roomPerformanceTableView.getItems().clear();
+
+            while (true) {
+                roomPerformanceTableView.getItems().add((PerformanceReport) ois.readObject());
+
+
+                //CheckinTableView.setItems(CheckinTabledataList);
+            }
+            //ois.close();
+
+        } catch (Exception e) {
+            try {
+                if (ois != null) ois.close();
+            } catch (Exception e2) {
+                //
+
+            }
+
+
+        }
     }
 }

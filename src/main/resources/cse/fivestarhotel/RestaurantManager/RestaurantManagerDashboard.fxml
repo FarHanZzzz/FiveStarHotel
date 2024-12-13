@@ -31,7 +31,7 @@
                     </font>
                 </Text>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Farhana Chowdhury" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sadeque" textAlignment="CENTER" wrappingWidth="350.13677978515625">
                     <font>
                         <Font name="Bell MT Bold" size="33.0" />
                     </font>
@@ -57,7 +57,7 @@
                         </LinearGradient>
                     </fill>
                 </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Head Manager" textAlignment="CENTER" wrappingWidth="350.13677978515625">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Restaurant Manager" textAlignment="CENTER" wrappingWidth="350.13677978515625">
                     <font>
                         <Font name="Bodoni MT" size="26.0" />
                     </font>

@@ -9,26 +9,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckoutController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.GuestcheckoutController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Guest Checkout">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Label layoutX="31.0" layoutY="152.0" text="Guest Email:">
+      <Label layoutX="47.0" layoutY="160.0" prefHeight="27.0" prefWidth="114.0" text="Guest Email:" textFill="#0f4a33">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="GuestcheckoutEmailTextfield" layoutX="136.0" layoutY="151.0" prefHeight="26.0" prefWidth="371.0" />
-      <Button layoutX="771.0" layoutY="110.0" mnemonicParsing="false" onAction="#CheckoutOnAction" prefHeight="158.0" prefWidth="131.0" text="Check out ">
+      <TextField fx:id="GuestcheckoutEmailTextfield" layoutX="176.0" layoutY="151.0" prefHeight="51.0" prefWidth="345.0" style="-fx-background-color: #B6A990;" />
+      <Button layoutX="620.0" layoutY="167.0" mnemonicParsing="false" onAction="#CheckoutOnAction" prefHeight="101.0" prefWidth="281.0" style="-fx-background-color: #0f4a33;" text="Check out " textFill="#edc215">
          <font>
-            <Font size="20.0" />
+            <Font name="Consolas Bold" size="20.0" />
          </font>
       </Button>
-      <Label fx:id="StatusLabel" layoutX="52.0" layoutY="278.0" prefHeight="32.0" prefWidth="406.0" style="-fx-border-color: red;" text="Status : ">
+      <Label fx:id="StatusLabel" layoutX="52.0" layoutY="269.0" prefHeight="41.0" prefWidth="443.0" style="-fx-border-color: #0f4a33;" text="Status : ">
          <font>
             <Font size="15.0" />
          </font>

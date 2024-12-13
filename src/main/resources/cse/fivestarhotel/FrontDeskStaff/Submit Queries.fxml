@@ -16,33 +16,38 @@
                 <Font name="Consolas Bold" size="28.0" />
             </font>
         </Text>
-        <Button layoutX="369.0" layoutY="618.0" mnemonicParsing="false" onAction="#submitQueriesOnAction" prefHeight="49.0" prefWidth="203.0" style="-fx-background-color: #0D3120;" text="Submit Queries" textFill="#f5a831">
+        <Button layoutX="357.0" layoutY="618.0" mnemonicParsing="false" onAction="#submitQueriesOnAction" prefHeight="49.0" prefWidth="203.0" style="-fx-background-color: #0D3120;" text="Submit Queries" textFill="#f5a831">
             <font>
                 <Font name="Consolas Bold" size="20.0" />
             </font>
         </Button>
-        <Text fill="#0d3120" layoutX="55.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="310.13672637939453">
+        <Text fill="#0d3120" layoutX="55.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="310.13672637939453">
             <font>
                 <Font name="Consolas Bold" size="29.0" />
             </font>
         </Text>
-        <ComboBox fx:id="PositionComboBox" layoutX="365.0" layoutY="240.0" prefHeight="40.0" prefWidth="225.0" />
-        <TextField fx:id="nameTextField" layoutX="362.0" layoutY="132.0" prefHeight="46.0" prefWidth="371.0" style="-fx-background-color: #B6A990;" />
-        <Text fill="#0d3120" layoutX="55.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="310.13672637939453">
+        <ComboBox fx:id="PositionComboBox" layoutX="365.0" layoutY="248.0" prefHeight="49.0" prefWidth="257.0" />
+        <TextField fx:id="nameTextField" layoutX="362.0" layoutY="164.0" prefHeight="46.0" prefWidth="371.0" style="-fx-background-color: #B6A990;" />
+        <Text fill="#0d3120" layoutX="63.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="310.13672637939453">
             <font>
                 <Font name="Consolas Bold" size="28.0" />
             </font>
         </Text>
-        <TextArea fx:id="DescriptionTextArea" layoutX="362.0" layoutY="332.0" prefHeight="249.0" prefWidth="513.0" />
-        <Label fx:id="QueryStatusLabel" layoutX="321.0" layoutY="66.0" prefHeight="0.0" prefWidth="238.0" textAlignment="CENTER">
+        <TextArea fx:id="DescriptionTextArea" layoutX="362.0" layoutY="332.0" prefHeight="249.0" prefWidth="513.0" style="-fx-background-color: #B6A990;" />
+        <Label fx:id="QueryStatusLabel" layoutX="259.0" layoutY="96.0" prefHeight="43.0" prefWidth="411.0" textAlignment="CENTER" textFill="#0d3120">
             <font>
-                <Font name="Consolas" size="15.0" />
+                <Font name="Consolas" size="20.0" />
             </font>
         </Label>
-      <Button layoutX="36.0" layoutY="629.0" mnemonicParsing="false" onAction="#clearFieldsOnAction" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #0D3120;" text="Clear Fields" textFill="#f5a831">
+      <Button layoutX="112.0" layoutY="542.0" mnemonicParsing="false" onAction="#clearFieldsOnAction" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #0D3120;" text="Clear Fields" textFill="#f5a831">
          <font>
             <Font name="Consolas Bold" size="14.0" />
          </font>
       </Button>
+      <Text fill="#0d3120" layoutX="250.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Submit any queries or concerns you might have. YOU make us better." textAlignment="CENTER" wrappingWidth="412.66666666666674">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

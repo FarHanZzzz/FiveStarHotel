@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewTransportationServiceDetailsController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewTransportationServiceDetailsController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Transportation Details">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView fx:id="transportationTableView" layoutX="9.0" layoutY="297.0" prefHeight="408.0" prefWidth="902.0">
+      <TableView fx:id="transportationTableView" layoutX="19.0" layoutY="260.0" prefHeight="445.0" prefWidth="902.0">
          <columns>
             <TableColumn fx:id="nameCol" maxWidth="1240.0" minWidth="30.0" prefWidth="124.0" text="Name" />
             <TableColumn fx:id="emailCol" maxWidth="1320.0" minWidth="30.0" prefWidth="132.0" text="Email" />
@@ -23,15 +26,15 @@
             <TableColumn fx:id="destinationCol" maxWidth="1830.0" minWidth="30.0" prefWidth="183.0" text="Destination" />
          </columns>
       </TableView>
-      <Label layoutX="22.0" layoutY="242.0" prefHeight="46.0" prefWidth="438.0" text="View Transporatation guest details ">
+      <Button layoutX="286.0" layoutY="177.0" mnemonicParsing="false" onAction="#showTransportationBookingDetailsOnAction" prefHeight="54.0" prefWidth="347.0" style="-fx-background-color: #0d3120;" text="Show Transportation Booking Details" textFill="#f5bd18">
          <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Button layoutX="22.0" layoutY="138.0" mnemonicParsing="false" onAction="#showTransportationBookingDetailsOnAction" prefHeight="54.0" prefWidth="347.0" text="Show Transportation Booking Details">
-         <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Text fill="#0d3120" layoutX="342.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest booked transportation requests" wrappingWidth="248.2800292968751">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

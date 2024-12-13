@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.StaffLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.Login.StaffLoginController">
    <left>
       <ImageView fitHeight="720.0" fitWidth="688.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
@@ -38,7 +38,7 @@
                </font>
             </Label>
             <TextField fx:id="StaffIdTextField" layoutX="329.0" layoutY="316.0" style="-fx-background-color: #cc8e3c;" />
-            <Button layoutX="250.0" layoutY="510.0" mnemonicParsing="false" onAction="#StaffLogInOnAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #cc8e3c;" text="Log in" textFill="#072917">
+            <Button layoutX="250.0" layoutY="513.0" mnemonicParsing="false" onAction="#StaffLogInOnAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #cc8e3c;" text="Log in" textFill="#072917">
                <font>
                   <Font size="18.0" />
                </font>
@@ -49,8 +49,8 @@
                   <Font name="Consolas Bold" size="23.0" />
                </font>
             </Button>
-            <ComboBox fx:id="positionComboBox" layoutX="330.0" layoutY="422.0" prefWidth="150.0" />
-            <Label layoutX="179.0" layoutY="416.0" prefHeight="35.0" prefWidth="133.0" text="Position" textFill="#cc8e3c">
+            <ComboBox fx:id="positionComboBox" layoutX="328.0" layoutY="434.0" prefWidth="150.0" />
+            <Label layoutX="171.0" layoutY="428.0" prefHeight="35.0" prefWidth="133.0" text="𐙚  Position:" textFill="#cc8e3c">
                <font>
                   <Font size="24.0" />
                </font>

@@ -12,45 +12,48 @@
 <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.AddMenuDishController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Update Menu">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Label layoutX="332.0" layoutY="146.0" text="Add Menu Details" underline="true">
+      <Label layoutX="332.0" layoutY="110.0" text="Add Menu Details" textFill="#0d3120" underline="true">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="237.0" text="Dish Name">
+      <TextField fx:id="dishNameTextField" layoutX="246.0" layoutY="183.0" style="-fx-background-color: #B6A990;" />
+      <ComboBox fx:id="dishTypeComboBox" layoutX="246.0" layoutY="238.0" prefWidth="150.0" />
+      <Button layoutX="86.0" layoutY="337.0" mnemonicParsing="false" onAction="#addDishToMenuOnAction" prefHeight="32.0" prefWidth="252.0" style="-fx-background-color: #0d3120;" text="Add Dish to Menu " textFill="#ffb826">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="520.0" layoutY="182.0" text="Meal Type:">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="276.0" text="Dish Type:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="dishNameTextField" layoutX="192.0" layoutY="238.0" />
-      <ComboBox fx:id="dishTypeComboBox" layoutX="192.0" layoutY="277.0" prefWidth="150.0" />
-      <Button layoutX="65.0" layoutY="418.0" mnemonicParsing="false" onAction="#addDishToMenuOnAction" prefHeight="25.0" prefWidth="236.0" text="Add Dish to Menu " />
-      <Label layoutX="466.0" layoutY="237.0" text="Meal Type:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="mealTypeComboBox" layoutX="602.0" layoutY="238.0" prefWidth="150.0" />
-      <Label fx:id="MenuDetailsLabel" layoutX="32.0" layoutY="488.0" prefHeight="209.0" prefWidth="895.0" style="-fx-border-color: black;">
+      <ComboBox fx:id="mealTypeComboBox" layoutX="656.0" layoutY="183.0" prefWidth="150.0" />
+      <Label fx:id="MenuDetailsLabel" layoutX="22.0" layoutY="392.0" prefHeight="300.0" prefWidth="895.0" style="-fx-border-color: #0d3120;">
          <font>
             <Font size="20.0" />
          </font></Label>
-      <Label layoutX="466.0" layoutY="276.0" text="Dish Price:">
+      <Label layoutX="520.0" layoutY="237.0" text="Dish Price:">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="dishPriceTextField" layoutX="603.0" layoutY="276.0" />
-      <Button layoutX="56.0" layoutY="326.0" mnemonicParsing="false" onAction="#clearfieldsOnAction" prefHeight="25.0" prefWidth="88.0" text="Clear fields" />
+      <TextField fx:id="dishPriceTextField" layoutX="657.0" layoutY="237.0" style="-fx-background-color: #B6A990;" />
+      <Button layoutX="400.0" layoutY="291.0" mnemonicParsing="false" onAction="#clearfieldsOnAction" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #B6A990;" text="Clear fields" />
+      <Label layoutX="109.0" layoutY="180.0" text="Dish Name:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="109.0" layoutY="238.0" text="Dish Type:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

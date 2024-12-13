@@ -1,6 +1,8 @@
 package cse.fivestarhotel.HotelHeadManager;
 
-
+import cse.fivestarhotel.HotelGuest.Reviews;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
@@ -14,39 +16,46 @@ import java.io.Serializable;
 public class ViewBudgetController implements Serializable {
 
     @javafx.fxml.FXML
-    private Label viewmenulabel;
-
+    private Label viewTransportBudget;
     @javafx.fxml.FXML
-    public void viewMenuOnAction(ActionEvent actionEvent) {
+    private Label viewEleBudget;
+    @javafx.fxml.FXML
+    private Label viewRoomBudget;
+    @javafx.fxml.FXML
+    private Label viewResBudget;
+    @javafx.fxml.FXML
+    private Label viewbudlabel;
+
+    @Deprecated
+    public void loadResBudgetOnAction(ActionEvent actionEvent) {
+
+        ObservableList<Budget> budgets = FXCollections.observableArrayList();
 
         FileInputStream fis = null;
         ObjectInputStream ois = null;
 
         try {
-            File f = new File("MenuDetails.bin");
+            File f = new File("ResBudgetUp.bin");
             if (f.exists()) {
                 fis = new FileInputStream(f);
             } else {
-                viewmenulabel.setText("error");
+                viewbudlabel.setText("error");
                 return;
             }
 
             if (fis != null) ois = new ObjectInputStream(fis);
 
-            StringBuilder menuDetails = new StringBuilder();
-
             while (true) {
                 try {
-                    Menu menu = (Menu) ois.readObject();
-                    menuDetails.append(formatMenuDetails(menu)).append("\n");
+                    Budget b = (Budget) ois.readObject();
                 } catch (Exception e) {
                     break;
                 }
             }
-            viewmenulabel.setText(menuDetails.toString());
+            viewbudlabel.setText(budgets.toString());
 
         } catch (Exception e) {
-            viewmenulabel.setText("oops- guess you're gonna have to be hungry");
+            viewbudlabel.setText("not yet uploaded");
         } finally {
             try {
                 if (ois != null) ois.close();
@@ -56,12 +65,16 @@ public class ViewBudgetController implements Serializable {
         }
     }
 
-    // Helper method to format menu details
-    private String formatMenuDetails(Menu menu) {
-        return "Dish Name: " + menu.getDishname() + "\n" +
-                "Dish Type: " + menu.getDishtype() + "\n" +
-                "Meal Type: " + menu.getMealtype() + "\n" +
-                "Price: $" + menu.getPrice() + "\n" +
-                "⊹------⊹------⊹------⊹------⊹------⊹";
+    @javafx.fxml.FXML
+    public void loadRoomBudgetOnAction(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void loadEleBudgetOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void loadTransportBudgetOnAction(ActionEvent actionEvent) {
+    }
+
 }

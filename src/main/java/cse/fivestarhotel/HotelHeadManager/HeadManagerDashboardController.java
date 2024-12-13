@@ -30,11 +30,14 @@ public class HeadManagerDashboardController
     private TableColumn<Announcement, LocalDate> dateCol;
     @javafx.fxml.FXML
     private TableView<Announcement> AnnouncementTableView;
+    @javafx.fxml.FXML
+    private TableColumn<Announcement,String> positionCol;
 
     @javafx.fxml.FXML
     public void initialize() {
 
         announcementsCol.setCellValueFactory(new PropertyValueFactory<>("announcement"));
+        positionCol.setCellValueFactory(new PropertyValueFactory<>("position"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
 
@@ -109,7 +112,7 @@ public class HeadManagerDashboardController
 
 
     @javafx.fxml.FXML
-    public void postannouncementOnAction(ActionEvent actionEvent) {
+    public void PostANNOnAction(ActionEvent actionEvent) {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/PostAnnouncement.fxml"));

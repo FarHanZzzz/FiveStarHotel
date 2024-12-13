@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -22,18 +23,13 @@
                 <Font name="System Bold" size="27.0" />
             </font>
         </Text>
-        <TextField layoutX="280.0" layoutY="384.0" prefHeight="183.0" prefWidth="589.0" style="-fx-background-color: #B6A990;" />
-        <Text layoutX="66.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" wrappingWidth="244.80333709716797">
-            <font>
-                <Font name="Consolas" size="23.0" />
-            </font>
-        </Text>
-      <Text layoutX="66.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="244.80333709716797">
+        <TextField fx:id="HeadAnnouncementTextField" layoutX="280.0" layoutY="384.0" prefHeight="183.0" prefWidth="589.0" style="-fx-background-color: #B6A990;" />
+      <Text layoutX="66.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="244.80333709716797">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Text layoutX="68.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="244.80333709716797">
+      <Text layoutX="68.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:" wrappingWidth="244.80333709716797">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
@@ -43,13 +39,17 @@
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <DatePicker layoutX="284.0" layoutY="314.0" prefHeight="36.0" prefWidth="231.0" />
-      <ComboBox layoutX="284.0" layoutY="249.0" prefHeight="39.0" prefWidth="229.0" />
-      <TextField layoutX="283.0" layoutY="188.0" prefHeight="38.0" prefWidth="327.0" style="-fx-background-color: #B6A990;" />
+      <DatePicker fx:id="HeaddateDatePicker" layoutX="284.0" layoutY="302.0" prefHeight="36.0" prefWidth="231.0" />
+      <ComboBox fx:id="headpositionCombobox" layoutX="284.0" layoutY="217.0" prefHeight="39.0" prefWidth="229.0" />
       <Button layoutX="358.0" layoutY="613.0" mnemonicParsing="false" onAction="#HeadsubmitAnnoncementOnAction" prefHeight="53.0" prefWidth="235.0" text="Post">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Button>
+      <Label fx:id="HeadStatus" layoutX="638.0" layoutY="291.0" prefHeight="47.0" prefWidth="219.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

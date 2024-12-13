@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -98,11 +95,6 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#postannouncementOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="post an announcement" textAlignment="CENTER" textFill="#cf8e40">
-               <font>
-                  <Font name="Consolas" size="20.0" />
-               </font>
-            </Button>
             <Button mnemonicParsing="false" onAction="#performancereportsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="performance reports" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
@@ -113,7 +105,12 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="satisfaction report" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" onAction="#staffinquiriesOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#PostANNOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="post announcement" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
@@ -123,7 +120,7 @@
                   <Font name="Consolas" size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#staffinquiriesOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="staff submitted inquiries" textAlignment="CENTER" textFill="#cf8e40">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="restaurant reviews" textAlignment="CENTER" textFill="#cf8e40">
                <font>
                   <Font name="Consolas" size="20.0" />
                </font>
@@ -143,28 +140,20 @@
    <right>
       <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
          <children>
-            <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+            <Line endX="707.3333129882812" endY="-7.62939453125E-6" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
             <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
                <font>
                   <Font name="Bell MT Bold" size="45.0" />
                </font>
             </Text>
-            <StackedBarChart layoutX="10.0" layoutY="243.0" prefHeight="201.0" prefWidth="680.0">
-              <xAxis>
-                <CategoryAxis prefHeight="24.0" prefWidth="265.0" side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" upperBound="10000.0" />
-              </yAxis>
-            </StackedBarChart>
-            <TableView fx:id="AnnouncementTableView" layoutX="25.0" layoutY="447.0" prefHeight="249.0" prefWidth="882.0" style="-fx-border-style: #8C8C7B;">
+            <TableView fx:id="AnnouncementTableView" layoutX="25.0" layoutY="360.0" prefHeight="336.0" prefWidth="882.0" style="-fx-border-style: #8C8C7B;">
               <columns>
-                <TableColumn fx:id="announcementsCol" prefWidth="499.99997901916504" text="Announcments" />
-                <TableColumn prefWidth="198.6666259765625" text="from" />
+                <TableColumn fx:id="announcementsCol" prefWidth="182.6667423248291" text="from" />
+                <TableColumn fx:id="positionCol" prefWidth="515.9998626708984" text="Announcement" />
                   <TableColumn fx:id="dateCol" prefWidth="204.666748046875" text="date" />
               </columns>
             </TableView>
-            <Line endX="730.0" layoutX="200.0" layoutY="426.0" startX="-202.00001525878906" stroke="#8c8c7b" />
+            <Line endX="718.6666870117188" endY="3.0517578125E-5" layoutX="200.0" layoutY="339.0" startX="-199.99998474121094" startY="3.0517578125E-5" stroke="#8c8c7b" />
             <VBox layoutX="78.0" layoutY="119.0" prefHeight="78.0" prefWidth="137.0" style="-fx-background-color: #B6A990;">
                <children>
                   <Label prefHeight="47.0" prefWidth="151.0" text="0">
@@ -193,12 +182,7 @@
                   </Text>
                </children>
             </VBox>
-            <Text fill="#000000aa" layoutX="67.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ guests per month" wrappingWidth="217.81787872314453">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="299.0" fitWidth="201.0" layoutX="707.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="214.0" fitWidth="201.0" layoutX="707.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </right>

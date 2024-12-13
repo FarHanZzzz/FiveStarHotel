@@ -4,12 +4,21 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Announcement implements Serializable {
-    private  String  Announcement;
+    private String position, Announcement;
     private LocalDate date;
 
-    public Announcement(String announcement, LocalDate date) {
+    public Announcement(String position, String announcement, LocalDate date) {
+        this.position = position;
         Announcement = announcement;
         this.date = date;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getAnnouncement() {
@@ -31,7 +40,8 @@ public class Announcement implements Serializable {
     @Override
     public String toString() {
         return "Announcement{" +
-                "Announcement='" + Announcement + '\'' +
+                "position='" + position + '\'' +
+                ", Announcement='" + Announcement + '\'' +
                 ", date=" + date +
                 '}';
     }

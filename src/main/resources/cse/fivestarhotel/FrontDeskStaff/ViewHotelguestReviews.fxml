@@ -12,26 +12,26 @@
 <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.FrontDeskStaff.ViewHotelguestReviewsController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Guest Reviews">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView fx:id="ReviewTableView" layoutX="41.0" layoutY="241.0" prefHeight="274.0" prefWidth="852.0">
+      <TableView fx:id="ReviewTableView" layoutX="41.0" layoutY="266.0" prefHeight="433.0" prefWidth="859.0">
          <columns>
-            <TableColumn fx:id="nameCol" prefWidth="137.0" text="Name" />
-            <TableColumn fx:id="ratingCol" prefWidth="186.0" text="Rating" />
+            <TableColumn fx:id="nameCol" prefWidth="167.99999618530273" text="Name" />
+            <TableColumn fx:id="ratingCol" prefWidth="155.3333740234375" text="Rating" />
             <TableColumn fx:id="reviewCol" prefWidth="528.0" text="Review" />
          </columns>
       </TableView>
-      <Button layoutX="737.0" layoutY="111.0" mnemonicParsing="false" onAction="#ViewHotelGuestReviews" prefHeight="98.0" prefWidth="151.0" text="View Hotel Guest Reviews" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="348.0" layoutY="176.0" mnemonicParsing="false" onAction="#ViewHotelGuestReviews" prefHeight="55.0" prefWidth="242.0" style="-fx-background-color: #0d3120;" text="View Hotel Guest Reviews" textAlignment="CENTER" textFill="#ffac1c" wrapText="true">
          <font>
-            <Font size="17.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <Label layoutX="249.0" layoutY="153.0" text="Hotel Guest Reviews" underline="true">
+      <Label layoutX="335.0" layoutY="116.0" text="Reviews of our recent guests." textFill="#0d3120">
          <font>
-            <Font size="39.0" />
+            <Font name="Consolas" size="17.0" />
          </font>
       </Label>
    </children>

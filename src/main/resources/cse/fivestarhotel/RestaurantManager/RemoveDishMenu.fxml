@@ -12,19 +12,22 @@
 <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.RemoveDishMenuController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Overview">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ Remove Menu Item">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Label layoutX="58.0" layoutY="139.0" prefHeight="30.0" prefWidth="113.0" text="DIsh Name: ">
+      <Label layoutX="92.0" layoutY="137.0" prefHeight="30.0" prefWidth="122.0" text="DIsh Name: ">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="nameTextField" layoutX="246.0" layoutY="139.0" prefHeight="25.0" prefWidth="657.0" />
-      <Label fx:id="statusLabel" layoutX="70.0" layoutY="301.0" prefHeight="17.0" prefWidth="745.0" style="-fx-border-color: black;" />
-      <TextArea fx:id="removedGuestTextArea" layoutX="36.0" layoutY="427.0" prefHeight="255.0" prefWidth="884.0" />
-      <Button layoutX="259.0" layoutY="248.0" mnemonicParsing="false" onAction="#RemoveDIshTextField" prefHeight="25.0" prefWidth="323.0" text="Remove Dish " />
+      <TextField fx:id="nameTextField" layoutX="246.0" layoutY="127.0" prefHeight="50.0" prefWidth="525.0" style="-fx-background-color: #B6A990;" />
+      <Label fx:id="statusLabel" layoutX="93.0" layoutY="302.0" prefHeight="40.0" prefWidth="745.0" style="-fx-border-color: #0d3120;" textFill="#6b5347" />
+      <TextArea fx:id="removedGuestTextArea" layoutX="29.0" layoutY="379.0" prefHeight="303.0" prefWidth="884.0" />
+      <Button layoutX="311.0" layoutY="236.0" mnemonicParsing="false" onAction="#RemoveDIshTextField" prefHeight="35.0" prefWidth="323.0" style="-fx-background-color: #0d3120;" text="Remove Dish " textFill="#ffb51f">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

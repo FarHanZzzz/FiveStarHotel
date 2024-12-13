@@ -11,21 +11,26 @@
 <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RestaurantManager.ViewRestaurantReviewController">
    <children>
       <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Reviews">
+      <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Restaurant Reviews">
          <font>
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <TableView fx:id="ViewRestaurantReviewTableView" layoutX="69.0" layoutY="260.0" prefHeight="428.0" prefWidth="807.0">
+      <TableView fx:id="ViewRestaurantReviewTableView" layoutX="38.0" layoutY="260.0" prefHeight="428.0" prefWidth="860.0">
         <columns>
           <TableColumn fx:id="nameCol" prefWidth="176.0" text="Name" />
           <TableColumn fx:id="ratingCol" prefWidth="180.00001525878906" text="Rating" />
             <TableColumn fx:id="descriptionCol" prefWidth="451.0" text="Description" />
         </columns>
       </TableView>
-      <Button layoutX="69.0" layoutY="209.0" mnemonicParsing="false" onAction="#viewRestaurantReviewOnAction" prefHeight="42.0" prefWidth="530.0" text="View Restaurant Review of Guests">
+      <Button layoutX="231.0" layoutY="171.0" mnemonicParsing="false" onAction="#viewRestaurantReviewOnAction" prefHeight="43.0" prefWidth="483.0" style="-fx-background-color: #0f4a33;" text="Load Restaurant Reviews" textFill="#ffae21">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font></Button>
+      <Text fill="#796868" layoutX="204.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest submitted reviews of our food, restaurant environment and overall vibe.">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
