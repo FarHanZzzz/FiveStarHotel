@@ -5,25 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_12_05_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_12_05_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_05_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_05_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_06_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_06_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_6_2024_11_31_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_6_2024_11_31_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_20_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_20_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_29_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_7_2024_4_29_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateAccountOfGuest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CreateAccountOfGuest.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HeadManager.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelGuestReview.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaundryInfo.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryReview.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestaurantManagerPerformance.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransportationDetails.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoncementsDetails.bin" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoncementsDetails.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/ManageUserAccountsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/Login/StaffLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/HeadManagerDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/ManageUserAccounts.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +48,12 @@
     &quot;assignee&quot;: &quot;FarHanZzzz&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,
-    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/FarHanZzzz/FiveStarHotel.git",
+    "accountId": "5d49b3d9-2eb5-473f-861c-0462b64dfa01"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -71,28 +72,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cse.fivestarhotel.HelloApplication" />
@@ -105,8 +106,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
       </set>
     </attachedChunks>
   </component>
@@ -129,8 +130,7 @@
       <workItem from="1733948278263" duration="481000" />
       <workItem from="1733948776583" duration="630000" />
       <workItem from="1733949431710" duration="1466000" />
-      <workItem from="1734126651964" duration="1102000" />
-      <workItem from="1734127776550" duration="1041000" />
+      <workItem from="1734130604153" duration="2562000" />
     </task>
     <servers />
   </component>

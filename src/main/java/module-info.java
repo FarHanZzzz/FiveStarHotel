@@ -18,6 +18,7 @@ module hotel.fivestarhotel {
     opens cse.fivestarhotel.RoomServiceWorker to javafx.fxml;
     opens cse.fivestarhotel.RoomServiceManager to javafx.fxml;
     opens cse.fivestarhotel.HotelGuest to javafx.fxml;
+    opens cse.fivestarhotel.Electrician to javafx.fxml;
 
 
 
@@ -32,6 +33,7 @@ module hotel.fivestarhotel {
     exports cse.fivestarhotel.RoomServiceManager;
     exports cse.fivestarhotel.RoomServiceWorker;
     exports cse.fivestarhotel.Login;
+    exports cse.fivestarhotel.Electrician;
 
 
 

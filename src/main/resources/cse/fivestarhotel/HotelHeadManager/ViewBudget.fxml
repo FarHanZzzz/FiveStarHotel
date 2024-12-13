@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.ViewBudgetController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.ViewBudgetController">
     <children>
         <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
         <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Budget">
@@ -69,8 +69,8 @@
       <Label fx:id="viewRoomBudget" layoutX="419.0" layoutY="398.0" prefHeight="41.0" prefWidth="265.0" style="-fx-background-color: #B6A990;" />
       <Label fx:id="viewEleBudget" layoutX="422.0" layoutY="488.0" prefHeight="41.0" prefWidth="261.0" style="-fx-background-color: #B6A990;" />
       <Label fx:id="viewTransportBudget" layoutX="424.0" layoutY="580.0" prefHeight="41.0" prefWidth="258.0" style="-fx-background-color: #B6A990;" />
-      <Label layoutX="380.0" layoutY="168.0" prefHeight="41.0" prefWidth="215.0" style="-fx-background-color: #B6A990;" />
-      <Button layoutX="637.0" layoutY="171.0" mnemonicParsing="false" onAction="#loadResBudgetOnAction" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #0f4a33;" text="load budget" textFill="#e5b409">
+      <Label fx:id="ViewTotalBudget" layoutX="380.0" layoutY="168.0" prefHeight="41.0" prefWidth="215.0" style="-fx-background-color: #B6A990;" />
+      <Button layoutX="637.0" layoutY="171.0" mnemonicParsing="false" onAction="#loadTotalBudgetOnAction" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #0f4a33;" text="load budget" textFill="#e5b409">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

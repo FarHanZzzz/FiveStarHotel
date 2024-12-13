@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.CEO.UpdateMonthlygoalsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.CEO.UpdateMonthlygoalsController">
    <children>
       <Line endX="821.0" layoutX="115.0" layoutY="116.0" startX="-115.0" stroke="#6f6a6a" />
       <Label layoutX="33.0" layoutY="24.0" prefHeight="64.0" prefWidth="549.0" text="⮯ Update Monthly Budget " textFill="#0f4a33">
@@ -66,8 +66,8 @@
             <Font name="Bell MT Bold" size="21.0" />
          </font>
       </Label>
-      <TextField layoutX="179.0" layoutY="507.0" />
-      <Button layoutX="690.0" layoutY="498.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #0f4a33;" text="Post budget" textFill="#e8ba60">
+      <TextField fx:id="TransBudgetTextField" layoutX="179.0" layoutY="507.0" />
+      <Button layoutX="690.0" layoutY="498.0" mnemonicParsing="false" onAction="#TransBudgetOnAction" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #0f4a33;" text="Post budget" textFill="#e8ba60">
          <font>
             <Font name="Bell MT Bold" size="17.0" />
          </font>
@@ -77,7 +77,7 @@
             <Font name="Bell MT Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox layoutX="477.0" layoutY="505.0" prefWidth="150.0" />
+      <ComboBox fx:id="TransMonthComboBox" layoutX="477.0" layoutY="505.0" prefWidth="150.0" />
       <Line endX="811.0000610351562" layoutX="122.0" layoutY="565.0" startX="-115.0" stroke="#6f6a6a" />
       <Line endX="811.0000610351562" layoutX="120.0" layoutY="419.0" startX="-115.0" stroke="#6f6a6a" />
       <Label layoutX="29.0" layoutY="593.0" prefHeight="35.0" prefWidth="377.0" text="Total Budget" textFill="#0f4a33" underline="true">
@@ -90,8 +90,8 @@
             <Font name="Bell MT Bold" size="21.0" />
          </font>
       </Label>
-      <TextField layoutX="177.0" layoutY="660.0" />
-      <Button layoutX="688.0" layoutY="651.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #0f4a33;" text="Post budget" textFill="#e8ba60">
+      <TextField fx:id="TotalBudgetTextField" layoutX="177.0" layoutY="660.0" />
+      <Button layoutX="688.0" layoutY="651.0" mnemonicParsing="false" onAction="#TotalBudgetOnAction" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #0f4a33;" text="Post budget" textFill="#e8ba60">
          <font>
             <Font name="Bell MT Bold" size="17.0" />
          </font>
@@ -101,7 +101,7 @@
             <Font name="Bell MT Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox layoutX="475.0" layoutY="658.0" prefWidth="150.0" />
+      <ComboBox fx:id="TotalBudgetComboBox" layoutX="475.0" layoutY="658.0" prefWidth="150.0" />
       <Button layoutX="694.0" layoutY="332.0" mnemonicParsing="false" onAction="#roomBudgetOnAction" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #0f4a33;" text="Post budget" textFill="#e8ba60">
          <font>
             <Font name="Bell MT Bold" size="17.0" />

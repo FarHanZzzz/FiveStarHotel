@@ -1,0 +1,508 @@
+Index: src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.CEO;\r\n\r\npublic class UpdateMonthlygoalsController\r\n{\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n    }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java b/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java
+--- a/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ b/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java	(date 1734011295873)
+@@ -1,7 +1,133 @@
+ package cse.fivestarhotel.CEO;
+ 
++import javafx.event.ActionEvent;
++import javafx.scene.control.ComboBox;
++import javafx.scene.control.DatePicker;
++import javafx.scene.control.TextField;
++import javafx.scene.control.Alert;
++import javafx.scene.control.Alert.AlertType;
++
++import java.io.*;
++import java.time.LocalDate;
++import java.util.Date;
++import java.util.HashMap;
++import java.util.Map;
++
+ public class UpdateMonthlygoalsController
+ {
++
++    @javafx.fxml.FXML
++    private TextField BudgetOfDepartmentsTextField;
++    @javafx.fxml.FXML
++    private DatePicker dateofpostingDatePicker;
++    @javafx.fxml.FXML
++    private ComboBox<String> DepartmentsCombox;
++
++    private static String FILE_NAME = "department_budgets.bin";  // Binary file for storing budgets
++    private Map<String, DepartmentBudget> departmentBudgets = new HashMap<>();
++
+     @javafx.fxml.FXML
+     public void initialize() {
+-    }}
+\ No newline at end of file
++        DepartmentsCombox.getItems().addAll("Transportation Department", "Restaurant Manager", "Room Service Manager","Electrician Department");
++        loadAllBudgets();
++
++    }
++
++    private void loadAllBudgets() {
++        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
++            Object readObject = in.readObject();
++
++            if (readObject instanceof Map<?, ?>) {
++                // Ensure it's a Map<String, DepartmentBudget>
++                @SuppressWarnings("unchecked")
++                Map<String, DepartmentBudget> loadedMap = (Map<String, DepartmentBudget>) readObject;
++                departmentBudgets = loadedMap;
++            } else {
++                System.out.println("The file does not contain valid budget data.");
++            }
++        } catch (IOException | ClassNotFoundException e) {
++            System.out.println("No existing budget data found or error loading data.");
++            // Ignore errors here as this is fine on the first run or if the file is empty
++        }
++    }
++
++
++    private void saveAllBudgets() {
++        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
++            out.writeObject(departmentBudgets);  // Serialize the map and save it to the binary file
++        } catch (IOException e) {
++            e.printStackTrace();
++            showAlert("Error saving data", "There was an error saving the department budgets.");
++        }
++    }
++    private void appendBudgetToFile(DepartmentBudget departmentBudget) {
++        // Use appendable file logic to avoid overwriting the file's previous data
++        try (FileOutputStream fileOut = new FileOutputStream(FILE_NAME, true);  // Open in append mode
++             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
++
++            // Prevent writing the header again if file already has data
++            if (new File(FILE_NAME).length() > 0) {
++                out.reset();  // Reset to avoid writing a new header
++            }
++
++            out.writeObject(departmentBudget);  // Serialize and append the department budget object
++
++        } catch (IOException e) {
++            e.printStackTrace();
++            showAlert("Error saving data", "There was an error saving the department budget.");
++        }
++    }
++
++
++
++
++    @javafx.fxml.FXML
++    public void showAllrevenueonBarchart(ActionEvent actionEvent) {
++    }
++
++    @javafx.fxml.FXML
++    public void postBudgetfordifferentDepartments(ActionEvent actionEvent) {
++        String department = DepartmentsCombox.getValue();  // Get the selected department
++        if (department == null) {
++            showAlert("No department selected", "Please select a department.");
++            return;
++        }
++
++        String budgetText = BudgetOfDepartmentsTextField.getText();  // Get the budget from the text field
++        if (budgetText.isEmpty()) {
++            showAlert("Invalid budget", "Please enter a valid budget amount.");
++            return;
++        }
++
++        double budget = 0;
++        try {
++            budget = Double.parseDouble(budgetText);  // Parse the budget as a double
++        } catch (NumberFormatException e) {
++            showAlert("Invalid input", "Please enter a valid number for the budget.");
++            return;
++        }
++
++        LocalDate date = dateofpostingDatePicker.getValue();  // Get the selected date
++        if (date == null) {
++            showAlert("No date selected", "Please select a date.");
++            return;
++        }
++
++        // Create a new DepartmentBudget object with the provided information
++        DepartmentBudget departmentBudget = new DepartmentBudget(department, budget, date);
++        departmentBudgets.put(department, departmentBudget);  // Update the map with the new budget
++
++        // Append the new budget to the binary file
++        appendBudgetToFile(departmentBudget);
++
++    }
++
++    private void showAlert(String error, String s) {
++        Alert alert = new Alert(AlertType.ERROR);
++        alert.setTitle("Error");
++        alert.setHeaderText(error);
++        alert.setContentText(s);
++        alert.showAndWait();
++
++    }
++}
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ /dev/null	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
+@@ -1,107 +0,0 @@
+-Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM__Changes_.xml
+-===================================================================
+-diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM__Changes_.xml
+-deleted file mode 100644
+---- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM__Changes_.xml	(revision 1fb97585d9ea3bd8ef08c101a155b7ba13b12863)
+-+++ /dev/null	(revision 1fb97585d9ea3bd8ef08c101a155b7ba13b12863)
+-@@ -1,4 +0,0 @@
+--<changelist name="Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM_[Changes]" date="1732740758296" recycled="true" deleted="true">
+--  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM_[Changes]/shelved.patch" />
+--  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/28/2024 2:52 AM [Changes]" />
+--</changelist>
+-\ No newline at end of file
+-Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM_[Changes]/shelved.patch
+-===================================================================
+-diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM_[Changes]/shelved.patch
+-deleted file mode 100644
+---- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2024_2_52_AM_[Changes]/shelved.patch	(revision 1fb97585d9ea3bd8ef08c101a155b7ba13b12863)
+-+++ /dev/null	(revision 1fb97585d9ea3bd8ef08c101a155b7ba13b12863)
+-@@ -1,69 +0,0 @@
+--Index: .idea/workspace.xml
+--IDEA additional info:
+--Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+--<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;ffe06a0d-a38a-49d0-901d-f1ca4a8601e0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+--Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+--<+>UTF-8
+--===================================================================
+--diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+----- a/.idea/workspace.xml	(revision 405b879329abc29053ac9465f2a984c53b73b028)
+--+++ b/.idea/workspace.xml	(date 1732740687776)
+--@@ -58,9 +58,23 @@
+--     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+--     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+--     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+---    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+--+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+--+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+--+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+--+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+--+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+--+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+--+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+--   }
+-- }</component>
+--+  <component name="SharedIndexes">
+--+    <attachedChunks>
+--+      <set>
+--+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+--+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+--+      </set>
+--+    </attachedChunks>
+--+  </component>
+--   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+--   <component name="TaskManager">
+--     <task active="true" id="Default" summary="Default task">
+--@@ -69,7 +83,12 @@
+--       <option name="number" value="Default" />
+--       <option name="presentableId" value="Default" />
+--       <updated>1732636037915</updated>
+--+      <workItem from="1732691317064" duration="1348000" />
+--+      <workItem from="1732740293857" duration="392000" />
+--     </task>
+--     <servers />
+--   </component>
+--+  <component name="TypeScriptGeneratedFilesManager">
+--+    <option name="version" value="3" />
+--+  </component>
+-- </project>
+--\ No newline at end of file
+--Index: .idea/misc.xml
+--IDEA additional info:
+--Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+--<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_22\" default=\"true\" project-jdk-name=\"22\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+--Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+--<+>UTF-8
+--===================================================================
+--diff --git a/.idea/misc.xml b/.idea/misc.xml
+----- a/.idea/misc.xml	(revision 405b879329abc29053ac9465f2a984c53b73b028)
+--+++ b/.idea/misc.xml	(date 1732740754968)
+--@@ -8,7 +8,7 @@
+--       </list>
+--     </option>
+--   </component>
+---  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="22" project-jdk-type="JavaSDK">
+--+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="temurin-21" project-jdk-type="JavaSDK">
+--     <output url="file://$PROJECT_DIR$/out" />
+--   </component>
+-- </project>
+--\ No newline at end of file
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;05fd5f93-b42c-44cd-9acf-41986fd5422d&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 1fb97585d9ea3bd8ef08c101a155b7ba13b12863)
+-+++ b/.idea/workspace.xml	(date 1733271728765)
+-@@ -6,8 +6,6 @@
+-   <component name="ChangeListManager">
+-     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/Guestcheckout.fxml" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM__Changes_.xml	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ /dev/null	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]" date="1733388729344" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/5/2024 2:52 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaff.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaff.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Query.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Query.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Transportation.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Transportation.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/goals thats been done\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/goals thats been done\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Goals thats been done\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Goals thats been done\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/checkin\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"cse.fivestarhotel.HelloApplication\" />\r\n      <module name=\"FiveStarHotel\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n      <workItem from=\"1733947475473\" duration=\"786000\" />\r\n      <workItem from=\"1733948278263\" duration=\"481000\" />\r\n      <workItem from=\"1733948776583\" duration=\"630000\" />\r\n      <workItem from=\"1733949431710\" duration=\"1466000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalAccessException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ b/.idea/workspace.xml	(date 1734023621303)
+@@ -5,26 +5,14 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_5_2024_2_52_PM__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaff.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckoutController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Query.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/SubmitQueriesController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Transportation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/Transportation.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/ViewTransportationServiceDetailsController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/goals thats been done" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/goals thats been done" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Goals thats been done" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/Goals thats been done" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RemoveDishMenuController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/FrontDeskStaffDashboard.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/FrontDeskStaff/checkin" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/UpdateMonthlygoalsController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -51,9 +39,12 @@
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+     &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,
+-    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;
++    &quot;accountId&quot;: &quot;5d49b3d9-2eb5-473f-861c-0462b64dfa01&quot;
+   }
+ }</component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="file://$PROJECT_DIR$/src/main/java/cse/fivestarhotel/FrontDeskStaff/GuestcheckinController.java" root0="FORCE_HIGHLIGHTING" />
++  </component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+@@ -106,8 +97,8 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
++        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
++        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -126,10 +117,10 @@
+       <workItem from="1732812928251" duration="38000" />
+       <workItem from="1732813016733" duration="370000" />
+       <workItem from="1732813603231" duration="2575000" />
+-      <workItem from="1733947475473" duration="786000" />
+-      <workItem from="1733948278263" duration="481000" />
+-      <workItem from="1733948776583" duration="630000" />
+-      <workItem from="1733949431710" duration="1466000" />
++      <workItem from="1733995504211" duration="643000" />
++      <workItem from="1733997095382" duration="7065000" />
++      <workItem from="1734010561404" duration="2961000" />
++      <workItem from="1734020731385" duration="2224000" />
+     </task>
+     <servers />
+   </component>
+Index: src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.HotelHeadManager.ViewBudgetController\">\r\n    <children>\r\n        <Line endX=\"730.0\" layoutX=\"202.0\" layoutY=\"88.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" strokeWidth=\"2.0\" />\r\n        <Text fill=\"#0f4a33\" layoutX=\"22.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"⮯ View Budget\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n            </font>\r\n        </Text>\r\n        <TextField layoutX=\"461.0\" layoutY=\"176.0\" prefHeight=\"41.0\" prefWidth=\"232.0\" style=\"-fx-background-color: #B6A990;\" />\r\n        <Text layoutX=\"215.0\" layoutY=\"203.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Total Budget ($):\" wrappingWidth=\"244.80333709716797\">\r\n            <font>\r\n                <Font name=\"Consolas\" size=\"23.0\" />\r\n            </font>\r\n        </Text>\r\n      <Text layoutX=\"168.0\" layoutY=\"417.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Room Service Department ($):\" wrappingWidth=\"356.80333709716797\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"541.0\" layoutY=\"388.0\" prefHeight=\"41.0\" prefWidth=\"232.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text layoutX=\"168.0\" layoutY=\"483.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Resturant Department ($):\" wrappingWidth=\"356.80333709716797\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"539.0\" layoutY=\"454.0\" prefHeight=\"41.0\" prefWidth=\"232.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text layoutX=\"168.0\" layoutY=\"552.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Electrician Department ($):\" wrappingWidth=\"356.80333709716797\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"541.0\" layoutY=\"523.0\" prefHeight=\"41.0\" prefWidth=\"232.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text layoutX=\"168.0\" layoutY=\"618.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Transport Department ($):\" wrappingWidth=\"356.80333709716797\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"23.0\" />\r\n         </font>\r\n      </Text>\r\n      <TextField layoutX=\"539.0\" layoutY=\"589.0\" prefHeight=\"41.0\" prefWidth=\"232.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <TextField layoutX=\"461.0\" layoutY=\"244.0\" prefHeight=\"41.0\" prefWidth=\"192.0\" style=\"-fx-background-color: #B6A990;\" />\r\n      <Text layoutX=\"292.0\" layoutY=\"269.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"month :\" wrappingWidth=\"115.99999999999989\">\r\n         <font>\r\n            <Font name=\"Consolas\" size=\"25.0\" />\r\n         </font>\r\n      </Text>\r\n      <Line endX=\"673.6666870117188\" endY=\"3.0517578125E-5\" layoutX=\"244.0\" layoutY=\"336.0\" startX=\"-217.0\" startY=\"3.0517578125E-5\" stroke=\"#8c8c7b\" />\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml b/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml
+--- a/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ b/src/main/resources/cse/fivestarhotel/HotelHeadManager/ViewBudget.fxml	(date 1734001472646)
+@@ -6,7 +6,7 @@
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.ViewBudgetController">
++<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.HotelHeadManager.ViewBudgetController">
+     <children>
+         <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+         <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Budget">
+@@ -14,7 +14,7 @@
+                 <Font name="Bell MT Bold" size="45.0" />
+             </font>
+         </Text>
+-        <TextField layoutX="461.0" layoutY="176.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
++        <TextField fx:id="totalBudgetLabel" layoutX="461.0" layoutY="176.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
+         <Text layoutX="215.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Budget ($):" wrappingWidth="244.80333709716797">
+             <font>
+                 <Font name="Consolas" size="23.0" />
+@@ -25,26 +25,26 @@
+             <Font name="Consolas" size="23.0" />
+          </font>
+       </Text>
+-      <TextField layoutX="541.0" layoutY="388.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
++      <TextField fx:id="RoomServiceDepartmentLabel" layoutX="541.0" layoutY="388.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
+       <Text layoutX="168.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resturant Department ($):" wrappingWidth="356.80333709716797">
+          <font>
+             <Font name="Consolas" size="23.0" />
+          </font>
+       </Text>
+-      <TextField layoutX="539.0" layoutY="454.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
++      <TextField fx:id="restaurantDepartmentLabel" layoutX="539.0" layoutY="454.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
+       <Text layoutX="168.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Electrician Department ($):" wrappingWidth="356.80333709716797">
+          <font>
+             <Font name="Consolas" size="23.0" />
+          </font>
+       </Text>
+-      <TextField layoutX="541.0" layoutY="523.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
++      <TextField fx:id="ElectricianDepartmentLabel" layoutX="541.0" layoutY="523.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
+       <Text layoutX="168.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transport Department ($):" wrappingWidth="356.80333709716797">
+          <font>
+             <Font name="Consolas" size="23.0" />
+          </font>
+       </Text>
+-      <TextField layoutX="539.0" layoutY="589.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
+-      <TextField layoutX="461.0" layoutY="244.0" prefHeight="41.0" prefWidth="192.0" style="-fx-background-color: #B6A990;" />
++      <TextField fx:id="TransportDepartmentLabel" layoutX="539.0" layoutY="589.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
++      <TextField fx:id="budgetOfmonthLabel" layoutX="461.0" layoutY="244.0" prefHeight="41.0" prefWidth="192.0" style="-fx-background-color: #B6A990;" />
+       <Text layoutX="292.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="month :" wrappingWidth="115.99999999999989">
+          <font>
+             <Font name="Consolas" size="25.0" />
+Index: src/main/java/cse/fivestarhotel/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel;\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\nimport java.io.IOException;\r\n\r\npublic class HelloApplication extends Application {\r\n    @Override\r\n    public void start(Stage stage) throws IOException {\r\n\r\n\r\n        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n        stage.setTitle(\"Sign in!\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/HelloApplication.java b/src/main/java/cse/fivestarhotel/HelloApplication.java
+--- a/src/main/java/cse/fivestarhotel/HelloApplication.java	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ b/src/main/java/cse/fivestarhotel/HelloApplication.java	(date 1734001970057)
+@@ -10,7 +10,7 @@
+     public void start(Stage stage) throws IOException {
+ 
+ 
+-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RestaurantManager/RestaurantManagerDashboard.fxml"));
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml"));
+         Scene scene = new Scene(fxmlLoader.load());
+         stage.setTitle("Sign in!");
+         stage.setScene(scene);
+Index: src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.chart.BarChart?>\r\n<?import javafx.scene.chart.CategoryAxis?>\r\n<?import javafx.scene.chart.NumberAxis?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.ComboBox?>\r\n<?import javafx.scene.control.DatePicker?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"739.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.CEO.UpdateMonthlygoalsController\">\r\n   <children>\r\n      <Line endX=\"821.0\" layoutX=\"115.0\" layoutY=\"116.0\" startX=\"-115.0\" stroke=\"#6f6a6a\" />\r\n      <Label layoutX=\"33.0\" layoutY=\"24.0\" prefHeight=\"64.0\" prefWidth=\"528.0\" text=\"⮯Monthly Goals Overview\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"7.0\" layoutY=\"157.0\" prefHeight=\"33.0\" prefWidth=\"133.0\" text=\"Post Goals\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"24.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"7.0\" layoutY=\"215.0\" prefHeight=\"33.0\" prefWidth=\"164.0\" text=\"Budget of Department\" textFill=\"#0f4a33\" wrapText=\"true\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"7.0\" layoutY=\"277.0\" prefHeight=\"33.0\" prefWidth=\"106.0\" text=\"Department\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"11.0\" layoutY=\"344.0\" prefHeight=\"33.0\" prefWidth=\"164.0\" text=\"Date of posting\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"180.0\" layoutY=\"219.0\" />\r\n      <DatePicker layoutX=\"180.0\" layoutY=\"348.0\" prefHeight=\"25.0\" prefWidth=\"150.0\" />\r\n      <ComboBox layoutX=\"180.0\" layoutY=\"281.0\" prefWidth=\"150.0\" />\r\n      <BarChart layoutX=\"422.0\" layoutY=\"190.0\">\r\n        <xAxis>\r\n          <CategoryAxis side=\"BOTTOM\" />\r\n        </xAxis>\r\n        <yAxis>\r\n          <NumberAxis side=\"LEFT\" />\r\n        </yAxis>\r\n      </BarChart>\r\n      <Label layoutX=\"508.0\" layoutY=\"157.0\" prefHeight=\"33.0\" prefWidth=\"481.0\" text=\"Revenue split by department\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"26.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button layoutX=\"157.0\" layoutY=\"419.0\" mnemonicParsing=\"false\" prefHeight=\"49.0\" prefWidth=\"236.0\" style=\"-fx-background-color: #0f4a33;\" text=\"Post budget for department\" textFill=\"#e8ba60\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"17.0\" />\r\n         </font>\r\n      </Button>\r\n      <Button layoutX=\"23.0\" layoutY=\"515.0\" mnemonicParsing=\"false\" prefHeight=\"49.0\" prefWidth=\"399.0\" style=\"-fx-background-color: #0f4a33;\" text=\"Show revenue Split per department with Barchart\" textFill=\"#e8ba60\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"17.0\" />\r\n         </font>\r\n      </Button>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml b/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml
+--- a/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ b/src/main/resources/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml	(date 1733995578638)
+@@ -40,9 +40,9 @@
+             <Font name="Bell MT Bold" size="16.0" />
+          </font>
+       </Label>
+-      <TextField layoutX="180.0" layoutY="219.0" />
+-      <DatePicker layoutX="180.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
+-      <ComboBox layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
++      <TextField fx:id="BudgetOfDepartmentsTextField" layoutX="180.0" layoutY="219.0" />
++      <DatePicker fx:id="dateofpostingDatePicker" layoutX="180.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
++      <ComboBox fx:id="DepartmentsCombox" layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
+       <BarChart layoutX="422.0" layoutY="190.0">
+         <xAxis>
+           <CategoryAxis side="BOTTOM" />
+@@ -56,12 +56,12 @@
+             <Font name="Bell MT Bold" size="26.0" />
+          </font>
+       </Label>
+-      <Button layoutX="157.0" layoutY="419.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="236.0" style="-fx-background-color: #0f4a33;" text="Post budget for department" textFill="#e8ba60">
++      <Button layoutX="157.0" layoutY="419.0" mnemonicParsing="false" onAction="#postBudgetfordifferentDepartments" prefHeight="49.0" prefWidth="236.0" style="-fx-background-color: #0f4a33;" text="Post budget for department" textFill="#e8ba60">
+          <font>
+             <Font name="Bell MT Bold" size="17.0" />
+          </font>
+       </Button>
+-      <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="399.0" style="-fx-background-color: #0f4a33;" text="Show revenue Split per department with Barchart" textFill="#e8ba60">
++      <Button layoutX="23.0" layoutY="515.0" mnemonicParsing="false" onAction="#showAllrevenueonBarchart" prefHeight="49.0" prefWidth="399.0" style="-fx-background-color: #0f4a33;" text="Show revenue Split per department with Barchart" textFill="#e8ba60">
+          <font>
+             <Font name="Bell MT Bold" size="17.0" />
+          </font>
+Index: src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.HotelHeadManager;\r\n\r\npublic class ViewBudgetController\r\n{\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n    }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java b/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java
+--- a/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java	(revision 7433c6f29d37740af09fffafda6130ca75e521c8)
++++ b/src/main/java/cse/fivestarhotel/HotelHeadManager/ViewBudgetController.java	(date 1734001609194)
+@@ -1,7 +1,22 @@
+ package cse.fivestarhotel.HotelHeadManager;
+ 
++import javafx.scene.control.TextField;
++
+ public class ViewBudgetController
+ {
++    @javafx.fxml.FXML
++    private TextField TransportDepartmentLabel;
++    @javafx.fxml.FXML
++    private TextField RoomServiceDepartmentLabel;
++    @javafx.fxml.FXML
++    private TextField ElectricianDepartmentLabel;
++    @javafx.fxml.FXML
++    private TextField budgetOfmonthLabel;
++    @javafx.fxml.FXML
++    private TextField totalBudgetLabel;
++    @javafx.fxml.FXML
++    private TextField restaurantDepartmentLabel;
++
+     @javafx.fxml.FXML
+     public void initialize() {
+     }}
+\ No newline at end of file

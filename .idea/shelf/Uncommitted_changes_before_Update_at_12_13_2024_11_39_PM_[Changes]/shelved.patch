@@ -1,0 +1,394 @@
+Index: src/main/java/cse/fivestarhotel/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel;\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\nimport java.io.IOException;\r\n\r\npublic class HelloApplication extends Application {\r\n    @Override\r\n    public void start(Stage stage) throws IOException {\r\n\r\n\r\n        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml\"));\r\n        Scene scene = new Scene(fxmlLoader.load());\r\n        stage.setTitle(\"Sign in!\");\r\n        stage.setScene(scene);\r\n        stage.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch();\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/HelloApplication.java b/src/main/java/cse/fivestarhotel/HelloApplication.java
+--- a/src/main/java/cse/fivestarhotel/HelloApplication.java	(revision 9a435193573795563cad043dfe7109ecde42a82b)
++++ b/src/main/java/cse/fivestarhotel/HelloApplication.java	(date 1734049800774)
+@@ -10,7 +10,7 @@
+     public void start(Stage stage) throws IOException {
+ 
+ 
+-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml"));
++        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/CEODashBoard.fxml"));
+         Scene scene = new Scene(fxmlLoader.load());
+         stage.setTitle("Sign in!");
+         stage.setScene(scene);
+Index: src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.CEO;\r\n\r\npublic class sponsershipCampaignsController\r\n{\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n    }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java b/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java
+--- a/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java	(revision 9a435193573795563cad043dfe7109ecde42a82b)
++++ b/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java	(date 1734049562133)
+@@ -1,7 +1,170 @@
+ package cse.fivestarhotel.CEO;
+ 
+-public class sponsershipCampaignsController
++import cse.fivestarhotel.FrontDeskStaff.AppendableObjectOutputStream;
++import javafx.collections.FXCollections;
++import javafx.collections.ObservableList;
++import javafx.event.ActionEvent;
++import javafx.fxml.FXML;
++import javafx.scene.control.*;
++import javafx.scene.control.cell.PropertyValueFactory;
++
++import java.io.*;
++
++public class sponsershipCampaignsController implements Serializable
+ {
++    @javafx.fxml.FXML
++    private TextField PotentialCompaniesNameTextField;
++    @javafx.fxml.FXML
++    private TextField ExpectedRevenueTextField;
++    @javafx.fxml.FXML
++    private TableColumn<SponsershipData,String> SponserNameTableColumn;
++    @javafx.fxml.FXML
++    private TableColumn<SponsershipData,String> RevenueGeneratedTableColumn;
++    @javafx.fxml.FXML
++    private ComboBox<String> SponsershipTypeComboBox;
++    @javafx.fxml.FXML
++    private TextField RevenueGeneratedTextField;
++    @javafx.fxml.FXML
++    private TableView<SponsershipData> SponserTableView;
++    @javafx.fxml.FXML
++    private ComboBox<String> SponserNameComboBox;
++    @javafx.fxml.FXML
++    private TableColumn<SponsershipData,String> SponsershipTypeTableColumn;
++    @javafx.fxml.FXML
++    private ComboBox<String> SponserShipStatusCombobox;
++    @javafx.fxml.FXML
++    private TableColumn<SponsershipData,String> SponserShipStatusTableColumn;
++    @javafx.fxml.FXML
++    private TableColumn<SponsershipData,String> ExpectedRevenueTableColumn;
++
++    private ObservableList<String> sponsorNames = FXCollections.observableArrayList();
++    private ObservableList<SponsershipData> tableData = FXCollections.observableArrayList();
++
+     @javafx.fxml.FXML
+     public void initialize() {
+-    }}
+\ No newline at end of file
++        SponserNameComboBox.setItems(sponsorNames);
++        SponsershipTypeComboBox.getItems().addAll("Media Sponsorship", "Product Sponsorship", "Event Sponsorship");
++        SponserShipStatusCombobox.getItems().addAll("Active Sponsorship", "Inactive Sponsorship", "Expired Sponsorship");
++
++        // Set the cell value factory for each TableColumn
++        SponserShipStatusTableColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
++        ExpectedRevenueTableColumn.setCellValueFactory(new PropertyValueFactory<>("expectedRevenue"));
++        RevenueGeneratedTableColumn.setCellValueFactory(new PropertyValueFactory<>("generatedRevenue"));
++        SponserNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
++        SponsershipTypeTableColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
++
++    }
++
++    @javafx.fxml.FXML
++    public void AddSponserOnAction(ActionEvent actionEvent) {
++        String name = PotentialCompaniesNameTextField.getText();
++        String type = SponsershipTypeComboBox.getValue();
++        String expectedRevenue = ExpectedRevenueTextField.getText();
++
++        if (!name.isEmpty() && !type.isEmpty() && !expectedRevenue.isEmpty()) {
++            sponsorNames.add(name); // Add sponsor name to the ComboBox
++        } else {
++            showAlert("Error", "Please fill in all fields to add a sponsor.");
++        }
++    }
++    @FXML
++    public void clearTable() {
++        // Clear the table's observable list
++        tableData.clear();
++
++        // Optionally, you can clear the items in the TableView itself
++        SponserTableView.getItems().clear();
++
++    }
++
++    @javafx.fxml.FXML
++    public void clearTableOnAction(ActionEvent actionEvent) {
++        clearTable();
++    }
++
++    @javafx.fxml.FXML
++    public void LoadTableOnAction(ActionEvent actionEvent) {
++        File file = new File("SponserDetails.bin");
++
++        if (!file.exists() || file.length() == 0) {
++            showAlert("Error", "The file 'SponserDetails.bin' does not exist or is empty.");
++            return;
++        }
++
++        try (FileInputStream fis = new FileInputStream(file);
++             ObjectInputStream ois = new ObjectInputStream(fis)) {
++
++            // Clear existing table data
++            SponserTableView.getItems().clear();
++            tableData.clear();
++
++            // Read objects from the file and add them to the table
++            while (true) {
++                try {
++                    SponsershipData data = (SponsershipData) ois.readObject();
++                    tableData.add(data); // Add to ObservableList
++                } catch (EOFException eof) {
++                    // End of file reached
++                    break;
++                }
++            }
++
++            // Bind the ObservableList to the TableView
++            SponserTableView.setItems(tableData);
++
++        } catch (ClassNotFoundException e) {
++            e.printStackTrace();
++            showAlert("Error", "Failed to deserialize the sponsorship data. Class not found.");
++        } catch (IOException e) {
++            e.printStackTrace();
++            showAlert("Error", "Failed to read sponsorship data from the file.");
++        }
++    }
++
++    @javafx.fxml.FXML
++    public void AddToTableOnAction(ActionEvent actionEvent) {
++        String name = SponserNameComboBox.getValue();
++        String status = SponserShipStatusCombobox.getValue();
++        String type = SponsershipTypeComboBox.getValue();
++        String expectedRevenue = ExpectedRevenueTextField.getText();
++        String generatedRevenue = RevenueGeneratedTextField.getText();
++
++        if (name != null && !status.isEmpty() && type != null && !expectedRevenue.isEmpty() && !generatedRevenue.isEmpty()) {
++            SponsershipData s = new SponsershipData(name, status, type, expectedRevenue, generatedRevenue);
++            tableData.add(s); // Add data to TableView
++
++            try {
++                File file = new File("SponserDetails.bin");
++                FileOutputStream fos = new FileOutputStream(file, true);
++                ObjectOutputStream oos;
++
++                if (file.length() == 0) {
++                    // First write with header
++                    oos = new ObjectOutputStream(fos);
++                } else {
++                    // Append without header
++                    oos = new AppendableObjectOutputStream(fos);
++                }
++
++                oos.writeObject(s); // Write the SponsershipData object
++                oos.close();
++
++               
++            } catch (IOException e) {
++                e.printStackTrace();
++                showAlert("Error", "Failed to store the sponsorship data. IOException occurred.");
++            }
++        } else {
++            showAlert("Error", "Please fill in all fields to store the data.");
++        }
++
++    }
++
++    private void showAlert(String title, String message) {
++        Alert alert = new Alert(Alert.AlertType.ERROR);
++        alert.setTitle(title);
++        alert.setHeaderText(null);
++        alert.setContentText(message);
++        alert.showAndWait();
++    }
++}
+\ No newline at end of file
+Index: src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.chart.PieChart?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.paint.Color?>\r\n<?import javafx.scene.paint.LinearGradient?>\r\n<?import javafx.scene.paint.Stop?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<BorderPane fx:id=\"CeoDashBoardBorderPane\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"1280.0\" style=\"-fx-background-color: #0D3120;\" xmlns=\"http://javafx.com/javafx/23\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.CEO.CEODashBoardController\">\r\n    <cursor>\r\n        <Cursor fx:constant=\"NE_RESIZE\" />\r\n    </cursor>\r\n    <left>\r\n        <VBox prefHeight=\"720.0\" prefWidth=\"351.0\" style=\"-fx-background-color: #0D3120;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Text fill=\"#d0913f\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"\uD83D\uDC64\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font size=\"29.0\" />\r\n                    </font>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Rafid Md Shafiq\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font name=\"Bell MT Bold\" size=\"33.0\" />\r\n                    </font>\r\n                    <fill>\r\n                        <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                            <stops>\r\n                                <Stop>\r\n                                    <color>\r\n                                        <Color />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"0.006711409395973154\">\r\n                                    <color>\r\n                                        <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"1.0\">\r\n                                    <color>\r\n                                        <Color red=\"0.9647058844566345\" green=\"0.8627451062202454\" blue=\"0.7372549176216125\" />\r\n                                    </color>\r\n                                </Stop>\r\n                            </stops>\r\n                        </LinearGradient>\r\n                    </fill>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Ceo\" textAlignment=\"CENTER\" wrappingWidth=\"350.13677978515625\">\r\n                    <font>\r\n                        <Font name=\"Bodoni MT\" size=\"26.0\" />\r\n                    </font>\r\n                    <fill>\r\n                        <LinearGradient endX=\"1.0\" endY=\"1.0\">\r\n                            <stops>\r\n                                <Stop>\r\n                                    <color>\r\n                                        <Color />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"0.006711409395973154\">\r\n                                    <color>\r\n                                        <Color red=\"0.8156862854957581\" green=\"0.5686274766921997\" blue=\"0.24705882370471954\" />\r\n                                    </color>\r\n                                </Stop>\r\n                                <Stop offset=\"1.0\">\r\n                                    <color>\r\n                                        <Color red=\"1.0\" green=\"0.8235294222831726\" blue=\"0.6039215922355652\" />\r\n                                    </color>\r\n                                </Stop>\r\n                            </stops>\r\n                        </LinearGradient>\r\n                    </fill>\r\n                </Text>\r\n                <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" />\r\n                <Line endX=\"251.25244140625\" endY=\"-1.583514928817749\" startX=\"-100.0\" strokeWidth=\"2.0\" />\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"60.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Dashboard\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n                    <font>\r\n                        <Font name=\"Consolas Bold\" size=\"24.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" onAction=\"#monthlyGoalsButtonOnAction\" prefHeight=\"35.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Monthly Goals\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" onAction=\"#sponsershipCampaignButtonOnAction\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Sponsership Campaigns\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" onAction=\"#ManageUserAccountsOnAction\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Manage User Accounts\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"50.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"Post announcements\" textAlignment=\"CENTER\" textFill=\"#cf8e40\">\r\n                    <font>\r\n                        <Font name=\"Consolas\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <Button mnemonicParsing=\"false\" prefHeight=\"75.0\" prefWidth=\"353.0\" style=\"-fx-background-color: #0D3120;\" text=\"⬅ Logout\" textAlignment=\"CENTER\" textFill=\"#f6dcbc\">\r\n                    <font>\r\n                        <Font name=\"Consolas Bold\" size=\"20.0\" />\r\n                    </font>\r\n                </Button>\r\n                <ImageView fitHeight=\"85.0\" fitWidth=\"351.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n                    <image>\r\n                        <Image url=\"@../Img/Untitled329_20241129211738.png\" />\r\n                    </image>\r\n                </ImageView>\r\n            </children></VBox>\r\n    </left>\r\n    <right>\r\n        <AnchorPane prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" BorderPane.alignment=\"CENTER\">\r\n            <children>\r\n                <Line endX=\"730.0\" layoutX=\"202.0\" layoutY=\"88.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" strokeWidth=\"2.0\" />\r\n                <Text fill=\"#0f4a33\" layoutX=\"22.0\" layoutY=\"60.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"⮯ Overview\">\r\n                    <font>\r\n                        <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n                    </font>\r\n                </Text>\r\n                <Line endX=\"730.0\" layoutX=\"202.0\" layoutY=\"347.0\" startX=\"-202.00001525878906\" stroke=\"#8c8c7b\" />\r\n                <VBox layoutX=\"44.0\" layoutY=\"126.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                        <Label opacity=\"0.55\" text=\"total employees\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"12.0\" />\r\n                            </font></Label>\r\n                    </children>\r\n                </VBox>\r\n                <VBox layoutX=\"221.0\" layoutY=\"126.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                        <Label opacity=\"0.55\" text=\"active guests\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"12.0\" />\r\n                            </font>\r\n                        </Label>\r\n                    </children>\r\n                </VBox>\r\n                <VBox layoutX=\"400.0\" layoutY=\"127.0\" prefHeight=\"78.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #B6A990;\">\r\n                    <children>\r\n                        <Label prefHeight=\"47.0\" prefWidth=\"151.0\" text=\"0\">\r\n                            <font>\r\n                                <Font size=\"38.0\" />\r\n                            </font>\r\n                        </Label>\r\n                        <Label opacity=\"0.55\" text=\"some other bullshit\">\r\n                            <font>\r\n                                <Font name=\"System Bold\" size=\"12.0\" />\r\n                            </font>\r\n                        </Label>\r\n                    </children>\r\n                </VBox>\r\n            <PieChart layoutX=\"635.0\" layoutY=\"119.0\" prefHeight=\"197.0\" prefWidth=\"261.0\" />\r\n            <Text layoutX=\"744.0\" layoutY=\"279.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"piechart\" />\r\n            </children>\r\n        </AnchorPane>\r\n    </right>\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml b/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml
+--- a/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml	(revision 9a435193573795563cad043dfe7109ecde42a82b)
++++ b/src/main/resources/cse/fivestarhotel/CEO/CEODashBoard.fxml	(date 1734049988681)
+@@ -16,7 +16,7 @@
+ <?import javafx.scene.text.Font?>
+ <?import javafx.scene.text.Text?>
+ 
+-<BorderPane fx:id="CeoDashBoardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.CEO.CEODashBoardController">
++<BorderPane fx:id="CeoDashBoardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.CEO.CEODashBoardController">
+     <cursor>
+         <Cursor fx:constant="NE_RESIZE" />
+     </cursor>
+@@ -104,7 +104,7 @@
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+                 </Button>
+-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Post announcements" textAlignment="CENTER" textFill="#cf8e40">
++                <Button mnemonicParsing="false" onAction="#PostAnnouncementsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Post announcements" textAlignment="CENTER" textFill="#cf8e40">
+                     <font>
+                         <Font name="Consolas" size="20.0" />
+                     </font>
+Index: src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cse.fivestarhotel.CEO;\r\n\r\nimport cse.fivestarhotel.HelloApplication;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.layout.BorderPane;\r\n\r\npublic class CEODashBoardController\r\n{\r\n    @javafx.fxml.FXML\r\n    private BorderPane CeoDashBoardBorderPane;\r\n\r\n    @javafx.fxml.FXML\r\n    public void initialize() {\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void sponsershipCampaignButtonOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml\"));\r\n\r\n\r\n            CeoDashBoardBorderPane.setRight(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void ManageUserAccountsOnAction(ActionEvent actionEvent) {\r\n    }\r\n\r\n    @javafx.fxml.FXML\r\n    public void monthlyGoalsButtonOnAction(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(\"/cse/fivestarhotel/CEO/UpdateMonthlygoals.fxml\"));\r\n\r\n\r\n            CeoDashBoardBorderPane.setRight(fxmlLoader.load());\r\n        }\r\n        catch(Exception e){}\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java b/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java
+--- a/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java	(revision 9a435193573795563cad043dfe7109ecde42a82b)
++++ b/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java	(date 1734050029878)
+@@ -27,6 +27,13 @@
+ 
+     @javafx.fxml.FXML
+     public void ManageUserAccountsOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/ManageUserAccounts.fxml"));
++
++
++            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
+     }
+ 
+     @javafx.fxml.FXML
+@@ -39,4 +46,15 @@
+         }
+         catch(Exception e){}
+     }
++
++    @javafx.fxml.FXML
++    public void PostAnnouncementsOnAction(ActionEvent actionEvent) {
++        try {
++            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/Announcement.fxml"));
++
++
++            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
++        }
++        catch(Exception e){}
++    }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/QueryReview.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/QueryReview.bin\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"FxmlFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;FarHanZzzz&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/FarHanZzzz/FiveStarHotel.git&quot;,\r\n    &quot;accountId&quot;: &quot;6a6a6314-c7b1-47a3-a0ee-4d945d400db2&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2pOTHwVPEYQNUAVmymNU9UCEMUe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/FARHAN/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"cse.fivestarhotel.HelloApplication\" />\r\n      <module name=\"FiveStarHotel\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f45a8678-6144-4ee8-b094-1a886ecfbc88\" name=\"Changes\" comment=\"\" />\r\n      <created>1732636037915</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1732636037915</updated>\r\n      <workItem from=\"1732691317064\" duration=\"1348000\" />\r\n      <workItem from=\"1732740293857\" duration=\"392000\" />\r\n      <workItem from=\"1732740700449\" duration=\"854000\" />\r\n      <workItem from=\"1732812843972\" duration=\"6000\" />\r\n      <workItem from=\"1732812928251\" duration=\"38000\" />\r\n      <workItem from=\"1732813016733\" duration=\"370000\" />\r\n      <workItem from=\"1732813603231\" duration=\"2575000\" />\r\n      <workItem from=\"1733947475473\" duration=\"786000\" />\r\n      <workItem from=\"1733948278263\" duration=\"481000\" />\r\n      <workItem from=\"1733948776583\" duration=\"630000\" />\r\n      <workItem from=\"1733949431710\" duration=\"1466000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.IllegalAccessException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9a435193573795563cad043dfe7109ecde42a82b)
++++ b/.idea/workspace.xml	(date 1734049931997)
+@@ -6,12 +6,10 @@
+   <component name="ChangeListManager">
+     <list default="true" id="f45a8678-6144-4ee8-b094-1a886ecfbc88" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/QueryReview.bin" beforeDir="false" afterPath="$PROJECT_DIR$/QueryReview.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/CEODashBoardController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/CEO/sponsershipCampaignsController.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/HelloApplication.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboardController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceManager/RoomServiceManagerDashboard.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/RoomServiceWorker/RoomServiceWorkerDashboard.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,8 +19,8 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Class" />
+         <option value="FxmlFile" />
++        <option value="Class" />
+       </list>
+     </option>
+   </component>
+Index: src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.ComboBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.shape.Line?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"720.0\" prefWidth=\"936.0\" style=\"-fx-background-color: #C7C0A7;\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"cse.fivestarhotel.CEO.sponsershipCampaignsController\">\r\n    <children>\r\n        <Line endX=\"821.0\" layoutX=\"115.0\" layoutY=\"116.0\" startX=\"-115.0\" stroke=\"#6f6a6a\" />\r\n        <Label layoutX=\"11.0\" layoutY=\"24.0\" prefHeight=\"64.0\" prefWidth=\"528.0\" text=\"⮯Sponsership Campaigns\" textFill=\"#0f4a33\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"45.0\" />\r\n            </font>\r\n        </Label>\r\n        <Label layoutX=\"7.0\" layoutY=\"157.0\" prefHeight=\"33.0\" prefWidth=\"431.0\" text=\"Potential Companies for Sponser Details\" textFill=\"#0f4a33\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"24.0\" />\r\n            </font>\r\n        </Label>\r\n        <Label layoutX=\"7.0\" layoutY=\"215.0\" prefHeight=\"33.0\" prefWidth=\"143.0\" text=\"Company Name\" textFill=\"#0f4a33\" wrapText=\"true\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n            </font>\r\n        </Label>\r\n        <Label layoutX=\"7.0\" layoutY=\"277.0\" prefHeight=\"33.0\" prefWidth=\"150.0\" text=\"SponserShip Type\" textFill=\"#0f4a33\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n            </font>\r\n        </Label>\r\n        <Label layoutX=\"11.0\" layoutY=\"344.0\" prefHeight=\"33.0\" prefWidth=\"143.0\" text=\"Expected Revenue\" textFill=\"#0f4a33\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n            </font>\r\n        </Label>\r\n        <TextField layoutX=\"180.0\" layoutY=\"219.0\" />\r\n        <ComboBox layoutX=\"180.0\" layoutY=\"281.0\" prefWidth=\"150.0\" />\r\n        <Button layoutX=\"180.0\" layoutY=\"417.0\" mnemonicParsing=\"false\" prefHeight=\"49.0\" prefWidth=\"174.0\" style=\"-fx-background-color: #0f4a33;\" text=\"Add Sponser\" textFill=\"#e8ba60\">\r\n            <font>\r\n                <Font name=\"Bell MT Bold\" size=\"17.0\" />\r\n            </font>\r\n        </Button>\r\n      <Line endX=\"100.0\" endY=\"-41.5\" layoutX=\"344.0\" layoutY=\"158.0\" startX=\"100.0\" startY=\"330.0\" />\r\n      <Label layoutX=\"468.0\" layoutY=\"157.0\" prefHeight=\"33.0\" prefWidth=\"222.0\" text=\"Sponser Details\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"24.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"468.0\" layoutY=\"215.0\" prefHeight=\"33.0\" prefWidth=\"120.0\" text=\"Sponser Name\" textFill=\"#0f4a33\" wrapText=\"true\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n      <ComboBox layoutX=\"615.0\" layoutY=\"219.0\" prefWidth=\"150.0\" />\r\n      <Label layoutX=\"468.0\" layoutY=\"277.0\" prefHeight=\"33.0\" prefWidth=\"150.0\" text=\"SponserShip Status\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n      <ComboBox layoutX=\"615.0\" layoutY=\"281.0\" prefWidth=\"150.0\" />\r\n      <TextField layoutX=\"180.0\" layoutY=\"348.0\" />\r\n      <Label layoutX=\"468.0\" layoutY=\"344.0\" prefHeight=\"33.0\" prefWidth=\"143.0\" text=\"Revenue Generated\" textFill=\"#0f4a33\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField layoutX=\"618.0\" layoutY=\"348.0\" prefHeight=\"25.0\" prefWidth=\"150.0\" />\r\n      <Button layoutX=\"606.0\" layoutY=\"417.0\" mnemonicParsing=\"false\" prefHeight=\"49.0\" prefWidth=\"174.0\" style=\"-fx-background-color: #0f4a33;\" text=\"Generate Table\" textFill=\"#e8ba60\">\r\n         <font>\r\n            <Font name=\"Bell MT Bold\" size=\"17.0\" />\r\n         </font>\r\n      </Button>\r\n      <Line endX=\"821.0\" layoutX=\"115.0\" layoutY=\"488.0\" startX=\"-115.0\" stroke=\"#6f6a6a\" />\r\n      <TableView layoutX=\"-1.0\" layoutY=\"488.0\" prefHeight=\"252.0\" prefWidth=\"937.0\">\r\n        <columns>\r\n          <TableColumn prefWidth=\"141.0\" text=\"Sponser Name\" />\r\n          <TableColumn prefWidth=\"220.0\" text=\"SponserShip Status\" />\r\n            <TableColumn prefWidth=\"185.0\" text=\"SponserShip Type\" />\r\n            <TableColumn prefWidth=\"155.0\" text=\"Expected Revenue\" />\r\n            <TableColumn prefWidth=\"235.0\" text=\"Revenue Generated\" />\r\n        </columns>\r\n      </TableView>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml b/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml
+--- a/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml	(revision 9a435193573795563cad043dfe7109ecde42a82b)
++++ b/src/main/resources/cse/fivestarhotel/CEO/sponsershipCampaigns.fxml	(date 1734047367722)
+@@ -38,14 +38,14 @@
+                 <Font name="Bell MT Bold" size="16.0" />
+             </font>
+         </Label>
+-        <TextField layoutX="180.0" layoutY="219.0" />
+-        <ComboBox layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
+-        <Button layoutX="180.0" layoutY="417.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="174.0" style="-fx-background-color: #0f4a33;" text="Add Sponser" textFill="#e8ba60">
++        <TextField fx:id="PotentialCompaniesNameTextField" layoutX="180.0" layoutY="219.0" />
++        <ComboBox fx:id="SponsershipTypeComboBox" layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
++        <Button layoutX="11.0" layoutY="393.0" mnemonicParsing="false" onAction="#AddSponserOnAction" prefHeight="49.0" prefWidth="120.0" style="-fx-background-color: #0f4a33;" text="Add Sponser" textFill="#e8ba60">
+             <font>
+                 <Font name="Bell MT Bold" size="17.0" />
+             </font>
+         </Button>
+-      <Line endX="100.0" endY="-41.5" layoutX="344.0" layoutY="158.0" startX="100.0" startY="330.0" />
++      <Line endX="100.0" endY="-31.5" layoutX="345.0" layoutY="147.0" startX="100.0" startY="284.0" />
+       <Label layoutX="468.0" layoutY="157.0" prefHeight="33.0" prefWidth="222.0" text="Sponser Details" textFill="#0f4a33">
+          <font>
+             <Font name="Bell MT Bold" size="24.0" />
+@@ -56,34 +56,44 @@
+             <Font name="Bell MT Bold" size="16.0" />
+          </font>
+       </Label>
+-      <ComboBox layoutX="615.0" layoutY="219.0" prefWidth="150.0" />
++      <ComboBox fx:id="SponserNameComboBox" layoutX="615.0" layoutY="219.0" prefWidth="150.0" />
+       <Label layoutX="468.0" layoutY="277.0" prefHeight="33.0" prefWidth="150.0" text="SponserShip Status" textFill="#0f4a33">
+          <font>
+             <Font name="Bell MT Bold" size="16.0" />
+          </font>
+       </Label>
+-      <ComboBox layoutX="615.0" layoutY="281.0" prefWidth="150.0" />
+-      <TextField layoutX="180.0" layoutY="348.0" />
++      <ComboBox fx:id="SponserShipStatusCombobox" layoutX="615.0" layoutY="281.0" prefWidth="150.0" />
++      <TextField fx:id="ExpectedRevenueTextField" layoutX="180.0" layoutY="348.0" />
+       <Label layoutX="468.0" layoutY="344.0" prefHeight="33.0" prefWidth="143.0" text="Revenue Generated" textFill="#0f4a33">
+          <font>
+             <Font name="Bell MT Bold" size="16.0" />
+          </font>
+       </Label>
+-      <TextField layoutX="618.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
+-      <Button layoutX="606.0" layoutY="417.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="174.0" style="-fx-background-color: #0f4a33;" text="Generate Table" textFill="#e8ba60">
++      <TextField fx:id="RevenueGeneratedTextField" layoutX="618.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
++      <Button layoutX="788.0" layoutY="393.0" mnemonicParsing="false" onAction="#AddToTableOnAction" prefHeight="49.0" prefWidth="126.0" style="-fx-background-color: #0f4a33;" text="Add to Table" textFill="#e8ba60">
+          <font>
+             <Font name="Bell MT Bold" size="17.0" />
+          </font>
+       </Button>
+       <Line endX="821.0" layoutX="115.0" layoutY="488.0" startX="-115.0" stroke="#6f6a6a" />
+-      <TableView layoutX="-1.0" layoutY="488.0" prefHeight="252.0" prefWidth="937.0">
++      <TableView fx:id="SponserTableView" layoutX="-1.0" layoutY="488.0" prefHeight="252.0" prefWidth="937.0">
+         <columns>
+-          <TableColumn prefWidth="141.0" text="Sponser Name" />
+-          <TableColumn prefWidth="220.0" text="SponserShip Status" />
+-            <TableColumn prefWidth="185.0" text="SponserShip Type" />
+-            <TableColumn prefWidth="155.0" text="Expected Revenue" />
+-            <TableColumn prefWidth="235.0" text="Revenue Generated" />
++          <TableColumn fx:id="SponserNameTableColumn" prefWidth="141.0" text="Sponser Name" />
++          <TableColumn fx:id="SponserShipStatusTableColumn" prefWidth="220.0" text="SponserShip Status" />
++            <TableColumn fx:id="SponsershipTypeTableColumn" prefWidth="185.0" text="SponserShip Type" />
++            <TableColumn fx:id="ExpectedRevenueTableColumn" prefWidth="155.0" text="Expected Revenue" />
++            <TableColumn fx:id="RevenueGeneratedTableColumn" prefWidth="235.0" text="Revenue Generated" />
+         </columns>
+       </TableView>
++      <Button layoutX="287.0" layoutY="432.0" mnemonicParsing="false" onAction="#LoadTableOnAction" prefHeight="49.0" prefWidth="315.0" style="-fx-background-color: #0f4a33;" text="Load Table" textFill="#e8ba60">
++         <font>
++            <Font name="Bell MT Bold" size="17.0" />
++         </font>
++      </Button>
++      <Button layoutX="748.0" layoutY="64.0" mnemonicParsing="false" onAction="#clearTableOnAction" prefHeight="49.0" prefWidth="174.0" style="-fx-background-color: #0f4a33;" text="clear table" textFill="#e8ba60">
++         <font>
++            <Font name="Bell MT Bold" size="17.0" />
++         </font>
++      </Button>
+     </children>
+ </AnchorPane>

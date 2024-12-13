@@ -38,14 +38,14 @@
                 <Font name="Bell MT Bold" size="16.0" />
             </font>
         </Label>
-        <TextField layoutX="180.0" layoutY="219.0" />
-        <ComboBox layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
-        <Button layoutX="180.0" layoutY="417.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="174.0" style="-fx-background-color: #0f4a33;" text="Add Sponser" textFill="#e8ba60">
+        <TextField fx:id="PotentialCompaniesNameTextField" layoutX="180.0" layoutY="219.0" />
+        <ComboBox fx:id="SponsershipTypeComboBox" layoutX="180.0" layoutY="281.0" prefWidth="150.0" />
+        <Button layoutX="11.0" layoutY="393.0" mnemonicParsing="false" onAction="#AddSponserOnAction" prefHeight="49.0" prefWidth="120.0" style="-fx-background-color: #0f4a33;" text="Add Sponser" textFill="#e8ba60">
             <font>
                 <Font name="Bell MT Bold" size="17.0" />
             </font>
         </Button>
-      <Line endX="100.0" endY="-41.5" layoutX="344.0" layoutY="158.0" startX="100.0" startY="330.0" />
+      <Line endX="100.0" endY="-31.5" layoutX="345.0" layoutY="147.0" startX="100.0" startY="284.0" />
       <Label layoutX="468.0" layoutY="157.0" prefHeight="33.0" prefWidth="222.0" text="Sponser Details" textFill="#0f4a33">
          <font>
             <Font name="Bell MT Bold" size="24.0" />
@@ -56,34 +56,44 @@
             <Font name="Bell MT Bold" size="16.0" />
          </font>
       </Label>
-      <ComboBox layoutX="615.0" layoutY="219.0" prefWidth="150.0" />
+      <ComboBox fx:id="SponserNameComboBox" layoutX="615.0" layoutY="219.0" prefWidth="150.0" />
       <Label layoutX="468.0" layoutY="277.0" prefHeight="33.0" prefWidth="150.0" text="SponserShip Status" textFill="#0f4a33">
          <font>
             <Font name="Bell MT Bold" size="16.0" />
          </font>
       </Label>
-      <ComboBox layoutX="615.0" layoutY="281.0" prefWidth="150.0" />
-      <TextField layoutX="180.0" layoutY="348.0" />
+      <ComboBox fx:id="SponserShipStatusCombobox" layoutX="615.0" layoutY="281.0" prefWidth="150.0" />
+      <TextField fx:id="ExpectedRevenueTextField" layoutX="180.0" layoutY="348.0" />
       <Label layoutX="468.0" layoutY="344.0" prefHeight="33.0" prefWidth="143.0" text="Revenue Generated" textFill="#0f4a33">
          <font>
             <Font name="Bell MT Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="618.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
-      <Button layoutX="606.0" layoutY="417.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="174.0" style="-fx-background-color: #0f4a33;" text="Generate Table" textFill="#e8ba60">
+      <TextField fx:id="RevenueGeneratedTextField" layoutX="618.0" layoutY="348.0" prefHeight="25.0" prefWidth="150.0" />
+      <Button layoutX="788.0" layoutY="393.0" mnemonicParsing="false" onAction="#AddToTableOnAction" prefHeight="49.0" prefWidth="126.0" style="-fx-background-color: #0f4a33;" text="Add to Table" textFill="#e8ba60">
          <font>
             <Font name="Bell MT Bold" size="17.0" />
          </font>
       </Button>
       <Line endX="821.0" layoutX="115.0" layoutY="488.0" startX="-115.0" stroke="#6f6a6a" />
-      <TableView layoutX="-1.0" layoutY="488.0" prefHeight="252.0" prefWidth="937.0">
+      <TableView fx:id="SponserTableView" layoutX="-1.0" layoutY="488.0" prefHeight="252.0" prefWidth="937.0">
         <columns>
-          <TableColumn prefWidth="141.0" text="Sponser Name" />
-          <TableColumn prefWidth="220.0" text="SponserShip Status" />
-            <TableColumn prefWidth="185.0" text="SponserShip Type" />
-            <TableColumn prefWidth="155.0" text="Expected Revenue" />
-            <TableColumn prefWidth="235.0" text="Revenue Generated" />
+          <TableColumn fx:id="SponserNameTableColumn" prefWidth="141.0" text="Sponser Name" />
+          <TableColumn fx:id="SponserShipStatusTableColumn" prefWidth="220.0" text="SponserShip Status" />
+            <TableColumn fx:id="SponsershipTypeTableColumn" prefWidth="185.0" text="SponserShip Type" />
+            <TableColumn fx:id="ExpectedRevenueTableColumn" prefWidth="155.0" text="Expected Revenue" />
+            <TableColumn fx:id="RevenueGeneratedTableColumn" prefWidth="235.0" text="Revenue Generated" />
         </columns>
       </TableView>
+      <Button layoutX="287.0" layoutY="432.0" mnemonicParsing="false" onAction="#LoadTableOnAction" prefHeight="49.0" prefWidth="315.0" style="-fx-background-color: #0f4a33;" text="Load Table" textFill="#e8ba60">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="748.0" layoutY="64.0" mnemonicParsing="false" onAction="#clearTableOnAction" prefHeight="49.0" prefWidth="174.0" style="-fx-background-color: #0f4a33;" text="clear table" textFill="#e8ba60">
+         <font>
+            <Font name="Bell MT Bold" size="17.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
