@@ -23,19 +23,20 @@ public class RestaurantManagerDashboardController
     @javafx.fxml.FXML
     private BorderPane dashBoardBorderPane;
     @javafx.fxml.FXML
-    private TableColumn<Announcement,String> announcementsCol;
-    @javafx.fxml.FXML
     private TableColumn<Announcement, LocalDate> dateCol;
     @javafx.fxml.FXML
     private TableView<Announcement> AnnouncementTableView;
+    @javafx.fxml.FXML
+    private TableColumn<Announcement,String> AnnouncementCol;
+    @javafx.fxml.FXML
+    private TableColumn<Announcement,String> positionCol;
 
     @javafx.fxml.FXML
     public void initialize() {
 
-        announcementsCol.setCellValueFactory(new PropertyValueFactory<>("announcement"));
+        AnnouncementCol.setCellValueFactory(new PropertyValueFactory<>("position"));
+        positionCol.setCellValueFactory(new PropertyValueFactory<>("announcement"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-
-
 
 
         FileInputStream fis=null;

@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,24 +28,32 @@ public class FrontDeskStaffDashboardController
     @javafx.fxml.FXML
     private BorderPane dashBoardBorderPane;
     @javafx.fxml.FXML
-    private TableColumn<Announcement,String> announcementsCol;
-    @javafx.fxml.FXML
     private TableView<Announcement> AnnouncementTableView;
     @javafx.fxml.FXML
     private TableColumn<Announcement, LocalDate> dateCol;
-
-
-
-
-
+    @javafx.fxml.FXML
+    private Label SingleroomLabel;
+    @javafx.fxml.FXML
+    private Label totalGuestCheckedOutLabel;
+    @javafx.fxml.FXML
+    private Label totalroomsStatus;
+    @javafx.fxml.FXML
+    private TableColumn<Announcement,String> announcementCol;
+    @javafx.fxml.FXML
+    private Label SingleroomLabel11;
+    @javafx.fxml.FXML
+    private TableColumn<Announcement,String> positionCol;
+    @javafx.fxml.FXML
+    private Label SingleroomLabel1;
 
 
     @javafx.fxml.FXML
     public void initialize() {
         //String announcement, LocalDate date
-        announcementsCol.setCellValueFactory(new PropertyValueFactory<>("announcement"));
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
+        announcementCol.setCellValueFactory(new PropertyValueFactory<>("position"));
+        positionCol.setCellValueFactory(new PropertyValueFactory<>("announcement"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
 
 
