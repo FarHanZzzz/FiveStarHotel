@@ -1,13 +1,11 @@
 package cse.fivestarhotel.FrontDeskStaff;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 //package cse.fivestarhotel.FrontDeskStaff;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.*;
@@ -45,6 +43,7 @@ public class AccessGuestDetailsController implements Serializable
         contactInfoCol.setCellValueFactory(new PropertyValueFactory<>("contactinfo"));
 
     }
+
 
 
 

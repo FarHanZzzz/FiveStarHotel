@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static cse.fivestarhotel.FrontDeskStaff.alert.showAlert;
+
 //import static cse.fivestarhotel.FrontDeskStaff.GuestcheckinController.EmailValidator.isValidEmail;
 
 public class GuestcheckinController implements Serializable
@@ -110,6 +112,11 @@ public class GuestcheckinController implements Serializable
             return;
         }
 
+            if (checkoutDate.isBefore(LocalDate.now())) {
+                showAlert("error","Checkout date cannot be in the past!");
+                return;
+            }
+
 
         // validating other inputs
         if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0  ||  checkoutDate == null ){
@@ -123,10 +130,13 @@ public class GuestcheckinController implements Serializable
         }
 
 
+
+
         // Allocate rooms
         List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);
         if (allocatedRooms.isEmpty()) {
-            CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
+            //CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
+            showAlert("error", "Not enough rooms available for the selected type!");
             return;
         }
 
