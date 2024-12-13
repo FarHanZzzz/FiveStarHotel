@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static cse.fivestarhotel.FrontDeskStaff.alert.showAlert;
+
 //import static cse.fivestarhotel.FrontDeskStaff.GuestcheckinController.EmailValidator.isValidEmail;
 
 public class GuestcheckinController implements Serializable
@@ -58,33 +60,13 @@ public class GuestcheckinController implements Serializable
     @javafx.fxml.FXML
     public void initialize() {
 
-
-
         for (int i = 1; i <= 100; i++) {
             if (i <= 50) SingleRoom.add(i); // 50 Single rooms
             else if (i <= 80) DoubleeRoom.add(i); // 30 Double rooms
             else SuiteRoom.add(i); // 20 Suite rooms
-
-
-
         }
 
-
-
-        // combobox
         RoomTypeComboBox.getItems().addAll("Single", "Double", "Suite");
-
-
-
-        //String name, String email, String roomtype, Integer noofRooms, String roomnumber, LocalDate checkoutDate
-
-
-
-
-        //CheckinTabledataList.add(new CheckInTableDummyClass("John Doe", "john@example.com", "Single", 1, "101", LocalDate.now()));
-
-        //CheckinTableView.setItems(CheckinTabledataList);
-//        CheckinTableView.refresh();
 
     }
 
@@ -103,20 +85,23 @@ public class GuestcheckinController implements Serializable
 
     }
 
+    public static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email != null && email.matches(emailRegex);
+    }
+
 
 
 
     @javafx.fxml.FXML
     public void CheckInOnAction(ActionEvent actionEvent) {
-
         String name = GuestNameTextField.getText();
         String email = GuestEmailTextField.getText();
         int contactno;
         LocalDate checkoutDate = CheckoutDatePicker.getValue();
         String roomtype = RoomTypeComboBox.getValue();
         int noofRooms;
-
-
 
         try {
             noofRooms = Integer.parseInt(NumberofRoomsTextField.getText());
@@ -127,23 +112,35 @@ public class GuestcheckinController implements Serializable
             return;
         }
 
+            if (checkoutDate.isBefore(LocalDate.now())) {
+                showAlert("error","Checkout date cannot be in the past!");
+                return;
+            }
+
 
         // validating other inputs
         if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0  ||  checkoutDate == null ){
             CheckInStatusLabel.setText("Please fill all the fields");
         }
 
+        // email
+        if (!isValidEmail(email)) {
+            CheckInStatusLabel.setText("Invalid email address.");
+            return;
+        }
+
+
+
 
         // Allocate rooms
         List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);
         if (allocatedRooms.isEmpty()) {
-            CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
+            //CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
+            showAlert("error", "Not enough rooms available for the selected type!");
             return;
         }
 
         String roomNumber = allocatedRooms.stream().map(String::valueOf).collect(Collectors.joining(", "));
-
-
         CheckInTableDummyClass c = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate,contactno);
         CheckinTabledataList.add(c);
 
@@ -183,6 +180,8 @@ public class GuestcheckinController implements Serializable
 
 
 
+
+
     public List<Integer> allocateRooms(String roomtype , int noofRooms) {
         List<Integer> roomList;
         List<Integer> allocatedRooms = new ArrayList<>();
@@ -196,80 +195,25 @@ public class GuestcheckinController implements Serializable
                 return allocatedRooms; // empty list if invalid
 
             }
-
         }
 
         // allocate room if avalidable
         System.out.println("Room list for " + roomtype + ": " + roomList);
 
-        // roomlist = 50 , 3
-
         if (roomList.size() >= noofRooms) {
             for(int i = 0; i < noofRooms; i++){
                 allocatedRooms.add(roomList.remove(0));  // remove and allocate
-
             }
-
             System.out.println("1"+ allocatedRooms);
-
-
-            // single 1 -50 =
-
         }
-
         else {
             System.out.println("Insufficient rooms for " + roomtype + ". Available: " + roomList.size());
 
         }
-
-
         System.out.println("Final "+ allocatedRooms);
-
         return allocatedRooms;
     }
 
-
-
-
-
-
-
-
-
-        //        // ends
-        //
-        //        //        CheckinTabledataList.add(new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate));
-        ////        for(CheckInTableDummyClass c: CheckinTabledataList){
-        ////            CheckinTableView.getItems().add(c);
-        ////            CheckInStatusLabel.setText("Check-in successful! Rooms allocated: " + roomNumber);
-        //
-        //        //CheckInTableDummyClass temp = new CheckInTableDummyClass(name,email,roomtype,noofRooms,roomNumber,checkoutDate);
-        ////        CheckinTabledataList.add(temp);
-        ////        CheckinTableView.refresh();
-        //        // String name, String email, String roomtype, Integer noofRooms, Integer roomnumber, LocalDate checkoutDate
-        //
-        //
-        //// main code of tableview
-        //
-        //
-        //
-        //            //Will create multiple file header issue while appending objects (class instances)
-        //
-        //        // append
-
-
-        //
-//                    if(f.exists()) {
-//                        fos = new FileOutputStream(f, true);
-//                        oos = new AppendableObjectOutputStream(fos);
-//                    }
-//                    else {
-//                        fos = new FileOutputStream(f);
-//                        oos = new ObjectOutputStream(fos);
-//                    }
-//
-//
-//
 
 
     }
