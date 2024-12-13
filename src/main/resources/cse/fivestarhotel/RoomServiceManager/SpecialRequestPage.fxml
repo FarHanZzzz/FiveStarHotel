@@ -1,159 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.SpecialRequestPageController">
-    <cursor>
-        <Cursor fx:constant="NE_RESIZE" />
-    </cursor>
-    <left>
-        <VBox prefHeight="720.0" prefWidth="351.0" style="-fx-background-color: #0D3120;" BorderPane.alignment="CENTER">
-            <children>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text fill="#d0913f" strokeType="OUTSIDE" strokeWidth="0.0" text="👤" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font size="29.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rehnuma Afrin Rose" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font name="Bell MT Bold" size="33.0" />
-                    </font>
-                    <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                            <stops>
-                                <Stop>
-                                    <color>
-                                        <Color />
-                                    </color>
-                                </Stop>
-                                <Stop offset="0.006711409395973154">
-                                    <color>
-                                        <Color red="0.8156862854957581" green="0.5686274766921997" blue="0.24705882370471954" />
-                                    </color>
-                                </Stop>
-                                <Stop offset="1.0">
-                                    <color>
-                                        <Color red="0.9647058844566345" green="0.8627451062202454" blue="0.7372549176216125" />
-                                    </color>
-                                </Stop>
-                            </stops>
-                        </LinearGradient>
-                    </fill>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Room Service Manager" textAlignment="CENTER" wrappingWidth="350.13677978515625">
-                    <font>
-                        <Font name="Bodoni MT" size="26.0" />
-                    </font>
-                    <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                            <stops>
-                                <Stop>
-                                    <color>
-                                        <Color />
-                                    </color>
-                                </Stop>
-                                <Stop offset="0.006711409395973154">
-                                    <color>
-                                        <Color red="0.8156862854957581" green="0.5686274766921997" blue="0.24705882370471954" />
-                                    </color>
-                                </Stop>
-                                <Stop offset="1.0">
-                                    <color>
-                                        <Color red="1.0" green="0.8235294222831726" blue="0.6039215922355652" />
-                                    </color>
-                                </Stop>
-                            </stops>
-                        </LinearGradient>
-                    </fill>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                <Line endX="251.25244140625" endY="-1.583514928817749" startX="-100.0" strokeWidth="2.0" />
-                <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Dashboard" textAlignment="CENTER" textFill="#f6dcbc">
-                    <font>
-                        <Font name="Consolas Bold" size="24.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Workers' Scedule " textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Special Requests ➦" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Bookman Old Style Bold" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Request Products" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Lost &amp; Found" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View Monthly Budget" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="goal" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
-                    <font>
-                        <Font name="Consolas Bold" size="20.0" />
-                    </font>
-                </Button>
-                <ImageView fitHeight="85.0" fitWidth="351.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Img/Untitled329_20241129211738.png" />
-                    </image>
-                </ImageView>
-            </children></VBox>
-    </left>
-    <right>
-        <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
-            <children>
-                <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
-                <Line endX="730.0" layoutX="220.0" layoutY="106.0" startX="-202.00001525878906" stroke="#8c8c7b" />
-                <Text fill="#0f4a33" layoutX="17.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Special Request:" wrappingWidth="355.41785430908203">
-                    <font>
-                        <Font name="System Bold" size="36.0" />
-                    </font>
-                </Text>
-            <TableView layoutX="146.0" layoutY="189.0" prefHeight="499.0" prefWidth="379.0" style="-fx-background-color: #B6A990;">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Guest Name" />
-                <TableColumn prefWidth="102.93330383300781" text="Room Number" />
-                  <TableColumn prefWidth="102.93330383300781" text="Room Number" />
-              </columns>
-            </TableView>
-            </children>
-        </AnchorPane>
-    </right>
-</BorderPane>
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.SpecialRequestPageController">
+   <children>
+      <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+      <Text fill="#0f4a33" layoutX="17.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Special Request:" wrappingWidth="355.41785430908203">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Button layoutX="48.0" layoutY="142.0" mnemonicParsing="false" onAction="#viewRequestOnAction" prefHeight="74.0" prefWidth="267.0" text="View Request">
+         <font>
+            <Font name="Consolas" size="19.0" />
+         </font>
+      </Button>
+      <Label fx:id="viewrequestlabel" layoutX="54.0" layoutY="286.0" prefHeight="402.0" prefWidth="840.0" />
+   </children>
+</AnchorPane>
