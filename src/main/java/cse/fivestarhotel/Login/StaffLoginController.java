@@ -460,7 +460,6 @@ public class StaffLoginController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return ceoList;
     }
 

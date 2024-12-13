@@ -22,7 +22,7 @@
     <right>
         <AnchorPane prefHeight="720.0" prefWidth="726.0" style="-fx-background-color: #072917;" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="CreateAnAccountNameTextField" layoutX="203.0" layoutY="260.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your Name" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+                <TextField fx:id="CreateAnAccountNameTextField" layoutX="203.0" layoutY="260.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your Name" style="-fx-background-color: #E8BA60; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
                 <Label layoutX="113.0" layoutY="123.0" prefHeight="92.0" prefWidth="342.0" text="Create An Account" textFill="#e8ba60">
                     <font>
                         <Font name="Bell MT Italic" size="47.0" />
@@ -33,7 +33,7 @@
                         <Font name="Bell MT" size="20.0" />
                     </font>
                 </Label>
-                <TextField fx:id="CreateAnAccountemailTextField" layoutX="203.0" layoutY="317.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your Email" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+                <TextField fx:id="CreateAnAccountemailTextField" layoutX="203.0" layoutY="317.0" prefHeight="27.0" prefWidth="269.0" promptText="Enter your Email" style="-fx-background-color: #E8BA60; -fx-border-color: #E8BA #E8BA6060; -fx-border-width: 0px 0px 2px 0px;" />
                 <Label layoutX="87.0" layoutY="320.0" prefHeight="21.0" prefWidth="80.0" text="Email" textFill="#e8ba60">
                     <font>
                         <Font name="Bell MT" size="20.0" />
@@ -45,7 +45,7 @@
                     </font>
                 </Label>
                 <DatePicker fx:id="CreateAnAccountBirthdayDatepicker" layoutX="203.0" layoutY="441.0" promptText="press to enter birthdate" style="-fx-border-color: #E8BA60;" />
-                <PasswordField fx:id="CreateAnAccountPasswordPasswordField" layoutX="203.0" layoutY="377.0" prefHeight="27.0" prefWidth="269.0" promptText="Password must be 8-letters" style="-fx-background-color: transparent; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
+                <PasswordField fx:id="CreateAnAccountPasswordPasswordField" layoutX="203.0" layoutY="377.0" prefHeight="27.0" prefWidth="269.0" promptText="Password must be 8-letters" style="-fx-background-color: #E8BA60; -fx-border-color: #E8BA60; -fx-border-width: 0px 0px 2px 0px;" />
                 <Label layoutX="87.0" layoutY="380.0" prefHeight="21.0" prefWidth="80.0" text="Password" textFill="#e8ba60">
                     <font>
                         <Font name="Bell MT" size="20.0" />
