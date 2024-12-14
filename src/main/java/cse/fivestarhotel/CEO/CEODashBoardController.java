@@ -83,9 +83,6 @@ public class CEODashBoardController
         catch(Exception e){}
     }
 
-    @javafx.fxml.FXML
-    public void ManageUserAccountsOnAction(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void monthlyGoalsButtonOnAction(ActionEvent actionEvent) {
@@ -98,4 +95,15 @@ public class CEODashBoardController
         catch(Exception e){}
     }
 
+    @javafx.fxml.FXML
+    public void ViewRevOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/ViewRevenueReport.fxml"));
+
+
+            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
+    
 }

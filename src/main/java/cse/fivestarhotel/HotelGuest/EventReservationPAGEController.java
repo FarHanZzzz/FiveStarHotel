@@ -18,6 +18,9 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import static cse.fivestarhotel.FrontDeskStaff.alert.showAlert;
+import static cse.fivestarhotel.Login.CreateanAccountController.isValidEmail;
+
 public class EventReservationPAGEController implements Serializable {
 
     @FXML
@@ -59,6 +62,19 @@ public class EventReservationPAGEController implements Serializable {
             eventstatusLabel.setText("Please input all the details.");
             return;
         }
+
+        if (!isValidEmail(email)) {
+            showAlert("error","Invalid email address.");
+            return;
+        }
+
+
+        if (date.isBefore(LocalDate.now())) {
+            showAlert("Error","event can't be in the past");
+            return;
+        }
+
+
 
         Event event = new Event(name, email, eventType, date, timing, additionalNotes);
         events.add(event);

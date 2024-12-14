@@ -56,15 +56,15 @@ public class CreateanAccountController implements Serializable
         }
 
 
-        if (date.isBefore(LocalDate.now())) {
-            showAlert("error","Checkout date cannot be in the past!");
+        if (date.isAfter(LocalDate.now())) {
+            showAlert("invalid birthday","are you from the future?");
             return;
         }
 
         //int num = 8;
 
-        if (password.length() < 9) {
-           showAlert("error","please make it bigger");
+        if (password.length() < 8) {
+           showAlert("error","password must be at least 8 letter");
             return;
         }
 

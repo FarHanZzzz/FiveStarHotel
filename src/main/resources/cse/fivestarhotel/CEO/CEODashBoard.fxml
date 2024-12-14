@@ -101,7 +101,7 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#ManageUserAccountsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="Manage User Accounts" textAlignment="CENTER" textFill="#cf8e40">
+                <Button mnemonicParsing="false" onAction="#ViewRevOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View Revenue Report" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>

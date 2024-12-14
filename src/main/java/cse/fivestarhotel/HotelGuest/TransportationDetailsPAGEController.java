@@ -18,6 +18,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import static cse.fivestarhotel.FrontDeskStaff.alert.showAlert;
+
 public class TransportationDetailsPAGEController implements Serializable {
 
     @javafx.fxml.FXML
@@ -58,6 +60,12 @@ public class TransportationDetailsPAGEController implements Serializable {
 //String name, String email, String destination, LocalDate date, String time, String vehicletype
         if (name.isEmpty() || email.isEmpty() || time.isEmpty() || destination.isEmpty() || date == null || vehicletype == null ) {
             transportlabel.setText("Please input all the details."); // Show error message
+            return;
+        }
+
+
+        if (date.isBefore(LocalDate.now())) {
+            showAlert("Error","invalid date");
             return;
         }
 

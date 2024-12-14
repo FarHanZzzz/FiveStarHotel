@@ -38,6 +38,7 @@ public class StaffLoginController {
         roommanagerWrite();
         roomeorkerWrite();
         ceoWrite();
+        eleWrite();
     }
 
 
@@ -183,6 +184,30 @@ public class StaffLoginController {
         }
 
         return ceoList;
+
+    }
+
+
+
+    public ObservableList<Electrician> eleWrite() {
+
+        String eleid = "Shafiq";
+        String elepass = "ayoo";
+
+        ObservableList<Electrician> eleList = FXCollections.observableArrayList();
+
+        eleList.add(new Electrician(eleid,elepass));
+
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("elect.bin", false))) {
+            for (Electrician ele : eleList) {
+                oos.writeObject(ele);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return eleList;
 
     }
 
@@ -346,6 +371,32 @@ public class StaffLoginController {
 
 
 
+        } else if (position.equals("Electrician")) {    // verify Hotel Head Manager
+            ObservableList<Electrician> eleList = eleRead();
+
+            boolean isAuthenticated = eleList.stream()
+                    .anyMatch(ele -> ele.getId().equals(id) && ele.getPassword().equals(password));
+
+            if (isAuthenticated) {   // go to dashboard
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Electrician/ElectricianDashboard.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+                    stage.setTitle("Electrician Dashboard");
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+
+                System.out.println("Invalid ID or password.");
+            }
+
+
+
+
+
         } else {
             System.out.println("Invalid position selected.");
         }
@@ -464,6 +515,22 @@ public class StaffLoginController {
         return ceoList;
     }
 
+
+    public ObservableList<Electrician> eleRead() {
+        ObservableList<Electrician> eleList = FXCollections.observableArrayList();
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("CEO.bin"))) {
+            while (true) {
+                eleList.add((Electrician) ois.readObject());
+            }
+        } catch (EOFException eof) {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return eleList;
+    }
 
 
 

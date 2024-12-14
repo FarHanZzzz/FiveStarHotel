@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.CEO.ViewRevenueReportController">
+    <children>
+        <Line endX="730.0" layoutX="202.0" layoutY="88.0" startX="-202.00001525878906" stroke="#8c8c7b" strokeWidth="2.0" />
+        <Text fill="#0f4a33" layoutX="22.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="⮯ View Rev Report">
+            <font>
+                <Font name="Bell MT Bold" size="45.0" />
+            </font>
+        </Text>
+        <Text layoutX="46.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Revenue ($):" wrappingWidth="356.80333709716797">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <Button layoutX="712.0" layoutY="220.0" mnemonicParsing="false" onAction="#loadTotalRevOnAction" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #0f4a33;" text="load total revenue" textFill="#e5b409">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Line endX="673.6666870117188" endY="3.0517578125E-5" layoutX="244.0" layoutY="284.0" startX="-217.0" startY="3.0517578125E-5" stroke="#8c8c7b" />
+        <Text layoutX="46.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Servic Department ($):" wrappingWidth="356.80333709716797">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <Button layoutX="712.0" layoutY="315.0" mnemonicParsing="false" onAction="#loadRoomRevOnAction" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #0f4a33;" text="load total revenue" textFill="#e5b409">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Line endX="673.6666870117188" endY="3.0517578125E-5" layoutX="244.0" layoutY="379.0" startX="-217.0" startY="3.0517578125E-5" stroke="#8c8c7b" />
+        <Text layoutX="38.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transportation Department ($):" wrappingWidth="394.13671112060547">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <Button layoutX="712.0" layoutY="404.0" mnemonicParsing="false" onAction="#loadTransRevOnAction" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #0f4a33;" text="load total revenue" textFill="#e5b409">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Line endX="673.6666870117188" endY="3.0517578125E-5" layoutX="244.0" layoutY="468.0" startX="-217.0" startY="3.0517578125E-5" stroke="#8c8c7b" />
+        <Text layoutX="37.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restaurant Department ($):" wrappingWidth="387.46996307373047">
+            <font>
+                <Font name="Consolas" size="23.0" />
+            </font>
+        </Text>
+        <Button layoutX="713.0" layoutY="501.0" mnemonicParsing="false" onAction="#loadResRevOnAction" prefHeight="32.0" prefWidth="159.0" style="-fx-background-color: #0f4a33;" text="load total revenue" textFill="#e5b409">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+        <Line endX="673.6666870117188" endY="3.0517578125E-5" layoutX="248.0" layoutY="565.0" startX="-217.0" startY="3.0517578125E-5" stroke="#8c8c7b" />
+        <Label fx:id="viewtotalrev" layoutX="416.0" layoutY="217.0" prefHeight="41.0" prefWidth="263.0" style="-fx-background-color: #B6A990;" />
+        <Label fx:id="viewRoomrev" layoutX="419.0" layoutY="311.0" prefHeight="41.0" prefWidth="265.0" style="-fx-background-color: #B6A990;" />
+        <Label fx:id="viewTransrev" layoutX="422.0" layoutY="401.0" prefHeight="41.0" prefWidth="261.0" style="-fx-background-color: #B6A990;" />
+        <Label fx:id="viewResrev" layoutX="424.0" layoutY="493.0" prefHeight="41.0" prefWidth="258.0" style="-fx-background-color: #B6A990;" />
+    </children>
+</AnchorPane>

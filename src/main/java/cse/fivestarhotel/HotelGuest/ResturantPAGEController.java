@@ -19,6 +19,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import static cse.fivestarhotel.FrontDeskStaff.alert.showAlert;
+
 public class ResturantPAGEController implements Serializable {
 
     @FXML
@@ -52,6 +54,11 @@ public class ResturantPAGEController implements Serializable {
         //String name, String time, LocalDate date, String noofPeople
         if (name.isEmpty() || time.isEmpty() || date == null || noofPeople == null ) {
             ResLabel.setText("Please input all the details."); // Show error message
+            return;
+        }
+
+        if (date.isBefore(LocalDate.now())) {
+            showAlert("Error","event can't be in the past");
             return;
         }
 

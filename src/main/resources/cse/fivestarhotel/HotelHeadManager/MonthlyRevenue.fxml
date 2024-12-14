@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -16,24 +17,59 @@
             <Font name="Bell MT Bold" size="45.0" />
          </font>
       </Text>
-      <Text fill="#000000aa" layoutX="31.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Submit Revenue Report" wrappingWidth="343.15125274658203">
+      <Text fill="#000000aa" layoutX="31.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Submit Revenue Report" wrappingWidth="343.15125274658203">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Text>
-      <StackedAreaChart layoutX="14.0" layoutY="373.0" prefHeight="335.0" prefWidth="908.0">
-        <xAxis>
-          <NumberAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </StackedAreaChart>
-      <TextField layoutX="312.0" layoutY="181.0" prefHeight="41.0" prefWidth="232.0" style="-fx-background-color: #B6A990;" />
-      <Text layoutX="66.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Revenue ($):" wrappingWidth="244.80333709716797">
+      <TextField fx:id="TotalrevTextField" layoutX="310.0" layoutY="221.0" prefHeight="41.0" prefWidth="195.0" style="-fx-background-color: #B6A990;" />
+      <Text layoutX="55.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Revenue ($):" wrappingWidth="244.80333709716797">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
+      <TextField fx:id="RESrevTextField" layoutX="310.0" layoutY="328.0" prefHeight="41.0" prefWidth="196.0" style="-fx-background-color: #B6A990;" />
+      <Text layoutX="55.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restaurant Department total Revenue ($):" wrappingWidth="244.80333709716797">
+         <font>
+            <Font name="Consolas" size="23.0" />
+         </font>
+      </Text>
+      <TextField fx:id="RoomrevTextField" layoutX="310.0" layoutY="448.0" prefHeight="41.0" prefWidth="199.0" style="-fx-background-color: #B6A990;" />
+      <Text layoutX="55.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Service Department total Revenue ($):" wrappingWidth="244.80333709716797">
+         <font>
+            <Font name="Consolas" size="23.0" />
+         </font>
+      </Text>
+      <TextField fx:id="TransrevTextField" layoutX="311.0" layoutY="560.0" prefHeight="41.0" prefWidth="201.0" style="-fx-background-color: #B6A990;" />
+      <Text layoutX="56.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transportation Department total Revenue ($):" wrappingWidth="244.80333709716797">
+         <font>
+            <Font name="Consolas" size="23.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="totalBudgetComboBox" layoutX="545.0" layoutY="219.0" prefHeight="38.0" prefWidth="172.0" />
+      <ComboBox fx:id="resmonthComboBox" layoutX="549.0" layoutY="330.0" prefHeight="38.0" prefWidth="172.0" />
+      <ComboBox fx:id="roommonthComboBox" layoutX="545.0" layoutY="451.0" prefHeight="38.0" prefWidth="172.0" />
+      <ComboBox fx:id="transMonthComboBox" layoutX="549.0" layoutY="559.0" prefHeight="38.0" prefWidth="172.0" />
+      <Button layoutX="760.0" layoutY="220.0" mnemonicParsing="false" onAction="#TotalrevOnAction" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #0f4a33;" text="submit" textFill="#ffa71f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="761.0" layoutY="327.0" mnemonicParsing="false" onAction="#postRESrevOnAction" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #0f4a33;" text="submit" textFill="#ffa71f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="762.0" layoutY="448.0" mnemonicParsing="false" onAction="#roomrevOnAction" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #0f4a33;" text="submit" textFill="#ffa71f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="762.0" layoutY="554.0" mnemonicParsing="false" onAction="#TransrevOnAction" prefHeight="38.0" prefWidth="98.0" style="-fx-background-color: #0f4a33;" text="submit" textFill="#ffa71f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="revStatusLabel" layoutX="491.0" layoutY="125.0" prefHeight="38.0" prefWidth="348.0" />
    </children>
 </AnchorPane>
