@@ -19,8 +19,6 @@ import java.io.ObjectInputStream;
 
 public class ElectricianDashboardController {
     @javafx.fxml.FXML
-    private BorderPane CeoDashBoardBorderPane;
-    @javafx.fxml.FXML
     private TableColumn<MaintainenceLogs, String> TaskTableCol;
     @javafx.fxml.FXML
     private TableColumn<MaintainenceLogs, String> StatusTableCol;
@@ -30,6 +28,8 @@ public class ElectricianDashboardController {
     private TableColumn<MaintainenceLogs, String> ObservationTableCol;
     @javafx.fxml.FXML
     private TableView<MaintainenceLogs> MaintainenceReportTableView;
+    @javafx.fxml.FXML
+    private BorderPane ElectricianDashBoardBorderPane;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -128,7 +128,7 @@ public class ElectricianDashboardController {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Electrician/ElectricianDashboard.fxml"));
 
 
-            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
+            ElectricianDashBoardBorderPane.setRight(fxmlLoader.load());
         }
         catch(Exception e){}
     }

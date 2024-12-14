@@ -136,4 +136,15 @@ public class RoomServiceWorkerDashboardController
         stage.setScene(scene);
         stage.show();
     }
+
+    @javafx.fxml.FXML
+    public void ViewLaundryOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceWorker/ViewLaundryRequestPage.fxml"));
+
+            RoomServiceWorkerBorderpane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+
+    }
 }

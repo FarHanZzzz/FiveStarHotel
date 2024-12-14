@@ -3,13 +3,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.ViewLaundryRequestPageController">
+<AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceWorker.ViewLaundryRequestPageController">
    <children>
       <Line endX="730.0" layoutX="210.0" layoutY="101.0" startX="-202.00001525878906" stroke="#8c8c7b" />
       <Text fill="#000000aa" layoutX="15.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ Laundry Request List" wrappingWidth="421.5512161254883">
@@ -17,22 +16,17 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Text>
-      <TableView layoutX="25.0" layoutY="141.0" prefHeight="427.0" prefWidth="454.0" style="-fx-background-color: #B6A990;">
+      <TableView fx:id="launreqtable" layoutX="25.0" layoutY="141.0" prefHeight="427.0" prefWidth="889.0" style="-fx-background-color: #B6A990;">
          <columns>
-            <TableColumn prefWidth="172.80001258850098" text="Guest Name" />
-            <TableColumn prefWidth="280.00002136230466" text="Room No." />
+            <TableColumn fx:id="launnameCol" prefWidth="172.80001258850098" text="Guest Name" />
+            <TableColumn fx:id="launroomNoCol" prefWidth="365.99989318847656" text="Room No." />
+            <TableColumn fx:id="addilaunCol" prefWidth="349.33349609375" text="additional info" />
          </columns>
       </TableView>
-      <Button layoutX="382.0" layoutY="617.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="177.0" style="-fx-background-color: #0D3120;" text="Update List" textFill="#cf8e40">
+      <Button layoutX="382.0" layoutY="617.0" mnemonicParsing="false" onAction="#loadlaunreqOnAction" prefHeight="26.0" prefWidth="177.0" style="-fx-background-color: #0D3120;" text="Update List" textFill="#cf8e40">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <TextField layoutX="546.0" layoutY="180.0" prefHeight="387.0" prefWidth="382.0" style="-fx-background-color: #B6A990;" />
-      <Text layoutX="546.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Information:" wrappingWidth="260.8033676147461">
-         <font>
-            <Font name="Consolas" size="18.0" />
-         </font>
-      </Text>
    </children>
 </AnchorPane>
