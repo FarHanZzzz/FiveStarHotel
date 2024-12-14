@@ -130,5 +130,26 @@ public class CEODashBoardController
         stage.setScene(scene);
         stage.show();
     }
-    
+
+    @javafx.fxml.FXML
+    public void CustomerReviewsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/ViewCustomerReviews.fxml"));
+
+
+            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
+
+    @javafx.fxml.FXML
+    public void PostannouncementOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/CEO/Annoncement.fxml"));
+
+
+            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
 }
