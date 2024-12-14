@@ -155,7 +155,7 @@ public class HeadManagerDashboardController {
     public void hotelgresreviewsOnAction(ActionEvent actionEvent) {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewResturantReviews.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/HotelHeadManager/ViewResturantReview.fxml"));
 
             DashboardBorderPaneHeadManager.setRight(fxmlLoader.load());
         } catch (Exception e) {

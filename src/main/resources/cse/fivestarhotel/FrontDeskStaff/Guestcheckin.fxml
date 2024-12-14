@@ -75,6 +75,9 @@
          </font>
       </Label>
       <DatePicker fx:id="CheckoutDatePicker" layoutX="530.0" layoutY="246.0" />
-      <TextArea fx:id="GuestTextAreaDetails" layoutX="47.0" layoutY="473.0" prefHeight="200.0" prefWidth="882.0" style="-fx-background-color: #B6A990;" />
+      <TextArea fx:id="GuestTextAreaDetails" layoutX="47.0" layoutY="473.0" prefHeight="200.0" prefWidth="882.0" style="-fx-background-color: #B6A990;">
+         <font>
+            <Font size="20.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>

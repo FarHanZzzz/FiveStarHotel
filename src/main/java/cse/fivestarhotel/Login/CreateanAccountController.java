@@ -98,6 +98,11 @@ public class CreateanAccountController implements Serializable
         }
 
 
+        CreateAnAccountNameTextField.clear();
+        CreateAnAccountPasswordPasswordField.clear();
+        CreateAnAccountemailTextField.clear();
+
+
     }
 
     @javafx.fxml.FXML
@@ -115,6 +120,8 @@ public class CreateanAccountController implements Serializable
                 "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return email != null && email.matches(emailRegex);
     }
+
+
 
 
 

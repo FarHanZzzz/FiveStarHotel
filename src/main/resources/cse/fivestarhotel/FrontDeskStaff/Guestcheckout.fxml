@@ -33,6 +33,9 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextArea fx:id="checkoutTextArea" layoutX="43.0" layoutY="330.0" prefHeight="368.0" prefWidth="866.0" />
+      <TextArea fx:id="checkoutTextArea" layoutX="43.0" layoutY="330.0" prefHeight="368.0" prefWidth="866.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>

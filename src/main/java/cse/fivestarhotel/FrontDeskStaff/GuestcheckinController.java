@@ -119,7 +119,7 @@ public class GuestcheckinController implements Serializable
 
 
         // validating other inputs
-        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms <= 0  ||  checkoutDate == null ){
+        if (name.isEmpty() || email.isEmpty() || roomtype.isEmpty() || noofRooms >= 0  ||  checkoutDate == null ){
             CheckInStatusLabel.setText("Please fill all the fields");
         }
 
