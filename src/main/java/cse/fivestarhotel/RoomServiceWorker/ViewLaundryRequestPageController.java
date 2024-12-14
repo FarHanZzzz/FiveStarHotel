@@ -31,8 +31,8 @@ public class ViewLaundryRequestPageController {
     @javafx.fxml.FXML
     public void initialize() {
 
-        launnameCol.setCellValueFactory(new PropertyValueFactory<>("specifyreq"));
-        launroomNoCol.setCellValueFactory(new PropertyValueFactory<>("detailnote"));
+        launnameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        launroomNoCol.setCellValueFactory(new PropertyValueFactory<>("roomNo"));
         addilaunCol.setCellValueFactory(new PropertyValueFactory<>("roomNo"));
     }
 
