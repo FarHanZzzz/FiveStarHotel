@@ -99,7 +99,7 @@ public class RoomServiceManagerDashboardController
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -153,5 +153,16 @@ public class RoomServiceManagerDashboardController
             RoomServiceManagerBorderPane.setRight(fxmlLoader.load());
         }
         catch(Exception e){}
+    }
+
+
+    @javafx.fxml.FXML
+    public void RoomServiceManagerLogoutOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
     }
 }

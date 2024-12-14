@@ -1,14 +1,20 @@
 package cse.fivestarhotel.Electrician;
 
+import cse.fivestarhotel.HelloApplication;
 import cse.fivestarhotel.HotelGuest.Reviews;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class ElectricianDashboardController {
@@ -107,10 +113,34 @@ public class ElectricianDashboardController {
         }}
 
     @javafx.fxml.FXML
-    public void LogoutOnAction(ActionEvent actionEvent) {
+    public void eleLogoutOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Login/Signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @javafx.fxml.FXML
     public void MaintainenceLogsOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Electrician/ElectricianDashboard.fxml"));
+
+
+            CeoDashBoardBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
+    }
+
+
+    @javafx.fxml.FXML
+    public void eleDashboardOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/Electrician/ElectricianDashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) (((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
     }
 }

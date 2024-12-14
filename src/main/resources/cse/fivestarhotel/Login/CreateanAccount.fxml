@@ -61,7 +61,10 @@
                   <Font name="Consolas Bold" size="23.0" />
                </font>
             </Button>
-            <Label fx:id="StatusLabel" layoutX="141.0" layoutY="106.0" prefHeight="17.0" prefWidth="321.0" />
+            <Label fx:id="StatusLabel" layoutX="141.0" layoutY="87.0" prefHeight="36.0" prefWidth="321.0" textFill="#ffc114">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             </children>
         </AnchorPane>
     </right>

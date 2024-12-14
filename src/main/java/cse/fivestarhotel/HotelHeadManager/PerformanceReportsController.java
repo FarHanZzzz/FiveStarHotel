@@ -18,13 +18,13 @@ public class PerformanceReportsController
 {
 
     @javafx.fxml.FXML
-    private TableColumn eleMonthCol;
+    private TableColumn<PerformanceReport,String> eleMonthCol;
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String> RescustomersatisCol;
     @javafx.fxml.FXML
-    private TableColumn elerestotalspentCol;
+    private TableColumn<PerformanceReport,String> elerestotalspentCol;
     @javafx.fxml.FXML
-    private TableColumn eleAttendanceCol;
+    private TableColumn<PerformanceReport,String> eleAttendanceCol;
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String> roomtotalspentCol;
     @javafx.fxml.FXML
@@ -34,7 +34,7 @@ public class PerformanceReportsController
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String> roomcustomersatisCol;
     @javafx.fxml.FXML
-    private TableColumn elecustomersatisCol;
+    private TableColumn<PerformanceReport,String> elecustomersatisCol;
     @javafx.fxml.FXML
     private TableColumn<PerformanceReport,String>  ResAttendanceCol;
     @javafx.fxml.FXML
@@ -46,7 +46,7 @@ public class PerformanceReportsController
     @javafx.fxml.FXML
     private TableView<PerformanceReport> roomPerformanceTableView;
     @javafx.fxml.FXML
-    private TableView elePerformanceTableView;
+    private TableView<PerformanceReport> elePerformanceTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -85,7 +85,6 @@ public class PerformanceReportsController
                 fis = new FileInputStream(f);
             }
             else{
-                //Alert: file does not exist
             }
             if(fis != null) ois = new ObjectInputStream(fis);
 
@@ -94,10 +93,7 @@ public class PerformanceReportsController
             while(true) {
                 resPerformanceTableView.getItems().add((PerformanceReport) ois.readObject());
 
-
-                //CheckinTableView.setItems(CheckinTabledataList);
             }
-            //ois.close();
 
         }
         catch(Exception e) {
@@ -108,14 +104,44 @@ public class PerformanceReportsController
 
             }
 
-
         }
     }
 
 
     @javafx.fxml.FXML
     public void elePerformaneOnAction(ActionEvent actionEvent) {
+
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+
+        try {
+            File f = new File("ElectricianPerformance.bin");
+            if (f.exists()) {
+                fis = new FileInputStream(f);
+            } else {
+                //Alert: file does not exist
+            }
+            if (fis != null) ois = new ObjectInputStream(fis);
+
+            elePerformanceTableView.getItems().clear();
+
+            while (true) {
+                elePerformanceTableView.getItems().add((PerformanceReport) ois.readObject());
+
+            }
+
+        } catch (Exception e) {
+            try {
+                if (ois != null) ois.close();
+            } catch (Exception e2) {
+                //
+
+            }
+
+        }
     }
+
 
     @javafx.fxml.FXML
     public void roomPerformaneOnAction(ActionEvent actionEvent) {
@@ -139,10 +165,7 @@ public class PerformanceReportsController
             while (true) {
                 roomPerformanceTableView.getItems().add((PerformanceReport) ois.readObject());
 
-
-                //CheckinTableView.setItems(CheckinTabledataList);
             }
-            //ois.close();
 
         } catch (Exception e) {
             try {

@@ -117,106 +117,55 @@
    <center>
         <AnchorPane prefHeight="720.0" prefWidth="936.0" style="-fx-background-color: #C7C0A7;" BorderPane.alignment="CENTER">
             <children>
-                <VBox layoutX="29.0" layoutY="356.0" prefHeight="79.0" prefWidth="160.0" style="-fx-background-color: #B6A990;">
-                    <children>
-                        <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="Room No." wrappingWidth="130.13671112060547">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Text>
-                        <Label prefHeight="47.0" prefWidth="151.0" text="0">
-                            <font>
-                                <Font name="Consolas" size="38.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </VBox>
             <ImageView fitHeight="160.0" fitWidth="930.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Img/Untitled332_20241201001844.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="260.0" fitWidth="280.0" layoutX="627.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="260.0" fitWidth="280.0" layoutX="627.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Img/Untitled334_20241201024857.jpg" />
                </image></ImageView>
-            <Text fill="#0d3120" layoutX="29.0" layoutY="321.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ B o o k i n g  D e t a i l s" wrappingWidth="283.469970703125">
+            <Text fill="#70615a" layoutX="41.0" layoutY="372.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ We here at Bonjour Monsieur tryto give you your finest hotel experience!" textAlignment="CENTER" wrappingWidth="431.469970703125">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <VBox layoutX="207.0" layoutY="356.0" prefHeight="79.0" prefWidth="160.0" style="-fx-background-color: #B6A990;">
-               <children>
-                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type" wrappingWidth="130.13671112060547">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Text>
-                  <Label prefHeight="47.0" prefWidth="151.0" text="n/a">
-                     <font>
-                        <Font size="38.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox layoutX="385.0" layoutY="356.0" prefHeight="79.0" prefWidth="160.0" style="-fx-background-color: #B6A990;">
-               <children>
-                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest Staying" wrappingWidth="130.13671112060547">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Text>
-                  <Label prefHeight="47.0" prefWidth="151.0" text="0">
-                     <font>
-                        <Font name="Consolas" size="38.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <Text fill="#0d3120" layoutX="104.0" layoutY="242.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="User email:" wrappingWidth="113.025634765625">
+            <Text fill="#0d3120" layoutX="109.0" layoutY="249.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="please enjoy your stay" wrappingWidth="215.6923370361328">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Text>
-            <Label layoutX="626.0" layoutY="311.0" prefHeight="48.0" prefWidth="269.0" style="-fx-background-color: #B6A990;" text="xx/xx/xx - xx/xx/xx">
-               <font>
-                  <Font name="Consolas" size="24.0" />
-               </font></Label>
             <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="28.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Img/Untitled333_20241201010635.png" />
                </image>
             </ImageView>
-            <Label layoutX="218.0" layoutY="222.0" prefHeight="24.0" prefWidth="343.0" text="2222@gmail.com" textFill="#a86207">
+            <Label layoutX="110.0" layoutY="205.0" prefHeight="24.0" prefWidth="359.0" text="Welcome to the finest 5 star hotel!" textFill="#a86207">
                <font>
                   <Font name="Eras Bold ITC" size="20.0" />
                </font>
             </Label>
-            <Text fill="#8b7a5c" layoutX="501.0" layoutY="571.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 r d   F l o o r  ⮯" wrappingWidth="194.13674926757812" AnchorPane.rightAnchor="234.86325073242188">
+            <Text fill="#8b7a5c" layoutX="500.66666666666674" layoutY="394.0" rotate="-90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 r d   F l o o r  ⮯" wrappingWidth="194.13674926757812" AnchorPane.rightAnchor="235.19658406575513">
                <font>
                   <Font name="Century Gothic Bold" size="25.0" />
                </font>
             </Text>
-            <Text fill="#0d3120" layoutX="623.0" layoutY="291.0" opacity="0.84" strokeType="OUTSIDE" strokeWidth="0.0" text="❍ B o o k e d  f o r" wrappingWidth="191.469970703125">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Text>
-            <Text fill="#0d3120" layoutX="31.0" layoutY="506.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="Front Desk No." wrappingWidth="159.6922607421875">
+            <Text fill="#0d3120" layoutX="31.0" layoutY="317.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="Front Desk No." wrappingWidth="159.6922607421875">
                <font>
                   <Font size="21.0" />
                </font>
             </Text>
-            <Text fill="#0d3120" layoutX="283.0" layoutY="506.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="email:" wrappingWidth="159.6922607421875">
+            <Text fill="#0d3120" layoutX="283.0" layoutY="317.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="email:" wrappingWidth="159.6922607421875">
                <font>
                   <Font size="21.0" />
                </font>
             </Text>
-            <Text fill="#0d3120" layoutX="175.0" layoutY="507.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="23347" wrappingWidth="69.025634765625">
+            <Text fill="#0d3120" layoutX="175.0" layoutY="318.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="23347" wrappingWidth="69.025634765625">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Text>
-            <Text fill="#0d3120" layoutX="347.0" layoutY="506.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="bandm@email.com" wrappingWidth="209.025634765625">
+            <Text fill="#0d3120" layoutX="347.0" layoutY="317.0" opacity="0.79" strokeType="OUTSIDE" strokeWidth="0.0" text="bandm@email.com" wrappingWidth="209.025634765625">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
@@ -250,34 +199,11 @@
                </stroke>
             </Line>
             <Text fill="#86775c" layoutX="829.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="powered by 4real" />
-            <VBox layoutX="32.0" layoutY="567.0" prefHeight="62.0" prefWidth="160.0" style="-fx-background-color: #B6A990;">
-               <children>
-                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="resturant reservation" wrappingWidth="152.80345916748047">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Text>
-                  <Label prefHeight="47.0" prefWidth="151.0" text="n/a">
-                     <font>
-                        <Font size="34.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox layoutX="256.0" layoutY="567.0" prefHeight="62.0" prefWidth="160.0" style="-fx-background-color: #B6A990;">
-               <children>
-                  <Text fill="#00000075" strokeType="OUTSIDE" strokeWidth="0.0" text="Laundry reservation" wrappingWidth="152.80345916748047">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Text>
-                  <Label prefHeight="47.0" prefWidth="151.0" text="n/a">
-                     <font>
-                        <Font size="34.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
+            <ImageView fitHeight="131.0" fitWidth="762.0" layoutX="90.0" layoutY="553.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Untitled349_20241208143837.jpg" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
    </center>
