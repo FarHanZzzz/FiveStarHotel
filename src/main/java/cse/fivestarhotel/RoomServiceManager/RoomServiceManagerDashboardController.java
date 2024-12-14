@@ -129,15 +129,15 @@ public class RoomServiceManagerDashboardController
         catch(Exception e){}
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ViewBudgetOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void AnnouncementOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void LostAndFoundOnAction(ActionEvent actionEvent) {
     }
 
@@ -164,5 +164,15 @@ public class RoomServiceManagerDashboardController
         stage.setTitle("Hello");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void ViewElectricianReportOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/cse/fivestarhotel/RoomServiceManager/ViewElectricianReport.fxml"));
+
+            RoomServiceManagerBorderPane.setRight(fxmlLoader.load());
+        }
+        catch(Exception e){}
     }
 }

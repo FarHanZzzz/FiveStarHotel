@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="RoomServiceManagerBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.RoomServiceManagerDashboardController">
+<BorderPane fx:id="RoomServiceManagerBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0D3120;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse.fivestarhotel.RoomServiceManager.RoomServiceManagerDashboardController">
     <cursor>
         <Cursor fx:constant="NE_RESIZE" />
     </cursor>
@@ -104,16 +104,16 @@
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#ViewBudgetOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View Monthly Budget" textAlignment="CENTER" textFill="#cf8e40">
-                    <font>
-                        <Font name="Consolas" size="20.0" />
-                    </font>
-                </Button>
                 <Button mnemonicParsing="false" onAction="#ViewReviewsOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View reviews" textAlignment="CENTER" textFill="#cf8e40">
                     <font>
                         <Font name="Consolas" size="20.0" />
                     </font>
                 </Button>
+            <Button mnemonicParsing="false" onAction="#ViewElectricianReportOnAction" prefHeight="50.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="View Electrician Report" textAlignment="CENTER" textFill="#cf8e40">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font>
+            </Button>
                 <Button mnemonicParsing="false" onAction="#RoomServiceManagerLogoutOnAction" prefHeight="75.0" prefWidth="353.0" style="-fx-background-color: #0D3120;" text="⬅ Logout" textAlignment="CENTER" textFill="#f6dcbc">
                     <font>
                         <Font name="Consolas Bold" size="20.0" />
