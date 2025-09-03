@@ -44,10 +44,7 @@ public class GuestcheckoutController implements Serializable
             StatusLabel.setText("No guest details found");
             return;
         }
-
         List<CheckInTableDummyClass> guestlist = new ArrayList<>();
-
-
         CheckInTableDummyClass checkedoutGuest = null;
 
         // Step 1: Read all objects and identify the one to delete
@@ -70,10 +67,13 @@ public class GuestcheckoutController implements Serializable
             }
 
 
+
         } catch (FileNotFoundException e) {
             StatusLabel.setText("The file does not exist.");
             e.printStackTrace();
             return;
+
+
         } catch (IOException e) {
             StatusLabel.setText("Error reading guest details: " + e.getMessage());
             e.printStackTrace();

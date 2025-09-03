@@ -103,6 +103,7 @@ public class GuestcheckinController implements Serializable
         String roomtype = RoomTypeComboBox.getValue();
         int noofRooms;
 
+
         try {
             noofRooms = Integer.parseInt(NumberofRoomsTextField.getText());
             contactno = Integer.parseInt(GuestContactNoTetField.getText());
@@ -112,10 +113,11 @@ public class GuestcheckinController implements Serializable
             return;
         }
 
-            if (checkoutDate.isBefore(LocalDate.now())) {
-                showAlert("error","Checkout date cannot be in the past!");
-                return;
-            }
+
+        if (checkoutDate.isBefore(LocalDate.now())) {
+            showAlert("error","Checkout date cannot be in the past!");
+            return;
+        }
 
 
         // validating other inputs
@@ -133,6 +135,7 @@ public class GuestcheckinController implements Serializable
 
 
         // Allocate rooms
+
         List<Integer> allocatedRooms = allocateRooms(roomtype, noofRooms);
         if (allocatedRooms.isEmpty()) {
             //CheckInStatusLabel.setText("Not enough rooms available for the selected type!");
@@ -182,6 +185,8 @@ public class GuestcheckinController implements Serializable
 
 
 
+
+
     public List<Integer> allocateRooms(String roomtype , int noofRooms) {
         List<Integer> roomList;
         List<Integer> allocatedRooms = new ArrayList<>();
@@ -212,11 +217,9 @@ public class GuestcheckinController implements Serializable
         }
         System.out.println("Final "+ allocatedRooms);
         return allocatedRooms;
-    }
-
-
 
     }
+}
 
 
 

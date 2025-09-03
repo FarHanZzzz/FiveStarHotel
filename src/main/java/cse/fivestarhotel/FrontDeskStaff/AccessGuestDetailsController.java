@@ -60,17 +60,16 @@ public class AccessGuestDetailsController implements Serializable
                 fis = new FileInputStream(f);
             }
             else{
-                //Alert: file does not exist
+                //
             }
             if(fis != null) ois = new ObjectInputStream(fis);
 
             CheckinTableView.getItems().clear();
-
             while(true) {
                 CheckinTableView.getItems().add((CheckInTableDummyClass) ois.readObject());
 
 
-                //CheckinTableView.setItems(CheckinTabledataList);
+                //
             }
             //ois.close();
 
@@ -87,11 +86,4 @@ public class AccessGuestDetailsController implements Serializable
         }
 
     }
-
-
-
-
-
-
-
 }
